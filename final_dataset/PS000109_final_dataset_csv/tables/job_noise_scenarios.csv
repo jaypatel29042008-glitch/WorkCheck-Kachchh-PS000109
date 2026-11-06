@@ -1,0 +1,10 @@
+job_id,scenario_noise_dba,basis
+stone_crushing,88.9,"Published 8-hour TWA, six stone-crushing factories, Taiwan"
+cement_yard,90.0,Placeholder; published machine levels are higher but are not worker averages
+cement_walk,88.0,Placeholder; needs measurement
+construction,85.0,Placeholder; needs measurement
+port_yard_kandla,85.0,Placeholder; no Indian port measurement found
+port_yard_mundra,85.0,Placeholder; no Indian port measurement found
+crane_cab,80.0,Placeholder; needs measurement
+truck_cab,80.0,Placeholder; no Indian cabin measurement found
+salt_raking,70.0,"Placeholder; open-air manual work, needs measurement"

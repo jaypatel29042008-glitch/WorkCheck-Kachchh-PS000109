@@ -1,0 +1,13 @@
+location_id,label,taluka,location_type,latitude,longitude,coordinate_note
+bhuj,Bhuj,Bhuj,town and construction,23.25,69.67,town or named-place point
+kandla_port,Kandla Port,Gandhidham,port,23.03,70.22,town or named-place point
+mundra_port,Mundra Port,Mundra,port,22.74,69.7,town or named-place point
+little_rann_kutch,Little Rann salt pans (approx.),Rapar,salt pan,23.35,70.7,approximate worksite-belt point
+abdasa_cement,Abdasa cement belt (approx.),Abdasa,cement,23.43,68.85,approximate worksite-belt point
+anjar,Anjar,Anjar,town,23.1132,70.0267,town or named-place point
+bhachau,Bhachau,Bhachau,town,23.2986,70.3428,town or named-place point
+gandhidham,Gandhidham,Gandhidham,town,23.0833,70.1333,town or named-place point
+lakhpat,Lakhpat,Lakhpat,town,23.8267,68.7754,town or named-place point
+mandvi,Mandvi,Mandvi,town,22.8328,69.3524,town or named-place point
+nakhatrana,Nakhatrana,Nakhatrana,town,23.3431,69.2669,town or named-place point
+rapar,Rapar,Rapar,town,23.5727,70.6472,town or named-place point

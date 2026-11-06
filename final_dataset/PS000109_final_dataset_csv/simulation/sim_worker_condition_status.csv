@@ -1,0 +1,1665 @@
+worker_id,condition,relevant_to_job,status,demo_only
+SIM-W001,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W001,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W001,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W001,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W001,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W001,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W001,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W001,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W001,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W001,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W001,Hearing loss,True,CHECK_MISSED,True
+SIM-W001,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W001,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W002,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W002,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W002,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W002,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W002,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W002,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W002,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W002,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W002,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W002,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W002,Hearing loss,True,CHECK_MISSED,True
+SIM-W002,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W002,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W003,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W003,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W003,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W003,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W003,Heat illness,True,CHECK_DUE,True
+SIM-W003,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W003,Eye and skin problems,True,CHECK_DUE,True
+SIM-W003,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W003,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W003,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W003,Hearing loss,True,CHECK_DUE,True
+SIM-W003,Heart and stroke risk,True,CHECK_DUE,True
+SIM-W003,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W004,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W004,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W004,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W004,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W004,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W004,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W004,Eye and skin problems,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-W004,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W004,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W004,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W004,Hearing loss,True,CHECK_DUE,True
+SIM-W004,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W004,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W005,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W005,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W005,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W005,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W005,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W005,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W005,Eye and skin problems,True,CHECK_DUE,True
+SIM-W005,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W005,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W005,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W005,Hearing loss,True,CHECK_DUE,True
+SIM-W005,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W005,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W006,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W006,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W006,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W006,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-W006,Heat illness,True,CHECKED_NOTHING_NOTED,True
+SIM-W006,Dehydration,True,CHECKED_NOTHING_NOTED,True
+SIM-W006,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W006,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W006,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W006,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W006,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W006,Heart and stroke risk,True,CHECKED_NOTHING_NOTED,True
+SIM-W006,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W007,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W007,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W007,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W007,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W007,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W007,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W007,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W007,Back and joint pain,True,CHECKED_NOTHING_NOTED,True
+SIM-W007,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W007,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W007,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W007,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W007,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W008,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W008,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W008,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W008,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W008,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W008,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W008,Eye and skin problems,True,CHECKED_FOLLOW_UP_OPEN,True
+SIM-W008,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W008,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W008,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W008,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W008,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W008,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W009,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W009,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W009,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W009,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W009,Heat illness,True,CHECKED_NOTHING_NOTED,True
+SIM-W009,Dehydration,True,CHECKED_NOTHING_NOTED,True
+SIM-W009,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W009,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W009,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W009,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W009,Hearing loss,True,CHECK_MISSED,True
+SIM-W009,Heart and stroke risk,True,CHECK_MISSED,True
+SIM-W009,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W010,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W010,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W010,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W010,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W010,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W010,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W010,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W010,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W010,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W010,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W010,Hearing loss,True,CHECK_MISSED,True
+SIM-W010,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W010,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W011,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W011,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W011,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W011,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W011,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W011,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W011,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W011,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W011,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W011,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W011,Hearing loss,True,CHECK_MISSED,True
+SIM-W011,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W011,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W012,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W012,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W012,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W012,Kidney disease,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-W012,Heat illness,True,CHECK_DUE,True
+SIM-W012,Dehydration,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-W012,Eye and skin problems,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-W012,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W012,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W012,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W012,Hearing loss,True,CHECK_DUE,True
+SIM-W012,Heart and stroke risk,True,CHECK_DUE,True
+SIM-W012,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W013,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W013,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W013,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W013,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W013,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W013,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W013,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W013,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W013,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W013,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W013,Hearing loss,True,CHECK_DUE,True
+SIM-W013,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W013,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W014,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W014,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W014,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W014,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W014,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W014,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W014,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W014,Back and joint pain,True,CHECKED_NOTHING_NOTED,True
+SIM-W014,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W014,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W014,Hearing loss,True,CHECK_DUE,True
+SIM-W014,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W014,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W015,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W015,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W015,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W015,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W015,Heat illness,True,CHECKED_NOTHING_NOTED,True
+SIM-W015,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W015,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W015,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W015,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W015,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W015,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W015,Heart and stroke risk,True,CHECKED_NOTHING_NOTED,True
+SIM-W015,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W016,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W016,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W016,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W016,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W016,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W016,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W016,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W016,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W016,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W016,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W016,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W016,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W016,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W017,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W017,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W017,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W017,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W017,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W017,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W017,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W017,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W017,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W017,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W017,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W017,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W017,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W018,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W018,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W018,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W018,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-W018,Heat illness,True,CHECKED_NOTHING_NOTED,True
+SIM-W018,Dehydration,True,CHECKED_NOTHING_NOTED,True
+SIM-W018,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W018,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W018,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W018,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W018,Hearing loss,True,CHECK_MISSED,True
+SIM-W018,Heart and stroke risk,True,CHECK_MISSED,True
+SIM-W018,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W019,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W019,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W019,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W019,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-W019,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W019,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W019,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W019,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W019,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W019,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W019,Hearing loss,True,CHECK_MISSED,True
+SIM-W019,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W019,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W020,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W020,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W020,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W020,Kidney disease,True,CHECK_MISSED,True
+SIM-W020,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W020,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W020,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W020,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W020,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W020,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W020,Hearing loss,True,CHECK_MISSED,True
+SIM-W020,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W020,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W021,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W021,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W021,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W021,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-W021,Heat illness,True,CHECK_DUE,True
+SIM-W021,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W021,Eye and skin problems,True,CHECK_DUE,True
+SIM-W021,Back and joint pain,True,CHECKED_NOTHING_NOTED,True
+SIM-W021,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W021,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W021,Hearing loss,True,CHECK_DUE,True
+SIM-W021,Heart and stroke risk,True,CHECK_DUE,True
+SIM-W021,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W022,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W022,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W022,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W022,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-W022,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W022,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W022,Eye and skin problems,True,CHECK_DUE,True
+SIM-W022,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W022,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W022,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W022,Hearing loss,True,CHECK_DUE,True
+SIM-W022,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W022,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W023,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W023,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W023,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W023,Kidney disease,True,CONDITION_NOTED_DEMO,True
+SIM-W023,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W023,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W023,Eye and skin problems,True,CHECK_DUE,True
+SIM-W023,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W023,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W023,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W023,Hearing loss,True,CHECK_DUE,True
+SIM-W023,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W023,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W024,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W024,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W024,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W024,Kidney disease,True,CHECKED_FOLLOW_UP_OPEN,True
+SIM-W024,Heat illness,True,CHECKED_NOTHING_NOTED,True
+SIM-W024,Dehydration,True,CHECKED_FOLLOW_UP_OPEN,True
+SIM-W024,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W024,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W024,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W024,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W024,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W024,Heart and stroke risk,True,CHECKED_NOTHING_NOTED,True
+SIM-W024,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W025,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W025,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W025,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W025,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W025,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W025,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W025,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W025,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W025,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W025,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W025,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W025,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W025,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W026,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W026,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W026,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W026,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W026,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W026,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W026,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W026,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W026,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W026,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W026,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W026,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W026,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W027,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W027,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W027,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W027,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W027,Heat illness,True,CHECKED_NOTHING_NOTED,True
+SIM-W027,Dehydration,True,CHECKED_NOTHING_NOTED,True
+SIM-W027,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W027,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W027,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W027,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W027,Hearing loss,True,CHECK_MISSED,True
+SIM-W027,Heart and stroke risk,True,CHECK_MISSED,True
+SIM-W027,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W028,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W028,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W028,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W028,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W028,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W028,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W028,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W028,Back and joint pain,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-W028,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W028,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W028,Hearing loss,True,CHECK_MISSED,True
+SIM-W028,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W028,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W029,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W029,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W029,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W029,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W029,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W029,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W029,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W029,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W029,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W029,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W029,Hearing loss,True,CHECK_MISSED,True
+SIM-W029,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W029,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W030,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W030,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W030,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W030,Kidney disease,True,CHECK_MISSED,True
+SIM-W030,Heat illness,True,CHECK_DUE,True
+SIM-W030,Dehydration,True,CHECK_MISSED,True
+SIM-W030,Eye and skin problems,True,CHECK_DUE,True
+SIM-W030,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W030,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W030,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W030,Hearing loss,True,CHECK_DUE,True
+SIM-W030,Heart and stroke risk,True,CHECK_DUE,True
+SIM-W030,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W031,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W031,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W031,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W031,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-W031,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W031,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W031,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W031,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W031,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W031,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W031,Hearing loss,True,CHECK_DUE,True
+SIM-W031,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W031,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W032,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W032,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W032,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W032,Kidney disease,True,CHECKED_FOLLOW_UP_OPEN,True
+SIM-W032,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W032,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W032,Eye and skin problems,True,CHECK_DUE,True
+SIM-W032,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W032,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W032,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W032,Hearing loss,True,CHECK_DUE,True
+SIM-W032,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W032,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W033,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W033,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W033,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W033,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-W033,Heat illness,True,CHECKED_NOTHING_NOTED,True
+SIM-W033,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W033,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W033,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W033,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W033,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W033,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W033,Heart and stroke risk,True,CHECKED_NOTHING_NOTED,True
+SIM-W033,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W034,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W034,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W034,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W034,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-W034,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W034,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W034,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W034,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W034,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W034,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W034,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W034,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W034,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W035,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W035,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W035,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W035,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-W035,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W035,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W035,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W035,Back and joint pain,True,CHECKED_NOTHING_NOTED,True
+SIM-W035,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W035,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W035,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W035,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W035,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W036,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W036,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W036,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W036,Kidney disease,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-W036,Heat illness,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-W036,Dehydration,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-W036,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W036,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W036,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W036,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W036,Hearing loss,True,CHECK_MISSED,True
+SIM-W036,Heart and stroke risk,True,CHECK_MISSED,True
+SIM-W036,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W037,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W037,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W037,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W037,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W037,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W037,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W037,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W037,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W037,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W037,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W037,Hearing loss,True,CHECK_MISSED,True
+SIM-W037,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W037,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W038,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W038,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W038,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W038,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W038,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W038,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W038,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W038,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W038,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W038,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W038,Hearing loss,True,CHECK_MISSED,True
+SIM-W038,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W038,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W039,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W039,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W039,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W039,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W039,Heat illness,True,CHECK_DUE,True
+SIM-W039,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W039,Eye and skin problems,True,CHECK_DUE,True
+SIM-W039,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W039,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W039,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W039,Hearing loss,True,CHECK_DUE,True
+SIM-W039,Heart and stroke risk,True,CHECK_DUE,True
+SIM-W039,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W040,Silicosis,True,CHECK_MISSED,True
+SIM-W040,TB and silico-TB,True,CHECK_MISSED,True
+SIM-W040,COPD,True,CHECK_MISSED,True
+SIM-W040,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W040,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W040,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W040,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W040,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W040,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W040,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W040,Hearing loss,True,CHECK_DUE,True
+SIM-W040,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W040,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W041,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W041,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W041,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W041,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W041,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W041,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W041,Eye and skin problems,True,CHECK_DUE,True
+SIM-W041,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W041,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W041,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W041,Hearing loss,True,CHECK_DUE,True
+SIM-W041,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W041,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W042,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W042,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W042,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W042,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-W042,Heat illness,True,CHECKED_NOTHING_NOTED,True
+SIM-W042,Dehydration,True,CHECKED_NOTHING_NOTED,True
+SIM-W042,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W042,Back and joint pain,True,CHECKED_NOTHING_NOTED,True
+SIM-W042,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W042,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W042,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W042,Heart and stroke risk,True,CHECKED_NOTHING_NOTED,True
+SIM-W042,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W043,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W043,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W043,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W043,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W043,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W043,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W043,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W043,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W043,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W043,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W043,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W043,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W043,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W044,Silicosis,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-W044,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W044,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W044,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W044,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W044,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W044,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W044,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W044,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W044,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W044,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W044,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W044,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W045,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W045,TB and silico-TB,True,CHECKED_NOTHING_NOTED,True
+SIM-W045,COPD,True,CHECKED_NOTHING_NOTED,True
+SIM-W045,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W045,Heat illness,True,CHECKED_NOTHING_NOTED,True
+SIM-W045,Dehydration,True,CHECKED_NOTHING_NOTED,True
+SIM-W045,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W045,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W045,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W045,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W045,Hearing loss,True,CHECK_MISSED,True
+SIM-W045,Heart and stroke risk,True,CHECK_MISSED,True
+SIM-W045,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W046,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W046,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W046,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W046,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-W046,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W046,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W046,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W046,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W046,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W046,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W046,Hearing loss,True,CHECK_MISSED,True
+SIM-W046,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W046,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W047,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W047,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W047,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W047,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-W047,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W047,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W047,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W047,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W047,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W047,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W047,Hearing loss,True,CHECK_MISSED,True
+SIM-W047,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W047,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W048,Silicosis,True,CHECKED_FOLLOW_UP_OPEN,True
+SIM-W048,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W048,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W048,Kidney disease,True,CHECKED_FOLLOW_UP_OPEN,True
+SIM-W048,Heat illness,True,CHECK_DUE,True
+SIM-W048,Dehydration,True,CHECKED_FOLLOW_UP_OPEN,True
+SIM-W048,Eye and skin problems,True,CHECK_DUE,True
+SIM-W048,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W048,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W048,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W048,Hearing loss,True,CHECK_DUE,True
+SIM-W048,Heart and stroke risk,True,CHECK_DUE,True
+SIM-W048,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W049,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W049,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W049,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W049,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W049,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W049,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W049,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W049,Back and joint pain,True,CHECKED_NOTHING_NOTED,True
+SIM-W049,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W049,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W049,Hearing loss,True,CHECK_DUE,True
+SIM-W049,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W049,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W050,Silicosis,True,CHECK_MISSED,True
+SIM-W050,TB and silico-TB,True,CHECK_MISSED,True
+SIM-W050,COPD,True,CHECK_MISSED,True
+SIM-W050,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W050,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W050,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W050,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W050,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W050,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W050,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W050,Hearing loss,True,CHECK_DUE,True
+SIM-W050,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W050,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W051,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W051,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W051,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W051,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W051,Heat illness,True,CHECKED_NOTHING_NOTED,True
+SIM-W051,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W051,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W051,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W051,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W051,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W051,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W051,Heart and stroke risk,True,CHECKED_NOTHING_NOTED,True
+SIM-W051,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W052,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W052,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W052,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W052,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W052,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W052,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W052,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W052,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W052,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W052,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W052,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W052,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W052,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W053,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W053,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W053,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W053,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W053,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W053,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W053,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W053,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W053,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W053,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W053,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W053,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W053,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W054,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W054,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W054,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W054,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-W054,Heat illness,True,CHECKED_NOTHING_NOTED,True
+SIM-W054,Dehydration,True,CHECKED_NOTHING_NOTED,True
+SIM-W054,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W054,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W054,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W054,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W054,Hearing loss,True,CHECK_MISSED,True
+SIM-W054,Heart and stroke risk,True,CHECK_MISSED,True
+SIM-W054,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W055,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W055,TB and silico-TB,True,CHECKED_NOTHING_NOTED,True
+SIM-W055,COPD,True,CHECKED_NOTHING_NOTED,True
+SIM-W055,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W055,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W055,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W055,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W055,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W055,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W055,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W055,Hearing loss,True,CHECK_MISSED,True
+SIM-W055,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W055,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W056,Silicosis,True,CHECKED_FOLLOW_UP_OPEN,True
+SIM-W056,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W056,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W056,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W056,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W056,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W056,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W056,Back and joint pain,True,CHECKED_FOLLOW_UP_OPEN,True
+SIM-W056,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W056,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W056,Hearing loss,True,CHECK_MISSED,True
+SIM-W056,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W056,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W057,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W057,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W057,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W057,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W057,Heat illness,True,CHECK_DUE,True
+SIM-W057,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W057,Eye and skin problems,True,CHECK_DUE,True
+SIM-W057,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W057,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W057,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W057,Hearing loss,True,CHECK_DUE,True
+SIM-W057,Heart and stroke risk,True,CHECK_DUE,True
+SIM-W057,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W058,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W058,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W058,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W058,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W058,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W058,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W058,Eye and skin problems,True,CHECK_DUE,True
+SIM-W058,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W058,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W058,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W058,Hearing loss,True,CHECK_DUE,True
+SIM-W058,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W058,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W059,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W059,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W059,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W059,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W059,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W059,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W059,Eye and skin problems,True,CHECK_DUE,True
+SIM-W059,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W059,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W059,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W059,Hearing loss,True,CHECK_DUE,True
+SIM-W059,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W059,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W060,Silicosis,True,CHECK_MISSED,True
+SIM-W060,TB and silico-TB,True,CHECK_MISSED,True
+SIM-W060,COPD,True,CHECK_MISSED,True
+SIM-W060,Kidney disease,True,CHECK_MISSED,True
+SIM-W060,Heat illness,True,CHECKED_NOTHING_NOTED,True
+SIM-W060,Dehydration,True,CHECK_MISSED,True
+SIM-W060,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W060,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W060,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W060,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W060,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W060,Heart and stroke risk,True,CHECKED_NOTHING_NOTED,True
+SIM-W060,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W061,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W061,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W061,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W061,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W061,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W061,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W061,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W061,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W061,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W061,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W061,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W061,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W061,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W062,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W062,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W062,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W062,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W062,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W062,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W062,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W062,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W062,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W062,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W062,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W062,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W062,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W063,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W063,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W063,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W063,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W063,Heat illness,True,CONDITION_NOTED_DEMO,True
+SIM-W063,Dehydration,True,CONDITION_NOTED_DEMO,True
+SIM-W063,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W063,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W063,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W063,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W063,Hearing loss,True,CHECK_MISSED,True
+SIM-W063,Heart and stroke risk,True,CHECK_MISSED,True
+SIM-W063,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W064,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W064,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W064,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W064,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W064,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W064,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W064,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W064,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W064,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W064,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W064,Hearing loss,True,CHECK_MISSED,True
+SIM-W064,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W064,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W065,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W065,TB and silico-TB,True,CHECKED_NOTHING_NOTED,True
+SIM-W065,COPD,True,CHECKED_NOTHING_NOTED,True
+SIM-W065,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W065,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W065,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W065,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W065,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W065,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W065,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W065,Hearing loss,True,CHECK_MISSED,True
+SIM-W065,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W065,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W066,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W066,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W066,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W066,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-W066,Heat illness,True,CHECK_DUE,True
+SIM-W066,Dehydration,True,CHECKED_NOTHING_NOTED,True
+SIM-W066,Eye and skin problems,True,CHECK_DUE,True
+SIM-W066,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W066,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W066,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W066,Hearing loss,True,CHECK_DUE,True
+SIM-W066,Heart and stroke risk,True,CHECK_DUE,True
+SIM-W066,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W067,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-W067,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W067,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W067,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W067,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W067,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W067,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W067,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W067,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W067,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W067,Hearing loss,True,CHECK_DUE,True
+SIM-W067,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W067,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W068,Silicosis,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-W068,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W068,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W068,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W068,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W068,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W068,Eye and skin problems,True,CHECK_DUE,True
+SIM-W068,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W068,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W068,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W068,Hearing loss,True,CHECK_DUE,True
+SIM-W068,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W068,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W069,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W069,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W069,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W069,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W069,Heat illness,True,CHECKED_NOTHING_NOTED,True
+SIM-W069,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W069,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W069,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W069,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W069,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W069,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W069,Heart and stroke risk,True,CHECKED_NOTHING_NOTED,True
+SIM-W069,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W070,Silicosis,True,CHECK_MISSED,True
+SIM-W070,TB and silico-TB,True,CHECK_MISSED,True
+SIM-W070,COPD,True,CHECK_MISSED,True
+SIM-W070,Kidney disease,True,CHECK_MISSED,True
+SIM-W070,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W070,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W070,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W070,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W070,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W070,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W070,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W070,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W070,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W071,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W071,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W071,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W071,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-W071,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W071,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W071,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W071,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W071,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W071,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W071,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W071,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W071,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W072,Silicosis,True,CHECKED_FOLLOW_UP_OPEN,True
+SIM-W072,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W072,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W072,Kidney disease,True,CHECKED_FOLLOW_UP_OPEN,True
+SIM-W072,Heat illness,True,CHECKED_FOLLOW_UP_OPEN,True
+SIM-W072,Dehydration,True,CHECKED_FOLLOW_UP_OPEN,True
+SIM-W072,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W072,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W072,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W072,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W072,Hearing loss,True,CHECK_MISSED,True
+SIM-W072,Heart and stroke risk,True,CHECK_MISSED,True
+SIM-W072,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W073,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W073,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W073,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W073,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W073,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W073,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W073,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W073,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W073,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W073,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W073,Hearing loss,True,CHECK_MISSED,True
+SIM-W073,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W073,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W074,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W074,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W074,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W074,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W074,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W074,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W074,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W074,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W074,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W074,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W074,Hearing loss,True,CHECK_MISSED,True
+SIM-W074,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W074,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W075,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W075,TB and silico-TB,True,CHECKED_NOTHING_NOTED,True
+SIM-W075,COPD,True,CHECKED_NOTHING_NOTED,True
+SIM-W075,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W075,Heat illness,True,CHECK_DUE,True
+SIM-W075,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W075,Eye and skin problems,True,CHECK_DUE,True
+SIM-W075,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W075,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W075,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W075,Hearing loss,True,CHECK_DUE,True
+SIM-W075,Heart and stroke risk,True,CHECK_DUE,True
+SIM-W075,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W076,Silicosis,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-W076,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W076,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W076,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W076,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W076,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W076,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W076,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W076,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W076,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W076,Hearing loss,True,CHECK_DUE,True
+SIM-W076,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W076,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W077,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W077,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W077,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W077,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W077,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W077,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W077,Eye and skin problems,True,CHECK_DUE,True
+SIM-W077,Back and joint pain,True,CHECKED_NOTHING_NOTED,True
+SIM-W077,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W077,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W077,Hearing loss,True,CHECK_DUE,True
+SIM-W077,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W077,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W078,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W078,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W078,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W078,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-W078,Heat illness,True,CHECKED_NOTHING_NOTED,True
+SIM-W078,Dehydration,True,CHECKED_NOTHING_NOTED,True
+SIM-W078,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W078,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W078,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W078,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W078,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W078,Heart and stroke risk,True,CHECKED_NOTHING_NOTED,True
+SIM-W078,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W079,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W079,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W079,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W079,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W079,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W079,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W079,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W079,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W079,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W079,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W079,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W079,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W079,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W080,Silicosis,True,CHECK_MISSED,True
+SIM-W080,TB and silico-TB,True,CHECK_MISSED,True
+SIM-W080,COPD,True,CHECK_MISSED,True
+SIM-W080,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W080,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W080,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W080,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W080,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W080,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W080,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W080,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W080,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W080,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W081,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W081,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W081,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W081,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W081,Heat illness,True,CHECKED_NOTHING_NOTED,True
+SIM-W081,Dehydration,True,CHECKED_NOTHING_NOTED,True
+SIM-W081,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W081,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W081,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W081,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W081,Hearing loss,True,CHECK_MISSED,True
+SIM-W081,Heart and stroke risk,True,CHECK_MISSED,True
+SIM-W081,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W082,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W082,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W082,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W082,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-W082,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W082,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W082,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W082,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W082,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W082,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W082,Hearing loss,True,CHECK_MISSED,True
+SIM-W082,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W082,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W083,Silicosis,True,CONDITION_NOTED_DEMO,True
+SIM-W083,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W083,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W083,Kidney disease,True,CONDITION_NOTED_DEMO,True
+SIM-W083,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W083,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W083,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W083,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W083,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W083,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W083,Hearing loss,True,CHECK_MISSED,True
+SIM-W083,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W083,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W084,Silicosis,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-W084,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W084,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W084,Kidney disease,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-W084,Heat illness,True,CHECK_DUE,True
+SIM-W084,Dehydration,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-W084,Eye and skin problems,True,CHECK_DUE,True
+SIM-W084,Back and joint pain,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-W084,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W084,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W084,Hearing loss,True,CHECK_DUE,True
+SIM-W084,Heart and stroke risk,True,CHECK_DUE,True
+SIM-W084,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W085,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W085,TB and silico-TB,True,CHECKED_NOTHING_NOTED,True
+SIM-W085,COPD,True,CHECKED_NOTHING_NOTED,True
+SIM-W085,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W085,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W085,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W085,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W085,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W085,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W085,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W085,Hearing loss,True,CHECK_DUE,True
+SIM-W085,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W085,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W086,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W086,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W086,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W086,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W086,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W086,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W086,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W086,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W086,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W086,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W086,Hearing loss,True,CHECK_DUE,True
+SIM-W086,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W086,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W087,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W087,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W087,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W087,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W087,Heat illness,True,CHECKED_NOTHING_NOTED,True
+SIM-W087,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W087,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W087,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W087,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W087,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W087,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W087,Heart and stroke risk,True,CHECKED_NOTHING_NOTED,True
+SIM-W087,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W088,Silicosis,True,CHECKED_FOLLOW_UP_OPEN,True
+SIM-W088,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W088,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W088,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W088,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W088,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W088,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W088,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W088,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W088,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W088,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W088,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W088,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W089,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W089,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W089,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W089,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W089,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W089,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W089,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W089,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W089,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W089,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W089,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W089,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W089,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W090,Silicosis,True,CHECK_MISSED,True
+SIM-W090,TB and silico-TB,True,CHECK_MISSED,True
+SIM-W090,COPD,True,CHECK_MISSED,True
+SIM-W090,Kidney disease,True,CHECK_MISSED,True
+SIM-W090,Heat illness,True,CHECK_MISSED,True
+SIM-W090,Dehydration,True,CHECK_MISSED,True
+SIM-W090,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W090,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W090,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W090,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W090,Hearing loss,True,CHECK_MISSED,True
+SIM-W090,Heart and stroke risk,True,CHECK_MISSED,True
+SIM-W090,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W091,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W091,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W091,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W091,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W091,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W091,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W091,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W091,Back and joint pain,True,CHECKED_NOTHING_NOTED,True
+SIM-W091,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W091,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W091,Hearing loss,True,CHECK_MISSED,True
+SIM-W091,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W091,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W092,Silicosis,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-W092,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W092,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W092,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W092,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W092,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W092,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W092,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W092,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W092,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W092,Hearing loss,True,CHECK_MISSED,True
+SIM-W092,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W092,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W093,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W093,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W093,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W093,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W093,Heat illness,True,CHECK_DUE,True
+SIM-W093,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W093,Eye and skin problems,True,CHECK_DUE,True
+SIM-W093,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W093,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W093,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W093,Hearing loss,True,CHECK_DUE,True
+SIM-W093,Heart and stroke risk,True,CHECK_DUE,True
+SIM-W093,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W094,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W094,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W094,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W094,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W094,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W094,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W094,Eye and skin problems,True,CHECK_DUE,True
+SIM-W094,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W094,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W094,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W094,Hearing loss,True,CHECK_DUE,True
+SIM-W094,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W094,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W095,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-W095,TB and silico-TB,True,CHECKED_NOTHING_NOTED,True
+SIM-W095,COPD,True,CHECKED_NOTHING_NOTED,True
+SIM-W095,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W095,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W095,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W095,Eye and skin problems,True,CHECK_DUE,True
+SIM-W095,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W095,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W095,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W095,Hearing loss,True,CHECK_DUE,True
+SIM-W095,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W095,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W096,Silicosis,True,CHECKED_FOLLOW_UP_OPEN,True
+SIM-W096,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-W096,COPD,True,WATCH_NO_TRIGGER,True
+SIM-W096,Kidney disease,True,CHECKED_FOLLOW_UP_OPEN,True
+SIM-W096,Heat illness,True,CHECKED_NOTHING_NOTED,True
+SIM-W096,Dehydration,True,CHECKED_FOLLOW_UP_OPEN,True
+SIM-W096,Eye and skin problems,True,CHECKED_NOTHING_NOTED,True
+SIM-W096,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W096,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-W096,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-W096,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W096,Heart and stroke risk,True,CHECKED_NOTHING_NOTED,True
+SIM-W096,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W097,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W097,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W097,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W097,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W097,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W097,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W097,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W097,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W097,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W097,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W097,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W097,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W097,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W098,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W098,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W098,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W098,Kidney disease,False,NOT_RELEVANT_TO_JOB,True
+SIM-W098,Heat illness,False,NOT_RELEVANT_TO_JOB,True
+SIM-W098,Dehydration,False,NOT_RELEVANT_TO_JOB,True
+SIM-W098,Eye and skin problems,False,NOT_RELEVANT_TO_JOB,True
+SIM-W098,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W098,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W098,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W098,Hearing loss,False,NOT_RELEVANT_TO_JOB,True
+SIM-W098,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W098,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W099,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W099,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W099,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W099,Kidney disease,False,NOT_RELEVANT_TO_JOB,True
+SIM-W099,Heat illness,False,NOT_RELEVANT_TO_JOB,True
+SIM-W099,Dehydration,False,NOT_RELEVANT_TO_JOB,True
+SIM-W099,Eye and skin problems,False,NOT_RELEVANT_TO_JOB,True
+SIM-W099,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W099,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W099,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W099,Hearing loss,False,NOT_RELEVANT_TO_JOB,True
+SIM-W099,Heart and stroke risk,True,CHECK_MISSED,True
+SIM-W099,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W100,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W100,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W100,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W100,Kidney disease,False,NOT_RELEVANT_TO_JOB,True
+SIM-W100,Heat illness,False,NOT_RELEVANT_TO_JOB,True
+SIM-W100,Dehydration,False,NOT_RELEVANT_TO_JOB,True
+SIM-W100,Eye and skin problems,False,NOT_RELEVANT_TO_JOB,True
+SIM-W100,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W100,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W100,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W100,Hearing loss,False,NOT_RELEVANT_TO_JOB,True
+SIM-W100,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W100,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W101,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W101,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W101,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W101,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W101,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W101,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W101,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W101,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W101,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W101,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W101,Hearing loss,True,CHECK_MISSED,True
+SIM-W101,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W101,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W102,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W102,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W102,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W102,Kidney disease,False,NOT_RELEVANT_TO_JOB,True
+SIM-W102,Heat illness,False,NOT_RELEVANT_TO_JOB,True
+SIM-W102,Dehydration,False,NOT_RELEVANT_TO_JOB,True
+SIM-W102,Eye and skin problems,False,NOT_RELEVANT_TO_JOB,True
+SIM-W102,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W102,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W102,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W102,Hearing loss,False,NOT_RELEVANT_TO_JOB,True
+SIM-W102,Heart and stroke risk,True,CHECK_DUE,True
+SIM-W102,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W103,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W103,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W103,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W103,Kidney disease,False,NOT_RELEVANT_TO_JOB,True
+SIM-W103,Heat illness,False,NOT_RELEVANT_TO_JOB,True
+SIM-W103,Dehydration,False,NOT_RELEVANT_TO_JOB,True
+SIM-W103,Eye and skin problems,False,NOT_RELEVANT_TO_JOB,True
+SIM-W103,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W103,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W103,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W103,Hearing loss,False,NOT_RELEVANT_TO_JOB,True
+SIM-W103,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W103,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W104,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W104,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W104,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W104,Kidney disease,False,NOT_RELEVANT_TO_JOB,True
+SIM-W104,Heat illness,False,NOT_RELEVANT_TO_JOB,True
+SIM-W104,Dehydration,False,NOT_RELEVANT_TO_JOB,True
+SIM-W104,Eye and skin problems,False,NOT_RELEVANT_TO_JOB,True
+SIM-W104,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W104,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W104,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W104,Hearing loss,False,NOT_RELEVANT_TO_JOB,True
+SIM-W104,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W104,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W105,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W105,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W105,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W105,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-W105,Heat illness,True,CHECKED_NOTHING_NOTED,True
+SIM-W105,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W105,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W105,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W105,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W105,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W105,Hearing loss,True,CHECKED_NOTHING_NOTED,True
+SIM-W105,Heart and stroke risk,True,CHECKED_NOTHING_NOTED,True
+SIM-W105,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W106,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W106,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W106,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W106,Kidney disease,False,NOT_RELEVANT_TO_JOB,True
+SIM-W106,Heat illness,False,NOT_RELEVANT_TO_JOB,True
+SIM-W106,Dehydration,False,NOT_RELEVANT_TO_JOB,True
+SIM-W106,Eye and skin problems,False,NOT_RELEVANT_TO_JOB,True
+SIM-W106,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W106,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W106,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W106,Hearing loss,False,NOT_RELEVANT_TO_JOB,True
+SIM-W106,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W106,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W107,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W107,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W107,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W107,Kidney disease,False,NOT_RELEVANT_TO_JOB,True
+SIM-W107,Heat illness,False,NOT_RELEVANT_TO_JOB,True
+SIM-W107,Dehydration,False,NOT_RELEVANT_TO_JOB,True
+SIM-W107,Eye and skin problems,False,NOT_RELEVANT_TO_JOB,True
+SIM-W107,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W107,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W107,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W107,Hearing loss,False,NOT_RELEVANT_TO_JOB,True
+SIM-W107,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W107,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W108,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W108,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W108,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W108,Kidney disease,False,NOT_RELEVANT_TO_JOB,True
+SIM-W108,Heat illness,False,NOT_RELEVANT_TO_JOB,True
+SIM-W108,Dehydration,False,NOT_RELEVANT_TO_JOB,True
+SIM-W108,Eye and skin problems,False,NOT_RELEVANT_TO_JOB,True
+SIM-W108,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W108,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W108,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W108,Hearing loss,False,NOT_RELEVANT_TO_JOB,True
+SIM-W108,Heart and stroke risk,True,CHECK_MISSED,True
+SIM-W108,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W109,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W109,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W109,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W109,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W109,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W109,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W109,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-W109,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W109,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W109,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W109,Hearing loss,True,CHECK_MISSED,True
+SIM-W109,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W109,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W110,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W110,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W110,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W110,Kidney disease,False,NOT_RELEVANT_TO_JOB,True
+SIM-W110,Heat illness,False,NOT_RELEVANT_TO_JOB,True
+SIM-W110,Dehydration,False,NOT_RELEVANT_TO_JOB,True
+SIM-W110,Eye and skin problems,False,NOT_RELEVANT_TO_JOB,True
+SIM-W110,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W110,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W110,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W110,Hearing loss,False,NOT_RELEVANT_TO_JOB,True
+SIM-W110,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W110,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W111,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W111,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W111,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W111,Kidney disease,False,NOT_RELEVANT_TO_JOB,True
+SIM-W111,Heat illness,False,NOT_RELEVANT_TO_JOB,True
+SIM-W111,Dehydration,False,NOT_RELEVANT_TO_JOB,True
+SIM-W111,Eye and skin problems,False,NOT_RELEVANT_TO_JOB,True
+SIM-W111,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W111,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W111,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W111,Hearing loss,False,NOT_RELEVANT_TO_JOB,True
+SIM-W111,Heart and stroke risk,True,CHECK_DUE,True
+SIM-W111,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W112,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W112,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W112,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W112,Kidney disease,False,NOT_RELEVANT_TO_JOB,True
+SIM-W112,Heat illness,False,NOT_RELEVANT_TO_JOB,True
+SIM-W112,Dehydration,False,NOT_RELEVANT_TO_JOB,True
+SIM-W112,Eye and skin problems,False,NOT_RELEVANT_TO_JOB,True
+SIM-W112,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W112,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W112,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W112,Hearing loss,False,NOT_RELEVANT_TO_JOB,True
+SIM-W112,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W112,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W113,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W113,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W113,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W113,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W113,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-W113,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W113,Eye and skin problems,True,CHECK_DUE,True
+SIM-W113,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W113,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W113,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W113,Hearing loss,True,CHECK_DUE,True
+SIM-W113,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W113,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W114,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W114,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W114,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W114,Kidney disease,False,NOT_RELEVANT_TO_JOB,True
+SIM-W114,Heat illness,False,NOT_RELEVANT_TO_JOB,True
+SIM-W114,Dehydration,False,NOT_RELEVANT_TO_JOB,True
+SIM-W114,Eye and skin problems,False,NOT_RELEVANT_TO_JOB,True
+SIM-W114,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W114,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W114,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W114,Hearing loss,False,NOT_RELEVANT_TO_JOB,True
+SIM-W114,Heart and stroke risk,True,CHECKED_NOTHING_NOTED,True
+SIM-W114,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W115,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W115,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W115,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W115,Kidney disease,False,NOT_RELEVANT_TO_JOB,True
+SIM-W115,Heat illness,False,NOT_RELEVANT_TO_JOB,True
+SIM-W115,Dehydration,False,NOT_RELEVANT_TO_JOB,True
+SIM-W115,Eye and skin problems,False,NOT_RELEVANT_TO_JOB,True
+SIM-W115,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W115,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W115,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W115,Hearing loss,False,NOT_RELEVANT_TO_JOB,True
+SIM-W115,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W115,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W116,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W116,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W116,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W116,Kidney disease,False,NOT_RELEVANT_TO_JOB,True
+SIM-W116,Heat illness,False,NOT_RELEVANT_TO_JOB,True
+SIM-W116,Dehydration,False,NOT_RELEVANT_TO_JOB,True
+SIM-W116,Eye and skin problems,False,NOT_RELEVANT_TO_JOB,True
+SIM-W116,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W116,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W116,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W116,Hearing loss,False,NOT_RELEVANT_TO_JOB,True
+SIM-W116,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W116,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W117,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W117,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W117,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W117,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-W117,Heat illness,True,CHECK_MISSED,True
+SIM-W117,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-W117,Eye and skin problems,True,CHECK_MISSED,True
+SIM-W117,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-W117,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W117,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W117,Hearing loss,True,CHECK_MISSED,True
+SIM-W117,Heart and stroke risk,True,CHECK_MISSED,True
+SIM-W117,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W118,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W118,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W118,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W118,Kidney disease,False,NOT_RELEVANT_TO_JOB,True
+SIM-W118,Heat illness,False,NOT_RELEVANT_TO_JOB,True
+SIM-W118,Dehydration,False,NOT_RELEVANT_TO_JOB,True
+SIM-W118,Eye and skin problems,False,NOT_RELEVANT_TO_JOB,True
+SIM-W118,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W118,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W118,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W118,Hearing loss,False,NOT_RELEVANT_TO_JOB,True
+SIM-W118,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W118,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W119,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W119,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W119,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W119,Kidney disease,False,NOT_RELEVANT_TO_JOB,True
+SIM-W119,Heat illness,False,NOT_RELEVANT_TO_JOB,True
+SIM-W119,Dehydration,False,NOT_RELEVANT_TO_JOB,True
+SIM-W119,Eye and skin problems,False,NOT_RELEVANT_TO_JOB,True
+SIM-W119,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W119,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W119,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W119,Hearing loss,False,NOT_RELEVANT_TO_JOB,True
+SIM-W119,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-W119,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-W120,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W120,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-W120,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-W120,Kidney disease,False,NOT_RELEVANT_TO_JOB,True
+SIM-W120,Heat illness,False,NOT_RELEVANT_TO_JOB,True
+SIM-W120,Dehydration,False,NOT_RELEVANT_TO_JOB,True
+SIM-W120,Eye and skin problems,False,NOT_RELEVANT_TO_JOB,True
+SIM-W120,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-W120,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-W120,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-W120,Hearing loss,False,NOT_RELEVANT_TO_JOB,True
+SIM-W120,Heart and stroke risk,True,CHECK_DUE,True
+SIM-W120,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-A,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-A,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-A,COPD,True,WATCH_NO_TRIGGER,True
+SIM-A,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-A,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-A,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-A,Eye and skin problems,True,WATCH_NO_TRIGGER,True
+SIM-A,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-A,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-A,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-A,Hearing loss,True,CHECK_DUE,True
+SIM-A,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-A,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-B,Silicosis,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-B,TB and silico-TB,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-B,COPD,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-B,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-B,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-B,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-B,Eye and skin problems,True,CHECK_DUE,True
+SIM-B,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-B,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-B,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-B,Hearing loss,True,CHECK_DUE,True
+SIM-B,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-B,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-C,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-C,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-C,COPD,True,WATCH_NO_TRIGGER,True
+SIM-C,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-C,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-C,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-C,Eye and skin problems,True,CHECK_DUE,True
+SIM-C,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-C,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-C,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-C,Hearing loss,True,CHECK_DUE,True
+SIM-C,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-C,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-D,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-D,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-D,COPD,True,WATCH_NO_TRIGGER,True
+SIM-D,Kidney disease,True,WATCH_NO_TRIGGER,True
+SIM-D,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-D,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-D,Eye and skin problems,True,CHECK_DUE,True
+SIM-D,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-D,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-D,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-D,Hearing loss,True,CHECK_DUE,True
+SIM-D,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-D,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-E,Silicosis,True,WATCH_NO_TRIGGER,True
+SIM-E,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-E,COPD,True,WATCH_NO_TRIGGER,True
+SIM-E,Kidney disease,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-E,Heat illness,True,WATCH_NO_TRIGGER,True
+SIM-E,Dehydration,True,CHECKED_FOLLOW_UP_DONE,True
+SIM-E,Eye and skin problems,True,CHECK_DUE,True
+SIM-E,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-E,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-E,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-E,Hearing loss,True,CHECK_DUE,True
+SIM-E,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-E,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-F,Silicosis,True,CHECKED_NOTHING_NOTED,True
+SIM-F,TB and silico-TB,True,WATCH_NO_TRIGGER,True
+SIM-F,COPD,True,WATCH_NO_TRIGGER,True
+SIM-F,Kidney disease,True,CHECKED_NOTHING_NOTED,True
+SIM-F,Heat illness,True,CHECK_DUE,True
+SIM-F,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-F,Eye and skin problems,True,CHECK_DUE,True
+SIM-F,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-F,Lung cancer,True,DOCTOR_ENTERED_ONLY,True
+SIM-F,Rheumatoid arthritis,True,DOCTOR_ENTERED_ONLY,True
+SIM-F,Hearing loss,True,CHECK_DUE,True
+SIM-F,Heart and stroke risk,True,CHECK_DUE,True
+SIM-F,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-G,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-G,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-G,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-G,Kidney disease,True,CHECK_DUE,True
+SIM-G,Heat illness,True,CHECK_DUE,True
+SIM-G,Dehydration,True,WATCH_NO_TRIGGER,True
+SIM-G,Eye and skin problems,True,CHECK_DUE,True
+SIM-G,Back and joint pain,True,WATCH_NO_TRIGGER,True
+SIM-G,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-G,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-G,Hearing loss,True,CHECK_DUE,True
+SIM-G,Heart and stroke risk,True,CHECK_DUE,True
+SIM-G,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True
+SIM-H,Silicosis,False,NOT_RELEVANT_TO_JOB,True
+SIM-H,TB and silico-TB,False,NOT_RELEVANT_TO_JOB,True
+SIM-H,COPD,False,NOT_RELEVANT_TO_JOB,True
+SIM-H,Kidney disease,False,NOT_RELEVANT_TO_JOB,True
+SIM-H,Heat illness,False,NOT_RELEVANT_TO_JOB,True
+SIM-H,Dehydration,False,NOT_RELEVANT_TO_JOB,True
+SIM-H,Eye and skin problems,False,NOT_RELEVANT_TO_JOB,True
+SIM-H,Back and joint pain,False,NOT_RELEVANT_TO_JOB,True
+SIM-H,Lung cancer,False,NOT_RELEVANT_TO_JOB,True
+SIM-H,Rheumatoid arthritis,False,NOT_RELEVANT_TO_JOB,True
+SIM-H,Hearing loss,False,NOT_RELEVANT_TO_JOB,True
+SIM-H,Heart and stroke risk,True,WATCH_NO_TRIGGER,True
+SIM-H,Chemical poisoning,False,NOT_RELEVANT_TO_JOB,True

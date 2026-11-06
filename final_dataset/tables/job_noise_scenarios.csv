@@ -1,0 +1,10 @@
+job_id,scenario_noise_dba,basis,metric,low_dba,high_dba,sample,place_year,read_flag
+stone_crushing,88.9,"Published 8-hour TWA, six stone-crushing factories; other studies bracket it",Personal TWA8,81.64,88.9,28 and 51 in bracket studies,Taiwan; Chhattisgarh 2018; China 2019-20,Read; verify Taiwan record
+construction,84.6,Operating engineers; all trades were 81.4,Personal full-shift,81.4,84.6,82 engineers,"Washington State, about 2004",Read
+truck_cab,86.1,"Heavy-machine operators, not truck-only; truck studies span the range",Personal TWA8,75.89,93.0,55 operators; 692 drivers; 9 trucks,Chhattisgarh 2018; Iran 2024; Tehran 2022,Read and abstract
+crane_cab,86.0,One operator only; weak,Personal TWA,86.0,86.0,1,"Tehran, published 2022",Read
+port_yard_kandla,,No personal value found; area readings of 90-92 dBA must not be used as a dose,Area only,90.0,92.0,Readings not reported,"Unnamed Indian port, 2024",Read
+port_yard_mundra,,No personal value found; area readings of 90-92 dBA must not be used as a dose,Area only,90.0,92.0,Readings not reported,"Unnamed Indian port, 2024",Read
+cement_yard,,No verified value found,,,,,,Abstract
+cement_walk,,No verified value found,,,,,,Abstract
+salt_raking,,No measurement found,,,,,,None

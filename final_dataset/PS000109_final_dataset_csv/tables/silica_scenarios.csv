@@ -1,0 +1,6 @@
+osha_group,samples,inspections,pct_recorded_zero,p50_ug_m3,p75_ug_m3,p90_ug_m3,sample_note
+Cement & concrete products,71,22,65,0.0,17.3,52.9,
+Clay/ceramic/tiles,9,2,11,48.4,57.5,111.8,Very small: 2 firms; do not use for routing
+Construction trades,33,14,70,0.0,27.6,232.4,
+Steel/foundry,89,14,40,18.2,56.8,132.8,
+Stone & other mineral,145,50,32,26.3,80.5,399.6,

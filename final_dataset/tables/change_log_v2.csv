@@ -1,0 +1,12 @@
+status,ids,summary
+Applied,N1-N9,"Noise table expanded; sourced values replace placeholders; cement, port and salt personal noise left blank; dose handles blanks"
+Applied,N10,Hearing loss now covers all jobs; jobs with no noise value show NO_NOISE_DATA
+Applied,"U1, U5",UV labelled as ambient model dose; UV evidence added
+Applied,"H1, H3, H4",Colour stays scripted; colour linked to dehydration only; hydration evidence and caveats added
+Applied,"W2, W3, W4",Official Gujarat hours and primary risk figures added; 55+ hours reworded as a long-term health flag
+Applied,C1,Combined rule marked exploratory; link to heart and stroke removed
+Not applied,"N11, N12",Awaiting your choice: extra hearing evidence and sensor note; one figure still needs checking
+Not applied,"U2, U3, U4",Awaiting your choice: adds assumptions; brine work and eye intervals need confirming
+Not applied,H2,Needs the hydration script rewritten first
+Not applied,W1,Needs new assumptions and a sex field
+Added,Public data,"MSHA, NIOSH, Lancet Countdown, ILOSTAT and PLFS tables, plus a source register"

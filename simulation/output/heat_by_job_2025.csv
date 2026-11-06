@@ -1,0 +1,10 @@
+job,site,assumed_workload,condition,9am-6pm_allowed_h_apr_oct,9am-6pm_worst_month_allowed_h,9am-6pm_days_under_half_shift,9am-6pm_hours_beyond_table,hours_100% work,hours_75% work,hours_50% work,hours_25% work,hours_Beyond table,6am-3pm_allowed_h_apr_oct,6am-3pm_worst_month_allowed_h,6am-3pm_days_under_half_shift,6am-3pm_hours_beyond_table
+Salt-pan raking,little_rann_kutch,heavy,sun,2.5,0.8,182,679,0,1467,510,629,679,3.5,1.9,165,546
+Port yard loading (Kandla),kandla_port,heavy,sun,2.3,0.6,194,739,0,1352,476,718,739,3.2,1.7,175,594
+Port yard loading (Mundra),mundra_port,heavy,sun,2.8,0.9,180,509,0,1439,602,735,509,3.5,1.8,154,442
+Cement yard loading,abdasa_cement,heavy,sun,2.9,0.8,176,500,0,1520,561,704,500,3.6,1.9,158,424
+Cement plant walk-around,abdasa_cement,moderate,sun,4.9,2.1,104,172,1681,400,494,538,172,5.7,3.4,46,155
+Outdoor construction (Bhuj),bhuj,heavy,sun,3.1,1.0,159,471,0,1630,581,603,471,3.9,2.1,145,397
+Stone crushing (Bhuj weather),bhuj,heavy,sun,3.1,1.0,159,471,0,1630,581,603,471,3.9,2.1,145,397
+"Crane cab, shaded (Kandla)",kandla_port,light,shade,9.0,8.9,0,0,3281,0,4,0,0,9.0,8.9,0,0
+"Truck cab, shaded (Mundra)",mundra_port,light,shade,9.0,9.0,0,0,3285,0,0,0,0,9.0,9.0,0,0

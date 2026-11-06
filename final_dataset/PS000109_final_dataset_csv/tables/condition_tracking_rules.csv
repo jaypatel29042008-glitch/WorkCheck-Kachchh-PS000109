@@ -1,0 +1,14 @@
+condition,relevant_jobs,trigger,doctor_records,tracking_level
+Silicosis,cement_walk; cement_yard; construction; stone_crushing,Past or current dust-job exposure; respiratory symptoms; legal exam,Chest X-ray reading; spirometry; doctor outcome,Active
+TB and silico-TB,cement_walk; cement_yard; construction; stone_crushing,Persistent cough or weight loss,Sputum test; X-ray; TB referral status,Active
+COPD,cement_walk; cement_yard; construction; stone_crushing,Cough or breathlessness; dust job; smoking history,Spirometry; doctor outcome,Active
+Kidney disease,cement_walk; cement_yard; construction; port_yard_kandla; port_yard_mundra; salt_raking; stone_crushing,Colour score of 5+ on hot days twice in 7 days; repeated dark urine; legal exam creatinine,Creatinine/eGFR; urine test; doctor outcome,Active
+Heat illness,cement_walk; cement_yard; construction; port_yard_kandla; port_yard_mundra; salt_raking; stone_crushing,"Heat spike days; dizziness, cramps or collapse",Heat event; body temperature; emergency referral,Active
+Dehydration,cement_walk; cement_yard; construction; port_yard_kandla; port_yard_mundra; salt_raking; stone_crushing,Dark urine; low water intake,Urine colour or specific gravity; advice given,Active
+Eye and skin problems,cement_walk; cement_yard; construction; port_yard_kandla; port_yard_mundra; salt_raking; stone_crushing,High UV on 30 days with 5+ years outdoors; glare or brine symptoms,Eye and skin exam outcome,Active
+Back and joint pain,cement_yard; construction; port_yard_kandla; port_yard_mundra; salt_raking; stone_crushing,Worker-reported pain in heavy work,Doctor outcome; work advice,Active
+Lung cancer,cement_walk; cement_yard; construction; stone_crushing,Not screened by this system; doctor may note it,Doctor-entered diagnosis only,Doctor-entered only
+Rheumatoid arthritis,cement_walk; cement_yard; construction; stone_crushing,Not screened by this system; doctor may note it,Doctor-entered diagnosis only,Doctor-entered only
+Hearing loss,cement_walk; cement_yard; construction; port_yard_kandla; port_yard_mundra; stone_crushing,Noise dose above 100% on 30 work days,Audiometry; doctor outcome,Active
+Heart and stroke risk,cement_walk; cement_yard; construction; crane_cab; port_yard_kandla; port_yard_mundra; salt_raking; stone_crushing; truck_cab,55+ hours a week for 4 weeks; combined workload,Blood pressure; doctor outcome,Active
+Chemical poisoning,None in cohort,Needs chemical process records; no chemical jobs in this cohort,Process-specific blood or urine tests,Later: out of scope

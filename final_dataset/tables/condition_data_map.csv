@@ -1,0 +1,13 @@
+condition,main_link,data_needed,project_scope,evidence_held
+Silicosis,Silica,Work history; chest X-ray; doctor reading; spirometry,Core,US silica samples; He 2022; Morbi case count
+Silico-TB and TB,Silica raises TB risk,Cough history; sputum test; X-ray; TB treatment status,Core,No TB data held
+COPD,Dust and silica,Symptoms; smoking; spirometry,Core,He 2022
+Lung cancer,Long-term silica exposure,Exposure and smoking history; doctor-ordered imaging,Mention only,Literature only
+Kidney disease,Heat and dehydration; reported silica link,Creatinine/eGFR; urine tests; water intake,Core,Salt-pan paper; Kachchh heat model
+Rheumatoid arthritis,Reported silica link,Joint symptoms; doctor assessment; blood tests,Mention only,None held
+Heat stroke and exhaustion,Heat and workload,Body temperature; symptoms; WBGT; job,Core,Kachchh heat model; no case records
+Dehydration,Heat and limited water,Water intake; urine colour or specific gravity,Core,Salt-pan paper
+Eye and skin problems,Salt-pan glare and brine,Eye and skin exam,Later,No checked dataset
+Hearing loss,Noise,Noise levels; audiometry,Later,None held
+Back and joint pain,Heavy work,Symptoms; job tasks,Later,None held
+Chemical poisoning,"Lead, benzene and others",Process records; blood or urine tests,Later,Gujarat draft rules only

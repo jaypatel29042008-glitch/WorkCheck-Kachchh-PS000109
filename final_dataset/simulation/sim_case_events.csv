@@ -1,0 +1,959 @@
+worker_id,date,event,detail,scripted
+SIM-A,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-A,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-A,2025-02-10,ENROLLED,Public screening; not on any register,True
+SIM-A,2025-02-10,REFERRED,Exposure review requested,True
+SIM-A,2025-03-05,ATTENDED,Clinic attendance recorded,True
+SIM-A,2025-03-05,CLOSED,No follow-up advised,True
+SIM-A,2025-07-01,JOB_CHANGE,Moved to Kandla; record stays with worker,True
+SIM-B,2025-01-01,SILICA_SCENARIO_P75_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-B,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-B,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-B,2025-02-17,ENROLLED,Public screening,True
+SIM-B,2025-02-17,REFERRED,Exposure review requested,True
+SIM-B,2025-03-04,SYMPTOM_REPORTED,Cough reported; doctor review prioritised,True
+SIM-B,2025-03-20,ATTENDED,Doctor review recorded,True
+SIM-B,2025-03-20,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-B,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-B,2025-04-10,FOLLOW_UP_MISSED,Reminder sent,True
+SIM-B,2025-04-25,FOLLOW_UP_DONE,Follow-up recorded,True
+SIM-B,2025-04-25,CLOSED,Closed by clinic,True
+SIM-C,2025-01-01,LEGAL_EXAM_DUE,Rule 9 window to 30 April,True
+SIM-C,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-C,2025-03-12,ATTENDED,Form 5 exam recorded,True
+SIM-C,2025-03-12,CLOSED,Certificate copy held by worker,True
+SIM-C,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-D,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-D,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-D,2025-06-10,ENROLLED,Public screening,True
+SIM-D,2025-06-10,REFERRED,Exposure review requested,True
+SIM-D,2025-09-01,JOB_CHANGE,Moved to Bhuj before attending,True
+SIM-D,2025-09-20,ATTENDED,Attendance recorded at new location,True
+SIM-D,2025-09-20,CLOSED,No follow-up advised,True
+SIM-E,2025-03-11,PARAMETER_TRIGGER,hydration threshold reached (placeholder rule),True
+SIM-E,2025-04-02,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-E,2025-04-14,ENROLLED,Worker-volunteer at salt pan,True
+SIM-E,2025-05-20,SYMPTOM_REPORTED,Repeated dark urine reported,True
+SIM-E,2025-05-28,ATTENDED,Doctor review recorded,True
+SIM-E,2025-05-28,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-E,2025-07-01,LOST_TO_FOLLOW_UP,Left salt pan for off-season work,True
+SIM-E,2025-08-20,RE_FOUND,Scanned QR card at a Bhuj check-up,True
+SIM-E,2025-08-20,FOLLOW_UP_DONE,Follow-up recorded,True
+SIM-E,2025-08-20,CLOSED,Closed by clinic,True
+SIM-F,2025-01-01,LEGAL_EXAM_DUE,Rule 9 window to 30 April,True
+SIM-F,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-F,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-F,2025-04-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-F,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-F,2025-04-26,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-F,2025-05-01,OVERDUE,Exam not recorded by deadline,True
+SIM-F,2025-05-22,ATTENDED,Late Form 5 exam recorded,True
+SIM-F,2025-05-22,CLOSED,Certificate copy held by worker,True
+SIM-G,2025-01-01,LEGAL_EXAM_DUE,Central Rule 5 annual exam,True
+SIM-G,2025-03-15,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-G,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-G,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-G,2025-05-01,OVERDUE,Follow-up target date passed; central rule sets no 120-day window,True
+SIM-G,2025-12-31,STILL_OPEN,Case still open at year end,True
+SIM-H,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-H,2025-03-03,ENROLLED,Public screening,True
+SIM-H,2025-03-03,NO_REFERRAL,Heat advice given; no legal or exposure route,True
+SIM-W001,2025-03-15,ENROLLED,Entered through worker-volunteer,True
+SIM-W001,2025-03-15,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W001,2025-07-01,JOB_CHANGE,Off-season construction work in Bhuj,True
+SIM-W001,2025-10-01,JOB_CHANGE,Returned to salt pan,True
+SIM-W002,2025-03-15,ENROLLED,Entered through worker-volunteer,True
+SIM-W002,2025-03-15,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W002,2025-07-01,JOB_CHANGE,Off-season construction work in Bhuj,True
+SIM-W002,2025-10-01,JOB_CHANGE,Returned to salt pan,True
+SIM-W003,2025-03-15,ENROLLED,Entered through worker-volunteer,True
+SIM-W003,2025-03-15,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W003,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W003,2025-04-02,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W003,2025-04-12,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W003,2025-07-01,JOB_CHANGE,Off-season construction work in Bhuj,True
+SIM-W003,2025-10-01,JOB_CHANGE,Returned to salt pan,True
+SIM-W004,2025-03-15,ENROLLED,Entered through worker-volunteer,True
+SIM-W004,2025-04-02,SYMPTOM_REPORTED,Glare or brine symptoms reported,True
+SIM-W004,2025-04-02,REFERRED,Referral request sent,True
+SIM-W004,2025-04-23,ATTENDED,Attendance recorded by clinic,True
+SIM-W004,2025-04-23,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W004,2025-05-23,FOLLOW_UP_DONE,Follow-up recorded,True
+SIM-W004,2025-05-23,CLOSED,Closed by clinic,True
+SIM-W004,2025-07-01,JOB_CHANGE,Off-season construction work in Bhuj,True
+SIM-W004,2025-10-01,JOB_CHANGE,Returned to salt pan,True
+SIM-W005,2025-03-15,ENROLLED,Entered through worker-volunteer,True
+SIM-W005,2025-03-15,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W005,2025-04-02,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W005,2025-07-01,JOB_CHANGE,Off-season construction work in Bhuj,True
+SIM-W005,2025-10-01,JOB_CHANGE,Returned to salt pan,True
+SIM-W006,2025-03-11,PARAMETER_TRIGGER,hydration threshold reached (placeholder rule),True
+SIM-W006,2025-03-15,ENROLLED,Entered through worker-volunteer,True
+SIM-W006,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W006,2025-04-02,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W006,2025-04-04,SYMPTOM_REPORTED,Repeated dark urine reported,True
+SIM-W006,2025-04-04,REFERRED,Referral request sent,True
+SIM-W006,2025-04-12,PARAMETER_CHECK_DONE,hours check recorded by clinic,True
+SIM-W006,2025-04-12,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W006,2025-04-23,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W006,2025-04-25,ATTENDED,Attendance recorded by clinic,True
+SIM-W006,2025-04-25,CLOSED,Doctor noted nothing further,True
+SIM-W006,2025-05-03,PARAMETER_CHECK_DONE,combined check recorded by clinic,True
+SIM-W006,2025-05-10,PARAMETER_CHECK_MISSED,hydration check not recorded,True
+SIM-W006,2025-07-01,JOB_CHANGE,Off-season construction work in Bhuj,True
+SIM-W006,2025-10-01,JOB_CHANGE,Returned to salt pan,True
+SIM-W007,2025-03-15,ENROLLED,Entered through worker-volunteer,True
+SIM-W007,2025-04-05,SYMPTOM_REPORTED,Pain with heavy work reported,True
+SIM-W007,2025-04-05,REFERRED,Referral request sent,True
+SIM-W007,2025-04-26,ATTENDED,Attendance recorded by clinic,True
+SIM-W007,2025-04-26,CLOSED,Doctor noted nothing further,True
+SIM-W007,2025-07-01,JOB_CHANGE,Off-season construction work in Bhuj,True
+SIM-W007,2025-10-01,JOB_CHANGE,Returned to salt pan,True
+SIM-W008,2025-03-15,ENROLLED,Entered through worker-volunteer,True
+SIM-W008,2025-04-02,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W008,2025-04-06,SYMPTOM_REPORTED,Glare or brine symptoms reported,True
+SIM-W008,2025-04-06,REFERRED,Referral request sent,True
+SIM-W008,2025-04-23,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W008,2025-04-27,ATTENDED,Attendance recorded by clinic,True
+SIM-W008,2025-04-27,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W008,2025-07-01,JOB_CHANGE,Off-season construction work in Bhuj,True
+SIM-W008,2025-10-01,JOB_CHANGE,Returned to salt pan,True
+SIM-W008,2025-12-31,STILL_OPEN,Follow-up not yet recorded,True
+SIM-W009,2025-03-15,ENROLLED,Entered through worker-volunteer,True
+SIM-W009,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W009,2025-04-02,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W009,2025-04-07,SYMPTOM_REPORTED,Dizziness or cramps at work,True
+SIM-W009,2025-04-07,REFERRED,Referral request sent,True
+SIM-W009,2025-04-12,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W009,2025-04-28,ATTENDED,Attendance recorded by clinic,True
+SIM-W009,2025-04-28,CLOSED,Doctor noted nothing further,True
+SIM-W009,2025-05-21,PARAMETER_CHECK_MISSED,hours check not recorded,True
+SIM-W009,2025-06-01,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W009,2025-06-11,PARAMETER_CHECK_MISSED,combined check not recorded,True
+SIM-W009,2025-07-01,JOB_CHANGE,Off-season construction work in Bhuj,True
+SIM-W009,2025-10-01,JOB_CHANGE,Returned to salt pan,True
+SIM-W010,2025-03-15,ENROLLED,Entered through worker-volunteer,True
+SIM-W010,2025-03-15,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W010,2025-04-02,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W010,2025-06-01,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W010,2025-07-01,JOB_CHANGE,Off-season construction work in Bhuj,True
+SIM-W010,2025-10-01,JOB_CHANGE,Returned to salt pan,True
+SIM-W011,2025-03-15,ENROLLED,Entered through worker-volunteer,True
+SIM-W011,2025-03-15,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W011,2025-04-02,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W011,2025-06-01,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W011,2025-07-01,JOB_CHANGE,Off-season construction work in Bhuj,True
+SIM-W011,2025-10-01,JOB_CHANGE,Returned to salt pan,True
+SIM-W012,2025-03-11,PARAMETER_TRIGGER,hydration threshold reached (placeholder rule),True
+SIM-W012,2025-03-15,ENROLLED,Entered through worker-volunteer,True
+SIM-W012,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W012,2025-03-31,SYMPTOM_REPORTED,Repeated dark urine reported,True
+SIM-W012,2025-03-31,SYMPTOM_REPORTED,Glare or brine symptoms reported,True
+SIM-W012,2025-03-31,REFERRED,Referral request sent,True
+SIM-W012,2025-04-01,PARAMETER_CHECK_DONE,hydration check recorded by clinic,True
+SIM-W012,2025-04-02,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W012,2025-04-12,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W012,2025-04-21,ATTENDED,Attendance recorded by clinic,True
+SIM-W012,2025-04-21,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W012,2025-05-21,FOLLOW_UP_DONE,Follow-up recorded,True
+SIM-W012,2025-05-21,CLOSED,Closed by clinic,True
+SIM-W012,2025-07-01,JOB_CHANGE,Off-season construction work in Bhuj,True
+SIM-W012,2025-10-01,JOB_CHANGE,Returned to salt pan,True
+SIM-W013,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W013,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W013,2025-07-01,JOB_CHANGE,"Moved to Truck cab, shaded, Mundra; record stays with worker",True
+SIM-W013,2025-08-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W014,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W014,2025-01-19,SYMPTOM_REPORTED,Pain with heavy work reported,True
+SIM-W014,2025-01-19,REFERRED,Referral request sent,True
+SIM-W014,2025-02-09,ATTENDED,Attendance recorded by clinic,True
+SIM-W014,2025-02-09,CLOSED,Doctor noted nothing further,True
+SIM-W015,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W015,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W015,2025-03-15,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W015,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W015,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W015,2025-04-05,PARAMETER_CHECK_DONE,combined check recorded by clinic,True
+SIM-W015,2025-04-12,PARAMETER_CHECK_DONE,hours check recorded by clinic,True
+SIM-W015,2025-04-25,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W016,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W016,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W017,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W017,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W017,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W017,2025-04-25,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W017,2025-07-01,JOB_CHANGE,"Moved to Truck cab, shaded, Mundra; record stays with worker",True
+SIM-W017,2025-08-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W017,2025-08-25,PARAMETER_CHECK_DONE,noise check recorded by clinic,True
+SIM-W018,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W018,2025-01-23,SYMPTOM_REPORTED,Repeated dark urine reported,True
+SIM-W018,2025-01-23,SYMPTOM_REPORTED,Dizziness or cramps at work,True
+SIM-W018,2025-01-23,REFERRED,Referral request sent,True
+SIM-W018,2025-02-13,ATTENDED,Attendance recorded by clinic,True
+SIM-W018,2025-02-13,CLOSED,Doctor noted nothing further,True
+SIM-W018,2025-02-27,PARAMETER_TRIGGER,hydration threshold reached (placeholder rule),True
+SIM-W018,2025-03-15,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W018,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W018,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W018,2025-05-14,PARAMETER_CHECK_MISSED,combined check not recorded,True
+SIM-W018,2025-05-21,PARAMETER_CHECK_MISSED,hours check not recorded,True
+SIM-W018,2025-06-03,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W019,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W019,2025-03-20,ATTENDED,Attendance recorded by clinic,True
+SIM-W019,2025-03-20,CLOSED,Doctor noted nothing further,True
+SIM-W020,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W020,2025-03-02,LOST_TO_FOLLOW_UP,No attendance recorded,True
+SIM-W020,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W020,2025-06-03,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W021,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W021,2025-01-16,SYMPTOM_REPORTED,Pain with heavy work reported,True
+SIM-W021,2025-03-15,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W021,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W021,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W021,2025-05-07,OVERDUE,Attendance overdue; reminder sent,True
+SIM-W021,2025-05-16,ATTENDED,Attendance recorded by clinic,True
+SIM-W021,2025-05-16,CLOSED,Doctor noted nothing further,True
+SIM-W021,2025-07-01,JOB_CHANGE,"Moved to Truck cab, shaded, Mundra; record stays with worker",True
+SIM-W021,2025-08-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W022,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W022,2025-03-23,ATTENDED,Attendance recorded by clinic,True
+SIM-W022,2025-03-23,CLOSED,Doctor noted nothing further,True
+SIM-W022,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W023,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W023,2025-03-24,ATTENDED,Attendance recorded by clinic,True
+SIM-W023,2025-03-24,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W023,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W023,2025-04-23,FOLLOW_UP_DONE,Follow-up recorded,True
+SIM-W023,2025-04-23,CLOSED,Closed by clinic,True
+SIM-W024,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W024,2025-01-19,SYMPTOM_REPORTED,Repeated dark urine reported,True
+SIM-W024,2025-02-27,PARAMETER_TRIGGER,hydration threshold reached (placeholder rule),True
+SIM-W024,2025-03-15,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W024,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W024,2025-03-25,ATTENDED,Attendance recorded by clinic,True
+SIM-W024,2025-03-25,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W024,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W024,2025-04-05,PARAMETER_CHECK_DONE,combined check recorded by clinic,True
+SIM-W024,2025-04-12,PARAMETER_CHECK_DONE,hours check recorded by clinic,True
+SIM-W024,2025-04-25,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W024,2025-04-28,PARAMETER_CHECK_MISSED,hydration check not recorded,True
+SIM-W024,2025-12-31,STILL_OPEN,Follow-up not yet recorded,True
+SIM-W025,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W025,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W025,2025-07-01,JOB_CHANGE,"Moved to Truck cab, shaded, Mundra; record stays with worker",True
+SIM-W025,2025-08-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W025,2025-08-25,PARAMETER_CHECK_DONE,noise check recorded by clinic,True
+SIM-W026,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W026,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W027,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W027,2025-01-22,SYMPTOM_REPORTED,Dizziness or cramps at work,True
+SIM-W027,2025-01-22,REFERRED,Referral request sent,True
+SIM-W027,2025-02-12,ATTENDED,Attendance recorded by clinic,True
+SIM-W027,2025-02-12,CLOSED,Doctor noted nothing further,True
+SIM-W027,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W027,2025-04-03,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W027,2025-04-12,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W027,2025-05-21,PARAMETER_CHECK_MISSED,hours check not recorded,True
+SIM-W027,2025-06-02,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W027,2025-06-11,PARAMETER_CHECK_MISSED,combined check not recorded,True
+SIM-W028,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W028,2025-01-23,SYMPTOM_REPORTED,Pain with heavy work reported,True
+SIM-W028,2025-01-23,REFERRED,Referral request sent,True
+SIM-W028,2025-02-13,ATTENDED,Attendance recorded by clinic,True
+SIM-W028,2025-02-13,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W028,2025-03-15,FOLLOW_UP_DONE,Follow-up recorded,True
+SIM-W028,2025-03-15,CLOSED,Closed by clinic,True
+SIM-W029,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W029,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W029,2025-04-03,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W029,2025-06-02,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W029,2025-07-01,JOB_CHANGE,"Moved to Truck cab, shaded, Mundra; record stays with worker",True
+SIM-W029,2025-08-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W029,2025-10-03,PARAMETER_CHECK_MISSED,noise check not recorded,True
+SIM-W030,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W030,2025-01-15,SYMPTOM_REPORTED,Repeated dark urine reported,True
+SIM-W030,2025-01-15,REFERRED,Referral request sent,True
+SIM-W030,2025-03-16,LOST_TO_FOLLOW_UP,No attendance recorded,True
+SIM-W030,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W030,2025-04-03,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W030,2025-04-05,PARAMETER_TRIGGER,hydration threshold reached (placeholder rule),True
+SIM-W030,2025-04-12,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W030,2025-04-26,PARAMETER_CHECK_DONE,hydration check recorded by clinic,True
+SIM-W031,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W031,2025-05-02,OVERDUE,Attendance overdue; reminder sent,True
+SIM-W031,2025-05-11,ATTENDED,Attendance recorded by clinic,True
+SIM-W031,2025-05-11,CLOSED,Doctor noted nothing further,True
+SIM-W032,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W032,2025-03-05,ATTENDED,Attendance recorded by clinic,True
+SIM-W032,2025-03-05,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W032,2025-04-03,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W032,2025-12-31,STILL_OPEN,Follow-up not yet recorded,True
+SIM-W033,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W033,2025-03-06,ATTENDED,Attendance recorded by clinic,True
+SIM-W033,2025-03-06,CLOSED,Doctor noted nothing further,True
+SIM-W033,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W033,2025-04-03,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W033,2025-04-12,PARAMETER_CHECK_DONE,hours check recorded by clinic,True
+SIM-W033,2025-04-12,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W033,2025-04-24,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W033,2025-05-03,PARAMETER_CHECK_DONE,combined check recorded by clinic,True
+SIM-W033,2025-07-01,JOB_CHANGE,"Moved to Truck cab, shaded, Mundra; record stays with worker",True
+SIM-W033,2025-08-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W033,2025-08-25,PARAMETER_CHECK_DONE,noise check recorded by clinic,True
+SIM-W034,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W034,2025-03-07,ATTENDED,Attendance recorded by clinic,True
+SIM-W034,2025-03-07,CLOSED,Doctor noted nothing further,True
+SIM-W034,2025-04-03,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W034,2025-04-24,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W035,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W035,2025-01-20,SYMPTOM_REPORTED,Pain with heavy work reported,True
+SIM-W035,2025-03-08,ATTENDED,Attendance recorded by clinic,True
+SIM-W035,2025-03-08,CLOSED,Doctor noted nothing further,True
+SIM-W035,2025-04-03,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W035,2025-04-24,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W036,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W036,2025-01-21,SYMPTOM_REPORTED,Repeated dark urine reported,True
+SIM-W036,2025-01-21,SYMPTOM_REPORTED,Dizziness or cramps at work,True
+SIM-W036,2025-03-09,ATTENDED,Attendance recorded by clinic,True
+SIM-W036,2025-03-09,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W036,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W036,2025-04-03,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W036,2025-04-05,PARAMETER_TRIGGER,hydration threshold reached (placeholder rule),True
+SIM-W036,2025-04-08,FOLLOW_UP_DONE,Follow-up recorded,True
+SIM-W036,2025-04-08,CLOSED,Closed by clinic,True
+SIM-W036,2025-04-12,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W036,2025-05-21,PARAMETER_CHECK_MISSED,hours check not recorded,True
+SIM-W036,2025-06-02,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W036,2025-06-11,PARAMETER_CHECK_MISSED,combined check not recorded,True
+SIM-W037,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W037,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W037,2025-07-01,JOB_CHANGE,"Moved to Outdoor construction, Bhuj; record stays with worker",True
+SIM-W038,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W038,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W039,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W039,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W039,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W039,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W039,2025-04-19,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W040,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W040,2025-01-15,SYMPTOM_REPORTED,Cough or breathlessness reported,True
+SIM-W040,2025-01-15,REFERRED,Referral request sent,True
+SIM-W040,2025-03-16,LOST_TO_FOLLOW_UP,No attendance recorded,True
+SIM-W041,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W041,2025-01-01,REFERRED,Referral request sent,True
+SIM-W041,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W041,2025-03-10,OVERDUE,Attendance overdue; reminder sent,True
+SIM-W041,2025-03-19,ATTENDED,Attendance recorded by clinic,True
+SIM-W041,2025-03-19,CLOSED,Doctor noted nothing further,True
+SIM-W041,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W041,2025-07-01,JOB_CHANGE,"Moved to Outdoor construction, Bhuj; record stays with worker",True
+SIM-W042,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W042,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W042,2025-01-17,SYMPTOM_REPORTED,Repeated dark urine reported,True
+SIM-W042,2025-01-17,SYMPTOM_REPORTED,Pain with heavy work reported,True
+SIM-W042,2025-01-17,REFERRED,Referral request sent,True
+SIM-W042,2025-02-07,ATTENDED,Attendance recorded by clinic,True
+SIM-W042,2025-02-07,CLOSED,Doctor noted nothing further,True
+SIM-W042,2025-02-26,PARAMETER_TRIGGER,hydration threshold reached (placeholder rule),True
+SIM-W042,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W042,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W042,2025-04-12,PARAMETER_CHECK_DONE,hours check recorded by clinic,True
+SIM-W042,2025-04-19,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W042,2025-04-26,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W042,2025-04-27,PARAMETER_CHECK_MISSED,hydration check not recorded,True
+SIM-W042,2025-05-10,PARAMETER_CHECK_DONE,combined check recorded by clinic,True
+SIM-W043,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W043,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W044,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W044,2025-01-01,REFERRED,Referral request sent,True
+SIM-W044,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W044,2025-01-22,ATTENDED,Attendance recorded by clinic,True
+SIM-W044,2025-01-22,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W044,2025-02-21,FOLLOW_UP_DONE,Follow-up recorded,True
+SIM-W044,2025-02-21,CLOSED,Closed by clinic,True
+SIM-W044,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W044,2025-04-26,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W045,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W045,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W045,2025-01-20,SYMPTOM_REPORTED,Cough or breathlessness reported,True
+SIM-W045,2025-01-20,SYMPTOM_REPORTED,Dizziness or cramps at work,True
+SIM-W045,2025-01-20,REFERRED,Referral request sent,True
+SIM-W045,2025-02-10,ATTENDED,Attendance recorded by clinic,True
+SIM-W045,2025-02-10,CLOSED,Doctor noted nothing further,True
+SIM-W045,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W045,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W045,2025-04-19,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W045,2025-05-21,PARAMETER_CHECK_MISSED,hours check not recorded,True
+SIM-W045,2025-06-04,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W045,2025-06-18,PARAMETER_CHECK_MISSED,combined check not recorded,True
+SIM-W045,2025-07-01,JOB_CHANGE,"Moved to Outdoor construction, Bhuj; record stays with worker",True
+SIM-W046,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W046,2025-03-19,ATTENDED,Attendance recorded by clinic,True
+SIM-W046,2025-03-19,CLOSED,Doctor noted nothing further,True
+SIM-W046,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W046,2025-06-04,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W047,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W047,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W047,2025-03-20,ATTENDED,Attendance recorded by clinic,True
+SIM-W047,2025-03-20,CLOSED,Doctor noted nothing further,True
+SIM-W047,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W047,2025-06-04,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W048,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W048,2025-01-01,SILICA_SCENARIO_P75_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W048,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W048,2025-01-23,SYMPTOM_REPORTED,Repeated dark urine reported,True
+SIM-W048,2025-02-26,PARAMETER_TRIGGER,hydration threshold reached (placeholder rule),True
+SIM-W048,2025-03-19,PARAMETER_CHECK_DONE,hydration check recorded by clinic,True
+SIM-W048,2025-03-21,ATTENDED,Attendance recorded by clinic,True
+SIM-W048,2025-03-21,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W048,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W048,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W048,2025-04-19,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W048,2025-12-31,STILL_OPEN,Follow-up not yet recorded,True
+SIM-W049,2025-04-12,ENROLLED,Entered through public screening,True
+SIM-W049,2025-05-05,SYMPTOM_REPORTED,Pain with heavy work reported,True
+SIM-W049,2025-05-05,REFERRED,Referral request sent,True
+SIM-W049,2025-05-26,ATTENDED,Attendance recorded by clinic,True
+SIM-W049,2025-05-26,CLOSED,Doctor noted nothing further,True
+SIM-W049,2025-07-01,JOB_CHANGE,"Moved to Outdoor construction, Bhuj; record stays with worker",True
+SIM-W050,2025-04-12,ENROLLED,Entered through public screening,True
+SIM-W050,2025-04-26,SYMPTOM_REPORTED,Cough or breathlessness reported,True
+SIM-W050,2025-04-26,REFERRED,Referral request sent,True
+SIM-W050,2025-06-25,LOST_TO_FOLLOW_UP,No attendance recorded,True
+SIM-W051,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W051,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W051,2025-04-12,ENROLLED,Entered through public screening,True
+SIM-W051,2025-04-12,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W051,2025-04-12,PARAMETER_CHECK_DONE,hours check recorded by clinic,True
+SIM-W051,2025-04-19,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W051,2025-04-26,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W051,2025-05-10,PARAMETER_CHECK_DONE,combined check recorded by clinic,True
+SIM-W052,2025-04-12,ENROLLED,Entered through public screening,True
+SIM-W052,2025-04-12,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W053,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W053,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W053,2025-04-12,ENROLLED,Entered through public screening,True
+SIM-W053,2025-04-12,REFERRED,Referral request sent,True
+SIM-W053,2025-04-26,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W053,2025-05-03,ATTENDED,Attendance recorded by clinic,True
+SIM-W053,2025-05-03,CLOSED,Doctor noted nothing further,True
+SIM-W053,2025-07-01,JOB_CHANGE,"Moved to Outdoor construction, Bhuj; record stays with worker",True
+SIM-W054,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W054,2025-02-26,PARAMETER_TRIGGER,hydration threshold reached (placeholder rule),True
+SIM-W054,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W054,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W054,2025-04-12,ENROLLED,Entered through public screening,True
+SIM-W054,2025-04-19,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W054,2025-04-30,SYMPTOM_REPORTED,Repeated dark urine reported,True
+SIM-W054,2025-04-30,SYMPTOM_REPORTED,Dizziness or cramps at work,True
+SIM-W054,2025-04-30,REFERRED,Referral request sent,True
+SIM-W054,2025-05-21,ATTENDED,Attendance recorded by clinic,True
+SIM-W054,2025-05-21,CLOSED,Doctor noted nothing further,True
+SIM-W054,2025-05-21,PARAMETER_CHECK_MISSED,hours check not recorded,True
+SIM-W054,2025-06-04,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W054,2025-06-18,PARAMETER_CHECK_MISSED,combined check not recorded,True
+SIM-W055,2025-04-12,ENROLLED,Entered through public screening,True
+SIM-W055,2025-05-01,SYMPTOM_REPORTED,Cough or breathlessness reported,True
+SIM-W055,2025-05-01,REFERRED,Referral request sent,True
+SIM-W055,2025-05-22,ATTENDED,Attendance recorded by clinic,True
+SIM-W055,2025-05-22,CLOSED,Doctor noted nothing further,True
+SIM-W056,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W056,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W056,2025-04-12,ENROLLED,Entered through public screening,True
+SIM-W056,2025-05-02,SYMPTOM_REPORTED,Pain with heavy work reported,True
+SIM-W056,2025-05-02,REFERRED,Referral request sent,True
+SIM-W056,2025-05-23,ATTENDED,Attendance recorded by clinic,True
+SIM-W056,2025-05-23,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W056,2025-06-04,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W056,2025-12-31,STILL_OPEN,Follow-up not yet recorded,True
+SIM-W057,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W057,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W057,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W057,2025-04-12,ENROLLED,Entered through public screening,True
+SIM-W057,2025-04-12,REFERRED,Referral request sent,True
+SIM-W057,2025-04-19,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W057,2025-05-03,ATTENDED,Attendance recorded by clinic,True
+SIM-W057,2025-05-03,CLOSED,Doctor noted nothing further,True
+SIM-W057,2025-07-01,JOB_CHANGE,"Moved to Outdoor construction, Bhuj; record stays with worker",True
+SIM-W058,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W058,2025-04-12,ENROLLED,Entered through public screening,True
+SIM-W058,2025-04-12,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W059,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W059,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W059,2025-04-12,ENROLLED,Entered through public screening,True
+SIM-W059,2025-04-12,REFERRED,Referral request sent,True
+SIM-W059,2025-05-03,ATTENDED,Attendance recorded by clinic,True
+SIM-W059,2025-05-03,CLOSED,Doctor noted nothing further,True
+SIM-W060,2025-01-01,SILICA_SCENARIO_P75_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W060,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W060,2025-02-26,PARAMETER_TRIGGER,hydration threshold reached (placeholder rule),True
+SIM-W060,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W060,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W060,2025-04-12,ENROLLED,Entered through public screening,True
+SIM-W060,2025-04-12,PARAMETER_CHECK_DONE,hours check recorded by clinic,True
+SIM-W060,2025-04-19,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W060,2025-04-26,SYMPTOM_REPORTED,Cough or breathlessness reported,True
+SIM-W060,2025-04-26,SYMPTOM_REPORTED,Repeated dark urine reported,True
+SIM-W060,2025-04-26,REFERRED,Referral request sent,True
+SIM-W060,2025-04-26,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W060,2025-04-27,PARAMETER_CHECK_MISSED,hydration check not recorded,True
+SIM-W060,2025-05-10,PARAMETER_CHECK_DONE,combined check recorded by clinic,True
+SIM-W060,2025-06-25,LOST_TO_FOLLOW_UP,No attendance recorded,True
+SIM-W061,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W061,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W061,2025-07-01,JOB_CHANGE,Moved to Cement yard loading; record stays with worker,True
+SIM-W062,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W062,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W063,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W063,2025-01-18,SYMPTOM_REPORTED,Dizziness or cramps at work,True
+SIM-W063,2025-01-18,REFERRED,Referral request sent,True
+SIM-W063,2025-02-08,ATTENDED,Attendance recorded by clinic,True
+SIM-W063,2025-02-08,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W063,2025-03-10,FOLLOW_UP_DONE,Follow-up recorded,True
+SIM-W063,2025-03-10,CLOSED,Closed by clinic,True
+SIM-W063,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W063,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W063,2025-04-19,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W063,2025-05-21,PARAMETER_CHECK_MISSED,hours check not recorded,True
+SIM-W063,2025-06-04,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W063,2025-06-18,PARAMETER_CHECK_MISSED,combined check not recorded,True
+SIM-W064,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W064,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W065,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W065,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W065,2025-01-20,SYMPTOM_REPORTED,Cough or breathlessness reported,True
+SIM-W065,2025-01-20,REFERRED,Referral request sent,True
+SIM-W065,2025-02-10,ATTENDED,Attendance recorded by clinic,True
+SIM-W065,2025-02-10,CLOSED,Doctor noted nothing further,True
+SIM-W065,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W065,2025-06-04,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W065,2025-07-01,JOB_CHANGE,Moved to Cement yard loading; record stays with worker,True
+SIM-W066,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W066,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W066,2025-01-21,SYMPTOM_REPORTED,Repeated dark urine reported,True
+SIM-W066,2025-01-21,REFERRED,Referral request sent,True
+SIM-W066,2025-02-11,ATTENDED,Attendance recorded by clinic,True
+SIM-W066,2025-02-11,CLOSED,Doctor noted nothing further,True
+SIM-W066,2025-02-26,PARAMETER_TRIGGER,hydration threshold reached (placeholder rule),True
+SIM-W066,2025-03-19,PARAMETER_CHECK_DONE,hydration check recorded by clinic,True
+SIM-W066,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W066,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W066,2025-04-19,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W067,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W067,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W068,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W068,2025-01-01,REFERRED,Referral request sent,True
+SIM-W068,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W068,2025-01-22,ATTENDED,Attendance recorded by clinic,True
+SIM-W068,2025-01-22,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W068,2025-02-21,FOLLOW_UP_DONE,Follow-up recorded,True
+SIM-W068,2025-02-21,CLOSED,Closed by clinic,True
+SIM-W068,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W069,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W069,2025-01-01,REFERRED,Referral request sent,True
+SIM-W069,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W069,2025-01-22,ATTENDED,Attendance recorded by clinic,True
+SIM-W069,2025-01-22,CLOSED,Doctor noted nothing further,True
+SIM-W069,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W069,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W069,2025-04-12,PARAMETER_CHECK_DONE,hours check recorded by clinic,True
+SIM-W069,2025-04-19,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W069,2025-04-26,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W069,2025-05-10,PARAMETER_CHECK_DONE,combined check recorded by clinic,True
+SIM-W069,2025-07-01,JOB_CHANGE,Moved to Cement yard loading; record stays with worker,True
+SIM-W070,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W070,2025-01-15,SYMPTOM_REPORTED,Cough or breathlessness reported,True
+SIM-W070,2025-03-16,LOST_TO_FOLLOW_UP,No attendance recorded,True
+SIM-W070,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W070,2025-04-26,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W071,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W071,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W071,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W071,2025-04-26,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W071,2025-05-12,OVERDUE,Attendance overdue; reminder sent,True
+SIM-W071,2025-05-21,ATTENDED,Attendance recorded by clinic,True
+SIM-W071,2025-05-21,CLOSED,Doctor noted nothing further,True
+SIM-W072,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W072,2025-01-01,SILICA_SCENARIO_P75_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W072,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W072,2025-01-17,SYMPTOM_REPORTED,Repeated dark urine reported,True
+SIM-W072,2025-01-17,SYMPTOM_REPORTED,Dizziness or cramps at work,True
+SIM-W072,2025-02-26,PARAMETER_TRIGGER,hydration threshold reached (placeholder rule),True
+SIM-W072,2025-03-17,ATTENDED,Attendance recorded by clinic,True
+SIM-W072,2025-03-17,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W072,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W072,2025-04-05,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W072,2025-04-19,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W072,2025-05-21,PARAMETER_CHECK_MISSED,hours check not recorded,True
+SIM-W072,2025-06-04,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W072,2025-06-18,PARAMETER_CHECK_MISSED,combined check not recorded,True
+SIM-W072,2025-12-31,STILL_OPEN,Follow-up not yet recorded,True
+SIM-W073,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W073,2025-02-25,REFERRED,Referral request sent,True
+SIM-W073,2025-02-25,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W073,2025-03-18,ATTENDED,Attendance recorded by clinic,True
+SIM-W073,2025-03-18,CLOSED,Doctor noted nothing further,True
+SIM-W073,2025-07-01,JOB_CHANGE,"Moved to Stone crushing, Bhuj weather; record stays with worker",True
+SIM-W073,2025-08-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W073,2025-10-03,PARAMETER_CHECK_MISSED,noise check not recorded,True
+SIM-W074,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W074,2025-01-01,REFERRED,Referral request sent,True
+SIM-W074,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W074,2025-01-22,ATTENDED,Attendance recorded by clinic,True
+SIM-W074,2025-01-22,CLOSED,Doctor noted nothing further,True
+SIM-W075,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W075,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W075,2025-01-20,SYMPTOM_REPORTED,Cough or breathlessness reported,True
+SIM-W075,2025-01-20,REFERRED,Referral request sent,True
+SIM-W075,2025-02-10,ATTENDED,Attendance recorded by clinic,True
+SIM-W075,2025-02-10,CLOSED,Doctor noted nothing further,True
+SIM-W075,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W075,2025-04-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W075,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W075,2025-04-26,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W076,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W076,2025-01-01,REFERRED,Referral request sent,True
+SIM-W076,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W076,2025-01-22,ATTENDED,Attendance recorded by clinic,True
+SIM-W076,2025-01-22,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W076,2025-02-21,FOLLOW_UP_DONE,Follow-up recorded,True
+SIM-W076,2025-02-21,CLOSED,Closed by clinic,True
+SIM-W077,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W077,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W077,2025-01-22,SYMPTOM_REPORTED,Pain with heavy work reported,True
+SIM-W077,2025-01-22,REFERRED,Referral request sent,True
+SIM-W077,2025-02-12,ATTENDED,Attendance recorded by clinic,True
+SIM-W077,2025-02-12,CLOSED,Doctor noted nothing further,True
+SIM-W077,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W077,2025-07-01,JOB_CHANGE,"Moved to Stone crushing, Bhuj weather; record stays with worker",True
+SIM-W077,2025-08-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W078,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W078,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W078,2025-01-23,SYMPTOM_REPORTED,Repeated dark urine reported,True
+SIM-W078,2025-01-23,REFERRED,Referral request sent,True
+SIM-W078,2025-02-13,ATTENDED,Attendance recorded by clinic,True
+SIM-W078,2025-02-13,CLOSED,Doctor noted nothing further,True
+SIM-W078,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W078,2025-04-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W078,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W078,2025-04-12,PARAMETER_CHECK_DONE,hours check recorded by clinic,True
+SIM-W078,2025-04-15,PARAMETER_TRIGGER,hydration threshold reached (placeholder rule),True
+SIM-W078,2025-04-25,PARAMETER_CHECK_DONE,noise check recorded by clinic,True
+SIM-W078,2025-04-25,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W078,2025-04-26,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W078,2025-05-17,PARAMETER_CHECK_DONE,combined check recorded by clinic,True
+SIM-W078,2025-06-14,PARAMETER_CHECK_MISSED,hydration check not recorded,True
+SIM-W079,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W079,2025-01-01,REFERRED,Referral request sent,True
+SIM-W079,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W079,2025-01-22,ATTENDED,Attendance recorded by clinic,True
+SIM-W079,2025-01-22,CLOSED,Doctor noted nothing further,True
+SIM-W080,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W080,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W080,2025-01-15,SYMPTOM_REPORTED,Cough or breathlessness reported,True
+SIM-W080,2025-01-15,REFERRED,Referral request sent,True
+SIM-W080,2025-03-16,LOST_TO_FOLLOW_UP,No attendance recorded,True
+SIM-W080,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W080,2025-04-25,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W081,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W081,2025-01-01,SILICA_SCENARIO_P75_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W081,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W081,2025-01-16,SYMPTOM_REPORTED,Dizziness or cramps at work,True
+SIM-W081,2025-01-16,REFERRED,Referral request sent,True
+SIM-W081,2025-03-20,OVERDUE,Attendance overdue; reminder sent,True
+SIM-W081,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W081,2025-03-29,ATTENDED,Attendance recorded by clinic,True
+SIM-W081,2025-03-29,CLOSED,Doctor noted nothing further,True
+SIM-W081,2025-04-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W081,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W081,2025-04-26,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W081,2025-05-21,PARAMETER_CHECK_MISSED,hours check not recorded,True
+SIM-W081,2025-06-03,PARAMETER_CHECK_MISSED,noise check not recorded,True
+SIM-W081,2025-06-03,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W081,2025-06-25,PARAMETER_CHECK_MISSED,combined check not recorded,True
+SIM-W081,2025-07-01,JOB_CHANGE,"Moved to Stone crushing, Bhuj weather; record stays with worker",True
+SIM-W082,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W082,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W082,2025-03-27,ATTENDED,Attendance recorded by clinic,True
+SIM-W082,2025-03-27,CLOSED,Doctor noted nothing further,True
+SIM-W082,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W082,2025-06-03,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W083,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W083,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W083,2025-03-28,ATTENDED,Attendance recorded by clinic,True
+SIM-W083,2025-03-28,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W083,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W083,2025-04-27,FOLLOW_UP_DONE,Follow-up recorded,True
+SIM-W083,2025-04-27,CLOSED,Closed by clinic,True
+SIM-W083,2025-06-03,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W084,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W084,2025-01-01,SILICA_SCENARIO_P75_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W084,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W084,2025-01-19,SYMPTOM_REPORTED,Repeated dark urine reported,True
+SIM-W084,2025-01-19,SYMPTOM_REPORTED,Pain with heavy work reported,True
+SIM-W084,2025-03-01,ATTENDED,Attendance recorded by clinic,True
+SIM-W084,2025-03-01,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W084,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W084,2025-03-31,FOLLOW_UP_DONE,Follow-up recorded,True
+SIM-W084,2025-03-31,CLOSED,Closed by clinic,True
+SIM-W084,2025-04-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W084,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W084,2025-04-15,PARAMETER_TRIGGER,hydration threshold reached (placeholder rule),True
+SIM-W084,2025-04-26,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W084,2025-05-06,PARAMETER_CHECK_DONE,hydration check recorded by clinic,True
+SIM-W085,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W085,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W085,2025-04-19,ENROLLED,Entered through public screening,True
+SIM-W085,2025-05-08,SYMPTOM_REPORTED,Cough or breathlessness reported,True
+SIM-W085,2025-05-08,REFERRED,Referral request sent,True
+SIM-W085,2025-05-29,ATTENDED,Attendance recorded by clinic,True
+SIM-W085,2025-05-29,CLOSED,Doctor noted nothing further,True
+SIM-W085,2025-07-01,JOB_CHANGE,"Moved to Port yard loading, Kandla; record stays with worker",True
+SIM-W086,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W086,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W086,2025-04-19,ENROLLED,Entered through public screening,True
+SIM-W086,2025-04-19,REFERRED,Referral request sent,True
+SIM-W086,2025-05-10,ATTENDED,Attendance recorded by clinic,True
+SIM-W086,2025-05-10,CLOSED,Doctor noted nothing further,True
+SIM-W087,2025-01-01,SILICA_SCENARIO_P75_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W087,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W087,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W087,2025-02-25,PARAMETER_CHECK_DONE,noise check recorded by clinic,True
+SIM-W087,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W087,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W087,2025-04-12,PARAMETER_CHECK_DONE,hours check recorded by clinic,True
+SIM-W087,2025-04-19,ENROLLED,Entered through public screening,True
+SIM-W087,2025-04-19,REFERRED,Referral request sent,True
+SIM-W087,2025-04-25,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W087,2025-04-26,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W087,2025-05-10,ATTENDED,Attendance recorded by clinic,True
+SIM-W087,2025-05-10,CLOSED,Doctor noted nothing further,True
+SIM-W087,2025-05-17,PARAMETER_CHECK_DONE,combined check recorded by clinic,True
+SIM-W088,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W088,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W088,2025-02-25,PARAMETER_CHECK_DONE,noise check recorded by clinic,True
+SIM-W088,2025-04-19,ENROLLED,Entered through public screening,True
+SIM-W088,2025-04-19,REFERRED,Referral request sent,True
+SIM-W088,2025-05-10,ATTENDED,Attendance recorded by clinic,True
+SIM-W088,2025-05-10,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W088,2025-12-31,STILL_OPEN,Follow-up not yet recorded,True
+SIM-W089,2025-01-01,SILICA_SCENARIO_P75_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W089,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W089,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W089,2025-02-25,PARAMETER_CHECK_DONE,noise check recorded by clinic,True
+SIM-W089,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W089,2025-04-19,ENROLLED,Entered through public screening,True
+SIM-W089,2025-04-19,REFERRED,Referral request sent,True
+SIM-W089,2025-04-25,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W089,2025-05-10,ATTENDED,Attendance recorded by clinic,True
+SIM-W089,2025-05-10,CLOSED,Doctor noted nothing further,True
+SIM-W089,2025-07-01,JOB_CHANGE,"Moved to Port yard loading, Kandla; record stays with worker",True
+SIM-W090,2025-01-01,SILICA_SCENARIO_P75_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W090,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W090,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W090,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W090,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W090,2025-04-05,PARAMETER_CHECK_MISSED,noise check not recorded,True
+SIM-W090,2025-04-15,PARAMETER_TRIGGER,hydration threshold reached (placeholder rule),True
+SIM-W090,2025-04-19,ENROLLED,Entered through public screening,True
+SIM-W090,2025-04-26,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W090,2025-05-03,SYMPTOM_REPORTED,Cough or breathlessness reported,True
+SIM-W090,2025-05-03,SYMPTOM_REPORTED,Repeated dark urine reported,True
+SIM-W090,2025-05-03,SYMPTOM_REPORTED,Dizziness or cramps at work,True
+SIM-W090,2025-05-03,REFERRED,Referral request sent,True
+SIM-W090,2025-05-21,PARAMETER_CHECK_MISSED,hours check not recorded,True
+SIM-W090,2025-06-03,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W090,2025-06-25,PARAMETER_CHECK_MISSED,combined check not recorded,True
+SIM-W090,2025-07-02,LOST_TO_FOLLOW_UP,No attendance recorded,True
+SIM-W091,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W091,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W091,2025-04-05,PARAMETER_CHECK_MISSED,noise check not recorded,True
+SIM-W091,2025-04-19,ENROLLED,Entered through public screening,True
+SIM-W091,2025-05-04,SYMPTOM_REPORTED,Pain with heavy work reported,True
+SIM-W091,2025-05-04,REFERRED,Referral request sent,True
+SIM-W091,2025-07-01,OVERDUE,Attendance overdue; reminder sent,True
+SIM-W091,2025-07-10,ATTENDED,Attendance recorded by clinic,True
+SIM-W091,2025-07-10,CLOSED,Doctor noted nothing further,True
+SIM-W092,2025-01-01,SILICA_SCENARIO_P75_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W092,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W092,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W092,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W092,2025-04-05,PARAMETER_CHECK_MISSED,noise check not recorded,True
+SIM-W092,2025-04-19,ENROLLED,Entered through public screening,True
+SIM-W092,2025-04-19,REFERRED,Referral request sent,True
+SIM-W092,2025-05-10,ATTENDED,Attendance recorded by clinic,True
+SIM-W092,2025-05-10,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W092,2025-06-03,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W092,2025-06-09,FOLLOW_UP_DONE,Follow-up recorded,True
+SIM-W092,2025-06-09,CLOSED,Closed by clinic,True
+SIM-W093,2025-01-01,SILICA_SCENARIO_P75_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W093,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W093,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W093,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W093,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W093,2025-04-19,ENROLLED,Entered through public screening,True
+SIM-W093,2025-04-19,REFERRED,Referral request sent,True
+SIM-W093,2025-04-26,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W093,2025-05-10,ATTENDED,Attendance recorded by clinic,True
+SIM-W093,2025-05-10,CLOSED,Doctor noted nothing further,True
+SIM-W093,2025-07-01,JOB_CHANGE,"Moved to Port yard loading, Kandla; record stays with worker",True
+SIM-W094,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W094,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W094,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W094,2025-04-19,ENROLLED,Entered through public screening,True
+SIM-W094,2025-04-19,REFERRED,Referral request sent,True
+SIM-W094,2025-05-10,ATTENDED,Attendance recorded by clinic,True
+SIM-W094,2025-05-10,CLOSED,Doctor noted nothing further,True
+SIM-W095,2025-01-01,SILICA_SCENARIO_P75_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W095,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W095,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W095,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W095,2025-04-19,ENROLLED,Entered through public screening,True
+SIM-W095,2025-05-08,SYMPTOM_REPORTED,Cough or breathlessness reported,True
+SIM-W095,2025-05-08,REFERRED,Referral request sent,True
+SIM-W095,2025-05-29,ATTENDED,Attendance recorded by clinic,True
+SIM-W095,2025-05-29,CLOSED,Doctor noted nothing further,True
+SIM-W096,2025-01-01,SILICA_SCENARIO_P75_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W096,2025-01-01,SILICA_SCENARIO_P90_REACHED_0_5,Placeholder threshold; scenario only,False
+SIM-W096,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W096,2025-02-25,PARAMETER_CHECK_DONE,noise check recorded by clinic,True
+SIM-W096,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W096,2025-04-04,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W096,2025-04-12,PARAMETER_CHECK_DONE,hours check recorded by clinic,True
+SIM-W096,2025-04-15,PARAMETER_TRIGGER,hydration threshold reached (placeholder rule),True
+SIM-W096,2025-04-19,ENROLLED,Entered through public screening,True
+SIM-W096,2025-04-25,PARAMETER_CHECK_DONE,uv check recorded by clinic,True
+SIM-W096,2025-04-26,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W096,2025-05-09,SYMPTOM_REPORTED,Repeated dark urine reported,True
+SIM-W096,2025-05-09,REFERRED,Referral request sent,True
+SIM-W096,2025-05-17,PARAMETER_CHECK_DONE,combined check recorded by clinic,True
+SIM-W096,2025-05-30,ATTENDED,Attendance recorded by clinic,True
+SIM-W096,2025-05-30,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W096,2025-06-14,PARAMETER_CHECK_MISSED,hydration check not recorded,True
+SIM-W096,2025-12-31,STILL_OPEN,Follow-up not yet recorded,True
+SIM-W097,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W097,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W097,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W097,2025-02-25,PARAMETER_CHECK_DONE,noise check recorded by clinic,True
+SIM-W097,2025-07-01,JOB_CHANGE,"Moved to Port yard loading, Kandla; record stays with worker",True
+SIM-W098,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W098,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W098,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W098,2025-02-25,PARAMETER_CHECK_DONE,noise check recorded by clinic,True
+SIM-W099,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W099,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W099,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W099,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W099,2025-04-05,PARAMETER_CHECK_MISSED,noise check not recorded,True
+SIM-W099,2025-05-21,PARAMETER_CHECK_MISSED,hours check not recorded,True
+SIM-W100,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W100,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W100,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W100,2025-04-05,PARAMETER_CHECK_MISSED,noise check not recorded,True
+SIM-W101,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W101,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W101,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W101,2025-04-05,PARAMETER_CHECK_MISSED,noise check not recorded,True
+SIM-W101,2025-07-01,JOB_CHANGE,"Moved to Port yard loading, Kandla; record stays with worker",True
+SIM-W102,2025-01-01,ENROLLED,Entered through employer list,True
+SIM-W102,2025-01-01,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W102,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W102,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W103,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W103,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W103,2025-03-20,ATTENDED,Attendance recorded by clinic,True
+SIM-W103,2025-03-20,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W103,2025-04-19,FOLLOW_UP_DONE,Follow-up recorded,True
+SIM-W103,2025-04-19,CLOSED,Closed by clinic,True
+SIM-W104,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W104,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W104,2025-03-21,ATTENDED,Attendance recorded by clinic,True
+SIM-W104,2025-03-21,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W104,2025-12-31,STILL_OPEN,Follow-up not yet recorded,True
+SIM-W105,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W105,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W105,2025-02-25,PARAMETER_CHECK_DONE,noise check recorded by clinic,True
+SIM-W105,2025-03-22,ATTENDED,Attendance recorded by clinic,True
+SIM-W105,2025-03-22,CLOSED,Doctor noted nothing further,True
+SIM-W105,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W105,2025-04-12,PARAMETER_CHECK_DONE,hours check recorded by clinic,True
+SIM-W105,2025-07-01,JOB_CHANGE,"Moved to Port yard loading, Kandla; record stays with worker",True
+SIM-W105,2025-07-05,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W105,2025-07-26,PARAMETER_CHECK_DONE,combined check recorded by clinic,True
+SIM-W106,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W106,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W106,2025-02-25,PARAMETER_CHECK_DONE,noise check recorded by clinic,True
+SIM-W106,2025-03-23,ATTENDED,Attendance recorded by clinic,True
+SIM-W106,2025-03-23,CLOSED,Doctor noted nothing further,True
+SIM-W107,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W107,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W107,2025-02-25,PARAMETER_CHECK_DONE,noise check recorded by clinic,True
+SIM-W107,2025-03-24,ATTENDED,Attendance recorded by clinic,True
+SIM-W107,2025-03-24,CLOSED,Doctor noted nothing further,True
+SIM-W108,2025-01-01,LEGAL_EXAM_DUE,Entered through employer list,True
+SIM-W108,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W108,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W108,2025-03-25,ATTENDED,Attendance recorded by clinic,True
+SIM-W108,2025-03-25,FOLLOW_UP_ADVISED,Doctor advised follow-up,True
+SIM-W108,2025-04-05,PARAMETER_CHECK_MISSED,noise check not recorded,True
+SIM-W108,2025-04-24,FOLLOW_UP_DONE,Follow-up recorded,True
+SIM-W108,2025-04-24,CLOSED,Closed by clinic,True
+SIM-W108,2025-05-21,PARAMETER_CHECK_MISSED,hours check not recorded,True
+SIM-W109,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W109,2025-04-05,ENROLLED,Entered through public screening,True
+SIM-W109,2025-04-05,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W109,2025-04-05,PARAMETER_CHECK_MISSED,noise check not recorded,True
+SIM-W109,2025-07-01,JOB_CHANGE,"Moved to Port yard loading, Mundra; record stays with worker",True
+SIM-W110,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W110,2025-04-05,ENROLLED,Entered through public screening,True
+SIM-W110,2025-04-05,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W110,2025-04-05,PARAMETER_CHECK_MISSED,noise check not recorded,True
+SIM-W111,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W111,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W111,2025-04-05,ENROLLED,Entered through public screening,True
+SIM-W111,2025-04-05,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W112,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W112,2025-04-05,ENROLLED,Entered through public screening,True
+SIM-W112,2025-04-05,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W113,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W113,2025-04-05,ENROLLED,Entered through public screening,True
+SIM-W113,2025-04-05,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W113,2025-07-01,JOB_CHANGE,"Moved to Port yard loading, Mundra; record stays with worker",True
+SIM-W113,2025-09-17,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W114,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W114,2025-02-25,PARAMETER_CHECK_DONE,noise check recorded by clinic,True
+SIM-W114,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W114,2025-04-05,ENROLLED,Entered through public screening,True
+SIM-W114,2025-04-05,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W114,2025-04-12,PARAMETER_CHECK_DONE,hours check recorded by clinic,True
+SIM-W115,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W115,2025-02-25,PARAMETER_CHECK_DONE,noise check recorded by clinic,True
+SIM-W115,2025-04-05,ENROLLED,Entered through public screening,True
+SIM-W115,2025-04-05,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W116,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W116,2025-02-25,PARAMETER_CHECK_DONE,noise check recorded by clinic,True
+SIM-W116,2025-04-05,ENROLLED,Entered through public screening,True
+SIM-W116,2025-04-05,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W117,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W117,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W117,2025-04-05,ENROLLED,Entered through public screening,True
+SIM-W117,2025-04-05,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W117,2025-04-05,PARAMETER_CHECK_MISSED,noise check not recorded,True
+SIM-W117,2025-05-21,PARAMETER_CHECK_MISSED,hours check not recorded,True
+SIM-W117,2025-07-01,JOB_CHANGE,"Moved to Port yard loading, Mundra; record stays with worker",True
+SIM-W117,2025-07-05,PARAMETER_TRIGGER,combined threshold reached (placeholder rule),True
+SIM-W117,2025-09-03,PARAMETER_CHECK_MISSED,combined check not recorded,True
+SIM-W117,2025-09-17,PARAMETER_TRIGGER,uv threshold reached (placeholder rule),True
+SIM-W117,2025-11-16,PARAMETER_CHECK_MISSED,uv check not recorded,True
+SIM-W118,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W118,2025-04-05,ENROLLED,Entered through public screening,True
+SIM-W118,2025-04-05,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W118,2025-04-05,PARAMETER_CHECK_MISSED,noise check not recorded,True
+SIM-W119,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W119,2025-04-05,ENROLLED,Entered through public screening,True
+SIM-W119,2025-04-05,NO_REFERRAL,Advice given; no route triggered,True
+SIM-W119,2025-04-05,PARAMETER_CHECK_MISSED,noise check not recorded,True
+SIM-W120,2025-02-04,PARAMETER_TRIGGER,noise threshold reached (placeholder rule),True
+SIM-W120,2025-03-22,PARAMETER_TRIGGER,hours threshold reached (placeholder rule),True
+SIM-W120,2025-04-05,ENROLLED,Entered through public screening,True
+SIM-W120,2025-04-05,NO_REFERRAL,Advice given; no route triggered,True

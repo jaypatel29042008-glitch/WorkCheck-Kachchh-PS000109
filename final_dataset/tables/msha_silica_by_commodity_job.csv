@@ -1,0 +1,47 @@
+commodity_group,job_class,samples,mines,first_year,last_year,dust_p50_ug_m3,dust_p90_ug_m3,implied_quartz_pct_p50,derived_silica_p50_ug_m3,derived_silica_p75_ug_m3,derived_silica_p90_ug_m3,pct_over_50_ug_m3,sample_note
+Cement,All jobs,1633,121,2000,2026,630.0,2168.0,3.1,19.4,36.6,65.4,16.0,
+Cement,Bagging or packing,111,29,2000,2025,990.0,2280.0,2.4,27.0,44.1,68.6,20.7,
+Cement,Crane or dragline,13,10,2002,2014,720.0,1702.0,1.8,11.0,19.5,61.8,15.4,Fewer than 30 samples; treat as weak
+Cement,Crusher,134,49,2000,2026,555.0,1354.0,4.3,21.4,39.2,66.0,17.2,
+Cement,"Kiln, mill or grinding",84,47,2000,2026,650.0,2176.0,2.3,18.3,29.3,45.8,8.3,
+Cement,Loader,74,44,2001,2026,360.0,1202.0,4.1,16.3,28.1,61.7,16.2,
+Cement,Other jobs,1130,118,2000,2026,650.0,2300.0,3.0,19.4,36.8,66.5,16.3,
+Cement,Truck,87,42,2000,2026,370.0,784.0,4.1,15.4,23.3,53.9,12.6,
+Clay and ceramic materials,All jobs,1799,191,2000,2026,480.0,1440.0,7.6,31.3,59.5,94.2,30.9,
+Clay and ceramic materials,Bagging or packing,707,64,2000,2026,620.0,1720.0,8.1,39.2,73.5,114.2,40.3,
+Clay and ceramic materials,Crane or dragline,1,1,2005,2005,130.0,130.0,14.4,18.7,18.7,18.7,0.0,Fewer than 30 samples; treat as weak
+Clay and ceramic materials,Crusher,60,32,2000,2025,370.0,841.0,6.7,26.9,41.0,88.7,20.0,
+Clay and ceramic materials,"Kiln, mill or grinding",203,48,2000,2026,500.0,1420.0,7.5,31.6,60.6,92.3,31.0,
+Clay and ceramic materials,Loader,119,65,2001,2026,280.0,732.0,7.6,22.2,32.0,77.5,16.8,
+Clay and ceramic materials,Other jobs,640,148,2000,2026,415.0,1183.0,7.4,27.9,51.6,86.6,26.1,
+Clay and ceramic materials,Truck,69,45,2000,2026,310.0,734.0,6.8,19.5,30.7,57.4,11.6,
+Crushed stone,All jobs,24950,3476,2000,2026,360.0,1060.0,6.5,24.3,46.4,82.2,22.6,
+Crushed stone,Bagging or packing,256,77,2000,2026,575.0,2120.0,4.1,26.3,53.4,157.2,28.1,
+Crushed stone,Crane or dragline,18,16,2000,2016,265.0,419.0,4.8,12.1,26.6,39.2,5.6,Fewer than 30 samples; treat as weak
+Crushed stone,Crusher,6419,2153,2000,2026,390.0,1140.0,6.7,26.6,50.4,87.0,25.3,
+Crushed stone,"Kiln, mill or grinding",171,62,2000,2025,470.0,1370.0,6.8,31.9,63.4,134.3,38.0,
+Crushed stone,Loader,2865,1616,2000,2026,300.0,770.0,6.3,18.4,32.7,61.5,14.3,
+Crushed stone,Other jobs,11502,2639,2000,2026,360.0,1110.0,7.0,26.6,50.6,88.2,25.6,
+Crushed stone,Truck,3719,1393,2000,2026,350.0,900.0,5.6,18.4,34.3,60.8,13.9,
+Lime and gypsum,All jobs,352,116,2000,2026,485.0,1210.0,3.0,13.6,24.4,36.8,6.2,
+Lime and gypsum,Bagging or packing,23,8,2001,2024,560.0,1256.0,2.0,9.8,16.6,18.5,0.0,Fewer than 30 samples; treat as weak
+Lime and gypsum,Crusher,49,35,2000,2024,480.0,1080.0,3.1,13.2,24.7,43.7,8.2,
+Lime and gypsum,"Kiln, mill or grinding",23,18,2000,2025,560.0,860.0,2.3,12.0,18.9,28.3,4.3,Fewer than 30 samples; treat as weak
+Lime and gypsum,Loader,36,29,2000,2024,375.0,855.0,2.4,9.5,17.2,22.5,0.0,
+Lime and gypsum,Other jobs,172,78,2000,2026,550.0,1443.0,3.1,16.0,29.8,43.8,8.7,
+Lime and gypsum,Truck,49,30,2000,2022,340.0,744.0,4.1,12.1,20.9,34.3,4.1,
+Salt,All jobs,96,14,2000,2025,625.0,1920.0,2.5,16.3,29.4,51.6,13.5,
+Salt,Bagging or packing,12,3,2001,2017,360.0,618.0,3.2,13.9,24.4,31.0,0.0,Fewer than 30 samples; treat as weak
+Salt,Crusher,3,2,2001,2010,460.0,1052.0,1.3,13.2,14.6,15.4,0.0,Fewer than 30 samples; treat as weak
+Salt,"Kiln, mill or grinding",2,2,2010,2010,1010.0,1666.0,2.2,14.7,19.1,21.7,0.0,Fewer than 30 samples; treat as weak
+Salt,Loader,7,4,2005,2011,410.0,742.0,2.7,9.7,12.8,15.7,0.0,Fewer than 30 samples; treat as weak
+Salt,Other jobs,66,11,2000,2025,820.0,2040.0,2.3,18.9,35.3,59.2,18.2,
+Salt,Truck,6,5,2002,2010,295.0,1680.0,2.7,8.9,11.0,39.9,16.7,Fewer than 30 samples; treat as weak
+Sand and gravel,All jobs,22609,5720,2000,2026,260.0,740.0,11.2,29.2,55.1,97.3,28.3,
+Sand and gravel,Bagging or packing,891,96,2000,2026,340.0,1560.0,14.9,55.0,91.2,172.3,55.3,
+Sand and gravel,Crane or dragline,51,47,2000,2025,190.0,500.0,7.7,14.7,23.5,29.7,7.8,
+Sand and gravel,Crusher,4854,2520,2000,2026,280.0,770.0,11.7,32.7,60.1,103.1,31.7,
+Sand and gravel,"Kiln, mill or grinding",397,132,2000,2026,250.0,758.0,18.4,47.6,80.2,147.7,47.9,
+Sand and gravel,Loader,5281,3272,2000,2026,240.0,620.0,9.5,22.9,40.0,71.3,18.2,
+Sand and gravel,Other jobs,9831,3608,2000,2026,270.0,790.0,11.5,30.8,59.0,109.2,30.5,
+Sand and gravel,Truck,1304,807,2000,2026,240.0,600.0,9.1,21.4,39.6,71.8,16.9,

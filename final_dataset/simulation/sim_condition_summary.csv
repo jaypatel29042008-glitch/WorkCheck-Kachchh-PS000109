@@ -1,0 +1,14 @@
+condition,CHECKED_FOLLOW_UP_DONE,CHECKED_FOLLOW_UP_OPEN,CHECKED_NOTHING_NOTED,CHECK_DUE,CHECK_MISSED,CONDITION_NOTED_DEMO,DOCTOR_ENTERED_ONLY,NOT_RELEVANT_TO_JOB,NO_NOISE_DATA,WATCH_NO_TRIGGER
+Back and joint pain,2,1,8,0,0,0,0,28,0,89
+COPD,1,0,6,0,6,0,0,50,0,65
+Chemical poisoning,0,0,0,0,0,0,0,128,0,0
+Dehydration,4,4,10,0,3,1,0,19,0,87
+Eye and skin problems,2,1,20,28,22,0,0,19,0,36
+Hearing loss,0,0,16,21,15,0,0,0,50,26
+Heart and stroke risk,0,0,13,16,13,0,0,0,0,86
+Heat illness,1,1,6,0,1,1,0,19,0,99
+Kidney disease,4,5,20,1,5,2,0,19,0,72
+Lung cancer,0,0,0,0,0,0,78,50,0,0
+Rheumatoid arthritis,0,0,0,0,0,0,78,50,0,0
+Silicosis,6,5,34,0,6,1,0,50,0,26
+TB and silico-TB,1,0,6,0,6,0,0,50,0,65

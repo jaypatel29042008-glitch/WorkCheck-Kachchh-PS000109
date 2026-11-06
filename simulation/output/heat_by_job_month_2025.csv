@@ -1,0 +1,109 @@
+job,month,allowed_h_per_9h_shift
+Salt-pan raking,1,6.7
+Salt-pan raking,2,6.5
+Salt-pan raking,3,6.0
+Salt-pan raking,4,3.6
+Salt-pan raking,5,0.8
+Salt-pan raking,6,1.1
+Salt-pan raking,7,2.1
+Salt-pan raking,8,2.4
+Salt-pan raking,9,2.6
+Salt-pan raking,10,5.2
+Salt-pan raking,11,6.2
+Salt-pan raking,12,6.7
+Port yard loading (Kandla),1,6.7
+Port yard loading (Kandla),2,6.4
+Port yard loading (Kandla),3,5.5
+Port yard loading (Kandla),4,1.8
+Port yard loading (Kandla),5,0.6
+Port yard loading (Kandla),6,1.2
+Port yard loading (Kandla),7,2.2
+Port yard loading (Kandla),8,2.4
+Port yard loading (Kandla),9,2.6
+Port yard loading (Kandla),10,4.9
+Port yard loading (Kandla),11,6.1
+Port yard loading (Kandla),12,6.7
+Port yard loading (Mundra),1,6.7
+Port yard loading (Mundra),2,6.5
+Port yard loading (Mundra),3,5.8
+Port yard loading (Mundra),4,2.5
+Port yard loading (Mundra),5,0.9
+Port yard loading (Mundra),6,1.8
+Port yard loading (Mundra),7,2.9
+Port yard loading (Mundra),8,3.1
+Port yard loading (Mundra),9,3.2
+Port yard loading (Mundra),10,5.1
+Port yard loading (Mundra),11,6.4
+Port yard loading (Mundra),12,6.8
+Cement yard loading,1,6.7
+Cement yard loading,2,6.6
+Cement yard loading,3,6.0
+Cement yard loading,4,3.5
+Cement yard loading,5,0.8
+Cement yard loading,6,1.7
+Cement yard loading,7,2.5
+Cement yard loading,8,2.9
+Cement yard loading,9,3.3
+Cement yard loading,10,5.4
+Cement yard loading,11,6.4
+Cement yard loading,12,6.8
+Cement plant walk-around,1,9.0
+Cement plant walk-around,2,8.9
+Cement plant walk-around,3,8.4
+Cement plant walk-around,4,5.7
+Cement plant walk-around,5,2.1
+Cement plant walk-around,6,3.4
+Cement plant walk-around,7,4.5
+Cement plant walk-around,8,4.9
+Cement plant walk-around,9,5.5
+Cement plant walk-around,10,7.9
+Cement plant walk-around,11,8.6
+Cement plant walk-around,12,9.0
+Outdoor construction (Bhuj),1,6.8
+Outdoor construction (Bhuj),2,6.7
+Outdoor construction (Bhuj),3,6.3
+Outdoor construction (Bhuj),4,4.1
+Outdoor construction (Bhuj),5,1.0
+Outdoor construction (Bhuj),6,1.7
+Outdoor construction (Bhuj),7,2.8
+Outdoor construction (Bhuj),8,3.0
+Outdoor construction (Bhuj),9,3.4
+Outdoor construction (Bhuj),10,5.9
+Outdoor construction (Bhuj),11,6.4
+Outdoor construction (Bhuj),12,6.8
+Stone crushing (Bhuj weather),1,6.8
+Stone crushing (Bhuj weather),2,6.7
+Stone crushing (Bhuj weather),3,6.3
+Stone crushing (Bhuj weather),4,4.1
+Stone crushing (Bhuj weather),5,1.0
+Stone crushing (Bhuj weather),6,1.7
+Stone crushing (Bhuj weather),7,2.8
+Stone crushing (Bhuj weather),8,3.0
+Stone crushing (Bhuj weather),9,3.4
+Stone crushing (Bhuj weather),10,5.9
+Stone crushing (Bhuj weather),11,6.4
+Stone crushing (Bhuj weather),12,6.8
+"Crane cab, shaded (Kandla)",1,9.0
+"Crane cab, shaded (Kandla)",2,9.0
+"Crane cab, shaded (Kandla)",3,9.0
+"Crane cab, shaded (Kandla)",4,9.0
+"Crane cab, shaded (Kandla)",5,8.9
+"Crane cab, shaded (Kandla)",6,9.0
+"Crane cab, shaded (Kandla)",7,9.0
+"Crane cab, shaded (Kandla)",8,9.0
+"Crane cab, shaded (Kandla)",9,9.0
+"Crane cab, shaded (Kandla)",10,9.0
+"Crane cab, shaded (Kandla)",11,9.0
+"Crane cab, shaded (Kandla)",12,9.0
+"Truck cab, shaded (Mundra)",1,9.0
+"Truck cab, shaded (Mundra)",2,9.0
+"Truck cab, shaded (Mundra)",3,9.0
+"Truck cab, shaded (Mundra)",4,9.0
+"Truck cab, shaded (Mundra)",5,9.0
+"Truck cab, shaded (Mundra)",6,9.0
+"Truck cab, shaded (Mundra)",7,9.0
+"Truck cab, shaded (Mundra)",8,9.0
+"Truck cab, shaded (Mundra)",9,9.0
+"Truck cab, shaded (Mundra)",10,9.0
+"Truck cab, shaded (Mundra)",11,9.0
+"Truck cab, shaded (Mundra)",12,9.0

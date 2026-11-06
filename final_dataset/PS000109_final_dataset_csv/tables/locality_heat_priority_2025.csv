@@ -1,0 +1,13 @@
+heat_rank,location_id,label,taluka,location_type,heavy_sun_allowed_h_apr_oct,moderate_sun_allowed_h_apr_oct,light_shade_allowed_h_apr_oct,hours_sun_over_27_5,shift_pm10_mean,days_pm10_over_100,taluka_population_2011
+1,bhachau,Bhachau,Bhachau,town,2.2,3.9,9.0,1922,41.4,2,186035
+1,gandhidham,Gandhidham,Gandhidham,town,2.2,3.8,8.9,1919,41.4,2,327166
+3,kandla_port,Kandla Port,Gandhidham,port,2.3,4.0,9.0,1933,41.4,2,327166
+4,anjar,Anjar,Anjar,town,2.4,4.1,9.0,1835,41.4,2,235537
+4,lakhpat,Lakhpat,Lakhpat,town,2.4,4.2,9.0,1859,49.6,6,62552
+6,little_rann_kutch,Little Rann salt pans (approx.),Rapar,salt pan,2.5,4.3,9.0,1818,41.4,2,217315
+6,rapar,Rapar,Rapar,town,2.5,4.2,9.0,1784,42.9,4,217315
+8,mandvi,Mandvi,Mandvi,town,2.7,4.6,9.0,1847,42.0,7,203373
+9,mundra_port,Mundra Port,Mundra,port,2.8,4.7,9.0,1846,41.2,6,153219
+10,abdasa_cement,Abdasa cement belt (approx.),Abdasa,cement,2.9,4.9,9.0,1765,45.6,4,117538
+11,bhuj,Bhuj,Bhuj,town and construction,3.1,5.1,9.0,1655,42.0,2,443269
+11,nakhatrana,Nakhatrana,Nakhatrana,town,3.1,5.2,9.0,1635,42.1,5,146367

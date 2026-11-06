@@ -1,0 +1,129 @@
+worker_id,label,cohort,age_on_1_jan_2025,employer_type,legal_sphere,years_in_silica_industry_before_2025,prior_job_id,entered_record_via,legal_rule_applying
+SIM-A,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,narrative,24,Contractor,State,4,stone_crushing,Public screening,
+SIM-B,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,narrative,32,Contractor,State,10,stone_crushing,Public screening,
+SIM-C,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,narrative,47,Factory,State,20,cement_yard,Employer list,Gujarat Rule 9
+SIM-D,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,narrative,38,Contractor,State,12,cement_yard,Public screening,
+SIM-E,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,narrative,41,Self-employed,None,0,,Worker-volunteer,
+SIM-F,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,narrative,46,Construction,State,15,construction,Employer list,Gujarat Rule 9
+SIM-G,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,narrative,42,Dock,Central,0,,Employer list,Central Rule 5
+SIM-H,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,narrative,35,Transport,State,0,,Public screening,
+SIM-W001,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Self-employed,None,0,,Worker-volunteer,
+SIM-W002,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Self-employed,None,0,,Worker-volunteer,
+SIM-W003,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Self-employed,None,0,,Worker-volunteer,
+SIM-W004,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Self-employed,None,0,,Worker-volunteer,
+SIM-W005,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Self-employed,None,0,,Worker-volunteer,
+SIM-W006,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Self-employed,None,0,,Worker-volunteer,
+SIM-W007,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Self-employed,None,0,,Worker-volunteer,
+SIM-W008,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Self-employed,None,0,,Worker-volunteer,
+SIM-W009,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Self-employed,None,0,,Worker-volunteer,
+SIM-W010,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Self-employed,None,0,,Worker-volunteer,
+SIM-W011,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Self-employed,None,0,,Worker-volunteer,
+SIM-W012,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Self-employed,None,0,,Worker-volunteer,
+SIM-W013,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Dock,Central,0,,Employer list,
+SIM-W014,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Dock,Central,0,,Employer list,
+SIM-W015,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Dock,Central,0,,Employer list,
+SIM-W016,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Dock,Central,0,,Employer list,
+SIM-W017,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Dock,Central,0,,Employer list,
+SIM-W018,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Dock,Central,0,,Employer list,
+SIM-W019,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Dock,Central,0,,Employer list,Central Rule 5
+SIM-W020,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Dock,Central,0,,Employer list,Central Rule 5
+SIM-W021,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Dock,Central,0,,Employer list,Central Rule 5
+SIM-W022,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Dock,Central,0,,Employer list,Central Rule 5
+SIM-W023,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Dock,Central,0,,Employer list,Central Rule 5
+SIM-W024,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Dock,Central,0,,Employer list,Central Rule 5
+SIM-W025,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Dock,Central,0,,Employer list,
+SIM-W026,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Dock,Central,0,,Employer list,
+SIM-W027,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Dock,Central,0,,Employer list,
+SIM-W028,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Dock,Central,0,,Employer list,
+SIM-W029,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Dock,Central,0,,Employer list,
+SIM-W030,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Dock,Central,0,,Employer list,
+SIM-W031,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Dock,Central,0,,Employer list,Central Rule 5
+SIM-W032,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Dock,Central,0,,Employer list,Central Rule 5
+SIM-W033,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Dock,Central,0,,Employer list,Central Rule 5
+SIM-W034,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Dock,Central,0,,Employer list,Central Rule 5
+SIM-W035,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Dock,Central,0,,Employer list,Central Rule 5
+SIM-W036,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Dock,Central,0,,Employer list,Central Rule 5
+SIM-W037,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Factory,State,2,cement_yard,Employer list,
+SIM-W038,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Factory,State,4,cement_yard,Employer list,
+SIM-W039,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Factory,State,7,cement_yard,Employer list,
+SIM-W040,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Factory,State,3,cement_yard,Employer list,
+SIM-W041,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Factory,State,10,cement_yard,Employer list,
+SIM-W042,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Factory,State,17,cement_yard,Employer list,
+SIM-W043,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Factory,State,3,cement_yard,Employer list,
+SIM-W044,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Factory,State,12,cement_yard,Employer list,
+SIM-W045,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Factory,State,24,cement_yard,Employer list,
+SIM-W046,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Factory,State,5,cement_yard,Employer list,Gujarat Rule 9
+SIM-W047,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Factory,State,15,cement_yard,Employer list,Gujarat Rule 9
+SIM-W048,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Factory,State,29,cement_yard,Employer list,Gujarat Rule 9
+SIM-W049,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Contractor,State,2,cement_yard,Public screening,
+SIM-W050,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Contractor,State,4,cement_yard,Public screening,
+SIM-W051,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Contractor,State,7,cement_yard,Public screening,
+SIM-W052,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Contractor,State,3,cement_yard,Public screening,
+SIM-W053,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Contractor,State,10,cement_yard,Public screening,
+SIM-W054,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Contractor,State,17,cement_yard,Public screening,
+SIM-W055,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Contractor,State,3,cement_yard,Public screening,
+SIM-W056,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Contractor,State,12,cement_yard,Public screening,
+SIM-W057,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Contractor,State,24,cement_yard,Public screening,
+SIM-W058,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Contractor,State,5,cement_yard,Public screening,
+SIM-W059,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Contractor,State,15,cement_yard,Public screening,
+SIM-W060,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Contractor,State,29,cement_yard,Public screening,
+SIM-W061,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Factory,State,2,cement_walk,Employer list,
+SIM-W062,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Factory,State,4,cement_walk,Employer list,
+SIM-W063,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Factory,State,7,cement_walk,Employer list,
+SIM-W064,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Factory,State,3,cement_walk,Employer list,
+SIM-W065,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Factory,State,10,cement_walk,Employer list,
+SIM-W066,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Factory,State,17,cement_walk,Employer list,
+SIM-W067,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Factory,State,3,cement_walk,Employer list,
+SIM-W068,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Factory,State,12,cement_walk,Employer list,
+SIM-W069,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Factory,State,24,cement_walk,Employer list,
+SIM-W070,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Factory,State,5,cement_walk,Employer list,Gujarat Rule 9
+SIM-W071,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Factory,State,15,cement_walk,Employer list,Gujarat Rule 9
+SIM-W072,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Factory,State,29,cement_walk,Employer list,Gujarat Rule 9
+SIM-W073,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Construction,State,2,construction,Employer list,
+SIM-W074,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Construction,State,4,construction,Employer list,
+SIM-W075,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Construction,State,7,construction,Employer list,
+SIM-W076,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Construction,State,3,construction,Employer list,
+SIM-W077,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Construction,State,10,construction,Employer list,
+SIM-W078,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Construction,State,17,construction,Employer list,
+SIM-W079,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Construction,State,3,construction,Employer list,
+SIM-W080,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Construction,State,12,construction,Employer list,
+SIM-W081,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Construction,State,24,construction,Employer list,
+SIM-W082,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Construction,State,5,construction,Employer list,Gujarat Rule 9
+SIM-W083,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Construction,State,15,construction,Employer list,Gujarat Rule 9
+SIM-W084,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Construction,State,29,construction,Employer list,Gujarat Rule 9
+SIM-W085,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Contractor,State,2,stone_crushing,Public screening,
+SIM-W086,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Contractor,State,4,stone_crushing,Public screening,
+SIM-W087,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Contractor,State,7,stone_crushing,Public screening,
+SIM-W088,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Contractor,State,3,stone_crushing,Public screening,
+SIM-W089,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Contractor,State,10,stone_crushing,Public screening,
+SIM-W090,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Contractor,State,17,stone_crushing,Public screening,
+SIM-W091,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Contractor,State,3,stone_crushing,Public screening,
+SIM-W092,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Contractor,State,12,stone_crushing,Public screening,
+SIM-W093,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Contractor,State,24,stone_crushing,Public screening,
+SIM-W094,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Contractor,State,5,stone_crushing,Public screening,
+SIM-W095,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Contractor,State,15,stone_crushing,Public screening,
+SIM-W096,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Contractor,State,29,stone_crushing,Public screening,
+SIM-W097,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Dock,Central,0,,Employer list,
+SIM-W098,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Dock,Central,0,,Employer list,
+SIM-W099,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Dock,Central,0,,Employer list,
+SIM-W100,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Dock,Central,0,,Employer list,
+SIM-W101,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Dock,Central,0,,Employer list,
+SIM-W102,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Dock,Central,0,,Employer list,
+SIM-W103,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Dock,Central,0,,Employer list,Central Rule 5
+SIM-W104,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Dock,Central,0,,Employer list,Central Rule 5
+SIM-W105,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Dock,Central,0,,Employer list,Central Rule 5
+SIM-W106,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Dock,Central,0,,Employer list,Central Rule 5
+SIM-W107,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Dock,Central,0,,Employer list,Central Rule 5
+SIM-W108,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Dock,Central,0,,Employer list,Central Rule 5
+SIM-W109,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Transport,State,0,,Public screening,
+SIM-W110,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Transport,State,0,,Public screening,
+SIM-W111,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,25,Transport,State,0,,Public screening,
+SIM-W112,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Transport,State,0,,Public screening,
+SIM-W113,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Transport,State,0,,Public screening,
+SIM-W114,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,35,Transport,State,0,,Public screening,
+SIM-W115,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Transport,State,0,,Public screening,
+SIM-W116,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Transport,State,0,,Public screening,
+SIM-W117,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,42,Transport,State,0,,Public screening,
+SIM-W118,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Transport,State,0,,Public screening,
+SIM-W119,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Transport,State,0,,Public screening,
+SIM-W120,SCENARIO - fictional workers on model and US data; not Kachchh worker measurements,designed_test,47,Transport,State,0,,Public screening,

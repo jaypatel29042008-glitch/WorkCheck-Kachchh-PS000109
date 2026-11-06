@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PS000109 Synopsis: WorkCheck Kachchh</title>
+<style>
+@page{size:A4;margin:17mm 16mm 18mm;@bottom-left{content:"PS000109 · WorkCheck Kachchh · Team TM005024";font:8pt Helvetica,Arial,sans-serif;color:#667}@bottom-right{content:"Page " counter(page) " of " counter(pages);font:8pt Helvetica,Arial,sans-serif;color:#667}}
+:root{--ink:#17212b;--muted:#566370;--line:#c9d1d8;--accent:#0b5c63;--soft:#e8f2f2;--warm:#fbf3e4;--warmline:#c98a1b}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;color:var(--ink);background:#fff;font:10pt/1.42 Helvetica,Arial,"Noto Sans",sans-serif}
+.eyebrow{font-size:8.5pt;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:0 0 3px}
+h1{font-size:23pt;line-height:1.1;margin:0 0 3px;letter-spacing:-.01em}
+.sub{font-size:11.5pt;color:var(--muted);margin:0 0 9px}
+.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink);border-bottom:1px solid var(--line);margin-bottom:11px}
+.meta div{padding:5px 8px 5px 0;font-size:8.8pt}.meta b{display:block;font-size:7.6pt;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:700}
+h2{font-size:13.5pt;line-height:1.2;margin:15px 0 5px;color:var(--accent);break-after:avoid}
+h3{font-size:10.2pt;margin:9px 0 3px;break-after:avoid}
+p{margin:0 0 6px}ul,ol{margin:0 0 6px;padding-left:17px}li{margin-bottom:2.5px}
+.pitch{background:var(--soft);border-left:4px solid var(--accent);padding:9px 12px;font-size:11pt;line-height:1.38;margin:0 0 8px;break-inside:avoid}
+.note{background:var(--warm);border-left:4px solid var(--warmline);padding:7px 10px;margin:7px 0;font-size:9.3pt;break-inside:avoid}
+table{width:100%;border-collapse:collapse;margin:5px 0 8px;font-size:8.9pt;break-inside:avoid}
+th{background:#eef1f3;text-align:left;font-weight:700;padding:4px 6px;border-bottom:1.2px solid #8996a1;vertical-align:bottom}
+td{padding:4px 6px;border-bottom:.6px solid var(--line);vertical-align:top}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.loop{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin:6px 0 8px;break-inside:avoid}
+.step{border:1px solid var(--accent);border-top:4px solid var(--accent);padding:5px 6px;font-size:8.5pt;line-height:1.3}
+.step b{display:block;font-size:9.2pt;margin-bottom:2px;color:var(--accent)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;break-inside:avoid}
+.tag{display:inline-block;font-size:7.4pt;font-weight:700;padding:1px 5px;border-radius:2px;background:var(--warm);color:#7a5209;white-space:nowrap}
+.tag.done{background:var(--soft);color:var(--accent)}
+.small{font-size:8.3pt;color:var(--muted)}
+.src{font-size:7.9pt;line-height:1.33;columns:2;column-gap:14px}.src p{margin:0 0 3px;break-inside:avoid}
+a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+
+<p class="eyebrow">Seva First Innovation Challenge 2026 · Synopsis</p>
+<h1>WorkCheck Kachchh</h1>
+<p class="sub">Finding exposed workers through the public health system, and following every referral to completion</p>
+<div class="meta">
+<div><b>Problem statement</b>PS000109: Digital Occupational Health Monitoring for Industrial Workers</div>
+<div><b>Posted by</b>District Development Office, Kachchh (Healthtech)</div>
+<div><b>Team</b>TM005024, LDRP Institute of Technology and Research, Gandhinagar</div>
+</div>
+
+<div class="pitch">Kachchh's workers do not all appear on a factory register, but they do live in localities the public health system can reach. We add a short work and exposure check to existing screening, use heat and dust data to decide where to go first, and track each referral until it is completed. Required employer examinations are flagged, and workers keep their own record.</div>
+
+<p><strong>Requested outcome:</strong> “A secure digital system for periodic health screening, risk alerts and follow-up tracking.” The statement names labourers and localities as users, and lists four failures: separate records, missed periodic screening, untracked risks, and workers who change employers or locations.</p>
+
+<h2>1. The problem we are solving</h2>
+<p><strong>The rules check workers by employer type and age. Dust and heat harm people by exposure.</strong> A worker can spend years in a hazardous job and still have no annual examination due.</p>
+<table>
+<tr><th style="width:43%">Rule</th><th>Who gets a free annual examination</th></tr>
+<tr><td>Gujarat OSH Rules 2025, Rule 9</td><td>Factory and building/construction workers who have completed <strong>45</strong>, within 120 days of the start of the calendar year; Form 5 includes occupational history, chest X-ray and creatinine</td></tr>
+<tr><td>Central OSH Rules 2026, Rule 5</td><td>Dock and building/construction employees who have completed <strong>40</strong>; Form-VIII; ESIC facilities may be used</td></tr>
+</table>
+<table>
+<tr><th style="width:34%">Job group</th><th>Annual-examination position (our reading)</th></tr>
+<tr><td>Cement plant employee</td><td>Covered at 45+ where the plant is a factory under the State; younger employees are not</td></tr>
+<tr><td>Outdoor construction worker</td><td>Covered at 45+ (State) or 40+ (Central); many younger workers are not</td></tr>
+<tr><td>Port worker</td><td>Likely 40+ at Kandla, a Union port; position at private Mundra to be confirmed</td></tr>
+<tr><td>Truck driver</td><td>Motor transport is not named in Rule 9; depends on the employer</td></tr>
+<tr><td>Self-employed salt-pan worker</td><td>No employer to carry the duty; we found no equivalent annual examination</td></tr>
+</table>
+<p>Even where a duty exists, follow-through is weak:</p>
+<ul>
+<li><strong>Inspection is thin.</strong> Secondary summaries of national data put 2021 inspection coverage at about 15% of factories and 26% of hazardous factories.</li>
+<li><strong>Disease goes unrecorded.</strong> An ILO India article reports only 562 occupational disease cases reported nationally in 2011–16. In Morbi and Surendranagar, one group alone (PTRC) reports identifying 182 silicosis cases, including 80 deaths, since 2018. That is a case-finding count, not a prevalence estimate.</li>
+<li><strong>Workers have reason to stay silent.</strong> Sister statements PS000247 and PS000271 describe fear of job loss, and say that dust exposure “is rarely measured at an individual level”.</li>
+</ul>
+
+<h2>2. Our solution</h2>
+<div class="loop">
+<div class="step"><b>1. Prioritise</b>Heat, job and screening data show which localities and work groups to reach first.</div>
+<div class="step"><b>2. Ask</b>Frontline staff or a trained worker-volunteer complete a short work and exposure check.</div>
+<div class="step"><b>3. Route</b>Clinician-approved rules select the next step. Doctors make all medical decisions.</div>
+<div class="step"><b>4. Follow up</b>The case stays open until attendance and any advised follow-up are recorded.</div>
+<div class="step"><b>5. Keep</b>The worker holds a QR card and copies of doctor-issued results, across employers.</div>
+</div>
+<p><strong>Where it plugs in.</strong> National programmes aim to screen everyone aged 30+ for common diseases at Ayushman Arogya Mandirs, using the CBAC checklist that also supports TB detection. We propose to add the work check alongside that process, subject to approval by the CDHO and DDO. Trained worker-volunteers and targeted camps would reach workers under 30 and remote salt-pan clusters.</p>
+<p><strong>The check asks about:</strong> current and past jobs, years in dust or heat, employer type, age, last examination, and symptoms. It is designed to take about a minute.</p>
+<h3>Three reasons a person can be routed for a check-up</h3>
+<table>
+<tr><th style="width:21%">Route</th><th style="width:38%">Trigger</th><th>Action</th></tr>
+<tr><td><strong>Legal due date</strong></td><td>Rule 9 or Rule 5 applies to this worker</td><td>Flag the exam as due, track the deadline, and record whether it happened. <strong>No alert is required.</strong></td></tr>
+<tr><td><strong>Past or current exposure</strong></td><td>Years in a silica-risk or dusty job, or a repeated workplace dust flag; thresholds to be set by a clinician</td><td>Referral request to an agreed clinic. It never says “silicosis suspected”.</td></tr>
+<tr><td><strong>Symptoms or request</strong></td><td>Cough, breathlessness, repeated dark urine, or the worker asks</td><td>Doctor review. Collapse or confusion in heat is an emergency: call 108 and start cooling.</td></tr>
+</table>
+<p>Past exposure matters because silica harm is cumulative. A worker with 20 years at a stone crusher who now works on a clean site would never trigger a sensor alert, so sensor alerts cannot be the only route. In a Chinese multi-enterprise study, pneumoconiosis-like changes had about 3.3 times the odds with more than 10 years' exposure than with 5 or fewer (95% CI 1.14–9.69; small case count).</p>
+
+<h2>3. Where the sensor fits</h2>
+<p><strong>The core system works without hardware. Low-cost sensors are an optional add-on, piloted at 2–3 sites where someone has agreed in advance what they will do when a reading is high.</strong></p>
+<div class="two">
+<div>
+<h3>Site node: what it is for</h3>
+<ul>
+<li><strong>Heat:</strong> checks how far weather-based WBGT estimates are from local conditions in sun, shade and salt-pan glare.</li>
+<li><strong>Dust:</strong> compares jobs and shows whether controls such as water spraying are working. Weather and air-quality models cannot see dust at a crusher or loading point.</li>
+<li><strong>Local action:</strong> a lamp and SMS show job-specific work-rest advice, with water and shade instructions.</li>
+</ul>
+</div>
+<div>
+<h3>What it does not do</h3>
+<ul>
+<li><strong>It does not measure silica,</strong> which needs lab analysis.</li>
+<li><strong>It does not diagnose.</strong> A dust flag only prompts dust control or a referral request.</li>
+<li><strong>It does not measure a worker's dose by itself.</strong> Site readings are combined with job and shift records.</li>
+<li><strong>It is not certified.</strong> In one construction dataset, two optical sensors differed by about 31 times during the same task, so each node must be checked against a reference.</li>
+</ul>
+</div>
+</div>
+<table>
+<tr><th>Site node part (estimates, not quotes)</th><th>Role</th><th class="n">Approx. cost</th></tr>
+<tr><td>ESP32</td><td>Controller and connectivity</td><td class="n">₹400</td></tr>
+<tr><td>BME280</td><td>Air temperature and humidity</td><td class="n">₹300</td></tr>
+<tr><td>Temperature probe in a black globe</td><td>Radiant heat for WBGT</td><td class="n">₹150</td></tr>
+<tr><td>PMS5003 or similar</td><td>Optical PM2.5/PM10 dust indication</td><td class="n">₹800–1,200</td></tr>
+<tr><td>Battery, charger and enclosure</td><td>Field use</td><td class="n">₹300–500</td></tr>
+<tr><td><strong>Total per node</strong></td><td></td><td class="n"><strong>about ₹2,000–2,500</strong></td></tr>
+</table>
+<p class="small">Personal dust badges remain later research and are outside this proposal's core scope.</p>
+
+<h2>4. What our Kachchh analysis already shows</h2>
+<p>We analysed hourly ERA5 and CAMS model data for five Kachchh locations. <strong>These are model estimates, not worksite measurements.</strong> Work-time allowances use the ACGIH-style criteria published by CCOHS for acclimatized workers. Workload classes are our assumption.</p>
+<table>
+<tr><th>Job and location (2025 model)</th><th>Assumed workload</th><th class="n">Allowed work hours in a 9-hour shift, Apr–Oct</th></tr>
+<tr><td>Port yard loading, Kandla, in sun</td><td>Heavy</td><td class="n">2.3</td></tr>
+<tr><td>Salt-pan raking, Little Rann, in sun</td><td>Heavy</td><td class="n">2.5</td></tr>
+<tr><td>Cement yard loading, Abdasa, in sun</td><td>Heavy</td><td class="n">2.9</td></tr>
+<tr><td>Outdoor construction, Bhuj, in sun</td><td>Heavy</td><td class="n">3.1</td></tr>
+<tr><td>Cement plant walk-around, Abdasa, in sun</td><td>Moderate</td><td class="n">4.9</td></tr>
+<tr><td>Crane or truck cab, in shade</td><td>Light</td><td class="n">9.0</td></tr>
+</table>
+<ul>
+<li><strong>Job matters more than place.</strong> Under these assumptions, the same port can mean about 2.3 allowed hours for a yard loader and 9 for a shaded cab operator. Alerts must therefore be set by job, not only by site.</li>
+<li><strong>Heat is a long season.</strong> Kandla had an estimated 2,067 of 3,650 daytime hours in 2025 above 27.5 °C WBGT in sun, the level beyond which the table allows less than 75% work time for heavy work.</li>
+<li><strong>Shift timing helps.</strong> Moving a 9-hour shift from 9am–6pm to 6am–3pm avoids about 20% of those hot hours across the five sites (average of about 358 hours a year).</li>
+<li><strong>Related evidence.</strong> In a Tamil Nadu cohort of 352 salt-pan workers, 87.5% exceeded the heat limit, 28% had high post-shift urine specific gravity and 7% had eGFR below 60. No equivalent Kachchh study was found, which is why local validation is needed.</li>
+</ul>
+
+<h2>5. How this differs from what exists</h2>
+<table>
+<tr><th style="width:31%">Existing option</th><th style="width:33%">What it does</th><th>Gap we address</th></tr>
+<tr><td>Employer health software (e.g. OccuCare, OHCTECH)</td><td>Occupational health records and compliance, as listed by vendors</td><td>Built around employers; misses people who have no employer system</td></tr>
+<tr><td>Smart helmets and gas detectors</td><td>Accident and gas safety</td><td>Different hazards; no check-up follow-up</td></tr>
+<tr><td>Mobile medical units</td><td>Care at sites, with eligibility limits (Dhanvantari Arogya Rath serves registered construction workers)</td><td>We would complement them with prioritised lists and follow-up, if services agree</td></tr>
+<tr><td>Public NCD screening</td><td>Population screening at 30+</td><td>Work history is not its focus; we propose to add this layer</td></tr>
+</table>
+<p><strong>Lessons from elsewhere.</strong> Thailand delivered basic worker health services through primary care units and worker-volunteers. Brazil's experience shows frontline teams need training and referral support. South Africa's silicosis claims show how much records matter. A Nicaraguan sugar mill's experience suggests water, shade and rest changes may protect kidneys. Each is a different setting, so we will test these lessons locally.</p>
+
+<h2>6. Architecture, privacy and safeguards</h2>
+<p><strong>Software:</strong> phone-first web app in Gujarati, Hindi and English; QR worker card; rules engine using a versioned, clinician-reviewed rule table; case tracker; SMS and voice alerts; FastAPI and SQL backend; district dashboard showing anonymous totals. Sensor readings and weather data feed the same system.</p>
+<ul>
+<li><strong>Consent first:</strong> taking part is voluntary, in the worker's language, and must not affect job, pay or care.</li>
+<li><strong>Worker control:</strong> employers see no individual results from our system without the worker's consent. Legal certificates remain the doctor's responsibility, because the rules also send them to the employer.</li>
+<li><strong>Clinical boundary:</strong> students and software do not diagnose; a clinician owns the rules and medical decisions.</li>
+<li><strong>Record integrity:</strong> examination status requires confirmation from the clinic, and the worker gets a copy.</li>
+<li><strong>Data rule:</strong> no synthetic or foreign data is presented as Kachchh measurement. Disease risk prediction stays out of scope until real outcome data exists.</li>
+</ul>
+
+<h2>7. Adoption and funding</h2>
+<p><strong>We start where a user and a duty already exist, and test demand before scaling.</strong> All funding routes and prices below are proposed, not confirmed.</p>
+<table>
+<tr><th style="width:17%">Stage</th><th style="width:35%">Who it serves</th><th>Possible funding</th></tr>
+<tr><td><strong>Pilot</strong></td><td>One taluka, one CHC or doctor, 2–3 node sites</td><td>District support or challenge support; uses existing staff and services only where agreed</td></tr>
+<tr><td><strong>District</strong></td><td>Informal, contract and salt-pan workers through public health</td><td>District Mineral Foundation in mining-affected areas, where health is a high-priority use; CSR programmes</td></tr>
+<tr><td><strong>Employer add-on</strong></td><td>Factories, contractors and clinics managing Rule 9 exams</td><td>About ₹25,000 a year per site, a clinic licence, and optional node rental. Prices to be tested in the pilot.</td></tr>
+<tr><td><strong>Later</strong></td><td>Ceramics and stone next (similar hazard); chemicals after</td><td>New rule tables for each industry; sensors and medical rules rebuilt with clinical review</td></tr>
+</table>
+<p><strong>Workers do not pay, and health data is never sold.</strong></p>
+
+<h2>8. Validation plan</h2>
+<div class="note"><strong>Current status.</strong> Done: Kachchh heat and dust data analysis, reading of the Gujarat and central rules, system design. <strong>Not yet done:</strong> DDO or CDHO confirmation, clinical review, a service partner, a field test, or any real worker case. Everything depending on these is labelled proposed.</div>
+<table>
+<tr><th style="width:21%">When</th><th>What we will do</th></tr>
+<tr><td><strong>By 23 Nov</strong></td><td>Ask the DDO's resource person and CDHO office who can be screened, what can be added to screening, and who accepts referrals. Send the rule sheet to NIOH Ahmedabad or a factory medical officer. Build one node and compare it with a reference instrument.</td></tr>
+<tr><td><strong>By 27 Nov (finale)</strong></td><td>Demonstrate the full loop with a clearly labelled sample worker, including a live node changing a heat alert and a filled Form 5 occupational history. Report any real responses received.</td></tr>
+<tr><td><strong>After approval</strong></td><td>Follow one consenting worker from due date to check-up, result and follow-up, on paper first. Then run one taluka with 2–3 sensor nodes.</td></tr>
+<tr><td><strong>By 30 Apr 2027</strong></td><td>Where a factory or contractor participates, measure how many eligible workers have a recorded Rule 9 examination by the deadline.</td></tr>
+</table>
+<p><strong>Proposed pilot measures:</strong> at least 90% of referred workers with a recorded outcome; time from referral to attendance; time taken by the work check; alerts followed by a recorded action; heat-estimate error against the node; workers still holding their record after changing employer.</p>
+
+<h3>Main risks</h3>
+<table>
+<tr><th style="width:36%">Risk</th><th>Response</th></tr>
+<tr><td>DDO cannot direct this, or CDHO will not add it</td><td>Confirm early; run through camps, a clinic and an NGO; State-directed survey under Rule 44(3) stays a separate later request</td></tr>
+<tr><td>Frontline staff are overloaded</td><td>Keep the check short; use worker-volunteers; test in one taluka</td></tr>
+<tr><td>No capacity for X-ray or doctor review</td><td>Name one referral point before launch; refer only under clinician-approved rules</td></tr>
+<tr><td>Workers fear job loss</td><td>Worker-held record; no employer access to individual data; consent witnessed by a non-manager</td></tr>
+<tr><td>Sensors read wrong or fail</td><td>Calibrate against a reference; label as early warning; core system keeps working without them</td></tr>
+<tr><td>Rules change or our reading is wrong</td><td>Rule table is versioned and reviewed; the Gujarat draft amendment is not treated as final</td></tr>
+</table>
+
+<h2>Sources</h2>
+<div class="src">
+<p><a href="https://sfic.co.in/problem_statement.php">SFIC problem statements</a> (PS000109, 247, 271)</p>
+<p><a href="https://col.gujarat.gov.in/Portal/Document/3_3124_1_Gujaratrules_3_24062026.pdf">Gujarat OSH Rules 2025</a> (Rules 9 and 44; Form 5)</p>
+<p><a href="https://www.labour.gov.in/static/uploads/2026/05/ee246f790cad0b8e99c3828f34fa09a6.pdf">Central OSH Rules 2026</a> (Rule 5; Form-VIII)</p>
+<p><a href="https://saralweb.com/state-wise-rules/gujarat/COSHGujarat.pdf">Gujarat draft amendment, December 2025</a></p>
+<p><a href="https://pwonlyias.com/editorial-analysis/factory-accidents-in-india/">Summary of national inspection coverage</a></p>
+<p><a href="https://india.un.org/en/162707-india-must-seize-opportunity-create-safe-and-healthy-workplace">ILO India article on reported occupational disease</a></p>
+<p><a href="https://www.downtoearth.org.in/health/gujarats-silent-epidemic-silicosis-is-killing-workers-while-the-state-looks-away">Down To Earth on silicosis in Gujarat</a></p>
+<p><a href="https://medicaldialogues.in/news/health/centre-launches-intensified-ncd-screening-drive-to-achieve-100-pecent-coverage-143672">National NCD screening drive, age 30+</a></p>
+<p><a href="https://ntep.in/node/4746">NTEP on the CBAC checklist</a></p>
+<p><a href="https://doi.org/10.3390/ijerph191711065">He et al. 2022, dust exposure and pulmonary function</a></p>
+<p><a href="https://data.mendeley.com/datasets/wy6shdctsr">Mendeley construction PM dataset</a></p>
+<p><a href="https://www.ccohs.ca/oshanswers/phys_agents/heat/CCOHS_heat_control.pdf">CCOHS heat stress criteria</a></p>
+<p><a href="https://open-meteo.com/">Open-Meteo</a> (ERA5 and CAMS model data)</p>
+<p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10334398">Salt-pan cohort, Kidney Int Rep 2023</a></p>
+<p><a href="https://www.capterra.in/software/206423/occucare">OccuCare</a> and <a href="https://www.techjockey.com/detail/ohctech">OHCTECH</a> listings</p>
+<p><a href="https://myscheme.gov.in/schemes/darygbocwwb">Dhanvantari Arogya Rath scheme</a></p>
+<p><a href="https://dmf.goa.gov.in/wp-content/uploads/2025/06/PMKKKY-Guidelines-2015.pdf">PMKKKY guidelines</a> (District Mineral Foundation)</p>
+<p><a href="https://www.ilo.org/publications/promoting-occupational-health-services-workers-informal-economy-through">ILO on Thai primary care units</a></p>
+<p><a href="https://www.scielo.br/j/rbso/a/9nFXHMhSSbSSgXTxyHGCcdr/?lang=en">Brazil: Family Health professionals survey</a></p>
+<p><a href="https://groundup.news/article/r27-billion-in-compensation-paid-to-sick-mineworkers/">South Africa: Tshiamiso compensation report</a></p>
+<p><a href="https://oem.bmj.com/content/77/8/527">Nicaragua: Adelante Initiative results</a></p>
+</div>
+</body>
+</html>

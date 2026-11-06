@@ -1,0 +1,333 @@
+================================================================================
+PS000109 - DIGITAL OCCUPATIONAL HEALTH MONITORING (KACHCHH)
+MASTER DATA GUIDE, CHART CATALOGUE & HACKATHON IMPLEMENTATION MANUAL
+================================================================================
+Target: District Development Office (DDO), Kachchh (Gujarat, India)
+Challenge: Seva First Innovation Challenge 2026
+Synopsis Deadline: 06 November 2026
+Repository: sfic-ps000109
+
+--------------------------------------------------------------------------------
+TABLE OF CONTENTS
+--------------------------------------------------------------------------------
+1. EXECUTIVE SUMMARY & THE 3 CORE PITCH NUMBERS
+2. COMPLETE CHART CATALOGUE & SLIDE PLACEMENT GUIDE
+3. TEAM-BY-TEAM IMPLEMENTATION BLUEPRINT
+   - For Neel: Database Schema, SQL Limits & Ingestion Rules
+   - For Person 2: Sensor Firmware, 15-min STEL Buffer & Glitch Filter
+   - For Person 3: e-Shram, ABHA & Government Health Scheme Integration
+   - For Person 4: Synopsis Write-Up & Presentation Flow
+4. SUMMARY OF PROCESSED DATA TABLES & SCHEMAS
+5. SCIENTIFIC & TECHNICAL CONCEPTS CHEATSHEET
+6. HONESTY & DEFENSE RULES FOR JUDGES' QUESTIONS
+
+================================================================================
+1. EXECUTIVE SUMMARY & THE 3 CORE PITCH NUMBERS
+================================================================================
+
+Our Core Idea:
+A low-cost solar site node (~Rs. 2,000) and dust badge (~Rs. 1,700-1,900) measure heat (WBGT) and dust (PM10/PM2.5).
+When exposure breaches safe clinical limits:
+  1. Worker receives a direct SMS alert in Gujarati/Hindi on their basic phone.
+  2. The worker is added to a check-up priority list for existing services
+     (BOCW, salt-worker van, ESIC); a clinician decides the tests.
+  3. The health record is worker-owned and portable (tied to their e-Shram card).
+  4. The DDO Kachchh accesses an anonymous district dashboard showing factory
+     hotspots and heat stress compliance across ports, salt pans, and quarries.
+
+THE 3 WINNING PITCH NUMBERS (Memorise these for judges):
+
+1. A 6 AM START CUTS HEAT DANGER BY ~20% WITH THE SAME 9-HOUR SHIFT:
+   - In 2025, standard 9 AM - 6 PM working hours exposed workers to 1,655 to 1,933
+     dangerous heat hours (>27.5 °C WBGT).
+   - Moving the same 9-hour shift to 6 AM - 3 PM avoids ~358 hazardous hours/year
+     (19.9%, modelled). A 6 AM - 1 PM shift avoids ~816 hours (45.3%), but workers
+     lose 2 hours a day, so it is not free.
+   - System feature: DDO Dashboard generates automated seasonal shift advisories.
+
+2. SAME WORKPLACE, VERY DIFFERENT DUST (INDIVIDUAL TRACKING):
+   - In 29 of 56 multi-sample US OSHA inspections with a result over 50 ug/m3,
+     another sample was under 25 ug/m3. The top 10% of samples hold 95.5% of measured
+     silica (~80% without the 4 highest). Samples, not workers; 46.6% are recorded as 0.
+   - Why it matters: A single environmental sensor measuring "average factory air"
+     misses the workers standing over the concrete mixer or bagging chute.
+     We must link exposure to individual worker e-Shram IDs based on job role.
+
+3. THE INVISIBLE COASTAL TRAP & THE "NO-SLEEP" HEAT DEBT:
+   - At Kandla Port and Mundra Port, summer air temperatures look mild (~31-34 °C)
+     compared to inland desert heat (~43 °C). But coastal humidity (65-69%) drives
+     WBGT past the danger limit for 2,067 hours a year.
+   - Worse: 54.8% of dangerous days are followed by tropical nights (WBGT >= 25 °C),
+     preventing sleep recovery. Our algorithm carries over "heat debt" to the next day.
+
+================================================================================
+2. COMPLETE CHART CATALOGUE & SLIDE PLACEMENT GUIDE
+================================================================================
+
+All charts are saved in `charts/` at 150 DPI, formatted for slides with caveats.
+
+--------------------------------------------------------------------------------
+CHART 1: charts/kachchh_heat_hours_by_site.png
+Title: Kachchh Worksite Heat Strain Exposure in 2025 (Sun vs. Shade)
+What it shows: Grouped bar chart comparing daytime hours over 27.5 °C WBGT.
+  - Kandla Port: 2,067 h sun vs. 997 h shade (56.6% of all work hours)
+  - Mundra Port: 1,965 h sun vs. 763 h shade
+  - Little Rann (Salt pans): 1,919 h sun vs. 857 h shade
+  - Abdasa (Cement): 1,886 h sun vs. 735 h shade
+  - Bhuj: 1,741 h sun vs. 604 h shade
+Slide Placement: Slide 3 ("The Local Reality: Heat Crisis in Kachchh")
+Pitch Point: "Over 50% of working hours in Kachchh breach safe human limits."
+
+--------------------------------------------------------------------------------
+CHART 2: charts/kachchh_heat_by_month.png
+Title: Seasonal Heat Stress Trajectory in Kachchh (2025)
+What it shows: Monthly curves of hours over 27.5 °C WBGT across the year.
+  - The danger window is not a 1-week spike: it lasts 7 continuous months
+    (April to October), with May-July peaking at 260-290 hours/month.
+Slide Placement: Slide 4 ("Seasonality & the 7-Month Danger Window")
+Pitch Point: "Heat in Kachchh is a structural multi-month season, not an emergency anomaly."
+
+--------------------------------------------------------------------------------
+CHART 3: charts/insight_2_diurnal_shift_rescheduling.png
+Title: Diurnal Heat Stress Curve & Shift Rescheduling Impact
+What it shows: Hourly probability curve of WBGT exceeding 27.5 °C.
+  - Heat rises past 50% probability between 8 AM and 9 AM, peaks at 69% from
+    12 PM to 2 PM, and drops after 5 PM.
+  - Same 9 hours, 6 AM - 3 PM: avoids ~358 h/year (~20%).
+  - Shorter 6 AM - 1 PM shift: avoids ~816 h (45.3%), with 2 fewer work hours a day.
+Slide Placement: Slide 5 ("Actionable Administrative Interventions: Shift Rescheduling")
+Pitch Point: "We don't just alert workers; we give the DDO no-cost policy solutions."
+
+--------------------------------------------------------------------------------
+CHART 4: charts/insight_3_value_of_shade.png
+Title: Protective Value and Limits of Worksite Shade
+What it shows: Stacked bars showing hours relieved by shade vs. residual danger.
+  - Shade relieves 51.8% to 65.3% of dangerous hours (~2.7 °C drop in WBGT).
+  - But 604 to 997 hours remain dangerous even in full shade due to coastal humidity.
+Slide Placement: Slide 6 ("Why Physical Infrastructure Alone Fails: The Limits of Shade")
+Pitch Point: "Shade sheds help, but high humidity means rest breaks and hydration are mandatory."
+
+--------------------------------------------------------------------------------
+CHART 5: charts/insight_4_night_recovery_deficit.png
+Title: Nocturnal Heat Strain Recovery Deficit in Kachchh
+What it shows: % of dangerous heat days followed by tropical nights (WBGT >= 25 °C).
+  - Mundra Port: 57.3% (126 nights)
+  - Kandla Port: 52.3% (124 nights)
+  - Abdasa Cement: 48.4% (104 nights)
+Slide Placement: Slide 7 ("Cumulative Physiological Strain: No Recovery at Night")
+Pitch Point: "On most dangerous days at the ports, the following night stays hot too, leaving less chance to recover."
+
+--------------------------------------------------------------------------------
+CHART 6: charts/insight_7_exposure_pareto_skew.png
+Title: Silica Results Vary Widely Between Samples (OSHA)
+What it shows: Lorenz curve of 599 personal silica samples.
+  - Top 10% of samples hold 95.5% of measured silica; 46.6% of samples are recorded as 0.
+  - Excluding the 4 highest values, the top 10% of samples hold ~80%.
+Slide Placement: Slide 8 ("Why Area Monitors Can Miss High Exposures")
+Pitch Point: "In 29 of 56 multi-sample inspections with a result over the limit, another sample was under the action level (US data)."
+
+--------------------------------------------------------------------------------
+CHART 7: charts/mendeley_dust_trace.png
+Title: Low-Cost Optical Dust Sensor Disagreement & Task Spikes (Mendeley Data)
+What it shows: 40-minute trace comparing Alphasense (~10,931 peak) vs Sharp (~349 peak).
+  - Highlights concrete mixing (3:24-3:40) vs block laying (3:40-4:00).
+  - Demonstrates 31.3x sensor output divergence and unstated units in raw data.
+Slide Placement: Slide 9 ("Sensor Engineering: Calibration, Spikes & Short-Term Limits")
+Pitch Point: "Cheap optical sensors must use 15-min STEL buffers and gravimetric calibration."
+
+--------------------------------------------------------------------------------
+CHART 8: charts/insight_1_compound_hazard_days.png
+Title: Double-Hazard Exposure in Kachchh (Heat + Dust Co-occurrence)
+What it shows: Days with severe heat (>=4h WBGT>27.5) AND high dust (PM10>100).
+  - Abdasa Cement: 27 compound days; Mundra Port: 16 compound days.
+  - 81.8% to 100% of all dusty days occur during severe heat.
+Slide Placement: Slide 10 ("The Multi-Hazard Reality: Dust Meets Extreme Heat")
+Pitch Point: "Dust masks suffocating workers in extreme heat require combined protocols."
+
+================================================================================
+3. TEAM-BY-TEAM IMPLEMENTATION BLUEPRINT
+================================================================================
+
+--------------------------------------------------------------------------------
+FOR NEEL (DATABASE & RULES ENGINE):
+Files to read: `db/README.md`, `data/processed/insights.csv`
+
+1. Ingestion Payload Schema (JSON over MQTT/HTTP):
+   {
+     "device_id": "kandla-berth-04",
+     "time": "2026-11-05T13:30:00+05:30",
+     "temp_c": 34.2,
+     "humidity_rh": 68.0,
+     "globe_temp_c": 49.5,
+     "wind_ms": 2.1,
+     "pm10": 145.0,
+     "pm25": 72.0
+   }
+
+2. Table Definitions to Build in `db/`:
+   - `sites`: id, name, category (port, salt_pan, cement, mining), lat, lon
+   - `devices`: id, site_id, is_replay, last_seen, calibration_factor
+   - `workers`: id, eshram_id, phone, name, trade, site_id, preferred_lang
+   - `readings`: raw 1-minute telemetry
+   - `daily_exposure`: rollups of hours over 27.5 C, max WBGT, 8-h TWA dust
+   - `rules`: threshold configurations (editable via admin, never hardcoded)
+   - `alerts`: triggered SMS messages (timestamp, worker_id, hazard_type, text)
+   - `checkup_cases`: booked health visits (status: booked, attended, completed)
+
+3. SQL Rules Engine Thresholds:
+   - WBGT Heavy Work Warning: WBGT_sun >= 26.0 °C (Hydration prompt SMS)
+   - WBGT Heavy Work Action:  WBGT_sun >= 27.5 °C (Mandatory rest cycle prompt)
+   - WBGT Moderate Work:      WBGT_sun >= 28.0 °C
+   - Dust 15-min STEL Alert:  Rolling 15-min PM10 >= 300 µg/m³
+   - Dust 8-hr TWA Action:    Silica estimate >= 50 ug/m3 (warning 25) with a lab-tested site silica %;
+                              otherwise PM10 >= 100 ug/m3 as a screening flag (our choice, from an
+                              outdoor standard, not a workplace limit). Adds worker to priority list.
+   - Sensor Glitch Filter:    Discard any single-minute PM10 > 10,000 µg/m³
+   - Cumulative Heat Debt:    If previous night WBGT >= 25.0 °C, reduce daytime
+                              trigger threshold by 1.0 °C (to 26.5 °C WBGT).
+
+--------------------------------------------------------------------------------
+FOR PERSON 2 (WOKWI DEVICE MOCK-UP & HARDWARE CODE):
+Files to read: `scripts/wbgt_rebuild.py`, `charts/mendeley_dust_trace.png`
+
+1. Simulated Hardware Components:
+   - ESP32 Microcontroller (Wi-Fi + BLE + Deep Sleep)
+   - DHT22 or SHT31 (Air Temperature & Relative Humidity)
+   - DS18B20 inside 150 mm matte black copper sphere (Black Globe Temp Tg)
+   - Plantower PMS5003 or GP2Y1010 (Optical Particulate Matter PM10/PM2.5)
+   - Anemometer pulse counter or fixed 1.0 m/s default wind model
+
+2. Firmware Algorithm in C++/MicroPython:
+   - Step 1: Read sensors every 2 seconds.
+   - Step 2: Sanity check: If PM10 > 10,000 µg/m³, drop as electrical glitch (NIOSH 2024 rule).
+   - Step 3: Compute psychrometric wet bulb and Bernard natural wet bulb:
+       Tnwb = Tpwb + 0.25*(Tg - Ta) + 0.1/(v^1.1) - 0.2
+   - Step 4: Compute site WBGT:
+       WBGT = 0.7*Tnwb + 0.2*Tg + 0.1*Ta
+   - Step 5: Maintain a 15-minute rolling FIFO ring buffer (450 samples) for STEL.
+   - Step 6: Transmit 1-minute average telemetry to Neel's ingestion API.
+
+3. Hardware Cost Model (Bill of Materials):
+   - ESP32 NodeMCU:          Rs. 450 (~$5.50)
+   - SHT31 Temp/RH:          Rs. 250 (~$3.00)
+   - DS18B20 + Copper Globe: Rs. 350 (~$4.20)
+   - Solar Panel (5W) + TP4056 + 18650 Li-ion battery: Rs. 600 (~$7.20)
+   - Enclosure & PCB:        Rs. 300 (~$3.60)
+   - SITE NODE TOTAL:        About Rs. 2,000
+   - DUST BADGE:             ESP32 Rs. 450 + PMS5003 Rs. 950 + battery/enclosure Rs. 300-500
+                             = about Rs. 1,700-1,900 (synopsis: Rs. 1,500, the low end of its prices)
+   Retail estimates, not quotes; parts still need calibration.
+   NIOSH 2024: <$300 low-cost packages vs ~$5,000 commercial monitors (not our parts).
+
+--------------------------------------------------------------------------------
+FOR PERSON 3 (GOVERNMENT SYSTEMS, E-SHRAM, ABHA & SMS):
+Files to read: `REPORT.md`, `data/SOURCES.md`
+
+1. The Worker Flow:
+   - Step 1: Worker enrolls at site office using their 12-digit e-Shram UAN number.
+   - Step 2: System creates an Ayushman Bharat Health Account (ABHA ID).
+   - Step 3: When a rule triggers (WBGT limit for alerts; dust rule for check-ups):
+       SMS sent via CDAC / NIC SMS Gateway in Gujarati/Hindi:
+       "સાવધાન! કંડલા પોર્ટ પર ગરમીનું સ્તર ૨૮.૫°C પહોંચી ગયું છે. છાંયડામાં ૧૫ મિનિટ આરામ કરો અને ઓઆરએસ (ORS) પાણી પીવો. સરકારી હોસ્પિટલમાં તમારી મફત ફેફસાં અને કિડની તપાસ બુક કરવામાં આવી છે."
+       ("Warning! Heat index has crossed safe limits. Take 15 min rest in shade and drink ORS. Free screening booked at CHC.")
+   - Step 4: Worker joins the priority list for BOCW schemes, the salt-worker van or ESIC.
+     Treat automatic booking through an API as future work unless someone confirms one exists.
+   - Step 5: CHC doctor enters spirometry (FEV1/FVC) and creatinine test result.
+     Result uploads to worker's ABHA health record (worker owns the data).
+
+2. District Development Office (DDO) Dashboard:
+   - Anonymous aggregated heat map showing compliance rate across 5 talukas.
+   - Tracks which contractors have high breach counts.
+   - Lets the DDO issue seasonal shift advisories: 6 AM - 3 PM (same hours) or 6 AM - 1 PM (shorter).
+
+--------------------------------------------------------------------------------
+FOR PERSON 4 (PPT SLIDE FLOW & SYNOPSIS DRAFTING):
+Files to read: `INSIGHTS.md`, `REPORT.md`, `data/processed/evidence.csv`
+
+10-Slide Pitch Deck Structure:
+  Slide 1: Title & Team ("Suraksha-Kachchh: Exposure-Triggered Health Screening")
+  Slide 2: The Problem: Kachchh Industrial Belt (Salt pans, Ports, Cement)
+  Slide 3: Real Local Data: 2,067 Hours Over Danger Limit (Chart 1)
+  Slide 4: The 7-Month Danger Season: April to October (Chart 2)
+  Slide 5: Shift Policy: 6 AM Start Avoids ~20% of Danger Hours in the Same 9-Hour Shift (Chart 3)
+  Slide 6: Physical Reality: Shade Helps, but Humidity Leaves Residual Heat (Chart 4)
+  Slide 7: Compounding Risk: Tropical Nights & No Biological Recovery (Chart 5)
+  Slide 8: Why Area Monitors Can Miss High Exposures (Chart 6)
+  Slide 9: Hardware & Architecture: ~Rs. 2,000 Node + Dust Badge + 15-min STEL Firmware (Chart 7)
+  Slide 10: Governance & Dignity: e-Shram + ABHA + DDO Dashboard
+
+================================================================================
+4. SUMMARY OF PROCESSED DATA TABLES & SCHEMAS
+================================================================================
+
+1. data/processed/kachchh_heat_dust_summary.csv (20 rows: 5 sites x 4 years)
+   - Columns: place, year, total_work_hours, hours_sun_over_27_5, hours_sun_over_28_0,
+     hours_shade_over_27_5, hours_shade_over_28_0, days_with_ge_4h_sun_over_27_5,
+     hottest_month, max_wbgt_sun_c, days_pm10_over_100, days_pm25_over_60
+
+2. data/processed/kachchh_heat_dust_monthly.csv (230 rows)
+   - Columns: place, month, work_hours, hours_sun_over_27_5, hours_shade_over_27_5,
+     max_wbgt_sun_c, mean_wbgt_sun_c, mean_pm10_ug_m3, days_pm10_over_100
+
+3. data/processed/evidence.csv (21 verified quantitative facts)
+   - Columns: claim, number, unit, place, years, source_file, caveat
+
+4. data/processed/insights.csv (11 analytical research findings)
+   - Columns: id, question, finding, number, strength, data_used, caveat,
+     design_implication
+
+================================================================================
+5. SCIENTIFIC & TECHNICAL CONCEPTS CHEATSHEET
+================================================================================
+
+- WBGT (Wet Bulb Globe Temperature):
+  Standard: ISO 7243.
+  Formula: 0.7*Tnwb + 0.2*Tg + 0.1*Ta (outdoor sun); 0.7*Tnwb + 0.3*Tg (shade).
+  Why: Air temp alone ignores sweat evaporation and solar radiation load.
+
+- ACGIH TLV Limits (Continuous Heavy Work):
+  27.5 °C WBGT for heavy labour (shovelling salt, handling coal, quarrying).
+  28.0 °C WBGT for moderate labour.
+
+- Optical Dust Photometry:
+  Light scattering detects particle count; does NOT weigh mass.
+  Requires lab co-located gravimetric filter calibration (NIOSH 2024).
+
+- Spirometry (Lung Function Testing):
+  FEV1 (Forced Expiratory Volume in 1 sec) / FVC (Forced Vital Capacity).
+  Ratio < 0.70 signifies obstructive pulmonary damage.
+  Workers with high dust have 2.46x higher odds of abnormal ratio (He et al. 2022).
+
+- Exposure Variation Across Samples:
+  Top 10% of OSHA samples hold 95.5% of measured silica. Do not quote the Gini: zeros inflate it.
+
+================================================================================
+6. HONESTY & DEFENSE RULES FOR JUDGES' QUESTIONS
+================================================================================
+
+When judges probe the data, use these exact honest responses:
+
+Q: "Did you measure this in Kachchh yourselves?"
+A: "No. These are atmospheric models from Open-Meteo (ERA5 weather reanalysis and
+    CAMS air quality) at 30-40 km grid resolution. They prove the macro-environment
+    is hazardous, but worksite microclimates (salt albedo, quarry dust) will have
+    higher localized extremes. That is exactly why physical IoT nodes are needed."
+
+Q: "Why did you use US OSHA data for silica?"
+A: "We did not find an open Indian dataset of personal worker silica samples. OSHA's
+    599 US samples show results differ widely inside one workplace: in 29 of 56
+    multi-sample inspections with a result over the limit, another was under the action
+    level. It supports individual tracking but says nothing about Kachchh levels."
+
+Q: "Can't employers just build a shade roof?"
+A: "Our data proves shade drops WBGT by ~2.7 °C and solves ~59% of danger hours,
+    but high coastal humidity leaves 600 to 997 hours dangerous even in full shade.
+    Cooling requires airflow fans, electrolyte hydration, and shift rescheduling."
+
+Q: "Why not alert on 8-hour TWA?"
+A: "Mendeley construction data proves that short acute bursts (like 16 minutes of
+    dry concrete mixing) get diluted by 30x in an 8-hour average. We use a 15-minute
+    STEL for immediate worker protection and 8-hour TWA for doctor check-ups."
+================================================================================
+END OF FILE
+

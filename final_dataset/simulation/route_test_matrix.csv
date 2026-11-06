@@ -1,0 +1,541 @@
+job_id,age,years_in_job,employer_type,legal_route,exposure_review_p75,exposure_review_p90,has_silica_scenario
+salt_raking,25,2,Factory,,False,False,False
+salt_raking,25,2,Construction,,False,False,False
+salt_raking,25,2,Contractor,,False,False,False
+salt_raking,25,2,Self-employed,,False,False,False
+salt_raking,25,2,Dock,,False,False,False
+salt_raking,25,8,Factory,,False,False,False
+salt_raking,25,8,Construction,,False,False,False
+salt_raking,25,8,Contractor,,False,False,False
+salt_raking,25,8,Self-employed,,False,False,False
+salt_raking,25,8,Dock,,False,False,False
+salt_raking,25,15,Factory,,False,False,False
+salt_raking,25,15,Construction,,False,False,False
+salt_raking,25,15,Contractor,,False,False,False
+salt_raking,25,15,Self-employed,,False,False,False
+salt_raking,25,15,Dock,,False,False,False
+salt_raking,35,2,Factory,,False,False,False
+salt_raking,35,2,Construction,,False,False,False
+salt_raking,35,2,Contractor,,False,False,False
+salt_raking,35,2,Self-employed,,False,False,False
+salt_raking,35,2,Dock,,False,False,False
+salt_raking,35,8,Factory,,False,False,False
+salt_raking,35,8,Construction,,False,False,False
+salt_raking,35,8,Contractor,,False,False,False
+salt_raking,35,8,Self-employed,,False,False,False
+salt_raking,35,8,Dock,,False,False,False
+salt_raking,35,15,Factory,,False,False,False
+salt_raking,35,15,Construction,,False,False,False
+salt_raking,35,15,Contractor,,False,False,False
+salt_raking,35,15,Self-employed,,False,False,False
+salt_raking,35,15,Dock,,False,False,False
+salt_raking,42,2,Factory,,False,False,False
+salt_raking,42,2,Construction,,False,False,False
+salt_raking,42,2,Contractor,,False,False,False
+salt_raking,42,2,Self-employed,,False,False,False
+salt_raking,42,2,Dock,Central Rule 5,False,False,False
+salt_raking,42,8,Factory,,False,False,False
+salt_raking,42,8,Construction,,False,False,False
+salt_raking,42,8,Contractor,,False,False,False
+salt_raking,42,8,Self-employed,,False,False,False
+salt_raking,42,8,Dock,Central Rule 5,False,False,False
+salt_raking,42,15,Factory,,False,False,False
+salt_raking,42,15,Construction,,False,False,False
+salt_raking,42,15,Contractor,,False,False,False
+salt_raking,42,15,Self-employed,,False,False,False
+salt_raking,42,15,Dock,Central Rule 5,False,False,False
+salt_raking,47,2,Factory,Gujarat Rule 9,False,False,False
+salt_raking,47,2,Construction,Gujarat Rule 9,False,False,False
+salt_raking,47,2,Contractor,,False,False,False
+salt_raking,47,2,Self-employed,,False,False,False
+salt_raking,47,2,Dock,Central Rule 5,False,False,False
+salt_raking,47,8,Factory,Gujarat Rule 9,False,False,False
+salt_raking,47,8,Construction,Gujarat Rule 9,False,False,False
+salt_raking,47,8,Contractor,,False,False,False
+salt_raking,47,8,Self-employed,,False,False,False
+salt_raking,47,8,Dock,Central Rule 5,False,False,False
+salt_raking,47,15,Factory,Gujarat Rule 9,False,False,False
+salt_raking,47,15,Construction,Gujarat Rule 9,False,False,False
+salt_raking,47,15,Contractor,,False,False,False
+salt_raking,47,15,Self-employed,,False,False,False
+salt_raking,47,15,Dock,Central Rule 5,False,False,False
+port_yard_kandla,25,2,Factory,,False,False,False
+port_yard_kandla,25,2,Construction,,False,False,False
+port_yard_kandla,25,2,Contractor,,False,False,False
+port_yard_kandla,25,2,Self-employed,,False,False,False
+port_yard_kandla,25,2,Dock,,False,False,False
+port_yard_kandla,25,8,Factory,,False,False,False
+port_yard_kandla,25,8,Construction,,False,False,False
+port_yard_kandla,25,8,Contractor,,False,False,False
+port_yard_kandla,25,8,Self-employed,,False,False,False
+port_yard_kandla,25,8,Dock,,False,False,False
+port_yard_kandla,25,15,Factory,,False,False,False
+port_yard_kandla,25,15,Construction,,False,False,False
+port_yard_kandla,25,15,Contractor,,False,False,False
+port_yard_kandla,25,15,Self-employed,,False,False,False
+port_yard_kandla,25,15,Dock,,False,False,False
+port_yard_kandla,35,2,Factory,,False,False,False
+port_yard_kandla,35,2,Construction,,False,False,False
+port_yard_kandla,35,2,Contractor,,False,False,False
+port_yard_kandla,35,2,Self-employed,,False,False,False
+port_yard_kandla,35,2,Dock,,False,False,False
+port_yard_kandla,35,8,Factory,,False,False,False
+port_yard_kandla,35,8,Construction,,False,False,False
+port_yard_kandla,35,8,Contractor,,False,False,False
+port_yard_kandla,35,8,Self-employed,,False,False,False
+port_yard_kandla,35,8,Dock,,False,False,False
+port_yard_kandla,35,15,Factory,,False,False,False
+port_yard_kandla,35,15,Construction,,False,False,False
+port_yard_kandla,35,15,Contractor,,False,False,False
+port_yard_kandla,35,15,Self-employed,,False,False,False
+port_yard_kandla,35,15,Dock,,False,False,False
+port_yard_kandla,42,2,Factory,,False,False,False
+port_yard_kandla,42,2,Construction,,False,False,False
+port_yard_kandla,42,2,Contractor,,False,False,False
+port_yard_kandla,42,2,Self-employed,,False,False,False
+port_yard_kandla,42,2,Dock,Central Rule 5,False,False,False
+port_yard_kandla,42,8,Factory,,False,False,False
+port_yard_kandla,42,8,Construction,,False,False,False
+port_yard_kandla,42,8,Contractor,,False,False,False
+port_yard_kandla,42,8,Self-employed,,False,False,False
+port_yard_kandla,42,8,Dock,Central Rule 5,False,False,False
+port_yard_kandla,42,15,Factory,,False,False,False
+port_yard_kandla,42,15,Construction,,False,False,False
+port_yard_kandla,42,15,Contractor,,False,False,False
+port_yard_kandla,42,15,Self-employed,,False,False,False
+port_yard_kandla,42,15,Dock,Central Rule 5,False,False,False
+port_yard_kandla,47,2,Factory,Gujarat Rule 9,False,False,False
+port_yard_kandla,47,2,Construction,Gujarat Rule 9,False,False,False
+port_yard_kandla,47,2,Contractor,,False,False,False
+port_yard_kandla,47,2,Self-employed,,False,False,False
+port_yard_kandla,47,2,Dock,Central Rule 5,False,False,False
+port_yard_kandla,47,8,Factory,Gujarat Rule 9,False,False,False
+port_yard_kandla,47,8,Construction,Gujarat Rule 9,False,False,False
+port_yard_kandla,47,8,Contractor,,False,False,False
+port_yard_kandla,47,8,Self-employed,,False,False,False
+port_yard_kandla,47,8,Dock,Central Rule 5,False,False,False
+port_yard_kandla,47,15,Factory,Gujarat Rule 9,False,False,False
+port_yard_kandla,47,15,Construction,Gujarat Rule 9,False,False,False
+port_yard_kandla,47,15,Contractor,,False,False,False
+port_yard_kandla,47,15,Self-employed,,False,False,False
+port_yard_kandla,47,15,Dock,Central Rule 5,False,False,False
+port_yard_mundra,25,2,Factory,,False,False,False
+port_yard_mundra,25,2,Construction,,False,False,False
+port_yard_mundra,25,2,Contractor,,False,False,False
+port_yard_mundra,25,2,Self-employed,,False,False,False
+port_yard_mundra,25,2,Dock,,False,False,False
+port_yard_mundra,25,8,Factory,,False,False,False
+port_yard_mundra,25,8,Construction,,False,False,False
+port_yard_mundra,25,8,Contractor,,False,False,False
+port_yard_mundra,25,8,Self-employed,,False,False,False
+port_yard_mundra,25,8,Dock,,False,False,False
+port_yard_mundra,25,15,Factory,,False,False,False
+port_yard_mundra,25,15,Construction,,False,False,False
+port_yard_mundra,25,15,Contractor,,False,False,False
+port_yard_mundra,25,15,Self-employed,,False,False,False
+port_yard_mundra,25,15,Dock,,False,False,False
+port_yard_mundra,35,2,Factory,,False,False,False
+port_yard_mundra,35,2,Construction,,False,False,False
+port_yard_mundra,35,2,Contractor,,False,False,False
+port_yard_mundra,35,2,Self-employed,,False,False,False
+port_yard_mundra,35,2,Dock,,False,False,False
+port_yard_mundra,35,8,Factory,,False,False,False
+port_yard_mundra,35,8,Construction,,False,False,False
+port_yard_mundra,35,8,Contractor,,False,False,False
+port_yard_mundra,35,8,Self-employed,,False,False,False
+port_yard_mundra,35,8,Dock,,False,False,False
+port_yard_mundra,35,15,Factory,,False,False,False
+port_yard_mundra,35,15,Construction,,False,False,False
+port_yard_mundra,35,15,Contractor,,False,False,False
+port_yard_mundra,35,15,Self-employed,,False,False,False
+port_yard_mundra,35,15,Dock,,False,False,False
+port_yard_mundra,42,2,Factory,,False,False,False
+port_yard_mundra,42,2,Construction,,False,False,False
+port_yard_mundra,42,2,Contractor,,False,False,False
+port_yard_mundra,42,2,Self-employed,,False,False,False
+port_yard_mundra,42,2,Dock,Central Rule 5,False,False,False
+port_yard_mundra,42,8,Factory,,False,False,False
+port_yard_mundra,42,8,Construction,,False,False,False
+port_yard_mundra,42,8,Contractor,,False,False,False
+port_yard_mundra,42,8,Self-employed,,False,False,False
+port_yard_mundra,42,8,Dock,Central Rule 5,False,False,False
+port_yard_mundra,42,15,Factory,,False,False,False
+port_yard_mundra,42,15,Construction,,False,False,False
+port_yard_mundra,42,15,Contractor,,False,False,False
+port_yard_mundra,42,15,Self-employed,,False,False,False
+port_yard_mundra,42,15,Dock,Central Rule 5,False,False,False
+port_yard_mundra,47,2,Factory,Gujarat Rule 9,False,False,False
+port_yard_mundra,47,2,Construction,Gujarat Rule 9,False,False,False
+port_yard_mundra,47,2,Contractor,,False,False,False
+port_yard_mundra,47,2,Self-employed,,False,False,False
+port_yard_mundra,47,2,Dock,Central Rule 5,False,False,False
+port_yard_mundra,47,8,Factory,Gujarat Rule 9,False,False,False
+port_yard_mundra,47,8,Construction,Gujarat Rule 9,False,False,False
+port_yard_mundra,47,8,Contractor,,False,False,False
+port_yard_mundra,47,8,Self-employed,,False,False,False
+port_yard_mundra,47,8,Dock,Central Rule 5,False,False,False
+port_yard_mundra,47,15,Factory,Gujarat Rule 9,False,False,False
+port_yard_mundra,47,15,Construction,Gujarat Rule 9,False,False,False
+port_yard_mundra,47,15,Contractor,,False,False,False
+port_yard_mundra,47,15,Self-employed,,False,False,False
+port_yard_mundra,47,15,Dock,Central Rule 5,False,False,False
+cement_yard,25,2,Factory,,False,False,True
+cement_yard,25,2,Construction,,False,False,True
+cement_yard,25,2,Contractor,,False,False,True
+cement_yard,25,2,Self-employed,,False,False,True
+cement_yard,25,2,Dock,,False,False,True
+cement_yard,25,8,Factory,,False,False,True
+cement_yard,25,8,Construction,,False,False,True
+cement_yard,25,8,Contractor,,False,False,True
+cement_yard,25,8,Self-employed,,False,False,True
+cement_yard,25,8,Dock,,False,False,True
+cement_yard,25,15,Factory,,False,True,True
+cement_yard,25,15,Construction,,False,True,True
+cement_yard,25,15,Contractor,,False,True,True
+cement_yard,25,15,Self-employed,,False,True,True
+cement_yard,25,15,Dock,,False,True,True
+cement_yard,35,2,Factory,,False,False,True
+cement_yard,35,2,Construction,,False,False,True
+cement_yard,35,2,Contractor,,False,False,True
+cement_yard,35,2,Self-employed,,False,False,True
+cement_yard,35,2,Dock,,False,False,True
+cement_yard,35,8,Factory,,False,False,True
+cement_yard,35,8,Construction,,False,False,True
+cement_yard,35,8,Contractor,,False,False,True
+cement_yard,35,8,Self-employed,,False,False,True
+cement_yard,35,8,Dock,,False,False,True
+cement_yard,35,15,Factory,,False,True,True
+cement_yard,35,15,Construction,,False,True,True
+cement_yard,35,15,Contractor,,False,True,True
+cement_yard,35,15,Self-employed,,False,True,True
+cement_yard,35,15,Dock,,False,True,True
+cement_yard,42,2,Factory,,False,False,True
+cement_yard,42,2,Construction,,False,False,True
+cement_yard,42,2,Contractor,,False,False,True
+cement_yard,42,2,Self-employed,,False,False,True
+cement_yard,42,2,Dock,Central Rule 5,False,False,True
+cement_yard,42,8,Factory,,False,False,True
+cement_yard,42,8,Construction,,False,False,True
+cement_yard,42,8,Contractor,,False,False,True
+cement_yard,42,8,Self-employed,,False,False,True
+cement_yard,42,8,Dock,Central Rule 5,False,False,True
+cement_yard,42,15,Factory,,False,True,True
+cement_yard,42,15,Construction,,False,True,True
+cement_yard,42,15,Contractor,,False,True,True
+cement_yard,42,15,Self-employed,,False,True,True
+cement_yard,42,15,Dock,Central Rule 5,False,True,True
+cement_yard,47,2,Factory,Gujarat Rule 9,False,False,True
+cement_yard,47,2,Construction,Gujarat Rule 9,False,False,True
+cement_yard,47,2,Contractor,,False,False,True
+cement_yard,47,2,Self-employed,,False,False,True
+cement_yard,47,2,Dock,Central Rule 5,False,False,True
+cement_yard,47,8,Factory,Gujarat Rule 9,False,False,True
+cement_yard,47,8,Construction,Gujarat Rule 9,False,False,True
+cement_yard,47,8,Contractor,,False,False,True
+cement_yard,47,8,Self-employed,,False,False,True
+cement_yard,47,8,Dock,Central Rule 5,False,False,True
+cement_yard,47,15,Factory,Gujarat Rule 9,False,True,True
+cement_yard,47,15,Construction,Gujarat Rule 9,False,True,True
+cement_yard,47,15,Contractor,,False,True,True
+cement_yard,47,15,Self-employed,,False,True,True
+cement_yard,47,15,Dock,Central Rule 5,False,True,True
+cement_walk,25,2,Factory,,False,False,True
+cement_walk,25,2,Construction,,False,False,True
+cement_walk,25,2,Contractor,,False,False,True
+cement_walk,25,2,Self-employed,,False,False,True
+cement_walk,25,2,Dock,,False,False,True
+cement_walk,25,8,Factory,,False,False,True
+cement_walk,25,8,Construction,,False,False,True
+cement_walk,25,8,Contractor,,False,False,True
+cement_walk,25,8,Self-employed,,False,False,True
+cement_walk,25,8,Dock,,False,False,True
+cement_walk,25,15,Factory,,False,True,True
+cement_walk,25,15,Construction,,False,True,True
+cement_walk,25,15,Contractor,,False,True,True
+cement_walk,25,15,Self-employed,,False,True,True
+cement_walk,25,15,Dock,,False,True,True
+cement_walk,35,2,Factory,,False,False,True
+cement_walk,35,2,Construction,,False,False,True
+cement_walk,35,2,Contractor,,False,False,True
+cement_walk,35,2,Self-employed,,False,False,True
+cement_walk,35,2,Dock,,False,False,True
+cement_walk,35,8,Factory,,False,False,True
+cement_walk,35,8,Construction,,False,False,True
+cement_walk,35,8,Contractor,,False,False,True
+cement_walk,35,8,Self-employed,,False,False,True
+cement_walk,35,8,Dock,,False,False,True
+cement_walk,35,15,Factory,,False,True,True
+cement_walk,35,15,Construction,,False,True,True
+cement_walk,35,15,Contractor,,False,True,True
+cement_walk,35,15,Self-employed,,False,True,True
+cement_walk,35,15,Dock,,False,True,True
+cement_walk,42,2,Factory,,False,False,True
+cement_walk,42,2,Construction,,False,False,True
+cement_walk,42,2,Contractor,,False,False,True
+cement_walk,42,2,Self-employed,,False,False,True
+cement_walk,42,2,Dock,Central Rule 5,False,False,True
+cement_walk,42,8,Factory,,False,False,True
+cement_walk,42,8,Construction,,False,False,True
+cement_walk,42,8,Contractor,,False,False,True
+cement_walk,42,8,Self-employed,,False,False,True
+cement_walk,42,8,Dock,Central Rule 5,False,False,True
+cement_walk,42,15,Factory,,False,True,True
+cement_walk,42,15,Construction,,False,True,True
+cement_walk,42,15,Contractor,,False,True,True
+cement_walk,42,15,Self-employed,,False,True,True
+cement_walk,42,15,Dock,Central Rule 5,False,True,True
+cement_walk,47,2,Factory,Gujarat Rule 9,False,False,True
+cement_walk,47,2,Construction,Gujarat Rule 9,False,False,True
+cement_walk,47,2,Contractor,,False,False,True
+cement_walk,47,2,Self-employed,,False,False,True
+cement_walk,47,2,Dock,Central Rule 5,False,False,True
+cement_walk,47,8,Factory,Gujarat Rule 9,False,False,True
+cement_walk,47,8,Construction,Gujarat Rule 9,False,False,True
+cement_walk,47,8,Contractor,,False,False,True
+cement_walk,47,8,Self-employed,,False,False,True
+cement_walk,47,8,Dock,Central Rule 5,False,False,True
+cement_walk,47,15,Factory,Gujarat Rule 9,False,True,True
+cement_walk,47,15,Construction,Gujarat Rule 9,False,True,True
+cement_walk,47,15,Contractor,,False,True,True
+cement_walk,47,15,Self-employed,,False,True,True
+cement_walk,47,15,Dock,Central Rule 5,False,True,True
+construction,25,2,Factory,,False,False,True
+construction,25,2,Construction,,False,False,True
+construction,25,2,Contractor,,False,False,True
+construction,25,2,Self-employed,,False,False,True
+construction,25,2,Dock,,False,False,True
+construction,25,8,Factory,,False,True,True
+construction,25,8,Construction,,False,True,True
+construction,25,8,Contractor,,False,True,True
+construction,25,8,Self-employed,,False,True,True
+construction,25,8,Dock,,False,True,True
+construction,25,15,Factory,,False,True,True
+construction,25,15,Construction,,False,True,True
+construction,25,15,Contractor,,False,True,True
+construction,25,15,Self-employed,,False,True,True
+construction,25,15,Dock,,False,True,True
+construction,35,2,Factory,,False,False,True
+construction,35,2,Construction,,False,False,True
+construction,35,2,Contractor,,False,False,True
+construction,35,2,Self-employed,,False,False,True
+construction,35,2,Dock,,False,False,True
+construction,35,8,Factory,,False,True,True
+construction,35,8,Construction,,False,True,True
+construction,35,8,Contractor,,False,True,True
+construction,35,8,Self-employed,,False,True,True
+construction,35,8,Dock,,False,True,True
+construction,35,15,Factory,,False,True,True
+construction,35,15,Construction,,False,True,True
+construction,35,15,Contractor,,False,True,True
+construction,35,15,Self-employed,,False,True,True
+construction,35,15,Dock,,False,True,True
+construction,42,2,Factory,,False,False,True
+construction,42,2,Construction,,False,False,True
+construction,42,2,Contractor,,False,False,True
+construction,42,2,Self-employed,,False,False,True
+construction,42,2,Dock,Central Rule 5,False,False,True
+construction,42,8,Factory,,False,True,True
+construction,42,8,Construction,,False,True,True
+construction,42,8,Contractor,,False,True,True
+construction,42,8,Self-employed,,False,True,True
+construction,42,8,Dock,Central Rule 5,False,True,True
+construction,42,15,Factory,,False,True,True
+construction,42,15,Construction,,False,True,True
+construction,42,15,Contractor,,False,True,True
+construction,42,15,Self-employed,,False,True,True
+construction,42,15,Dock,Central Rule 5,False,True,True
+construction,47,2,Factory,Gujarat Rule 9,False,False,True
+construction,47,2,Construction,Gujarat Rule 9,False,False,True
+construction,47,2,Contractor,,False,False,True
+construction,47,2,Self-employed,,False,False,True
+construction,47,2,Dock,Central Rule 5,False,False,True
+construction,47,8,Factory,Gujarat Rule 9,False,True,True
+construction,47,8,Construction,Gujarat Rule 9,False,True,True
+construction,47,8,Contractor,,False,True,True
+construction,47,8,Self-employed,,False,True,True
+construction,47,8,Dock,Central Rule 5,False,True,True
+construction,47,15,Factory,Gujarat Rule 9,False,True,True
+construction,47,15,Construction,Gujarat Rule 9,False,True,True
+construction,47,15,Contractor,,False,True,True
+construction,47,15,Self-employed,,False,True,True
+construction,47,15,Dock,Central Rule 5,False,True,True
+stone_crushing,25,2,Factory,,False,True,True
+stone_crushing,25,2,Construction,,False,True,True
+stone_crushing,25,2,Contractor,,False,True,True
+stone_crushing,25,2,Self-employed,,False,True,True
+stone_crushing,25,2,Dock,,False,True,True
+stone_crushing,25,8,Factory,,True,True,True
+stone_crushing,25,8,Construction,,True,True,True
+stone_crushing,25,8,Contractor,,True,True,True
+stone_crushing,25,8,Self-employed,,True,True,True
+stone_crushing,25,8,Dock,,True,True,True
+stone_crushing,25,15,Factory,,True,True,True
+stone_crushing,25,15,Construction,,True,True,True
+stone_crushing,25,15,Contractor,,True,True,True
+stone_crushing,25,15,Self-employed,,True,True,True
+stone_crushing,25,15,Dock,,True,True,True
+stone_crushing,35,2,Factory,,False,True,True
+stone_crushing,35,2,Construction,,False,True,True
+stone_crushing,35,2,Contractor,,False,True,True
+stone_crushing,35,2,Self-employed,,False,True,True
+stone_crushing,35,2,Dock,,False,True,True
+stone_crushing,35,8,Factory,,True,True,True
+stone_crushing,35,8,Construction,,True,True,True
+stone_crushing,35,8,Contractor,,True,True,True
+stone_crushing,35,8,Self-employed,,True,True,True
+stone_crushing,35,8,Dock,,True,True,True
+stone_crushing,35,15,Factory,,True,True,True
+stone_crushing,35,15,Construction,,True,True,True
+stone_crushing,35,15,Contractor,,True,True,True
+stone_crushing,35,15,Self-employed,,True,True,True
+stone_crushing,35,15,Dock,,True,True,True
+stone_crushing,42,2,Factory,,False,True,True
+stone_crushing,42,2,Construction,,False,True,True
+stone_crushing,42,2,Contractor,,False,True,True
+stone_crushing,42,2,Self-employed,,False,True,True
+stone_crushing,42,2,Dock,Central Rule 5,False,True,True
+stone_crushing,42,8,Factory,,True,True,True
+stone_crushing,42,8,Construction,,True,True,True
+stone_crushing,42,8,Contractor,,True,True,True
+stone_crushing,42,8,Self-employed,,True,True,True
+stone_crushing,42,8,Dock,Central Rule 5,True,True,True
+stone_crushing,42,15,Factory,,True,True,True
+stone_crushing,42,15,Construction,,True,True,True
+stone_crushing,42,15,Contractor,,True,True,True
+stone_crushing,42,15,Self-employed,,True,True,True
+stone_crushing,42,15,Dock,Central Rule 5,True,True,True
+stone_crushing,47,2,Factory,Gujarat Rule 9,False,True,True
+stone_crushing,47,2,Construction,Gujarat Rule 9,False,True,True
+stone_crushing,47,2,Contractor,,False,True,True
+stone_crushing,47,2,Self-employed,,False,True,True
+stone_crushing,47,2,Dock,Central Rule 5,False,True,True
+stone_crushing,47,8,Factory,Gujarat Rule 9,True,True,True
+stone_crushing,47,8,Construction,Gujarat Rule 9,True,True,True
+stone_crushing,47,8,Contractor,,True,True,True
+stone_crushing,47,8,Self-employed,,True,True,True
+stone_crushing,47,8,Dock,Central Rule 5,True,True,True
+stone_crushing,47,15,Factory,Gujarat Rule 9,True,True,True
+stone_crushing,47,15,Construction,Gujarat Rule 9,True,True,True
+stone_crushing,47,15,Contractor,,True,True,True
+stone_crushing,47,15,Self-employed,,True,True,True
+stone_crushing,47,15,Dock,Central Rule 5,True,True,True
+crane_cab,25,2,Factory,,False,False,False
+crane_cab,25,2,Construction,,False,False,False
+crane_cab,25,2,Contractor,,False,False,False
+crane_cab,25,2,Self-employed,,False,False,False
+crane_cab,25,2,Dock,,False,False,False
+crane_cab,25,8,Factory,,False,False,False
+crane_cab,25,8,Construction,,False,False,False
+crane_cab,25,8,Contractor,,False,False,False
+crane_cab,25,8,Self-employed,,False,False,False
+crane_cab,25,8,Dock,,False,False,False
+crane_cab,25,15,Factory,,False,False,False
+crane_cab,25,15,Construction,,False,False,False
+crane_cab,25,15,Contractor,,False,False,False
+crane_cab,25,15,Self-employed,,False,False,False
+crane_cab,25,15,Dock,,False,False,False
+crane_cab,35,2,Factory,,False,False,False
+crane_cab,35,2,Construction,,False,False,False
+crane_cab,35,2,Contractor,,False,False,False
+crane_cab,35,2,Self-employed,,False,False,False
+crane_cab,35,2,Dock,,False,False,False
+crane_cab,35,8,Factory,,False,False,False
+crane_cab,35,8,Construction,,False,False,False
+crane_cab,35,8,Contractor,,False,False,False
+crane_cab,35,8,Self-employed,,False,False,False
+crane_cab,35,8,Dock,,False,False,False
+crane_cab,35,15,Factory,,False,False,False
+crane_cab,35,15,Construction,,False,False,False
+crane_cab,35,15,Contractor,,False,False,False
+crane_cab,35,15,Self-employed,,False,False,False
+crane_cab,35,15,Dock,,False,False,False
+crane_cab,42,2,Factory,,False,False,False
+crane_cab,42,2,Construction,,False,False,False
+crane_cab,42,2,Contractor,,False,False,False
+crane_cab,42,2,Self-employed,,False,False,False
+crane_cab,42,2,Dock,Central Rule 5,False,False,False
+crane_cab,42,8,Factory,,False,False,False
+crane_cab,42,8,Construction,,False,False,False
+crane_cab,42,8,Contractor,,False,False,False
+crane_cab,42,8,Self-employed,,False,False,False
+crane_cab,42,8,Dock,Central Rule 5,False,False,False
+crane_cab,42,15,Factory,,False,False,False
+crane_cab,42,15,Construction,,False,False,False
+crane_cab,42,15,Contractor,,False,False,False
+crane_cab,42,15,Self-employed,,False,False,False
+crane_cab,42,15,Dock,Central Rule 5,False,False,False
+crane_cab,47,2,Factory,Gujarat Rule 9,False,False,False
+crane_cab,47,2,Construction,Gujarat Rule 9,False,False,False
+crane_cab,47,2,Contractor,,False,False,False
+crane_cab,47,2,Self-employed,,False,False,False
+crane_cab,47,2,Dock,Central Rule 5,False,False,False
+crane_cab,47,8,Factory,Gujarat Rule 9,False,False,False
+crane_cab,47,8,Construction,Gujarat Rule 9,False,False,False
+crane_cab,47,8,Contractor,,False,False,False
+crane_cab,47,8,Self-employed,,False,False,False
+crane_cab,47,8,Dock,Central Rule 5,False,False,False
+crane_cab,47,15,Factory,Gujarat Rule 9,False,False,False
+crane_cab,47,15,Construction,Gujarat Rule 9,False,False,False
+crane_cab,47,15,Contractor,,False,False,False
+crane_cab,47,15,Self-employed,,False,False,False
+crane_cab,47,15,Dock,Central Rule 5,False,False,False
+truck_cab,25,2,Factory,,False,False,False
+truck_cab,25,2,Construction,,False,False,False
+truck_cab,25,2,Contractor,,False,False,False
+truck_cab,25,2,Self-employed,,False,False,False
+truck_cab,25,2,Dock,,False,False,False
+truck_cab,25,8,Factory,,False,False,False
+truck_cab,25,8,Construction,,False,False,False
+truck_cab,25,8,Contractor,,False,False,False
+truck_cab,25,8,Self-employed,,False,False,False
+truck_cab,25,8,Dock,,False,False,False
+truck_cab,25,15,Factory,,False,False,False
+truck_cab,25,15,Construction,,False,False,False
+truck_cab,25,15,Contractor,,False,False,False
+truck_cab,25,15,Self-employed,,False,False,False
+truck_cab,25,15,Dock,,False,False,False
+truck_cab,35,2,Factory,,False,False,False
+truck_cab,35,2,Construction,,False,False,False
+truck_cab,35,2,Contractor,,False,False,False
+truck_cab,35,2,Self-employed,,False,False,False
+truck_cab,35,2,Dock,,False,False,False
+truck_cab,35,8,Factory,,False,False,False
+truck_cab,35,8,Construction,,False,False,False
+truck_cab,35,8,Contractor,,False,False,False
+truck_cab,35,8,Self-employed,,False,False,False
+truck_cab,35,8,Dock,,False,False,False
+truck_cab,35,15,Factory,,False,False,False
+truck_cab,35,15,Construction,,False,False,False
+truck_cab,35,15,Contractor,,False,False,False
+truck_cab,35,15,Self-employed,,False,False,False
+truck_cab,35,15,Dock,,False,False,False
+truck_cab,42,2,Factory,,False,False,False
+truck_cab,42,2,Construction,,False,False,False
+truck_cab,42,2,Contractor,,False,False,False
+truck_cab,42,2,Self-employed,,False,False,False
+truck_cab,42,2,Dock,Central Rule 5,False,False,False
+truck_cab,42,8,Factory,,False,False,False
+truck_cab,42,8,Construction,,False,False,False
+truck_cab,42,8,Contractor,,False,False,False
+truck_cab,42,8,Self-employed,,False,False,False
+truck_cab,42,8,Dock,Central Rule 5,False,False,False
+truck_cab,42,15,Factory,,False,False,False
+truck_cab,42,15,Construction,,False,False,False
+truck_cab,42,15,Contractor,,False,False,False
+truck_cab,42,15,Self-employed,,False,False,False
+truck_cab,42,15,Dock,Central Rule 5,False,False,False
+truck_cab,47,2,Factory,Gujarat Rule 9,False,False,False
+truck_cab,47,2,Construction,Gujarat Rule 9,False,False,False
+truck_cab,47,2,Contractor,,False,False,False
+truck_cab,47,2,Self-employed,,False,False,False
+truck_cab,47,2,Dock,Central Rule 5,False,False,False
+truck_cab,47,8,Factory,Gujarat Rule 9,False,False,False
+truck_cab,47,8,Construction,Gujarat Rule 9,False,False,False
+truck_cab,47,8,Contractor,,False,False,False
+truck_cab,47,8,Self-employed,,False,False,False
+truck_cab,47,8,Dock,Central Rule 5,False,False,False
+truck_cab,47,15,Factory,Gujarat Rule 9,False,False,False
+truck_cab,47,15,Construction,Gujarat Rule 9,False,False,False
+truck_cab,47,15,Contractor,,False,False,False
+truck_cab,47,15,Self-employed,,False,False,False
+truck_cab,47,15,Dock,Central Rule 5,False,False,False

@@ -1,0 +1,8 @@
+rule_id,type,trigger,action,basis,status
+LAW_GJ_9,Legal,"Factory or construction worker, State sphere, completed 45",Annual exam due within 120 days of 1 January; Form 5,"Gujarat OSH Rules 2025, Rule 9",In force per text read
+LAW_C_5,Legal,"Dock or construction employee, Central sphere, completed 40",Annual exam; Form-VIII; ESIC facilities allowed,"Central OSH Rules 2026, Rule 5",In force per text read
+LAW_DISEASE,Legal,Third Schedule disease suspected or found,Notice by employer or doctor,Gujarat OSH Rules 2025,Check rule number before quoting
+EXP_REVIEW,Proposed,Scenario cumulative silica at or above 0.5 mg/m3-years,Referral request; never 'silicosis suspected',Team placeholder from published cohorts,CLINICIAN MUST CONFIRM; show P75 and P90
+SYMPTOM,Proposed,"Cough, breathlessness, repeated dark urine, or worker request",Doctor review,Team proposal,CLINICIAN MUST CONFIRM
+HEAT_EMERGENCY,Proposed,Collapse or confusion in heat,Call 108 and start cooling,Team proposal,CLINICIAN MUST CONFIRM
+HEAT_SPIKE,Proposed,Day's peak WBGT at or above that job's 2025 95th percentile,Spike alert in addition to seasonal plan,Team placeholder,Tune in pilot

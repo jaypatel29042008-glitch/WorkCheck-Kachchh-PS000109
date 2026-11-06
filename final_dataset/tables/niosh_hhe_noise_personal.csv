@@ -1,0 +1,858 @@
+hhe_no,naics,sector,facility,area,job_title,activity,duration,niosh_rel_dba,niosh_rel_dose_pct,osha_pel_dba
+1997-0084,333618.0,Manufacturing,Engine Control Devices Manufacturing Company,Dept. 595 Tumbler Area,Production worker,Metal tumbler ,6:22,,,
+1997-0084,333618.0,Manufacturing,Engine Control Devices Manufacturing Company,Lathe Dept. Mach. #1091,Production worker,Machining ,8:08,,,
+1997-0084,333618.0,Manufacturing,Engine Control Devices Manufacturing Company,Heat Treat Dept.,Production worker,Heat treatment ,6:13,,,
+1997-0084,333618.0,Manufacturing,Engine Control Devices Manufacturing Company,Lathe Dept. Mach. #1046,Production worker,Machining ,6:46,,,
+1997-0084,333618.0,Manufacturing,Engine Control Devices Manufacturing Company,Dept. 516 Deburring Area,Production worker,Machining ,7:06,,,
+1997-0084,333618.0,Manufacturing,Engine Control Devices Manufacturing Company,Dept. 521 Mach. #5832,Production worker,Machining ,7:36,,,
+1997-0084,333618.0,Manufacturing,Engine Control Devices Manufacturing Company,Sheet Metal Area Emp. #1,Production worker,Metal fabrication,5:51,,,
+1997-0084,333618.0,Manufacturing,Engine Control Devices Manufacturing Company,Sheet Metal Area Emp. #2,Production worker,Metal fabrication,5:46,,,
+1997-0084,333618.0,Manufacturing,Engine Control Devices Manufacturing Company,Electrical Plating Dept.,Production worker,Plating process,5:40,,,
+1997-0084,333618.0,Manufacturing,Engine Control Devices Manufacturing Company,Powder Paint Dept.,Powder painter,Paint booth,7:03,,,
+1997-0084,333618.0,Manufacturing,Engine Control Devices Manufacturing Company,Sheet Metal Area Emp. #2,Production worker,Metal fabrication,7:01,,,
+1997-0084,333618.0,Manufacturing,Engine Control Devices Manufacturing Company,Drill & Router Dept. Emp. #1,Production worker,Drill and router ,7:55,,,
+1997-0084,333618.0,Manufacturing,Engine Control Devices Manufacturing Company,Drill & Router Dept. Emp. #2,Production worker,Drill and router ,6:54,,,
+1997-0291,928120.0,Services,Port of Entry Land Boarding Station,Primary inspection booth,Inspector #1,Noise from vehicles and ventilation system,8:28,,,
+1997-0291,928120.0,Services,Port of Entry Land Boarding Station,Primary inspection booth,Inspector #2,Noise from vehicles and ventilation system,7:32,,,
+1997-0291,928120.0,Services,Port of Entry Land Boarding Station,Primary inspection booth,Inspector #3,Noise from vehicles and ventilation system,8:12,,,
+1997-0291,928120.0,Services,Port of Entry Land Boarding Station,Primary inspection booth,Inspector #4,Noise from vehicles and ventilation system,8:15,,,
+1997-0291,928120.0,Services,Port of Entry Land Boarding Station,Primary inspection booth,Inspector #5,Noise from vehicles and ventilation system,7:57,,,
+1998-0093,711310.0,Services,Hot Rod Monster Truck and Motocross Show,Gate area,Usher,Monster truck and motocross,3:55,94.9,197.2,87.2
+1998-0093,711310.0,Services,Hot Rod Monster Truck and Motocross Show,Gate area,Usher,Monster truck and motocross,3:50,93.9,171.7,87.8
+1998-0093,711310.0,Services,Hot Rod Monster Truck and Motocross Show,Concourse ,Security,Monster truck and motocross,4:31,91.4,121.4,84.3
+1998-0093,711310.0,Services,Hot Rod Monster Truck and Motocross Show,Coliseum complex,Security,Monster truck and motocross,4:15,93.8,169.3,87.1
+1998-0093,711310.0,Services,Hot Rod Monster Truck and Motocross Show,Gate area,Usher,Monster truck and motocross,3:41,95.3,208.5,88.0
+1998-0093,711310.0,Services,Hot Rod Monster Truck and Motocross Show,Gate area,Usher,Monster truck and motocross,3:39,93.1,153.7,86.6
+1998-0093,711310.0,Services,Hot Rod Monster Truck and Motocross Show,Concourse ,Security,Monster truck and motocross,3:56,92.6,143.4,86.5
+1998-0093,711310.0,Services,Hot Rod Monster Truck and Motocross Show,Coliseum complex,Security,Monster truck and motocross,4:03,93.0,151.6,87.3
+1998-0149,221111.0,"Transportation, Warehousing & Utilities",Hydroelectric Power Plant,Powerhouse,Electrician,Production ,8:40,84.7,93.3,73.0
+1998-0149,221111.0,"Transportation, Warehousing & Utilities",Hydroelectric Power Plant,Powerhouse,Mechanic A,Production ,8:29,85.4,109.6,74.7
+1998-0149,221111.0,"Transportation, Warehousing & Utilities",Hydroelectric Power Plant,Powerhouse,Mechanic B,Production ,20:34,79.0,25.1,57.7
+1998-0149,221111.0,"Transportation, Warehousing & Utilities",Hydroelectric Power Plant,Powerhouse,Powerplant Operator,Production ,20:24,78.6,22.9,61.3
+1998-0149,221111.0,"Transportation, Warehousing & Utilities",Hydroelectric Power Plant,Powerhouse,Laborer,Production ,20:21,80.7,37.2,66.0
+1998-0289,327320.0,Manufacturing,Concrete Ready-Mix Plant,Ready-Mix Truck #0482,Truck driver,"Ready-mix cement truck (cabs sounds, diesel engine, data
+telemetry system, and radio transmissions)",9:16,87.7,186.2,79.0
+1998-0289,327320.0,Manufacturing,Concrete Ready-Mix Plant,Ready-Mix Truck #0564,Truck driver,"Ready-mix cement truck (cabs sounds, diesel engine, data
+telemetry system, and radio transmissions)",9:24,87.1,162.2,77.1
+1998-0289,327320.0,Manufacturing,Concrete Ready-Mix Plant,Ready-Mix Truck #0471,Truck driver,"Ready-mix cement truck (cabs sounds, diesel engine, data
+telemetry system, and radio transmissions)",9:28,91.6,457.1,85.6
+1998-0289,327320.0,Manufacturing,Concrete Ready-Mix Plant,Ready-Mix Truck #0489,Truck driver,"Ready-mix cement truck (cabs sounds, diesel engine, data
+telemetry system, and radio transmissions)",9:38,92.5,562.3,86.8
+1998-0289,327320.0,Manufacturing,Concrete Ready-Mix Plant,Ready-Mix Truck #0421,Truck driver,"Ready-mix cement truck (cabs sounds, diesel engine, data
+telemetry system, and radio transmissions)",10:22,91.8,478.6,86.9
+1998-0289,327320.0,Manufacturing,Concrete Ready-Mix Plant,Ready-Mix Truck #0415,Truck driver,"Ready-mix cement truck (cabs sounds, diesel engine, data
+telemetry system, and radio transmissions)",12:43,90.6,363.1,85.7
+1998-0289,327320.0,Manufacturing,Concrete Ready-Mix Plant,Ready-Mix Truck #0564,Truck driver,"Ready-mix cement truck (cabs sounds, diesel engine, data
+telemetry system, and radio transmissions)",9:23,87.3,169.8,77.4
+1998-0289,327320.0,Manufacturing,Concrete Ready-Mix Plant,Ready-Mix Truck #0466,Truck driver,"Ready-mix cement truck (cabs sounds, diesel engine, data
+telemetry system, and radio transmissions)",9:04,89.2,263.0,81.3
+1998-0289,327320.0,Manufacturing,Concrete Ready-Mix Plant,Ready-Mix Truck #0423,Truck driver,"Ready-mix cement truck (cabs sounds, diesel engine, data
+telemetry system, and radio transmissions)",9:03,91.5,446.7,83.4
+1998-0289,327320.0,Manufacturing,Concrete Ready-Mix Plant,Ready-Mix Truck #0421,Truck driver,"Ready-mix cement truck (cabs sounds, diesel engine, data
+telemetry system, and radio transmissions)",8:37,92.2,524.8,88.5
+1998-0289,327320.0,Manufacturing,Concrete Ready-Mix Plant,Ready-Mix Truck #0489,Truck driver,"Ready-mix cement truck (cabs sounds, diesel engine, data
+telemetry system, and radio transmissions)",8:37,89.3,269.2,83.1
+1998-0289,327320.0,Manufacturing,Concrete Ready-Mix Plant,Ready-Mix Truck #0482,Truck driver,"Ready-mix cement truck (cabs sounds, diesel engine, data
+telemetry system, and radio transmissions)",9:58,87.7,186.2,79.0
+1998-0289,327320.0,Manufacturing,Concrete Ready-Mix Plant,Ready-Mix Truck #0564,Truck driver,"Ready-mix cement truck (cabs sounds, diesel engine, data
+telemetry system, and radio transmissions)",9:19,89.5,281.8,83.5
+1998-0289,327320.0,Manufacturing,Concrete Ready-Mix Plant,Ready-Mix Truck #0482,Truck driver,"Ready-mix cement truck (cabs sounds, diesel engine, data
+telemetry system, and radio transmissions)",9:36,88.8,239.9,81.6
+1998-0289,327320.0,Manufacturing,Concrete Ready-Mix Plant,Ready-Mix Truck #0644,Truck driver,"Ready-mix cement truck (cabs sounds, diesel engine, data
+telemetry system, and radio transmissions)",8:49,87.8,190.5,79.0
+1998-0289,327320.0,Manufacturing,Concrete Ready-Mix Plant,Ready-Mix Truck #0465,Truck driver,"Ready-mix cement truck (cabs sounds, diesel engine, data
+telemetry system, and radio transmissions)",7:13,91.3,426.6,85.8
+1998-0315,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Industry ,Packing house,Potato Sorting,Production equipment,7:46,86.7,147.9,70.0
+1998-0315,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Industry ,Packing house,100-pound Bagging,Production equipment,7:41,85.9,123.0,76.1
+1998-0315,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Industry ,Packing house,100-pound Bagging,Production equipment,7:44,87.7,186.2,77.7
+1998-0315,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Industry ,Packing house,Supervisor,Production equipment,7:42,85.8,120.2,73.3
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,Rowe 1 operator,Machine (rowe #1),9:28,88.2,208.9,81.2
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,Rowe 1 asst. operator,Machine (rowe #1),9:32,86.4,138.0,77.1
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,Rowe 1 asst.  takeoff,Machine (rowe #1),9:36,85.1,102.3,74.0
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,Rowe 2 operator,Machine (rowe #2),9:44,92.2,524.8,86.4
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,Rowe 2 asst. operator,Machine (rowe #2),8:38,90.3,338.8,84.0
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,Rowe 2 asst.  takeoff,Machine (rowe #2),8:31,86.4,138.0,73.5
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,"72"" slitter operator",Machine (slitter),9:46,87.4,173.8,79.4
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,"72"" slitter asst.",Machine (slitter),9:43,89.8,302.0,82.1
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,"72"" slitter asst.",Machine (slitter),9:31,86.6,144.5,77.5
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,"60"" slitter operator",Machine (slitter),9:41,85.7,117.5,73.8
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,"60"" slitter asst.",Machine (slitter),9:39,85.3,107.2,73.2
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,"60"" slitter asst.",Machine (slitter),9:37,85.5,112.2,74.1
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,Banding operator,Machine (banding line),9:22,87.2,166.0,77.6
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,Banding line asst.,Machine (metal saw),9:20,85.8,120.2,75.8
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,Metal saw asst.,Machine (rowe #1),9:04,86.7,147.9,75.7
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,Rowe 1 operator,Machine (rowe #1),9:37,89.3,269.2,83.9
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,Rowe 1 asst.  takeoff,Machine (rowe #1),9:38,88.0,199.5,79.5
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,Rowe 1 asst. op.,Machine (rowe #1),X,,,
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,Rowe 2 operator,Machine (rowe #2),9:39,89.5,281.8,84.1
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,Rowe 2 asst.  takeoff,Machine (rowe #2),9:35,86.6,144.5,67.3
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,Rowe 2 asst. op.,Machine (rowe #2),9:38,89.0,251.2,83.3
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,"72"" slitter operator",Machine (slitter),9:19,85.2,104.7,73.2
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,"72"" slitter asst.",Machine (slitter),9:36,86.2,131.8,75.7
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,"72"" slitter asst.",Machine (slitter),9:42,85.9,123.0,75.7
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,"60"" slitter operator",Machine (slitter),9:39,87.5,177.8,79.1
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,"60"" slitter asst.",Machine (slitter),9:39,85.4,109.6,73.1
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,Banding operator,Machine (banding line),9:35,84.1,81.3,68.8
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,Banding line asst.,Machine (banding line),9:37,85.9,123.0,76.0
+1999-0047,423510.0,Wholesale and Retail Trade,Steel Processing facility,Production area,Metal saw op.,Machine (metal saw),9:26,89.1,257.0,83.0
+1999-0060,488119.0,"Transportation, Warehousing & Utilities",Airline,Bravo Line - a,Ramp employees,Auxiliary power units of jets,7:58,93.6,724.4,87.4
+1999-0060,488119.0,"Transportation, Warehousing & Utilities",Airline,Charlie Line - a,Ramp employees,Auxiliary power units of jets,8:13,91.6,457.1,86.6
+1999-0060,488119.0,"Transportation, Warehousing & Utilities",Airline,Bravo Line - b,Ramp employees,Auxiliary power units of jets,8:10,92.4,549.5,85.7
+1999-0060,488119.0,"Transportation, Warehousing & Utilities",Airline,Charlie Line - b,Ramp employees,Auxiliary power units of jets,7:56,91.2,416.9,85.9
+1999-0060,488119.0,"Transportation, Warehousing & Utilities",Airline,Charlie Line - c,Ramp employees,Auxiliary power units of jets,8:10,89.6,288.4,82.9
+1999-0060,488119.0,"Transportation, Warehousing & Utilities",Airline,Ramp Area,Ramp employees,Auxiliary power units of jets,7:19,88.3,213.8,79.0
+2000-0110,711212.0,Services,Racing Team Shop,Office,Public Relations,Race car shop/Race track,X,51.8,0.0,
+2000-0110,711212.0,Services,Racing Team Shop,Office,Team Owner,Race car shop/Race track,X,58.0,0.2,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,90.6,363.1,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,93.0,631.0,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,83.9,77.6,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,84.7,93.3,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,72.0,5.0,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,86.7,147.9,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,89.3,269.2,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,72.4,5.5,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,70.1,3.2,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,82.8,60.3,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,90.9,389.0,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,94.7,933.3,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,96.0,1258.9,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,85.0,100.0,
+2000-0110,711212.0,Services,Racing Team Shop,Body Shop,Paint and Body,Race car shop/Race track,X,80.0,31.6,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,89.3,269.2,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,90.8,380.2,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,94.7,933.3,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,98.2,2089.3,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,93.0,631.0,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,90.6,363.1,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,97.1,1621.8,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,87.7,186.2,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,79.8,30.2,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,84.6,91.2,
+2000-0110,711212.0,Services,Racing Team Shop,Gear/Suspension Room,Suspension Assembly,Race car shop/Race track,X,68.7,2.3,
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,X,86.5,141.3,
+2000-0110,711212.0,Services,Racing Team Shop,Inside Paint Booth,Paint and Body,Race car shop/Race track,X,95.1,1023.3,
+2000-0110,711212.0,Services,Racing Team Shop,Inside Paint Booth,Paint and Body,Race car shop/Race track,X,96.1,1288.2,
+2000-0110,711212.0,Services,Racing Team Shop,Paint Mixing Area,Paint and Body,Race car shop/Race track,X,81.9,49.0,
+2000-0110,711212.0,Services,Racing Team Shop,Body Shop,Paint and Body,Race car shop/Race track,X,72.8,6.0,
+2000-0110,711212.0,Services,Racing Team Shop,Body Shop,Paint and Body,Race car shop/Race track,X,98.2,2089.3,
+2000-0110,711212.0,Services,Racing Team Shop,Outdoors,Mechanic,Race car shop/Race track,X,104.4,8709.6,
+2000-0110,711212.0,Services,Racing Team Shop,Gear/Suspension Room,Suspension Assembly,Race car shop/Race track,10:00,82.4,55.0,74.5
+2000-0110,711212.0,Services,Racing Team Shop,Race shop,Crew Chief,Race car shop/Race track,10:50,82.7,58.9,78.3
+2000-0110,711212.0,Services,Racing Team Shop,Outdoors,Mechanic/ Jackman,Race car shop/Race track,10:40,82.8,60.3,76.9
+2000-0110,711212.0,Services,Racing Team Shop,Race shop,Engine Tuner,Race car shop/Race track,5:01,94.7,933.3,82.9
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,5:54,88.6,229.1,74.9
+2000-0110,711212.0,Services,Racing Team Shop,Fabrication area,Fabricator,Race car shop/Race track,4:19,97.7,1862.1,86.9
+2000-0110,711212.0,Services,Racing Team Shop,Outdoors,Mechanic,Race car shop/Race track,10:28,88.9,245.5,86.2
+2000-0110,711212.0,Services,Racing Team Shop,Outdoors,Mechanic,Race car shop/Race track,10:44,88.1,204.2,82.2
+2000-0110,711212.0,Services,Racing Team Shop,Paint Booth,Painter,Race car shop/Race track,10:28,79.6,28.8,73.8
+2000-0181,332618.0,Manufacturing,Wire Rope manufacture,Production area,Machine operator,Closer,10:36,103.0,6309.6,99.8
+2000-0181,332618.0,Manufacturing,Wire Rope manufacture,Production area,Machine operator,Swager,10:38,95.6,1148.2,94.1
+2000-0181,332618.0,Manufacturing,Wire Rope manufacture,Production area,Machine operator,Closer,10:40,94.3,851.1,92.6
+2000-0181,332618.0,Manufacturing,Wire Rope manufacture,Production area,Machine operator,Closer,10:42,91.4,436.5,87.7
+2000-0181,332618.0,Manufacturing,Wire Rope manufacture,Production area,Machine operator,Closer,10:43,91.9,489.8,85.9
+2000-0181,332618.0,Manufacturing,Wire Rope manufacture,Production area,Machine operator,Strander,10:49,104.1,8128.3,103.7
+2000-0181,332618.0,Manufacturing,Wire Rope manufacture,Production area,Machine operator,Strander,10:51,106.7,14791.1,106.0
+2000-0181,332618.0,Manufacturing,Wire Rope manufacture,Production area,Machine operator,Strander,10:55,107.3,16982.4,106.2
+2000-0181,332618.0,Manufacturing,Wire Rope manufacture,Production area,Machine operator,Closer,10:59,96.5,1412.5,95.4
+2000-0181,332618.0,Manufacturing,Wire Rope manufacture,Production area,Machine operator,Strander,11:21,103.4,6918.3,102.6
+2000-0181,332618.0,Manufacturing,Wire Rope manufacture,Production area,Machine operator,Wire Drawing,11:06,90.9,389.0,82.8
+2000-0181,332618.0,Manufacturing,Wire Rope manufacture,Production area,Machine operator,Closer,11:04,90.5,354.8,82.4
+2000-0181,332618.0,Manufacturing,Wire Rope manufacture,Production area,Machine operator,Closer,11:10,90.7,371.5,82.2
+2000-0181,332618.0,Manufacturing,Wire Rope manufacture,Production area,Machine operator,Closer,10:52,98.3,2138.0,97.4
+2000-0181,332618.0,Manufacturing,Wire Rope manufacture,Production area,Machine operator,Closer,10:51,95.0,1000.0,92.7
+2000-0191,922120.0,Public Safety,Immigration and Naturalization Service National Firearms Unit - Firing Range,Firing lanes 7-8,Line Safety Officer,Single Pistol,X,106.2,13182.6,91.9
+2000-0191,922120.0,Public Safety,Immigration and Naturalization Service National Firearms Unit - Firing Range,Firing lanes 7-8,Line Safety Officer,Double Pistol,X,109.1,25704.0,96.7
+2000-0191,922120.0,Public Safety,Immigration and Naturalization Service National Firearms Unit - Firing Range,Firing lanes 7-8,Line Safety Officer,Single Shotgun,X,104.0,7943.3,87.9
+2000-0191,922120.0,Public Safety,Immigration and Naturalization Service National Firearms Unit - Firing Range,Firing lanes 12-13,Line Safety Officer,Single Pistol,X,107.7,18620.9,93.4
+2000-0191,922120.0,Public Safety,Immigration and Naturalization Service National Firearms Unit - Firing Range,Firing lanes 12-13,Line Safety Officer,Double Pistol,X,109.0,25118.9,96.6
+2000-0191,922120.0,Public Safety,Immigration and Naturalization Service National Firearms Unit - Firing Range,Firing lanes 12-13,Line Safety Officer,Single Shotgun,X,103.3,6760.8,87.3
+2000-0232,334419.0,Manufacturing,Assembly facilities,Old Boardtown facility,Heat Shrinker,Operated manual heat shrink machine,X,80.3,33.9,
+2000-0232,334419.0,Manufacturing,Assembly facilities,Old Boardtown facility,Terminator,Operated manual terminator machines,X,78.9,24.5,
+2000-0232,334419.0,Manufacturing,Assembly facilities,Old Boardtown facility,Terminator,Operated manual terminator machines,X,84.6,91.2,
+2000-0232,334419.0,Manufacturing,Assembly facilities,Old Boardtown facility,Terminator,Operated manual terminator machines,X,85.2,104.7,
+2000-0232,334419.0,Manufacturing,Assembly facilities,Old Boardtown facility,Wire Cutter,Operated mechanical wire cutter,X,79.4,27.5,
+2000-0232,334419.0,Manufacturing,Assembly facilities,Old Boardtown facility,Wire Cutter,Operated mechanical wire cutter and stamper,X,78.9,24.5,
+2000-0232,334419.0,Manufacturing,Assembly facilities,Old Boardtown facility,Wire Cutter,Operated mechanical wire cutter and stamper,X,80.1,32.4,
+2000-0232,334419.0,Manufacturing,Assembly facilities,515 Building,Damper Line Assembler,Operated lockformer,X,82.4,55.0,
+2000-0232,334419.0,Manufacturing,Assembly facilities,515 Building,Damper Line Assembler,"Operated air drill, marked, corners, ran lockformer",X,90.2,331.1,
+2000-0408,926120.0,Public Safety,Federal Aviation Administration,"Portland, ME airport airport - a.m.",Aviation Safety Inspector,Airport ramps,2:36,86.1,128.8,74.2
+2000-0408,926120.0,Public Safety,Federal Aviation Administration,"Portland, ME airport airport - p.m.",Aviation Safety Inspector,Airport ramps,1:10,78.3,21.4,63.4
+2000-0408,926120.0,Public Safety,Federal Aviation Administration,"Bedford, MA airport",Aviation Safety Inspector,Airport ramps,3:37,73.3,6.8,54.5
+2000-0408,926120.0,Public Safety,Federal Aviation Administration,Bradley Int. airport,Aviation Safety Inspector,Airport ramps,2:13,78.3,21.4,65.0
+2000-0408,926120.0,Public Safety,Federal Aviation Administration,Aircraft engine repair facility,Aviation Safety Inspector,Repair station,0:51,72.1,5.1,43.1
+2000-0408,926120.0,Public Safety,Federal Aviation Administration,Lubrication pump repair facility - a.m.,Aviation Safety Inspector,Repair station,2:47,76.7,14.8,63.1
+2000-0408,926120.0,Public Safety,Federal Aviation Administration,Lubrication pump repair facility - a.m.,Aviation Safety Inspector,Repair station,1:33,59.9,0.3,31.8
+2000-0408,926120.0,Public Safety,Federal Aviation Administration,Bradley Int. aircraft repair hanger,Aviation Safety Inspector,Aviation hanger,1:05,64.5,0.9,34.3
+2001-0109,721120.0,Services,Resort and Casino,Vault and counting area (counting coins and paper money) ,Casino employees,Opened bill holders in soft count room,7:38,77.8,19.1,69.3
+2001-0109,721120.0,Services,Resort and Casino,Vault and counting area (counting coins and paper money) ,Casino employees,Collected change from slots; assisted in hard count,7:38,77.7,18.6,69.3
+2001-0109,721120.0,Services,Resort and Casino,Vault and counting area (counting coins and paper money) ,Casino employees,Soft count,7:28,73.5,7.1,57.8
+2001-0109,721120.0,Services,Resort and Casino,Vault and counting area (counting coins and paper money) ,Casino employees,Hard count ,8:17,78.9,24.5,73.6
+2001-0109,721120.0,Services,Resort and Casino,Vault and counting area (counting coins and paper money) ,Casino employees,Soft count,7:32,79.0,25.1,66.9
+2001-0109,721120.0,Services,Resort and Casino,Vault and counting area (counting coins and paper money) ,Casino employees,Hard count ,7:36,76.4,13.8,66.4
+2001-0109,721120.0,Services,Resort and Casino,Vault and counting area (counting coins and paper money) ,Casino employees,Hard count,7:25,74.5,8.9,62.8
+2001-0109,721120.0,Services,Resort and Casino,Vault and counting area (counting coins and paper money) ,Casino employees,Hard count,7:30,75.7,11.7,65.1
+2001-0326,326191.0,Manufacturing,Cultured marble manufacture,Production of raw cultured marble products and product finishing,Mold Preparation and Marble Casting,"Product grinder and product buffer, mixer and powder delivery system and vibrating mold tables, casting operations",8:18,85.0,100.5,74.9
+2001-0326,326191.0,Manufacturing,Cultured marble manufacture,Production of raw cultured marble products and product finishing,Gel Coat Sprayer,"Product grinder and product buffer, mixer and powder delivery system and vibrating mold tables, casting operations",8:25,89.2,261.0,78.1
+2001-0326,326191.0,Manufacturing,Cultured marble manufacture,Production of raw cultured marble products and product finishing,Mold Mixing,"Product grinder and product buffer, mixer and powder delivery system and vibrating mold tables, casting operations",8:23,92.0,505.5,86.5
+2001-0326,326191.0,Manufacturing,Cultured marble manufacture,Production of raw cultured marble products and product finishing,Marble Casting,"Product grinder and product buffer, mixer and powder delivery system and vibrating mold tables, casting operations",8:14,89.8,299.8,84.7
+2001-0326,326191.0,Manufacturing,Cultured marble manufacture,Production of raw cultured marble products and product finishing,Product Removal and Buffing,"Product grinder and product buffer, mixer and powder delivery system and vibrating mold tables, casting operations",8:32,90.2,327.6,79.7
+2001-0326,326191.0,Manufacturing,Cultured marble manufacture,Production of raw cultured marble products and product finishing,Product Grinding,"Product grinder and product buffer, mixer and powder delivery system and vibrating mold tables, casting operations",8:40,98.7,2338.8,96.5
+2001-0326,326191.0,Manufacturing,Cultured marble manufacture,Production of raw cultured marble products and product finishing,Mold Preparation and Office Work,"Product grinder and product buffer, mixer and powder delivery system and vibrating mold tables, casting operations",8:43,84.6,91.7,73.5
+2001-0326,326191.0,Manufacturing,Cultured marble manufacture,Production of raw cultured marble products and product finishing,Gel Coat Sprayer,"Product grinder and product buffer, mixer and powder delivery system and vibrating mold tables, casting operations",8:10,89.3,269.3,84.7
+2001-0326,326191.0,Manufacturing,Cultured marble manufacture,Production of raw cultured marble products and product finishing,Product Buffing,"Product grinder and product buffer, mixer and powder delivery system and vibrating mold tables, casting operations",8:42,96.4,1377.5,92.4
+2001-0326,326191.0,Manufacturing,Cultured marble manufacture,Production of raw cultured marble products and product finishing,Product Removal and Buffing,"Product grinder and product buffer, mixer and powder delivery system and vibrating mold tables, casting operations",8:45,92.9,614.5,89.1
+2001-0326,326191.0,Manufacturing,Cultured marble manufacture,Production of raw cultured marble products and product finishing,Whirlpool Tub Finisher,"Product grinder and product buffer, mixer and powder delivery system and vibrating mold tables, casting operations",9:03,93.6,727.0,87.0
+2001-0461,327390.0,Manufacturing,"Custom
+concrete counter tops manufacture",Forms tables,Laborer,Using orbital grinder,X,,,
+2001-0461,327390.0,Manufacturing,"Custom
+concrete counter tops manufacture",All over shop,Foreman,"Circular saw, other tools",X,,,
+2001-0461,327390.0,Manufacturing,"Custom
+concrete counter tops manufacture",Forms tables,Laborer,Using orbital grinder,X,,,
+2001-0461,327390.0,Manufacturing,"Custom
+concrete counter tops manufacture",Raw materials area (cement),Laborer,Cement mixer,X,,,
+2001-0496,611210.0,Services,Community College Bookstore,Bookstore,Bookstore employees,Bookstore and nearby gym,X,72.8,6.0,
+2001-0496,611210.0,Services,Community College Bookstore,Bookstore,Bookstore employees,Bookstore and nearby gym,X,72.8,6.0,
+2001-0496,611210.0,Services,Community College Bookstore,Bookstore,Bookstore employees,Bookstore and nearby gym,X,72.8,6.0,
+2002-0222,485410.0,"Transportation, Warehousing & Utilities",School Bus Drivers,School bus,Transit-Style Bus Operator (Bus #29),School bus,10:47,81.4,43.6,59.2
+2002-0222,485410.0,"Transportation, Warehousing & Utilities",School Bus Drivers,School bus,Transit-Style Bus Operator (Bus #70),School bus,11:34,81.9,49.4,59.7
+2002-0222,485410.0,"Transportation, Warehousing & Utilities",School Bus Drivers,School bus,Transit-Style Bus Operator (Bus #83),School bus,11:19,79.7,29.7,51.8
+2002-0222,485410.0,"Transportation, Warehousing & Utilities",School Bus Drivers,School bus,Transit-Style Bus Operator (Bus #88),School bus,11:05,80.1,32.1,62.1
+2002-0222,485410.0,"Transportation, Warehousing & Utilities",School Bus Drivers,School bus,Transit-Style Bus Operator (Bus #90),School bus,10:56,77.0,15.8,45.2
+2002-0222,485410.0,"Transportation, Warehousing & Utilities",School Bus Drivers,School bus,Transit-Style Bus Operator (Bus #102),School bus,10:45,76.1,13.0,40.2
+2002-0222,485410.0,"Transportation, Warehousing & Utilities",School Bus Drivers,School bus,Conventional-Style Bus Operator (Bus #22),School bus,11:14,78.9,24.5,56.8
+2002-0222,485410.0,"Transportation, Warehousing & Utilities",School Bus Drivers,School bus,Conventional-Style Bus Operator (Bus #92),School bus,10:59,80.1,32.4,63.9
+2002-0284,221112.0,"Transportation, Warehousing & Utilities",Heat and Power Plant,Unknown,Employee #1,"Turbines, fans, chillers, condenser water pump",6:42,76.5,14.1,53.1
+2002-0284,221112.0,"Transportation, Warehousing & Utilities",Heat and Power Plant,Unknown,Employee #2,"Turbines, fans, chillers, condenser water pump",7:05,80.6,36.3,67.0
+2002-0284,221112.0,"Transportation, Warehousing & Utilities",Heat and Power Plant,Unknown,Employee #3,"Turbines, fans, chillers, condenser water pump",7:22,79.0,25.1,54.9
+2002-0284,221112.0,"Transportation, Warehousing & Utilities",Heat and Power Plant,Unknown,Employee #4,"Turbines, fans, chillers, condenser water pump",7:11,84.9,97.7,72.3
+2002-0284,221112.0,"Transportation, Warehousing & Utilities",Heat and Power Plant,Unknown,Employee #5,"Turbines, fans, chillers, condenser water pump",7:42,85.3,107.2,75.4
+2002-0354,481111.0,"Transportation, Warehousing & Utilities",Airline,Aircraft passanger cabin - Q200 - #360 ,Flight attendant,"Take-off, cruising, landing",0:41,71.8,4.83,
+2002-0354,481111.0,"Transportation, Warehousing & Utilities",Airline,Aircraft passanger cabin - Q200 - #360 ,Flight attendant,"Take-off, cruising, landing",0:15,63.5,0.7,
+2002-0354,481111.0,"Transportation, Warehousing & Utilities",Airline,Aircraft passanger cabin - Q200 - #360 ,Flight attendant,"Take-off, cruising, landing",0:43,70.3,3.39,
+2002-0354,481111.0,"Transportation, Warehousing & Utilities",Airline,Aircraft passanger cabin - Q200 - #354 ,Flight attendant,"Take-off, cruising, landing",0:42,73.7,7.47,
+2002-0354,481111.0,"Transportation, Warehousing & Utilities",Airline,Aircraft passanger cabin - Q200 - #354 ,Flight attendant,"Take-off, cruising, landing",0:15,64.9,0.97,
+2002-0354,481111.0,"Transportation, Warehousing & Utilities",Airline,Aircraft passanger cabin - Q200 - #354 ,Flight attendant,"Take-off, cruising, landing",0:50,71.1,4.09,
+2002-0354,481111.0,"Transportation, Warehousing & Utilities",Airline,Aircraft passanger cabin - Q400 - #407 ,Flight attendant,"Take-off, cruising, landing",1:03,73.3,6.7,
+2002-0354,481111.0,"Transportation, Warehousing & Utilities",Airline,Aircraft passanger cabin - Q400 - #407 ,Flight attendant,"Take-off, cruising, landing",0:27,68.7,2.32,
+2002-0354,481111.0,"Transportation, Warehousing & Utilities",Airline,Aircraft passanger cabin - Q400 - #407 ,Flight attendant,"Take-off, cruising, landing",1:01,72.4,5.5,
+2002-0354,481111.0,"Transportation, Warehousing & Utilities",Airline,Aircraft passanger cabin - Q400 - #413,Flight attendant,"Take-off, cruising, landing",1:01,74.6,9.15,
+2002-0354,481111.0,"Transportation, Warehousing & Utilities",Airline,Aircraft passanger cabin - Q400 - #413,Flight attendant,"Take-off, cruising, landing",0:24,70.5,3.54,
+2002-0354,481111.0,"Transportation, Warehousing & Utilities",Airline,Aircraft passanger cabin - Q400 - #413,Flight attendant,"Take-off, cruising, landing",1:03,75.6,11.44,
+2002-0354,481111.0,"Transportation, Warehousing & Utilities",Airline,Aircraft passanger cabin - CRJ - #604,Flight attendant,"Take-off, cruising, landing",1:38,72.8,6.03,
+2002-0354,481111.0,"Transportation, Warehousing & Utilities",Airline,Aircraft passanger cabin - CRJ - #604,Flight attendant,"Take-off, cruising, landing",1:25,73.3,6.71,
+2002-0354,481111.0,"Transportation, Warehousing & Utilities",Airline,Aircraft passanger cabin - CRJ - #604,Flight attendant,"Take-off, cruising, landing",0:30,73.0,6.28,
+2002-0354,481111.0,"Transportation, Warehousing & Utilities",Airline,Aircraft passanger cabin - CRJ - #605,Flight attendant,"Take-off, cruising, landing",1:38,73.2,6.54,
+2002-0354,481111.0,"Transportation, Warehousing & Utilities",Airline,Aircraft passanger cabin - CRJ - #605,Flight attendant,"Take-off, cruising, landing",1:29,73.4,6.86,
+2002-0354,481111.0,"Transportation, Warehousing & Utilities",Airline,Aircraft passanger cabin - CRJ - #614,Flight attendant,"Take-off, cruising, landing",0:32,71.0,3.96,
+2003-0094,922120.0,Public Safety,Highway Patrol,Highway patrol,State trooper,Highway noise,9:24,81.2,59.1,64.8
+2003-0094,922120.0,Public Safety,Highway Patrol,Highway patrol,State trooper,Highway noise,9:26,82.5,70.3,67.3
+2003-0094,922120.0,Public Safety,Highway Patrol,Highway patrol,State trooper,Highway noise,9:42,81.4,60.9,66.9
+2003-0157,721120.0,Services,Casino,Casino grounds,Groundskeeper,"Casinos cashier cages, games in childrens daycare and arcade, ground keeping staff, video slot machines with their bells, sirens, and whistles",9:31,80.1,32.3,55.2
+2003-0157,721120.0,Services,Casino,Casino (gaming area),Island Cage,"Casinos cashier cages, games in childrens daycare and arcade, ground keeping staff, video slot machines with their bells, sirens, and whistles",7:31,73.9,7.8,45.2
+2003-0157,721120.0,Services,Casino,Casino (gaming area),Security Desk,"Casinos cashier cages, games in childrens daycare and arcade, ground keeping staff, video slot machines with their bells, sirens, and whistles",10:16,73.7,7.4,0.0
+2003-0157,721120.0,Services,Casino,Casino (gaming area),Slot Attendant,"Casinos cashier cages, games in childrens daycare and arcade, ground keeping staff, video slot machines with their bells, sirens, and whistles",9:04,78.4,22.0,51.8
+2003-0157,721120.0,Services,Casino,Casino (gaming and beverage areas),Beverage Server,"Casinos cashier cages, games in childrens daycare and arcade, ground keeping staff, video slot machines with their bells, sirens, and whistles",6:08,75.3,10.6,40.2
+2003-0157,721120.0,Services,Casino,Casino (gaming area),Pit Boss,"Casinos cashier cages, games in childrens daycare and arcade, ground keeping staff, video slot machines with their bells, sirens, and whistles",6:14,80.7,37.1,65.2
+2003-0157,721120.0,Services,Casino,Casino (children's daycare),Daycare Center,"Casinos cashier cages, games in childrens daycare and arcade, ground keeping staff, video slot machines with their bells, sirens, and whistles",7:43,79.2,26.6,59.7
+2003-0157,721120.0,Services,Casino,Casino (children's arcade),Childrens Arcade,"Casinos cashier cages, games in childrens daycare and arcade, ground keeping staff, video slot machines with their bells, sirens, and whistles",6:39,81.7,46.9,63.1
+2003-0157,721120.0,Services,Casino,Casino (gaming area),Slot Attendant,"Casinos cashier cages, games in childrens daycare and arcade, ground keeping staff, video slot machines with their bells, sirens, and whistles",8:01,79.3,26.9,57.5
+2003-0157,721120.0,Services,Casino,Casino (gaming and beverage areas),Beverage Server,"Casinos cashier cages, games in childrens daycare and arcade, ground keeping staff, video slot machines with their bells, sirens, and whistles",8:03,79.3,27.2,60.2
+2003-0157,721120.0,Services,Casino,Casino (gaming area),Pit Boss,"Casinos cashier cages, games in childrens daycare and arcade, ground keeping staff, video slot machines with their bells, sirens, and whistles",6:29,75.8,11.9,53.1
+2003-0157,721120.0,Services,Casino,Casino (children's daycare),Daycare Center,"Casinos cashier cages, games in childrens daycare and arcade, ground keeping staff, video slot machines with their bells, sirens, and whistles",7:12,79.9,31.0,60.6
+2003-0157,721120.0,Services,Casino,Casino (children's arcade),Childrens Arcade,"Casinos cashier cages, games in childrens daycare and arcade, ground keeping staff, video slot machines with their bells, sirens, and whistles",6:28,82.0,50.5,62.5
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",½ Schumag Operator,"Annealing, drawing, straightening, grinding",7:17,83.2,66.2,67.0
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",½ Schumag Operator,"Annealing, drawing, straightening, grinding",5:39,86.2,130.8,75.9
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",1 Schumag Operator,"Annealing, drawing, straightening, grinding",6:30,84.3,84.3,70.8
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Shaver,"Annealing, drawing, straightening, grinding",7:06,86.1,129.7,75.3
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Annealer,"Annealing, drawing, straightening, grinding",8:11,81.3,43.0,64.7
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Annealer,"Annealing, drawing, straightening, grinding",7:50,83.2,66.3,68.8
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Annealer,"Annealing, drawing, straightening, grinding",7:42,83.3,67.8,68.1
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Annealer,"Annealing, drawing, straightening, grinding",6:47,84.6,90.6,70.6
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Pickling Cab Driver,"Annealing, drawing, straightening, grinding",7:40,84.8,96.6,62.5
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Pickling Cab Driver,"Annealing, drawing, straightening, grinding",8:24,84.9,97.1,63.9
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Materials Handler,"Annealing, drawing, straightening, grinding",7:06,83.1,65.3,67.5
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Materials Handler,"Annealing, drawing, straightening, grinding",7:53,85.4,109.9,73.5
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Materials Handler,"Annealing, drawing, straightening, grinding",7:53,86.9,155.7,78.1
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Materials Handler,"Annealing, drawing, straightening, grinding",7:44,88.6,227.1,79.9
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Materials Handler,"Annealing, drawing, straightening, grinding",7:35,88.6,231.0,80.1
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Draw Block Operator,"Annealing, drawing, straightening, grinding",7:13,83.0,63.0,67.8
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Draw Block Operator,"Annealing, drawing, straightening, grinding",7:08,84.2,82.4,67.8
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Draw Block Operator,"Annealing, drawing, straightening, grinding",6:00,84.3,85.2,68.9
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Draw Block Operator,"Annealing, drawing, straightening, grinding",6:56,84.7,93.9,71.4
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Draw Block Operator,"Annealing, drawing, straightening, grinding",5:11,85.5,112.0,72.4
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Draw Block Operator,"Annealing, drawing, straightening, grinding",5:57,85.9,121.7,74.4
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Draw Block Operator,"Annealing, drawing, straightening, grinding",5:51,88.0,197.3,76.7
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Draw Bench Operator,"Annealing, drawing, straightening, grinding",7:10,83.2,65.8,77.2
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Straight Cut Operator,"Annealing, drawing, straightening, grinding",5:44,80.9,38.9,65.4
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Straight Cut Operator,"Annealing, drawing, straightening, grinding",6:50,81.7,47.2,58.7
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Straight Cut Operator,"Annealing, drawing, straightening, grinding",6:54,83.4,68.8,60.6
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Straight Cut Operator,"Annealing, drawing, straightening, grinding",6:36,83.9,78.1,68.2
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Straight Cut Operator,"Annealing, drawing, straightening, grinding",6:30,86.5,141.8,69.5
+2003-0175,331222.0,Manufacturing,Steel Manufacturing ,"Production area (pickling, grinding, shaving, annealing)",Grinder,"Annealing, drawing, straightening, grinding",7:08,83.7,73.8,75.6
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,Press 25-3,RDP press high speed and printing,7:40,88.2,208.9,80.6
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,Press 22-7,RDP press high speed and printing,7:36,89.6,288.4,83.0
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,Press 17-3,RDP press high speed and printing,7:40,86.3,134.9,70.6
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,Goebel Press,RDP press high speed and printing,7:26,89.6,288.4,83.7
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,Perf 3 Press,RDP press high speed and printing,7:07,86.7,147.9,75.8
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,Press 22-1,RDP press high speed and printing,7:18,88.2,208.9,80.0
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,Ink station,RDP press high speed and printing,7:36,85.5,112.2,74.0
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,Perf 2 Press,RDP press high speed and printing,10:00,89.8,302.0,82.0
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,Press 25-4,RDP press high speed and printing,11:16,90.7,371.5,84.8
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,RDP Press,RDP press high speed and printing,11:24,97.2,1659.6,96.0
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,Press 25-2,RDP press high speed and printing,7:43,85.5,112.2,67.6
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,Press 22-7,RDP press high speed and printing,7:51,90.1,323.6,84.9
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,Press 17-3,RDP press high speed and printing,7:55,89.2,263.0,82.5
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,Press 25-3/Press 22-9,RDP press high speed and printing,7:49,90.4,346.7,86.0
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,Perf 3 Press,RDP press high speed and printing,7:34,86.9,154.9,75.9
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,Press 22-1,RDP press high speed and printing,7:44,86.2,131.8,75.8
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,Ink station,RDP press high speed and printing,7:43,82.0,50.1,65.7
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,Press 25-4,RDP press high speed and printing,10:00,91.8,478.6,86.1
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,RDP Press,RDP press high speed and printing,10:00,93.6,724.4,89.9
+2003-0203,323110.0,Manufacturing,Computer Services,Press area ,Perf 2 Press,RDP press high speed and printing,10:14,90.7,371.5,84.4
+2003-0209,238160.0,Construction,Roofing company,Residential and commercial properties' roofs,Foreman,"Saw usage, cutting on the roofing tiles",8:03,99.0,2511.9,93.5
+2003-0209,238160.0,Construction,Roofing company,Residential and commercial properties' roofs,Second man,"Saw usage, cutting on the roofing tiles",8:01,101.7,4677.4,96.8
+2003-0209,238160.0,Construction,Roofing company,Residential and commercial properties' roofs,Laborer-1,"Saw usage, cutting on the roofing tiles",8:00,89.1,257.0,80.1
+2003-0209,238160.0,Construction,Roofing company,Residential and commercial properties' roofs,Laborer-2,"Saw usage, cutting on the roofing tiles",8:00,92.5,562.3,82.1
+2003-0209,238160.0,Construction,Roofing company,Residential and commercial properties' roofs,Foreman,"Saw usage, cutting on the roofing tiles",7:35,96.5,1412.5,88.2
+2003-0209,238160.0,Construction,Roofing company,Residential and commercial properties' roofs,Second man,"Saw usage, cutting on the roofing tiles",7:41,101.4,4365.2,95.4
+2003-0209,238160.0,Construction,Roofing company,Residential and commercial properties' roofs,Laborer-1,"Saw usage, cutting on the roofing tiles",7:37,95.8,1202.3,87.8
+2003-0209,238160.0,Construction,Roofing company,Residential and commercial properties' roofs,Laborer-2,"Saw usage, cutting on the roofing tiles",7:18,86.6,144.5,78.2
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 1 - #522,"Aircraft activities (take-off, cruise, landing)",8:39,60.4,0.35,23.6
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 2 - #522,"Aircraft activities (take-off, cruise, landing)",8:37,61.3,0.43,23.6
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 1 - #514 & #504,"Aircraft activities (take-off, cruise, landing)",9:46,62.2,0.52,31.5
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 2 - #514 & #504,"Aircraft activities (take-off, cruise, landing)",9:47,63.2,0.66,31.5
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 1 - #527 & #524,"Aircraft activities (take-off, cruise, landing)",11:04,64.0,0.8,23.6
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 2 - #527 & #524,"Aircraft activities (take-off, cruise, landing)",11:04,63.5,0.7,31.5
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 1 - #522,"Aircraft activities (take-off, cruise, landing)",8:54,63.0,0.63,33.6
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 2 - #522,"Aircraft activities (take-off, cruise, landing)",8:59,63.8,0.75,36.5
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 1 - #510 & #515,"Aircraft activities (take-off, cruise, landing)",10:36,62.9,0.62,33.6
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 2 - #510 & #515,"Aircraft activities (take-off, cruise, landing)",10:39,62.2,0.52,23.6
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 1 - #522 & #520,"Aircraft activities (take-off, cruise, landing)",9:22,62.9,0.61,31.5
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 2 - #522 & #520,"Aircraft activities (take-off, cruise, landing)",9:29,64.1,0.81,35.2
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 1 - #520 & #532,"Aircraft activities (take-off, cruise, landing)",8:59,62.6,0.58,33.6
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 2 - #520 & #532,"Aircraft activities (take-off, cruise, landing)",9:01,62.3,0.54,31.5
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 1 - #521 & #522,"Aircraft activities (take-off, cruise, landing)",7:21,63.8,0.75,36.5
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 2 - #521 & #522,"Aircraft activities (take-off, cruise, landing)",7:20,61.1,0.41,28.6
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 1 - #507,"Aircraft activities (take-off, cruise, landing)",10:33,66.1,1.28,39.4
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 2 - #507,"Aircraft activities (take-off, cruise, landing)",10:36,64.7,0.94,37.6
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 1 - #520,"Aircraft activities (take-off, cruise, landing)",3:41,59.0,0.25,23.6
+2003-0364,481111.0,"Transportation, Warehousing & Utilities",Airline,Passenger cabin ,Attendant 2 - #520,"Aircraft activities (take-off, cruise, landing)",3:43,56.8,0.15,0.0
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Fresh Pack,Unloader-1,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",7:03,81.0,40.1,54.2
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Fresh Pack,Unloader-2,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",6:52,80.6,36.6,51.8
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Fresh Pack,Sorter-1,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",7:19,84.1,80.4,40.2
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Fresh Pack,Sorter-2,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",7:15,83.8,76.5,53.1
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Fresh Pack,Sorter-3,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",7:10,84.8,94.6,40.2
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Fresh Pack,Box maker,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",7:21,82.6,57.6,55.2
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Fresh Pack,Bagger-1,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",7:01,89.5,281.4,83.9
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Fresh Pack,Bagger-2,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",7:02,84.7,93.3,63.7
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Fresh Pack,Pallet stacking,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",7:01,84.5,88.2,62.5
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Fresh Pack,Plastic bag packing,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",7:04,82.9,61.8,53.1
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Fresh Pack,Sorter-4,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",8:06,82.8,60.4,45.2
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Fresh Pack,Sorter-5,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",8:05,83.5,70.9,45.2
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Fresh Pack,Sorter-6,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",8:13,84.1,80.7,45.2
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Fresh Pack,Boxer,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",8:12,90.5,358.9,70.7
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Fresh Pack,Box loader-1,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",8:23,82.4,55.0,53.1
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Fresh Pack,Box loader-2,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",8:08,83.7,74.1,66.6
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Fresh Pack,Box loader-3,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",7:55,83.1,64.9,60.2
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Fresh Pack,Forklift driver,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",8:02,81.8,47.9,64.2
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Pellet Shop,Operator,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",6:07,91.6,458.6,87.8
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Pellet Shop,Front loader,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",6:12,81.7,47.2,62.8
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Mechanic Shop,Mechanic-1,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",7:06,89.0,253.1,76.4
+2004-0014,115114.0,"Agriculture, Forestry & Fishing",Agricultural Products Company,Mechanic Shop,Mechanic-2,"Potato processing, packaging, corn storage, dispensing, equipment maintenance, mechanical tasks, manufacture of alfalfa pellets",5:26,75.9,12.2,54.2
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Director,"Power washing, ear clipping, snout snaring, castrating, breeding, gate repairs, feed mill",8:00,84.7,93.6,74.7
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Farm Technician,"Power washing, ear clipping, snout snaring, castrating, breeding, gate repairs, feed mill",8:00,81.4,43.6,70.3
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Student I,"Power washing, ear clipping, snout snaring, castrating, breeding, gate repairs, feed mill",8:00,93.2,659.3,89.8
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Student II,"Power washing, ear clipping, snout snaring, castrating, breeding, gate repairs, feed mill",8:00,86.2,131.6,75.2
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Director,"Power washing, ear clipping, snout snaring, castrating, breeding, gate repairs, feed mill",8:00,88.9,242.8,79.1
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Farm Technician,"Power washing, ear clipping, snout snaring, castrating, breeding, gate repairs, feed mill",8:00,86.6,144.4,76.9
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Student,"Power washing, ear clipping, snout snaring, castrating, breeding, gate repairs, feed mill",8:00,91.8,482.7,85.7
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Director,Castration,0:12,86.1,128.4,
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Director,Breeding,0:30,88.6,227.8,
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Director,Gate Repairs,0:41,83.2,66.3,
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Farm Technician,Gate Repairs,0:46,82.5,56.6,
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Student I,Gate Repairs,0:46,80.0,31.4,
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Student II,Gate Repairs,0:47,86.1,128.1,
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Student I,Power Washing,0:29,97.4,1718.6,
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Director,Feed Mill,0:13,83.0,63.8,
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Farm Technician,Feed Mill,0:19,86.4,139.5,
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Student I,Feed Mill,0:08,77.2,16.7,
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Director,Snaring,0:17,96.8,1496.4,
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Farm Technician,Snaring,0:16,93.7,745.1,
+2004-0046,611310.0,Services, Community College Swine Education Center,Finishing area (barns),Student I,Snaring,0:17,99.9,3111.4,
+2004-0100,488119.0,Services,Transportation Security Administration,West Baggage (WB-4),Screener #1,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:47,83.4,69.9,70.3
+2004-0100,488119.0,Services,Transportation Security Administration,West Baggage (WB-4),Screener #2,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:51,81.0,39.5,61.4
+2004-0100,488119.0,Services,Transportation Security Administration,West Baggage (WB-3),Screener #1,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:45,77.9,19.3,45.2
+2004-0100,488119.0,Services,Transportation Security Administration,West Baggage (WB-3),Screener #2,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:36,95.7,1186.9,78.9
+2004-0100,488119.0,Services,Transportation Security Administration,West Baggage (WB-2),Screener #1,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:37,87.0,159.1,68.4
+2004-0100,488119.0,Services,Transportation Security Administration,West Baggage (WB-2),Screener #2,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:44,83.7,73.9,68.8
+2004-0100,488119.0,Services,Transportation Security Administration,West Baggage (WB-1),Screener #1,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:51,83.8,75.1,69.6
+2004-0100,488119.0,Services,Transportation Security Administration,West Baggage (WB-1),Screener #2,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:50,85.3,108.0,73.2
+2004-0100,488119.0,Services,Transportation Security Administration,East Baggage (EB-4),Screener #1,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:41,81.8,47.7,63.1
+2004-0100,488119.0,Services,Transportation Security Administration,East Baggage (EB-2),Screener #1,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:30,81.2,41.9,58.1
+2004-0100,488119.0,Services,Transportation Security Administration,East Baggage (EB-1),Screener #1,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:36,82.1,51.3,67.3
+2004-0100,488119.0,Services,Transportation Security Administration,Remote Baggage (MU-2),Screener #1,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:08,76.8,15.0,48.1
+2004-0100,488119.0,Services,Transportation Security Administration,Remote Baggage (MU-1),Screener #1,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:16,79.0,25.2,56.8
+2004-0100,488119.0,Services,Transportation Security Administration,Southeast Baggage (SE-4),Screener #1,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",6:50,77.4,17.3,54.2
+2004-0100,488119.0,Services,Transportation Security Administration,Southeast Baggage (SE-3),Screener #1,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",5:15,77.3,17.1,50.2
+2004-0100,488119.0,Services,Transportation Security Administration,Southeast Baggage (SE-1),Screener #1,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",6:41,88.5,224.0,82.1
+2004-0101,488119.0,Services,Transportation Security Administration,Air Tran Baggage Screening,Screener #1,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:11,88.1,202.9,69.8
+2004-0101,488119.0,Services,Transportation Security Administration,Air Tran Baggage Screening,Screener #2,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:11,87.0,158.6,74.9
+2004-0101,488119.0,Services,Transportation Security Administration,Air Tran Baggage Screening,Screener #3,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",6:16,84.4,87.5,73.4
+2004-0101,488119.0,Services,Transportation Security Administration,International Baggage Screening,Screener #1,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",6:43,79.2,26.2,56.8
+2004-0101,488119.0,Services,Transportation Security Administration,International Baggage Screening,Screener #2,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",6:42,81.5,44.9,63.4
+2004-0101,488119.0,Services,Transportation Security Administration,United Baggage Screening,Screener #1,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",6:11,79.1,25.9,53.1
+2004-0101,488119.0,Services,Transportation Security Administration,United Baggage Screening, Screener #2,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",6:02,79.9,30.6,58.7
+2004-0101,488119.0,Services,Transportation Security Administration,Delta Baggage Screening, Screener #1,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:24,84.9,97.1,71.6
+2004-0101,488119.0,Services,Transportation Security Administration,Southwest Baggage Screening,Screener #1,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:38,81.4,43.4,63.7
+2004-0101,488119.0,Services,Transportation Security Administration,Southwest Baggage Screening,Screener #2,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:57,77.4,17.2,48.1
+2004-0101,488119.0,Services,Transportation Security Administration,Southwest Baggage Screening,Screener #3,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:55,77.9,19.4,45.2
+2004-0101,488119.0,Services,Transportation Security Administration,U.S. Air Baggage Screening,Screener #1,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",6:42,79.1,25.7,57.5
+2004-0130,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,EDS: Lane 1,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:39,90.5,351.2,83.4
+2004-0130,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,EDS: Lane 3,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",6:15,81.2,41.3,64.9
+2004-0130,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,EDS: Lane 4,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",6:20,79.3,26.7,58.7
+2004-0130,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,EDS: Lanes 4 & 5,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:36,80.8,38.0,62.8
+2004-0130,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,EDS: Lane 6,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:58,84.6,90.4,72.3
+2004-0130,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,EDS: Lane 7,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",8:01,87.6,181.0,77.7
+2004-0130,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,EDS: Lane 8,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",8:02,78.4,21.8,53.1
+2004-0130,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,EDS: Lane 9,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",6:08,81.8,47.9,66.6
+2004-0130,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,EDS: Lane 2,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",8:02,81.6,45.4,58.1
+2004-0130,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,EDS: Lanes 2 & 5,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:49,84.9,97.2,73.5
+2004-0130,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,EDS: Lane 3,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",6:42,81.0,39.7,62.1
+2004-0130,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,EDS: Lane 5,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",8:02,79.5,28.1,56.8
+2004-0130,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,EDS: Lane 7,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",8:08,79.1,25.5,50.2
+2004-0130,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,EDS: Lane 8,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",4:30,81.2,42.0,65.8
+2004-0130,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,EDS: Lane 9,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:49,83.1,64.2,71.0
+2004-0146,488119.0,Services,Transportation Security Administration,Area 62 - #1,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:01,82.8,60.9,60.6
+2004-0146,488119.0,Services,Transportation Security Administration,Area 62 - #2,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:05,82.9,62.2,62.5
+2004-0146,488119.0,Services,Transportation Security Administration,Area 62 - #3,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:02,84.5,89.6,68.1
+2004-0146,488119.0,Services,Transportation Security Administration,Area 62 - #4,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",6:44,83.2,66.4,64.9
+2004-0146,488119.0,Services,Transportation Security Administration,F2,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:04,86.8,152.3,71.5
+2004-0146,488119.0,Services,Transportation Security Administration,Area 62 - #5,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:01,87.0,157.7,74.1
+2004-0146,488119.0,Services,Transportation Security Administration,Area 62 - #6,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:04,84.5,88.7,69.1
+2004-0146,488119.0,Services,Transportation Security Administration,Area 62 - #7,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:00,86.4,139.2,69.8
+2004-0146,488119.0,Services,Transportation Security Administration,Area 62 - #8,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:09,83.9,77.3,66.8
+2004-0146,488119.0,Services,Transportation Security Administration,H3 - #1,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:47,82.7,58.3,62.5
+2004-0146,488119.0,Services,Transportation Security Administration,H3 - #2,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",7:48,84.9,98.2,70.7
+2004-0146,488119.0,Services,Transportation Security Administration,EITI - #1,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",6:53,85.6,115.6,73.2
+2004-0146,488119.0,Services,Transportation Security Administration,EITI - #2,TSA employees,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",6:57,84.3,84.6,70.2
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Extruder, Line 1","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",11:08,87.8,191.6,74.6
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Winder, Line 8","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",9:36,85.7,116.7,72.4
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Winder, Line 3","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",9:32,83.3,67.8,69.3
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Winder, Line 2","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",9:48,86.4,138.0,76.0
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,Cut-to-Size,"Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",9:09,84.7,93.5,64.2
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Extruder, Line 8","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",10:13,86.4,139.0,69.2
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,Pelletizer,"Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",9:53,95.7,1166.0,92.5
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Extruder, Line 7","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",9:46,104.1,8115.0,88.1
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,Supervisor,"Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",2:49,80.6,36.7,65.8
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,Forklift Operator,"Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",11:25,85.3,106.4,71.7
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Extruder, Line 4","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",11:03,89.2,265.3,80.4
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Regrind/Winder, Line 4","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",10:44,84.9,97.8,68.9
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Extruder, Line 7","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",10:51,88.1,204.0,79.2
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,Team Lead,"Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",10:17,85.7,117.7,75.9
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,Maintenance,"Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",10:05,86.9,154.8,75.4
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Winder, Line 8","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",11:08,90.6,364.3,72.7
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,Pelletizer,"Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",10:04,92.5,559.7,90.4
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,Rewinder,"Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",10:46,85.2,103.7,71.6
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,Supervisor,"Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",10:44,85.1,102.9,73.2
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Extruder, Line 2","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",11:02,88.6,229.5,78.0
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,Maintenance,"Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",2:57,86.5,141.3,78.1
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Extruder, Line 1","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",11:02,88.8,239.5,79.0
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Winder, Line 8","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",11:12,89.4,276.0,81.5
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Extruder, Line 8","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",3:05,81.1,40.4,65.6
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,Rover,"Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",3:10,89.1,259.4,80.5
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,Maintenance,"Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",4:56,85.1,102.1,73.7
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Winder, Line 1","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",4:43,79.5,28.4,60.6
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Winder, Line 8","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",5:33,87.9,193.4,77.4
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Winder, Line 8","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",5:07,88.9,246.1,78.7
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,Team Lead,"Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",5:04,87.8,191.8,78.1
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Winder, Line 4","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",11:11,84.3,84.4,64.7
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Winder, Line 2","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",11:01,88.1,202.8,74.5
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,"Extruder, Line 3","Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",11:02,93.7,736.2,90.5
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,Team Lead,"Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",11:14,88.3,215.5,79.6
+2004-0372,326199.0,Manufacturing,Polyethylene manufacturing company,Production area,Pelletizer,"Extrusion, winding, palletizing, maintenance, and utility/rover jobs (such as, fork lift operators)",11:06,93.8,754.7,93.1
+2005-0030,238160.0,Construction,Roofing Company,Roof,Roofer #1,"Cutting and laying roof tiles (residential roofing operations, roof installation)",7:06,98.8,2413.1,92.9
+2005-0030,238160.0,Construction,Roofing Company,Roof,Roofer #2,"Cutting and laying roof tiles (residential roofing operations, roof installation)",8:48,95.8,1208.5,89.5
+2005-0030,238160.0,Construction,Roofing Company,Roof,Roofer #3,"Cutting and laying roof tiles (residential roofing operations, roof installation)",8:20,94.6,911.5,88.7
+2005-0030,238160.0,Construction,Roofing Company,Roof,Roofer #4,"Cutting and laying roof tiles (residential roofing operations, roof installation)",9:00,93.9,783.4,87.2
+2005-0030,238160.0,Construction,Roofing Company,Roof,Roofer #5,"Cutting and laying roof tiles (residential roofing operations, roof installation)",6:22,98.8,2408.3,92.5
+2005-0030,238160.0,Construction,Roofing Company,Roof,Roofer #6,"Cutting and laying roof tiles (residential roofing operations, roof installation)",5:45,94.9,973.5,87.1
+2005-0030,238160.0,Construction,Roofing Company,Roof,Roofer #7,"Cutting and laying roof tiles (residential roofing operations, roof installation)",5:49,92.6,573.5,84.9
+2005-0031,238160.0,Construction,Roofing Company,Roof,Laborer,"Cutting and laying roof tiles (residential roofing operations, roof installation)",8:15,86.3,136.1,77.0
+2005-0031,238160.0,Construction,Roofing Company,Roof,Foreman,"Cutting and laying roof tiles (residential roofing operations, roof installation)",8:21,94.0,803.2,87.0
+2005-0031,238160.0,Construction,Roofing Company,Roof,Laborer,"Cutting and laying roof tiles (residential roofing operations, roof installation)",6:03,96.8,1500.1,88.3
+2005-0031,238160.0,Construction,Roofing Company,Roof,Second man,"Cutting and laying roof tiles (residential roofing operations, roof installation)",5:27,96.4,1367.8,88.6
+2005-0031,238160.0,Construction,Roofing Company,Roof,Foreman,"Cutting and laying roof tiles (residential roofing operations, roof installation)",7:06,98.8,2413.1,92.9
+2005-0031,238160.0,Construction,Roofing Company,Roof,Laborer,"Cutting and laying roof tiles (residential roofing operations, roof installation)",8:11,92.9,621.0,85.7
+2005-0031,238160.0,Construction,Roofing Company,Roof,Second man,"Cutting and laying roof tiles (residential roofing operations, roof installation)",8:24,91.3,427.0,83.1
+2005-0032,238160.0,Construction,Roofing Company,Roof,Roofer #1,"Cutting and laying roof tiles (residential roofing operations, roof installation)",8:36,85.5,113.2,75.3
+2005-0032,238160.0,Construction,Roofing Company,Roof,Roofer #2,"Cutting and laying roof tiles (residential roofing operations, roof installation)",9:02,96.3,1352.1,89.3
+2005-0032,238160.0,Construction,Roofing Company,Roof,Roofer #3,"Cutting and laying roof tiles (residential roofing operations, roof installation)",8:38,95.4,1095.8,88.4
+2005-0032,238160.0,Construction,Roofing Company,Roof,Roofer #2,"Cutting and laying roof tiles (residential roofing operations, roof installation)",10:05,92.7,590.7,85.0
+2005-0032,238160.0,Construction,Roofing Company,Roof,Roofer #4,"Cutting and laying roof tiles (residential roofing operations, roof installation)",7:07,90.2,330.8,80.9
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Construction,Trackhoe Operator,"Bulldozers, trackhoes, jack hammers, circular saws",9:00,87.1,162.6,78.1
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Plant Operations,Small Plant Operator,"Pumps, compressors, trucks, and other equipment",7:52,79.3,27.0,55.4
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Customer Service,Vactor Truck Assistant,"Pumps, compressors, trucks, and other equipment",7:37,84.4,86.8,72.5
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Plant Operations,Small Plant Operator,"Pumps, compressors, trucks, and other equipment",7:25,79.9,31.0,62.0
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Plant Operations,Electrician,"Pumps, compressors, trucks, and other equipment",7:58,78.1,20.5,59.7
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Plant Operations,Maintenance,"Pumps, compressors, trucks, and other equipment",8:00,84.0,78.8,66.1
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Customer Service,Vactor Truck,"Pumps, compressors, trucks, and other equipment",7:25,85.7,116.9,76.6
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Plant Operations,Operator Zimpro,"Pumps, compressors, trucks, and other equipment",11:33,78.6,23.1,61.6
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Plant Operations,Operator,"Pumps, compressors, trucks, and other equipment",11:48,84.0,79.4,73.1
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Plant Operations,Operator,"Pumps, compressors, trucks, and other equipment",11:40,86.0,125.4,77.2
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Plant Operations,Electrician,"Pumps, compressors, trucks, and other equipment",7:28,84.4,88.0,63.8
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Plant Operations,Operator Zimpro,"Pumps, compressors, trucks, and other equipment",11:28,80.9,39.1,65.9
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Plant Operations,Operator Zimpro,"Pumps, compressors, trucks, and other equipment",12:25,82.8,60.9,69.6
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Plant Operations,Pump Station,"Pumps, compressors, trucks, and other equipment",7:39,84.4,88.1,73.8
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Customer Service,Vactor Truck Assistant,"Pumps, compressors, trucks, and other equipment",7:58,88.1,202.3,81.0
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Construction,Trackhoe Operator,"Bulldozers, trackhoes, jack hammers, circular saws",7:54,83.3,67.4,67.9
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Construction,Trackhoe Operator Assistant,"Bulldozers, trackhoes, jack hammers, circular saws",7:49,81.5,45.1,66.2
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Customer Service,Vactor Truck Operator,"Pumps, compressors, trucks, and other equipment",7:58,92.2,523.3,86.3
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Plant Operations,Maintenance (boiler),"Pumps, compressors, trucks, and other equipment",7:46,86.1,130.3,66.3
+2005-0035,221320.0,"Transportation, Warehousing & Utilities",Sewage Treatment Plant/Installation and Maintenance Sewer Lines  ,Plant Operations,Maintenance,"Pumps, compressors, trucks, and other equipment",7:45,76.5,14.0,50.7
+2005-0091,928110.0,Services,Transportation Security Administration,Palm Beach International Airport,Screener,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",X,,,
+2005-0091,928110.0,Services,Transportation Security Administration,Miami International Airport,Screener,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",X,,,
+2005-0091,928110.0,Services,Transportation Security Administration,Washington-Dulles International Airport,Screener,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",X,,,
+2005-0091,928110.0,Services,Transportation Security Administration,Baltimore-Washington International Airport,Screener,"Tugs, jets, conveyor belts, and baggage carousels in the (checked baggage screening area)",X,,,
+2005-0197,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,Baggage screening,Screener #1,Airport screening conveyors and machines,7:16,83.5,70.3,65.8
+2005-0197,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,Baggage screening,Screener #2,Airport screening conveyors and machines,7:22,81.7,46.5,60.2
+2005-0197,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,Baggage screening,Screener #3,Airport screening conveyors and machines,6:06,91.2,419.0,76.0
+2005-0197,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,Baggage screening,Screener #4,Airport screening conveyors and machines,8:03,80.4,34.5,54.2
+2005-0197,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,Baggage screening,Screener #5,Airport screening conveyors and machines,7:14,81.6,45.2,62.5
+2005-0197,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,Baggage screening,Screener #6,Airport screening conveyors and machines,7:08,81.5,44.7,61.4
+2005-0197,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,Baggage screening,Screener #7,Airport screening conveyors and machines,7:16,82.3,53.2,62.8
+2005-0197,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,Baggage screening,Screener #8,Airport screening conveyors and machines,6:08,82.8,60.3,67.3
+2005-0197,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,Baggage screening,Screener #9,Airport screening conveyors and machines,7:17,83.3,67.6,68.7
+2005-0197,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,Baggage screening,Screener #10,Airport screening conveyors and machines,7:20,82.2,52.6,62.5
+2005-0197,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,Baggage screening,Screener #11,Airport screening conveyors and machines,9:48,73.2,6.6,40.2
+2005-0197,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,Baggage screening,Screener #12,Airport screening conveyors and machines,3:30,75.0,10.1,48.1
+2005-0197,488119.0,"Transportation, Warehousing & Utilities",Transportation Security Administration,Baggage screening,Screener #13,Airport screening conveyors and machines,7:27,79.1,25.8,62.1
+2005-0306,221119.0,"Transportation, Warehousing & Utilities",Oil-Powered Electricity Generating  Plant ,Production area,Plant Equipment Operator,"Boiler structure, compressor, boiler feed pump, welding ",6:27,,,
+2005-0306,221119.0,"Transportation, Warehousing & Utilities",Oil-Powered Electricity Generating  Plant ,Production area,Mechanic,"Boiler structure, compressor, boiler feed pump, welding ",5:51,,,
+2005-0306,221119.0,"Transportation, Warehousing & Utilities",Oil-Powered Electricity Generating  Plant ,Production area,Plant Tester,"Boiler structure, compressor, boiler feed pump, welding ",4:50,,,
+2005-0306,221119.0,"Transportation, Warehousing & Utilities",Oil-Powered Electricity Generating  Plant ,Production area, Mechanic,"Boiler structure, compressor, boiler feed pump, welding ",5:25,,,
+2006-0196,541940.0,Services,Veterinary Hospital,"Laboratory, Kennel, and Grooming Areas",Kennel workers,Barking dogs,X,,,
+2006-0196,541940.0,Services,Veterinary Hospital,"Laboratory, Kennel, and Grooming Areas",Kennel workers,Barking dogs,X,,,
+2006-0196,541940.0,Services,Veterinary Hospital,"Laboratory, Kennel, and Grooming Areas",Veterinary staff,Surgical equipment,X,,,
+2006-0196,541940.0,Services,Veterinary Hospital,"Laboratory, Kennel, and Grooming Areas",Veterinary staff,Surgical equipment,X,76.8,15.1,57.5
+2006-0212,813310.0,Services,Animal Shelter,Animal shelter,Animal shelter workers,"Clean dog cages, wash dishes, and clean bathrooms",X,,,
+2006-0212,813310.0,Services,Animal Shelter,Animal shelter,Animal shelter workers,"Laundry, clean cat and puppy cages, provide shots to animals, respond to the public, arrange adoptions",X,,,
+2006-0222,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,8:29,94.9,973.1,89.9
+2006-0222,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,11:24,89.8,300.1,80.9
+2006-0222,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,9:28,95.3,1060.6,90.0
+2006-0222,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,10:32,96.3,1338.2,92.7
+2006-0222,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,9:52,92.8,607.9,88.3
+2006-0222,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,10:16,92.8,600.9,84.9
+2006-0222,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,9:23,84.7,94.1,74.6
+2006-0222,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,9:20,90.1,321.7,82.1
+2006-0222,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,3:47,81.7,47.2,69.6
+2006-0222,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,5:57,88.3,213.2,79.2
+2006-0222,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,8:58,92.2,528.1,87.0
+2006-0222,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,9:30,95.7,1173.8,91.4
+2006-0222,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,6:55,86.4,136.5,77.1
+2006-0222,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,9:46,94.9,985.7,89.2
+2006-0222,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,9:10,96.1,1300.8,93.3
+2006-0222,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,9:24,87.4,174.6,78.7
+2006-0222,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,9:09,94.3,854.5,88.6
+2006-0222,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,8:31,86.7,146.7,75.4
+2006-0222,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,5:38,87.5,179.1,77.7
+2006-0223,922120.0,Public Safety,Police Canine Unit,Police canine unit vehicle,Police officer (day shift),Barking dogs,X,,,
+2006-0223,922120.0,Public Safety,Police Canine Unit,Police canine unit vehicle,Police officer (night shift),Barking dogs,X,,,
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Galvanizing,Bundler,Metal to metal contact,10:27,94.8,961.5,89.8
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Galvanizing,Bundler,Metal to metal contact,10:32,92.9,620.0,87.8
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Hot Dip,Hot Dip Extractor,Metal to metal contact and compressed air release,6:56,102.7,5961.1,94.7
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Hot Dip,Hot Dip Extractor,Metal to metal contact and compressed air release,7:54,99.0,2536.4,92.0
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Hot Dip,Hot Dip Operator,Metal to metal contact and compressed air release,7:12,101.2,4215.7,94.1
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Hot Dip,Hot Dip Laborer,Metal to metal contact and compressed air release,4:25,93.1,649.3,84.3
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Hot Dip,Hot Dip Loader,Metal to metal contact and compressed air release,10:11,90.5,356.2,85.2
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Hot Dip,Hot Dip,Metal to metal contact and compressed air release,11:02,94.2,837.1,91.1
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Maintenance,Maintenance,Metal to metal contact,7:57,91.0,399.8,83.2
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Maintenance,Maintenance,Metal to metal contact,7:55,84.7,93.3,72.2
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Maintenance,Maintenance,Metal to metal contact,7:56,96.7,1491.1,88.3
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Maintenance,Maintenance,Metal to metal contact,7:44,85.4,109.7,75.5
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Shipping,Material Handler,Metal to metal contact,8:16,89.5,282.7,82.1
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Shipping,Material Handler,Metal to metal contact,10:28,92.5,565.3,84.5
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Shipping,Material Handler,Metal to metal contact,6:48,91.5,448.7,84.9
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Shipping,Material Handler,Metal to metal contact,7:28,88.3,214.3,81.5
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Shipping,Material Handler,Metal to metal contact,7:33,90.5,356.2,83.2
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Shipping,Material Handler,Metal to metal contact,7:28,89.8,303.0,84.0
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Threading,Packaging Operator,Metal to metal contact,6:40,94.4,876.7,83.3
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Threading,Packaging Operator,Metal to metal contact,7:28,87.3,170.1,79.6
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Threading,Saw Operator,Metal to metal contact,5:57,92.4,552.4,88.2
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Threading,Saw Operator,Metal to metal contact,6:23,91.2,418.7,86.0
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Threading,Threader Operator,Metal to metal contact,6:41,90.5,356.2,86.4
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Threading,Threader Operator,Metal to metal contact,7:26,90.7,373.0,86.3
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Threading,Threading Inspector,Metal to metal contact,6:38,89.8,303.0,83.1
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Welding,Bander,Metal to metal contact,7:10,92.9,620.0,87.4
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Welding,Bander,Metal to metal contact,7:45,92.6,578.5,87.2
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Welding,Bander,Metal to metal contact,7:11,97.1,1635.5,94.9
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Welding,Bander,Metal to metal contact,8:10,93.7,745.8,89.4
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Welding,End Finisher,Metal to metal contact,2:43,86.7,148.1,77.1
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Welding,End Finisher,Metal to metal contact,7:49,97.3,1712.8,92.5
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Welding,End Finisher,Metal to metal contact,6:22,89.4,276.3,82.0
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Welding,Mill Operator,Metal to metal contact,10:54,90.0,317.3,83.2
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Welding,Mill Operator,Metal to metal contact,9:21,86.9,155.1,76.9
+2006-0332,332813.0,Manufacturing,Metal conduit manufacturing company,Welding,Utility,Metal to metal contact,7:09,81.7,46.7,86.3
+2007-0068,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Kennel workers,Barking dogs,X,,,
+2007-0068,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Veterinary technicians,Barking dogs,X,82.0,49.8,67.9
+2007-0068,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Veterinary technicians,Barking dogs,X,85.0,100.7,80.0
+2007-0068,813312.0,Services,Society for the Prevention of Cruelty to Animals,Kennel,Client care workers,Barking dogs,X,,,
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Die Repair,Hammer strikes,X,91.4,436.5,85.3
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Forklift Operator (South Forge),Hammer strikes,X,98.3,2138.0,96.1
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Grinder Operator,Hammer strikes,X,94.8,955.0,93.9
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Hammer Operator,Hammer strikes,X,110.4,34673.7,106.8
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Hammer Operator,Hammer strikes,X,107.8,19054.6,106.1
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Hammer Operator,Hammer strikes,X,106.7,14791.1,103.5
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Hammer Operator,Hammer strikes,X,105.4,10964.8,103.0
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Hammer Operator,Hammer strikes,X,105.1,10232.9,100.5
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Hammer Operator,Hammer strikes,X,99.6,2884.0,97.6
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Hammer Operator,Hammer strikes,X,98.8,2398.8,97.0
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Heat Treat Helper,Hammer strikes,X,94.2,831.8,90.9
+2007-0076,,,,Hammer forge,Heater,Hammer strikes,X,101.2,4168.7,99.2
+2007-0077,,,,Hammer forge,Heater,Hammer strikes and equipment noise,X,100.3,3388.4,99.1
+2007-0078,,,,Hammer forge,Heater,Hammer strikes and equipment noise,X,100.2,3311.3,99.2
+2007-0079,,,,Hammer forge,Heater,Hammer strikes and equipment noise,X,100.0,3162.3,99.3
+2007-0080,,,,Hammer forge,Heater,Hammer strikes and equipment noise,X,99.9,3090.3,98.5
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Heater,Hammer strikes and equipment noise,X,98.8,2398.8,96.4
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Line-up,Hammer strikes and equipment noise,X,96.8,1513.6,92.3
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Line-up,Hammer strikes and equipment noise,X,95.4,1096.5,91.9
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Machinist,Hammer strikes and equipment noise,X,83.4,69.2,65.2
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Maintenance,Hammer strikes and equipment noise,X,96.4,1380.4,92.9
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Shear Operator,Hammer strikes and equipment noise,X,98.4,2187.8,95.6
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Shear Operator,Hammer strikes and equipment noise,X,97.4,1737.8,93.9
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Shopblast Operator,Hammer strikes and equipment noise,X,97.9,1949.8,91.6
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Shopblast Operator,Hammer strikes and equipment noise,X,95.3,1071.5,90.2
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Tow Motor Driver (North Forge),Hammer strikes and equipment noise,X,97.1,1621.8,94.2
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Trim Press Operator,Hammer strikes and equipment noise,X,104.1,8128.3,101.6
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Trim Press Operator,Hammer strikes and equipment noise,X,103.2,6606.9,102.0
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Trim Press Operator,Hammer strikes and equipment noise,X,100.4,3467.4,97.8
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Trim Press Operator,Hammer strikes and equipment noise,X,100.3,3388.4,98.3
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Trim Press Operator,Hammer strikes and equipment noise,X,99.3,2691.5,96.8
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Trim Press Operator,Hammer strikes and equipment noise,X,98.9,2454.7,97.1
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Upset Heater,Hammer strikes and equipment noise,X,97.7,1862.1,96.6
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Upset Heater,Hammer strikes and equipment noise,X,95.7,1174.9,94.0
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Upset Operator,Hammer strikes and equipment noise,X,96.1,1288.2,95.3
+2007-0075,332111.0,Manufacturing,Hammer Forge,Hammer forge,Upset Operator,Hammer strikes and equipment noise,X,94.0,794.3,92.3
+2007-0183,622110.0,Healthcare & Social Assistance,Hospital,Hospital's kitchen,Food service worker,"Kitchen equipment and metal-to-metal contact between
+utensils and metal racks",3:46,85.1,102.8,76.0
+2007-0183,622110.0,Healthcare & Social Assistance,Hospital,Hospital's kitchen,Food service worker,"Kitchen equipment and metal-to-metal contact between
+utensils and metal racks",3:35,79.5,28.4,61.8
+2007-0183,622110.0,Healthcare & Social Assistance,Hospital,Hospital's kitchen,Food service worker,"Kitchen equipment and metal-to-metal contact between
+utensils and metal racks",8:10,85.1,102.2,74.0
+2007-0183,622110.0,Healthcare & Social Assistance,Hospital,Hospital's kitchen,Food service worker,"Kitchen equipment and metal-to-metal contact between
+utensils and metal racks",8:10,77.7,18.8,58.1
+2007-0183,622110.0,Healthcare & Social Assistance,Hospital,Hospital's kitchen,Food service worker,"Kitchen equipment and metal-to-metal contact between
+utensils and metal racks",1:00,75.9,12.2,59.2
+2007-0183,622110.0,Healthcare & Social Assistance,Hospital,Hospital's kitchen,Food service worker,"Kitchen equipment and metal-to-metal contact between
+utensils and metal racks",8:18,82.5,55.9,69.8
+2007-0183,622110.0,Healthcare & Social Assistance,Hospital,Hospital's kitchen,Food service worker,"Kitchen equipment and metal-to-metal contact between
+utensils and metal racks",9:07,80.1,32.5,64.7
+2007-0183,622110.0,Healthcare & Social Assistance,Hospital,Hospital's kitchen,Food service worker,"Kitchen equipment and metal-to-metal contact between
+utensils and metal racks",10:14,79.6,28.8,62.1
+2007-0183,622110.0,Healthcare & Social Assistance,Hospital,Hospital's kitchen,Cook,"Kitchen equipment and metal-to-metal contact between
+utensils and metal racks",8:14,84.3,84.7,71.8
+2007-0183,622110.0,Healthcare & Social Assistance,Hospital,Hospital's kitchen,Cook,"Kitchen equipment and metal-to-metal contact between
+utensils and metal racks",8:23,84.3,84.8,73.4
+2007-0183,622110.0,Healthcare & Social Assistance,Hospital,Hospital's kitchen,Cook,"Kitchen equipment and metal-to-metal contact between
+utensils and metal racks",8:15,85.8,119.5,77.0
+2007-0183,622110.0,Healthcare & Social Assistance,Hospital,Hospital's kitchen,Food service worker,"Kitchen equipment and metal-to-metal contact between
+utensils and metal racks",4:30,86.8,151.9,77.9
+2007-0183,622110.0,Healthcare & Social Assistance,Hospital,Hospital's kitchen,Food service worker,"Kitchen equipment and metal-to-metal contact between
+utensils and metal racks",4:03,76.7,14.8,59.2
+2007-0183,622110.0,Healthcare & Social Assistance,Hospital,Hospital's kitchen,Materials handler,"Kitchen equipment and metal-to-metal contact between
+utensils and metal racks",8:11,82.8,59.7,70.7
+2007-0183,622110.0,Healthcare & Social Assistance,Hospital,Hospital's kitchen,Materials handler,"Kitchen equipment and metal-to-metal contact between
+utensils and metal racks",8:30,81.4,43.2,67.8
+2007-0235,922160.0,Public Safety,Fire Department,Maintenance shop,AFD mechanic,"½"" impactor gun, priming, and air vacuum pump",10:04,84.9,97.1,72.1
+2007-0235,922160.0,Public Safety,Fire Department,Maintenance shop,AFD mechanic,"½"" impactor gun, priming, and air vacuum pump",9:54,77.3,16.9,58.9
+2007-0235,922160.0,Public Safety,Fire Department,Maintenance shop,AFD mechanic,"½"" impactor gun, priming, and air vacuum pump",9:58,89.2,263.0,79.0
+2007-0235,922160.0,Public Safety,Fire Department,Maintenance shop,AFD mechanic,"½"" impactor gun, priming, and air vacuum pump",11:03,82.8,59.6,68.5
+2007-0235,922160.0,Public Safety,Fire Department,Maintenance shop,AFD mechanic,"½"" impactor gun, priming, and air vacuum pump",10:04,96.3,1351.5,85.8
+2007-0235,922160.0,Public Safety,Fire Department,Maintenance shop,AFD mechanic,"½"" impactor gun, priming, and air vacuum pump",10:00,101.7,4631.3,81.6
+2007-0235,922160.0,Public Safety,Fire Department,Maintenance shop,AFD mechanic,"½"" impactor gun, priming, and air vacuum pump",10:06,85.4,110.2,73.6
+2007-0235,922160.0,Public Safety,Fire Department,Maintenance shop,AFD mechanic,"½"" impactor gun, priming, and air vacuum pump",9:53,85.5,112.7,75.1
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Back end (lacquer spray),Back end operator (lacquer spray),Aluminum can production equipment,10:40,98.8,338.7,97.4
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Back end (lacquer spray),Back end operator (lacquer spray),Aluminum can production equipment,10:00,100.5,428.7,98.9
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Back end (necker),Back end operator (necker),Aluminum can production equipment,10:00,102.2,542.6,99.9
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Back end (necker),Back end operator (necker),Aluminum can production equipment,10:03,102.7,581.6,99.8
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Baler room,Baler room/forklift operator,Aluminum can production equipment,11:23,95.6,217.3,94.6
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Baler room,Baler room/forklift operator,Aluminum can production equipment,10:54,97.0,263.9,95.4
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Front end,Front end ironer trimmer,Aluminum can production equipment,11:02,95.4,211.4,92.9
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Front end,Front end ironer trimmer,Aluminum can production equipment,10:55,95.7,220.4,93.4
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Front end,Front end ironer trimmer,Aluminum can production equipment,10:50,97.8,294.8,96.4
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Front end,Front end ironer trimmer/chemical process operator,Aluminum can production equipment,7:51,93.4,160.2,90.6
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Front end,Front end ironer trimmer leadman,Aluminum can production equipment,10:27,96.5,246.2,94.8
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Front end,Front end ironer trimmer leadman,Aluminum can production equipment,11:06,96.5,246.2,95.0
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Front end,Front end ironer trimmer line 3,Aluminum can production equipment,11:13,99.0,348.2,97.6
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Front end,Front end ironer trimmer lines 1 and 2,Aluminum can production equipment,10:53,97.9,299.0,95.8
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Front end,Front end maintenance/repair,Aluminum can production equipment,10:40,91.0,114.9,86.3
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Plant-wide,Material handler,Aluminum can production equipment,7:13,84.2,44.8,71.2
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Plant-wide,Material handler,Aluminum can production equipment,10:48,89.8,97.3,81.8
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Maintenance area,Millwright,Aluminum can production equipment,10:05,90.7,110.2,84.3
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Maintenance area,Millwright,Aluminum can production equipment,10:47,93.4,160.2,87.4
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Palletizer area,Palletizer,Aluminum can production equipment,10:02,86.6,62.4,72.5
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Palletizer area,Palletizer,Aluminum can production equipment,10:51,88.0,75.8,77.3
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Printer,Printer operator,Aluminum can production equipment,10:10,99.7,383.7,98.2
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Printer,Printer operator,Aluminum can production equipment,10:25,100.1,405.6,98.5
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Printer,Printer operator,Aluminum can production equipment,10:40,100.3,417.0,98.8
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Printer,Printer operator,Aluminum can production equipment,9:15,101.2,472.4,100.0
+2008-0099,331316.0,Manufacturing,Aluminum beverage can manufacturing,Printer,Printer leadman,Aluminum can production equipment,10:40,100.4,422.8,98.8
+2008-0231,622110.0,Healthcare & Social Assistance,Hospital,Operating rooms,Registered nurse,"Drilling, surgery preparation, clean up",8:43,83.0,60.0,72.0
+2008-0231,622110.0,Healthcare & Social Assistance,Hospital,Operating rooms,Registered nurse,"Drilling, surgery preparation, clean up",8:17,81.0,44.0,68.0
+2008-0231,622110.0,Healthcare & Social Assistance,Hospital,Operating rooms,Registered nurse,"Drilling, surgery preparation, clean up",7:05,71.0,4.4,43.0
+2008-0231,622110.0,Healthcare & Social Assistance,Hospital,Operating rooms,Registered nurse,"Drilling, surgery preparation, clean up",7:50,70.0,3.4,46.0
+2008-0231,622110.0,Healthcare & Social Assistance,Hospital,Operating rooms,Surgical technician,"Drilling, surgery preparation, clean up",7:35,80.0,29.0,64.0
+2008-0231,622110.0,Healthcare & Social Assistance,Hospital,Operating rooms,Surgical technician,"Drilling, surgery preparation, clean up",7:44,77.0,16.0,55.0
+2008-0231,622110.0,Healthcare & Social Assistance,Hospital,Operating rooms,Surgical technician,"Drilling, surgery preparation, clean up",6:56,73.0,6.2,48.0
+2008-0231,622110.0,Healthcare & Social Assistance,Hospital,Operating rooms,Surgical technician,"Drilling, surgery preparation, clean up",7:49,68.0,2.2,38.0
+2008-0231,622110.0,Healthcare & Social Assistance,Hospital,Operating rooms,Surgical technician,"Drilling, surgery preparation, clean up",9:07,,,
+2008-0231,622110.0,Healthcare & Social Assistance,Hospital,Operating rooms,Circulating nurse,"Drilling, surgery preparation, clean up",7:54,76.0,11.0,55.0
+2008-0231,622110.0,Healthcare & Social Assistance,Hospital,Operating rooms,Surgeon,"Drilling, surgery preparation, clean up",1:02,,,
+2009-0180,928120.0,Services,Immigration and Customs Enforcement Service and Staging facility,"Squad, Receiving and Discharge, Computer Service Equipment Room",X,"Background, fans, computer server equipment",X,,,
+2009-0216,928110.0,Services,Federal Government Helicopter Interdiction Tactical Squadron,Helicopter,Right pilot,"Helicopter engine, rotors, gunfire",2:24,101.8,4786.3,98.8
+2009-0216,928110.0,Services,Federal Government Helicopter Interdiction Tactical Squadron,Helicopter,Left pilot,"Helicopter engine, rotors, gunfire",2:23,101.8,4786.3,99.7
+2009-0216,928110.0,Services,Federal Government Helicopter Interdiction Tactical Squadron,Helicopter,Gunner,"Helicopter engine, rotors, gunfire",2:21,108.5,22387.2,106.3
+2009-0216,928110.0,Services,Federal Government Helicopter Interdiction Tactical Squadron,Helicopter,Right pilot,"Helicopter engine, rotors, gunfire",2:46,104.0,7943.3,100.3
+2009-0216,928110.0,Services,Federal Government Helicopter Interdiction Tactical Squadron,Helicopter,Left pilot,"Helicopter engine, rotors, gunfire",2:49,103.7,7413.1,101.2
+2009-0216,928110.0,Services,Federal Government Helicopter Interdiction Tactical Squadron,Helicopter,Gunner 1,"Helicopter engine, rotors, gunfire",0:23,104.3,8511.4,100.3
+2009-0216,928110.0,Services,Federal Government Helicopter Interdiction Tactical Squadron,Helicopter,Gunner 2,"Helicopter engine, rotors, gunfire",0:22,107.3,16982.4,104.5
+2009-0216,928110.0,Services,Federal Government Helicopter Interdiction Tactical Squadron,Helicopter,Gunner 3,"Helicopter engine, rotors, gunfire",0:20,107.6,18197.0,104.4
+2009-0216,928110.0,Services,Federal Government Helicopter Interdiction Tactical Squadron,Helicopter,Gunner 4,"Helicopter engine, rotors, gunfire",0:15,107.7,18620.9,103.8
+2009-0224,331511.0,Manufacturing,Metal Foundry,Herman,Foundry worker,"Vibration of the shaker conveyor pan and frame, castings dropping from one conveyor to another conveyor, rattling of metal",11:42,106.4,13803.8,105.6
+2009-0224,331511.0,Manufacturing,Metal Foundry,Herman,Foundry worker,"Vibration of the shaker conveyor pan and frame, castings dropping from one conveyor to another conveyor, rattling of metal",9:37,104.7,9332.5,104.3
+2009-0224,331511.0,Manufacturing,Metal Foundry,Disa 1 Hot,Foundry worker,"Vibration of the shaker conveyor pan and frame, castings dropping from one conveyor to another conveyor, rattling of metal",5:57,107.1,16218.1,106.4
+2009-0224,331511.0,Manufacturing,Metal Foundry,Disa 1 Cold,Foundry worker,"Vibration of the shaker conveyor pan and frame, castings dropping from one conveyor to another conveyor, rattling of metal",6:02,104.8,9549.9,102.5
+2009-0224,331511.0,Manufacturing,Metal Foundry,Disa 1 Cold,Foundry worker,"Vibration of the shaker conveyor pan and frame, castings dropping from one conveyor to another conveyor, rattling of metal",6:52,104.1,8128.3,102.1
+2009-0224,331511.0,Manufacturing,Metal Foundry,Disa 1 Hot,Foundry worker,"Vibration of the shaker conveyor pan and frame, castings dropping from one conveyor to another conveyor, rattling of metal",7:07,100.5,3548.1,99.4
+2009-0224,331511.0,Manufacturing,Metal Foundry,Disa 1 Cold,Foundry worker,"Vibration of the shaker conveyor pan and frame, castings dropping from one conveyor to another conveyor, rattling of metal",5:57,107.1,16218.1,106.4
+2009-0224,331511.0,Manufacturing,Metal Foundry,Disa 1 Cold,Foundry worker,"Vibration of the shaker conveyor pan and frame, castings dropping from one conveyor to another conveyor, rattling of metal",X,,,
+2009-0224,331511.0,Manufacturing,Metal Foundry,2071,Foundry worker,"Vibration of the shaker conveyor pan and frame, castings dropping from one conveyor to another conveyor, rattling of metal",7:47,100.9,3890.5,99.7
+2009-0224,331511.0,Manufacturing,Metal Foundry,2071,Foundry worker,"Vibration of the shaker conveyor pan and frame, castings dropping from one conveyor to another conveyor, rattling of metal",8:00,100.3,3388.4,99.4
+2009-0224,331511.0,Manufacturing,Metal Foundry,2071,Foundry worker,"Vibration of the shaker conveyor pan and frame, castings dropping from one conveyor to another conveyor, rattling of metal",7:06,101.6,4570.9,100.9
+2009-0224,331511.0,Manufacturing,Metal Foundry,2071,Foundry worker,"Vibration of the shaker conveyor pan and frame, castings dropping from one conveyor to another conveyor, rattling of metal",7:06,100.1,3235.9,99.7
+2009-0224,331511.0,Manufacturing,Metal Foundry,2072,Foundry worker,"Vibration of the shaker conveyor pan and frame, castings dropping from one conveyor to another conveyor, rattling of metal",7:49,105.4,10964.8,103.7
+2009-0224,331511.0,Manufacturing,Metal Foundry,2072,Foundry worker,"Vibration of the shaker conveyor pan and frame, castings dropping from one conveyor to another conveyor, rattling of metal",7:49,102.7,5888.4,101.0
+2009-0224,331511.0,Manufacturing,Metal Foundry,2072 (sorter),Foundry worker,"Vibration of the shaker conveyor pan and frame, castings dropping from one conveyor to another conveyor, rattling of metal",7:43,97.7,1862.1,95.7
+2009-0224,331511.0,Manufacturing,Metal Foundry,2072,Foundry worker,"Vibration of the shaker conveyor pan and frame, castings dropping from one conveyor to another conveyor, rattling of metal",7:55,107.9,19498.4,107.5
+2009-0224,331511.0,Manufacturing,Metal Foundry,2072,Foundry worker,"Vibration of the shaker conveyor pan and frame, castings dropping from one conveyor to another conveyor, rattling of metal",7:55,106.6,14454.4,106.6
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Indoor loading,Dock operator,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,91.2,416.9,84.2
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Indoor loading,Dock operator,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,88.8,239.9,81.3
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Indoor loading,Dock operator,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,91.9,489.8,86.2
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Indoor loading,Dock operator,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,98.0,1995.3,96.3
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Poly wash,Painter,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,89.1,257.0,83.9
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Poly wash,Painter,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,87.5,177.8,78.9
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Poly wash,Bung capper,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,89.7,295.1,84.8
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Poly wash,Bung capper,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,88.9,245.5,83.3
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Poly wash,Pressure Wash,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,104.3,8511.4,102.0
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Poly wash,Pressure Wash,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,104.9,9772.4,102.7
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Poly wash,Cleaner,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,94.8,955.0,92.9
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Poly wash,Exterior cleaner,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,96.0,1258.9,94.2
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Poly wash,Label Remover,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,91.3,426.6,88.1
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Poly wash,Label Remover,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,90.9,389.0,87.2
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Regrind,Grinder Operator,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,91.2,416.9,87.6
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Regrind,Grinder Operator,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,90.2,331.1,86.0
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Regrind,Shredder,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,92.3,537.0,86.9
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Regrind,Drum Cleaner,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,92.6,575.4,90.9
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Regrind,Drum Cleaner,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,92.0,501.2,89.8
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Regrind,Grinder Operator,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,91.7,467.7,87.6
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Tote wash,Label Remover,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,93.2,660.7,91.4
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Tote wash,Valve Installer,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,90.8,380.2,86.1
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Tote wash,Valve Installer,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,92.8,602.6,89.3
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Tote wash,Pressure Wash,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,98.4,2187.8,96.9
+2010-0031,423840.0,Wholesale and Retail Trade,Drum Refurbishing Plant,Tote wash,Pressure Wash,"Loading drums, pressure washing drums and totes, emptying and vacuuming drums, removing labels from totes",X,102.1,5128.6,100.2
+2011-0069,541370.0,Services,Outdoor Firing Range,Outdoor Firing Range,Student,Gunfire,5:00,97.0,1598.0,85.0
+2011-0069,541370.0,Services,Outdoor Firing Range,Outdoor Firing Range,Student,Gunfire,4:54,96.0,1269.0,84.0
+2011-0069,541370.0,Services,Outdoor Firing Range,Outdoor Firing Range,Student,Gunfire,4:59,96.0,1269.0,84.0
+2011-0069,541370.0,Services,Outdoor Firing Range,Outdoor Firing Range,Student,Gunfire,5:04,95.0,1007.0,82.0
+2011-0069,541370.0,Services,Outdoor Firing Range,Outdoor Firing Range,Student,Gunfire,4:52,95.0,1007.0,82.0
+2011-0069,541370.0,Services,Outdoor Firing Range,Outdoor Firing Range,Student,Gunfire,4:57,93.0,634.0,80.0
+2011-0069,541370.0,Services,Outdoor Firing Range,Outdoor Firing Range,Instructor,Gunfire,4:59,96.0,1269.0,84.0
+2011-0069,541370.0,Services,Outdoor Firing Range,Outdoor Firing Range,Instructor,Gunfire,4:53,94.0,799.0,85.0
+2011-0069,541370.0,Services,Outdoor Firing Range,Outdoor Firing Range,Instructor,Gunfire,4:55,91.0,400.0,78.0
+2011-0069,541370.0,Services,Outdoor Firing Range,Outdoor Firing Range,Instructor,Gunfire,5:37,96.0,1269.0,85.0
+2011-0069,541370.0,Services,Outdoor Firing Range,Outdoor Firing Range,Instructor,Gunfire,4:59,95.0,1007.0,83.0
+2011-0069,541370.0,Services,Outdoor Firing Range,Outdoor Firing Range,Instructor,Gunfire,5:42,94.0,799.0,81.0
+2011-0069,541370.0,Services,Outdoor Firing Range,Outdoor Firing Range,Instructor,Gunfire,6:30,94.0,799.0,80.0
+2011-0069,541370.0,Services,Outdoor Firing Range,Outdoor Firing Range,Instructor,Gunfire,6:34,88.0,200.0,74.0
+2011-0087,331511.0,Manufacturing,Metal Foundry,30-inch grinder,Foundry worker,Grinder ,9:59,97.7,1862.1,93.6
+2011-0087,331511.0,Manufacturing,Metal Foundry,30-inch grinder (Booth 4),Foundry worker,Grinder,9:46,101.8,4786.3,98.4
+2011-0087,331511.0,Manufacturing,Metal Foundry,Chop saw and spin blast,Foundry worker,"Chop saw, spin blast",4:11,105.9,12302.7,98.9
+2011-0087,331511.0,Manufacturing,Metal Foundry,V-8 chipper/grinder,Foundry worker,"Chipper, grinder",9:24,105.7,11749.0,103.6
+2011-0087,331511.0,Manufacturing,Metal Foundry,V-8 chipper/grinder,Foundry worker,"Chipper, grinder",9:28,99.3,2691.5,97.2
+2011-0087,331511.0,Manufacturing,Metal Foundry,30-inch grinder,Foundry worker,Grinder,9:36,101.0,3981.1,98.9
+2011-0087,331511.0,Manufacturing,Metal Foundry,30-inch grinder,Foundry worker,Grinder,9:48,97.2,1659.6,96.0
+2011-0087,331511.0,Manufacturing,Metal Foundry,Casting sorter,Foundry worker,Metal-to-metal contact,9:35,98.8,2398.8,97.9
+2011-0087,331511.0,Manufacturing,Metal Foundry,Casting sorter,Foundry worker,Metal-to-metal contact,9:49,96.3,1349.0,95.6
+2011-0087,331511.0,Manufacturing,Metal Foundry,Inspector,Foundry worker,Metal-to-metal contact,9:45,97.6,1819.7,95.2
+2011-0087,331511.0,Manufacturing,Metal Foundry,Molding (machine 2547),Foundry worker,Molding machine,10:01,94.2,831.8,91.3
+2011-0087,331511.0,Manufacturing,Metal Foundry,Molding (machine 797),Foundry worker,Molding machine,9:14,101.2,4168.7,98.2
+2011-0087,331511.0,Manufacturing,Metal Foundry,Shakeout/knockoff,Foundry worker,Shakeout/knockoff,9:34,102.4,5495.4,101.5
+2011-0087,331511.0,Manufacturing,Metal Foundry,Shakeout/knockoff,Foundry worker,Shakeout/knockoff,9:48,100.5,3548.1,99.3
+2011-0087,331511.0,Manufacturing,Metal Foundry,Chop saw,Foundry worker,Chop saw,8:27,101.3,4265.8,97.3
+2011-0129,611110.0,Services,Elementary/High School,Band room,Band director,Full shift activities,7:01,90.0,316.2,83.0
+2011-0129,611110.0,Services,Elementary/High School,Cafeteria,Band director,Marching band rehearsal in cafeteria,0:42,95.0,1000.0,93.0
+2011-0129,611110.0,Services,Elementary/High School,Band room,Band director,Marching band rehearsal in band room,0:51,97.0,1584.9,95.0
+2011-0129,611110.0,Services,Elementary/High School,Band room,Band director,Fifth grade band class,0:25,90.0,316.2,84.0
+2011-0129,611110.0,Services,Elementary/High School,Band room,Band director,Sixth grade elementary music class,0:30,91.0,398.1,87.0
+2011-0129,611110.0,Services,Elementary/High School,Band room,Band director,Sixth grade band class,0:30,92.0,501.2,89.0
+2011-0129,611110.0,Services,Elementary/High School,Band room,Band director,Discovery rehearsal class,0:50,91.0,398.1,86.0
+2012-0065,713990.0,Services,Outdoor Firing Range,Firing range,Instructor,Firearms shooting,8:07,110.0,31622.8,101.0
+2012-0065,713990.0,Services,Outdoor Firing Range,Firing range,Instructor,Firearms shooting,8:06,109.0,25118.9,101.0
+2012-0065,713990.0,Services,Outdoor Firing Range,Firing range,Instructor,Firearms shooting,8:08,109.0,25118.9,100.0
+2012-0065,713990.0,Services,Outdoor Firing Range,Firing range,Instructor,Firearms shooting,7:15,109.0,25118.9,100.0
+2012-0065,713990.0,Services,Outdoor Firing Range,Firing range,Instructor,Firearms shooting,7:32,109.0,25118.9,100.0
+2012-0065,713990.0,Services,Outdoor Firing Range,Firing range,Instructor,Firearms shooting,7:01,108.0,19952.6,99.0
+2012-0065,713990.0,Services,Outdoor Firing Range,Firing range,Instructor,Firearms shooting,7:35,108.0,19952.6,99.0
+2012-0065,713990.0,Services,Outdoor Firing Range,Firing range,Instructor,Firearms shooting,6:12,108.0,19952.6,99.0
+2012-0065,713990.0,Services,Outdoor Firing Range,Firing range,Instructor,Firearms shooting,6:07,106.0,12589.3,95.0
+2012-0065,713990.0,Services,Outdoor Firing Range,Firing range,Hazardous Materials Technician,Cleaning and vacuuming ,5:07,74.0,7.9,65.0
+2012-0065,713990.0,Services,Outdoor Firing Range,Firing range,Shooter,Firearms shooting,2:37,115.0,100000.0,107.0
+2012-0065,713990.0,Services,Outdoor Firing Range,Firing range,Shooter,Firearms shooting,2:29,114.0,79432.8,107.0
+2012-0065,713990.0,Services,Outdoor Firing Range,Firing range,Shooter,Firearms shooting,2:45,114.0,79432.8,106.0
+2012-0065,713990.0,Services,Outdoor Firing Range,Firing range,Shooter,Firearms shooting,2:30,114.0,79432.8,106.0
+2012-0065,713990.0,Services,Outdoor Firing Range,Firing range,Shooter,Firearms shooting,2:48,111.0,39810.7,103.0
+2012-0065,713990.0,Services,Outdoor Firing Range,Firing range,Shooter,Firearms shooting,2:40,112.0,50118.7,104.0
+2012-0071,423610.0,Wholesale and Retail Trade,Battery Recycling Company,Production and non-production areas,Battery Shredder,Shredding activities,X,,,
+2012-0071,423610.0,Wholesale and Retail Trade,Battery Recycling Company,Production and non-production areas,Forklift driver and loading/mixing,"Unloading automotive batters onto converyor belt, shredding, drossing, flashing, emptying drum into furnances",X,86.0,125.9,76.0
+2012-0071,423610.0,Wholesale and Retail Trade,Battery Recycling Company,Production and non-production areas,Foundry - drossing,"Unloading automotive batters onto converyor belt, shredding, drossing, flashing, emptying drum into furnances",X,87.0,158.5,77.0
+2012-0071,423610.0,Wholesale and Retail Trade,Battery Recycling Company,Production and non-production areas,Foundry - kettle pots,"Unloading automotive batters onto converyor belt, shredding, drossing, flashing, emptying drum into furnances",X,,,
+2012-0071,423610.0,Wholesale and Retail Trade,Battery Recycling Company,Production and non-production areas,Foundry - oven loader,"Unloading automotive batters onto converyor belt, shredding, drossing, flashing, emptying drum into furnances",X,,,
+2012-0071,423610.0,Wholesale and Retail Trade,Battery Recycling Company,Production and non-production areas,Furnance forklift,"Unloading automotive batters onto converyor belt, shredding, drossing, flashing, emptying drum into furnances",X,,,
+2012-0071,423610.0,Wholesale and Retail Trade,Battery Recycling Company,Production and non-production areas,Maintenance - mechanic,"Unloading automotive batters onto converyor belt, shredding, drossing, flashing, emptying drum into furnances",X,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+2012-0100,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,CRT processing area,CRT buffing and grinding ,Using handheld tools to demanufacture televisions and computer monitors with CRTs,8:07,92.0,501.1872336,85.0
+2012-0100,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,Shred-Tech,Shred-Tech Picker/Shred-Tech,Shredder sorting,8:11,90.0,316.227766,83.0
+2012-0100,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,Shred-Tech,Shred-Tech Picker/Shred-Tech,Shredder sorting,7:43,89.0,251.1886432,82.0
+2012-0100,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,Bailer,Bailing operator,Forklift driving and bailing operator,8:19,89.0,251.1886432,82.0
+2012-0100,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,Shredder Area,Forklift driving and baling,Emptying large box of electronics onto conveyor using forklift,8:28,88.0,199.5262315,80.0
+2012-0100,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,Shred-Tech,Shred-Tech Picker/Shred-Tech,Shredder sorting,7:33,86.0,125.8925412,77.0
+2012-0100,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,CRT processing area,CRT buffing,Using handheld tools to demanufacture televisions and computer monitors with CRTs,7:53,86.0,125.8925412,77.0
+2012-0100,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,Shredder Area,Forklift driving and baling,Emptying large box of electronics onto conveyor using forklift,7:47,85.0,100.0,73.0
+2012-0100,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,CRT processing area,CRT demanufactoring,Using handheld tools to demanufacture televisions and computer monitors with CRTs,7:50,84.0,79.43282347,76.0
+2012-0100,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,Shred-Tech,Shred-Tech Picker/Shred-Tech,Shredder sorting,8:14,83.0,63.09573445,72.0
+2012-0100,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,Bailer,Bailing Operator,Forklift driving and bailing operator,8:01,84.0,79.43282347,71.0
+2012-0100,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,CRT processing area,CRT demanufactoring,Using handheld tools to demanufacture televisions and computer monitors with CRTs,7:44,81.0,39.81071706,68.0
+2013-0130,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,Demanufactoring (shredder off),Demanufactorer,Dismantling and separating computer components,8:55,116.7,147910.8388,91.0
+2013-0130,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,Demanufactoring (shredder off),Demanufactorer,Dismantling and separating computer components,8:47,86.5,141.2537545,73.1
+2013-0130,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,Demanufactoring (shredder off),Demanufactorer,Dismantling and separating computer components,8:52,77.8,19.05460718,59.3
+2013-0130,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,Loading dock (shredder off),Loader,Loading electronics onto converyor,8:46,87.0,158.4893192,76.7
+2013-0130,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,Loading dock (shredder off),Loader,Loading electronics onto converyor,8:43,78.6,22.90867653,63.4
+2013-0130,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,Loading dock (shredder off),Loader,Loading electronics onto converyor,6:50,81.9,48.97788194,70.1
+2013-0130,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,Taping batteries (shredder on),Battery Taper,"Removing expired batteries from packaging, taping electrodes",8:39,82.2,52.48074602,71.0
+2013-0130,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,Taping batteries (shredder on),Battery Taper,"Removing expired batteries from packaging, taping electrodes",8:25,70.3,3.388441561,48.1
+2013-0130,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,Shredding/taping (shredder on),Battery Taper/Shredder,"Removing expired batteries from packaging, taping electrodes, removing electronics from boxes and placing them on shredder converyor",8:26,87.4,173.7800829,80.8
+2013-0130,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,Shredding/taping (shredder on),Battery Taper/Shredder,"Removing expired batteries from packaging, taping electrodes, removing electronics from boxes and placing them on shredder converyor",8:26,86.5,141.2537545,76.2
+2013-0130,423610.0,Wholesale and Retail Trade,Electronic Recycling Company,Shredding/taping (shredder on),Battery Taper/Shredder,"Removing expired batteries from packaging, taping electrodes, removing electronics from boxes and placing them on shredder converyor",8:08,88.0,199.5262315,80.0

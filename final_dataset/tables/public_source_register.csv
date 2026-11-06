@@ -1,0 +1,19 @@
+source,coverage,location,status,licence,url,limit_for_kachchh
+MSHA Noise Samples,"US mines, 2000-2026",public_downloads/msha_noise,Summarised: msha_noise_by_commodity_job,US government work; confirm terms,https://arlweb.msha.gov/OpenGovernmentData/DataSets/NoiseSamples.zip,US mines; 5 dB exchange rate
+MSHA Personal Health Samples,"US mines, 2000-2026",public_downloads/msha_personal_health,Summarised: msha_silica_by_commodity_job,US government work; confirm terms,https://arlweb.msha.gov/OpenGovernmentData/DataSets/PersonalHealthSamples.zip,US inspections; job names differ from Kachchh
+MSHA Quartz Samples,"US mines, 2000-2026",public_downloads/msha_quartz,Raw only; almost entirely coal mines,US government work; confirm terms,https://arlweb.msha.gov/OpenGovernmentData/DataSets/QuartzSamples.zip,Coal focus
+MSHA Mines,US mine register,public_downloads/msha_mines,Used to group samples by commodity,US government work; confirm terms,https://arlweb.msha.gov/OpenGovernmentData/DataSets/Mines.zip,Primary commodity only
+NIOSH HHE noise,"US, 1996-2013",public_downloads/niosh_hhe,Loaded: niosh_hhe_noise_personal,US government; confirm terms,https://data.cdc.gov/download/87ea-ip25/application%2Fzip,US evaluations; not a random sample
+Lancet Countdown 2026,"National, modelled",public_downloads/lancet_countdown,"Loaded: lancet_india_hours_lost, lancet_india_outdoor_workers",Check site terms,https://data.lancetcountdown.org/downloads/2026/1.1.3/9691d5c2da24/lancet-countdown-2026-1.1.3-working-hours-lost.csv,India only; column units inferred
+ILOSTAT India hours,National,public_downloads/ilostat_india,Loaded: ilostat_india_*,ILO terms,https://rplumber.ilo.org/data/indicator/?id=HOW_TEMP_SEX_ECO_NB_A&ref_area=IND&format=.csv,Levels conflict with PLFS; use to rank
+PLFS 2023-24 report,"Gujarat, official survey",public_downloads/plfs_report,"Loaded: plfs_gujarat_table41, plfs_gujarat_table43",Official report,https://www.mospi.gov.in/sites/default/files/publication_reports/AnnualReport_PLFS2023-24L2.pdf,"Gujarat-level, not Kachchh"
+Buono CIE urine colour,Human study,public_downloads/mendeley_fkbjjf95ws,Raw only; for method work,CC BY 4.0,https://data.mendeley.com/datasets/fkbjjf95ws,Non-workers
+Muraishi heat tolerance,17 soccer players,public_downloads/mendeley_7p4jwfkkdb,Raw only,"CC BY-NC 3.0, non-commercial",https://data.mendeley.com/datasets/7p4jwfkkdb/1,Non-workers; non-commercial
+Bangladesh urinalysis,Clinical records,public_downloads/mendeley_6xhr6sfsr9,Raw only; NOT loaded because it has patient name and ID columns,CC BY 4.0,https://data.mendeley.com/datasets/6xhr6sfsr9,Clinical patients; check for personal data before use
+URBANOME biomarkers,Greece,public_downloads/urbanome,Raw only,CC BY 4.0,https://zenodo.org/records/16965005,Not workers in hot climates
+"Gridded labour capacity, ERA5","Global, modelled",public_downloads/zenodo_labor,Raw only; not extracted to Kachchh yet,CC BY 4.0,https://zenodo.org/records/21636524,Model data
+"Gridded labour capacity, CMIP6","Global, modelled",Not downloaded,About 5.3 GB of future-climate files,CC BY 4.0,https://zenodo.org/records/21636524,Not needed for current work
+noiseJEM,Noise job-exposure matrix,Not downloaded,Site blocked automated access; try in a browser,Unknown,https://noisejem.sph.umich.edu/about.html,US-focused; unconfirmed
+PLFS microdata,"Person-level hours, may allow Kachchh",Not downloaded,Needs your free login,Read terms first,https://microdata.gov.in/NADA/index.php/catalog/292/get-microdata,Kachchh estimate would be unofficial
+OMI and TEMIS UV,Satellite UV,Not downloaded,Large gridded products; no single file for Kachchh,See provider,https://www.temis.nl/uvradiation/UVarchive.php,Satellite; TEMIS clear-sky only for India
+"Worker cohorts: Venugopal, Hansson, Dutta",Person-level,Not available,Only by writing to the authors,By request,https://pmc.ncbi.nlm.nih.gov/articles/PMC10334398,Needs author approval

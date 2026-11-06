@@ -1,0 +1,7 @@
+job,shift_hours,hours_engine_allows_more_than_table,share_pct,allowed_h_per_shift_table,allowed_h_per_shift_engine
+Salt-pan raking,3285,3285,100.0,4.1,6.7
+Port yard loading (Kandla),3285,3285,100.0,3.9,6.6
+Port yard loading (Mundra),3285,3285,100.0,4.3,7.0
+Cement yard loading,3285,3285,100.0,4.4,7.0
+Outdoor construction (Bhuj),3285,3285,100.0,4.6,7.2
+Stone crushing (Bhuj weather),3285,3285,100.0,4.6,7.2

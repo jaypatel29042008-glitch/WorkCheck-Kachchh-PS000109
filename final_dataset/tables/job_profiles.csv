@@ -1,0 +1,10 @@
+job_id,label,location_id,assumed_workload,condition,osha_group,scope_note
+salt_raking,Salt-pan raking,little_rann_kutch,heavy,sun,,Original job group
+port_yard_kandla,"Port yard loading, Kandla",kandla_port,heavy,sun,,"Original; cargo unknown, so no silica scenario"
+port_yard_mundra,"Port yard loading, Mundra",mundra_port,heavy,sun,,"Original; cargo unknown, so no silica scenario"
+cement_yard,Cement yard loading,abdasa_cement,heavy,sun,Cement & concrete products,Original job group
+cement_walk,Cement plant walk-around,abdasa_cement,moderate,sun,Cement & concrete products,Original job group
+construction,"Outdoor construction, Bhuj",bhuj,heavy,sun,Construction trades,Original job group
+stone_crushing,"Stone crushing, Bhuj weather",bhuj,heavy,sun,Stone & other mineral,Scope to be confirmed by the team
+crane_cab,"Crane cab, shaded, Kandla",kandla_port,light,shade,,Original job group
+truck_cab,"Truck cab, shaded, Mundra",mundra_port,light,shade,,Original job group

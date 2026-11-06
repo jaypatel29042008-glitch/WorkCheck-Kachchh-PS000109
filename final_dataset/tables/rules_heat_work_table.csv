@@ -1,0 +1,11 @@
+workload,wbgt_max_c,allowed_work_pct
+light,31.0,100
+light,32.0,50
+light,32.5,25
+moderate,28.0,100
+moderate,29.0,75
+moderate,30.0,50
+moderate,31.5,25
+heavy,27.5,75
+heavy,29.0,50
+heavy,30.5,25

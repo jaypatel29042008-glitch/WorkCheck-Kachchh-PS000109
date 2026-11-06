@@ -1,0 +1,9 @@
+persona,label,age,job,years_in_job,employer_type,symptoms,annual_exam_legally_due,silica_cum_p75_mg_m3_yr,silica_cum_p90_mg_m3_yr,heat_allowed_h_apr_oct,routes
+A,FICTIONAL SCENARIO,24,Stone crushing (Bhuj weather),4,Contractor,False,False,0.32,1.6,3.1,Exposure review
+B,FICTIONAL SCENARIO,32,Stone crushing (Bhuj weather),10,Contractor,True,False,0.8,4.0,3.1,Exposure review; Symptoms: doctor review
+C,FICTIONAL SCENARIO,47,Cement yard loading,20,Factory,False,True,0.35,1.06,2.9,Legal due date; Exposure review
+D,FICTIONAL SCENARIO,38,Cement yard loading,12,Contractor,False,False,0.21,0.63,2.9,Exposure review
+E,FICTIONAL SCENARIO,41,Salt-pan raking,20,Self-employed,True,False,,,2.5,Symptoms: doctor review
+F,FICTIONAL SCENARIO,46,Outdoor construction (Bhuj),15,Construction,False,True,0.41,3.49,3.1,Legal due date; Exposure review
+G,FICTIONAL SCENARIO,42,Port yard loading (Kandla),18,Dock,False,True,,,2.3,Legal due date
+H,FICTIONAL SCENARIO,35,"Truck cab, shaded (Mundra)",10,Transport,False,False,,,9.0,No referral; heat advice only
