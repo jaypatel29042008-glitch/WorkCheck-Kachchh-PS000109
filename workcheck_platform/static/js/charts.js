@@ -154,7 +154,7 @@ function restBar(work, rest, words = {}) {
 /* Kachchh map from OpenStreetMap boundaries. */
 let mapCache;
 async function loadMap() {
-  if (!mapCache) mapCache = await fetch("/static/assets/kachchh_map.json").then((r) => r.json());
+  if (!mapCache) mapCache = await fetch("./assets/kachchh_map.json").catch(() => fetch("/static/assets/kachchh_map.json")).then((r) => r.json());
   return mapCache;
 }
 function mapSvg(map, cfg = {}) {

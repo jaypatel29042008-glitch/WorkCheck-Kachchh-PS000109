@@ -26,13 +26,135 @@ class ApiError extends Error {
 }
 
 async function api(path, options = {}) {
-  const init = { credentials: "same-origin", method: options.method || "GET", headers: {} };
-  if (options.body !== undefined) { init.body = JSON.stringify(options.body); init.headers["Content-Type"] = "application/json"; }
-  const res = await fetch(path, init);
-  const data = await res.json().catch(() => ({}));
-  if (res.status === 401 && path !== "/api/auth/login" && path !== "/api/auth/me") { S.user = null; renderLogin(); }
-  if (!res.ok) throw new ApiError(res.status, data.detail || "Something went wrong. Please try again.");
-  return data;
+  const method = (options.method || "GET").toUpperCase();
+
+  // Try real network backend first (e.g. when running FastAPI locally)
+  try {
+    const init = { credentials: "same-origin", method, headers: {} };
+    if (options.body !== undefined) {
+      init.body = JSON.stringify(options.body);
+      init.headers["Content-Type"] = "application/json";
+    }
+    const res = await fetch(path, init);
+    if (res.ok) {
+      return await res.json().catch(() => ({}));
+    }
+    if (res.status === 401 && path !== "/api/auth/login" && path !== "/api/auth/me") {
+      S.user = null;
+      renderLogin();
+      throw new ApiError(401, "Please sign in.");
+    }
+    if (res.status !== 404) {
+      const data = await res.json().catch(() => ({}));
+      throw new ApiError(res.status, data.detail || "Something went wrong. Please try again.");
+    }
+  } catch (err) {
+    if (err instanceof ApiError && err.status !== 404) throw err;
+  }
+
+  // Client-side static handler (powered by reference.db dataset for GitHub Pages)
+  if (window.WORKCHECK_STATIC_DATA) {
+    const D = window.WORKCHECK_STATIC_DATA;
+
+    // 1. Auth Login
+    if (path === "/api/auth/login" && method === "POST") {
+      const { email, password } = options.body || {};
+      const found = D.users[email];
+      if (found && found.password === password) {
+        localStorage.setItem("wc_static_user", JSON.stringify(found.user));
+        return found.user;
+      }
+      throw new ApiError(401, "Check your email and password.");
+    }
+
+    // 2. Auth Me
+    if (path === "/api/auth/me") {
+      const saved = localStorage.getItem("wc_static_user");
+      if (saved) return JSON.parse(saved);
+      throw new ApiError(401, "Please sign in.");
+    }
+
+    // 3. Auth Logout
+    if (path === "/api/auth/logout") {
+      localStorage.removeItem("wc_static_user");
+      return { ok: true };
+    }
+
+    // 4. Overview
+    if (path === "/api/overview") return D.overview;
+
+    // 5. Workers list
+    if (path === "/api/workers") return D.workers;
+
+    // 6. Heat map
+    if (path === "/api/heat/map") return D.heat_map;
+
+    // 7. Heat jobs
+    if (path === "/api/heat/jobs") return D.heat_jobs;
+
+    // 8. Heat year
+    if (path.startsWith("/api/heat/year")) {
+      const jid = new URL(path, window.location.origin).searchParams.get("job_id");
+      return (D.heat_year && D.heat_year[jid]) || { curve: [] };
+    }
+
+    // 9. Node state
+    if (path === "/api/node/state") return D.node_state;
+
+    // 10. Node day
+    if (path.startsWith("/api/node/day")) {
+      const lid = new URL(path, window.location.origin).searchParams.get("location_id") || "kandla_port";
+      return (D.node_day && D.node_day[lid]) || { points: [] };
+    }
+
+    // 11. Node replay
+    if (path.startsWith("/api/node/replay")) {
+      const lid = new URL(path, window.location.origin).searchParams.get("location_id") || "kandla_port";
+      return (D.node_replay && D.node_replay[lid]) || { points: [] };
+    }
+
+    // 12. Facilities
+    if (path.startsWith("/api/facilities")) {
+      const u = new URL(path, window.location.origin);
+      const taluka = u.searchParams.get("taluka");
+      const base = JSON.parse(JSON.stringify(D.facilities_default || { facilities: [] }));
+      if (taluka && taluka !== "ALL" && base.facilities) {
+        base.facilities = base.facilities.filter(f => f.taluka && f.taluka.toUpperCase() === taluka.toUpperCase());
+      }
+      return base;
+    }
+
+    // 13. Facilities refer
+    if (path === "/api/facilities/refer") {
+      return { ok: true, message: "Referral recorded successfully" };
+    }
+
+    // 14. Worker Details & actions
+    if (path.startsWith("/api/workers/")) {
+      const parts = path.split("/");
+      const wid = parts[3];
+      if (parts.length === 4) {
+        return (D.worker_details && D.worker_details[wid]) || { worker: null };
+      }
+      return { ok: true, status: "saved" };
+    }
+
+    // 15. Worker Self Today
+    if (path === "/api/me/today") return D.me_today;
+
+    // 16. Evidence
+    if (path === "/api/evidence") return D.evidence;
+
+    // 17. Storage
+    if (path === "/api/storage") return { status: "ready", label: "Static GitHub Pages Preview" };
+
+    // 18. Simulate
+    if (path === "/api/node/simulate") {
+      return { points: (D.node_day && D.node_day["kandla_port"])?.points || [] };
+    }
+  }
+
+  throw new ApiError(404, "Endpoint not found");
 }
 
 const onCleanup = (fn) => S.cleanup.push(fn);
