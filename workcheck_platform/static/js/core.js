@@ -27,29 +27,31 @@ class ApiError extends Error {
 
 async function api(path, options = {}) {
   const method = (options.method || "GET").toUpperCase();
+  const isStatic = location.hostname.endsWith("github.io") || location.protocol === "file:" || !location.port;
 
-  // Try real network backend first (e.g. when running FastAPI locally)
-  try {
-    const init = { credentials: "same-origin", method, headers: {} };
-    if (options.body !== undefined) {
-      init.body = JSON.stringify(options.body);
-      init.headers["Content-Type"] = "application/json";
-    }
-    const res = await fetch(path, init);
-    if (res.ok) {
-      return await res.json().catch(() => ({}));
-    }
-    if (res.status === 401 && path !== "/api/auth/login" && path !== "/api/auth/me") {
-      S.user = null;
-      renderLogin();
-      throw new ApiError(401, "Please sign in.");
-    }
-    if (res.status !== 404) {
+  // If running locally with backend, try network fetch
+  if (!isStatic) {
+    try {
+      const init = { credentials: "same-origin", method, headers: {} };
+      if (options.body !== undefined) {
+        init.body = JSON.stringify(options.body);
+        init.headers["Content-Type"] = "application/json";
+      }
+      const res = await fetch(path, init);
+      if (res.ok) {
+        return await res.json().catch(() => ({}));
+      }
+      if (res.status === 401 && path !== "/api/auth/login" && path !== "/api/auth/me") {
+        S.user = null;
+        renderLogin();
+        throw new ApiError(401, "Please sign in.");
+      }
       const data = await res.json().catch(() => ({}));
       throw new ApiError(res.status, data.detail || "Something went wrong. Please try again.");
+    } catch (err) {
+      if (!window.WORKCHECK_STATIC_DATA) throw err;
+      // If network fails, fallback to static data
     }
-  } catch (err) {
-    if (err instanceof ApiError && err.status !== 404) throw err;
   }
 
   // Client-side static handler (powered by reference.db dataset for GitHub Pages)
