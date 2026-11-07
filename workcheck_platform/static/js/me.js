@@ -1,8 +1,8 @@
 "use strict";
 /* Worker Dashboard 2.0:
-   - Feature 1: Health Pass · સ્વાસ્થ્ય કાર્ડ with ABHA, e-Shram UAN and QR Code.
-   - Feature 2: 4 Worker Exposure & Demographic Metadata Tiles (Age/Gender, Worksite, Silica Range, Severe Heat Hours).
-   - Feature 1 (Right): Log Daily Symptoms / લક્ષણો નોંધો (Van Route 3 Trigger with 4 acute symptom checkboxes).
+   - Feature 1: Health Pass · સ્વાસ્થ્ય કાર્ડ with QR Code.
+   - Feature 2: 4 Worker Exposure & Demographic Metadata Tiles (Age, Worksite, Silica Range, Severe Heat Hours).
+   - Feature 1 (Right): Log Daily Symptoms / લક્ષણો નોંધો (4 acute symptom checkboxes).
    - Feature 3: Nearest Hospital Connector depending on each site and sorted by diseases.
 */
 const PLAN_KEYS = [100, 75, 50, 25, 0];
@@ -12,11 +12,11 @@ const I18N = {
     status: { action: ["Please visit the clinic", "Something on your record needs a doctor."], due: ["A check is waiting for you", "Visit the clinic when you can. It will not take long."], watch: ["Nothing to do today", "The risks of your work are being watched."], clear: ["You are all clear", "No check is waiting."] },
     today: "Today at work", plan: { 100: ["Safe to work", "No extra heat limit for this work. Keep drinking water."], 75: ["Take regular breaks", "Work 45 minutes, then rest 15 minutes in shade with water."], 50: ["Work half of each hour", "Work 30 minutes, then rest 30 minutes in shade with water."], 25: ["Mostly rest", "Work 15 minutes, then rest 45 minutes in shade with water."], 0: ["Pause this work", "Too hot for this work. A supervisor must review before it continues."] },
     feel: "Log Daily Symptoms / લક્ષણો નોંધો",
-    feelSub: "Select any acute symptoms experienced during today's shift. Severe symptoms immediately alert the nearest BOCW Dhanvantari Rath for priority medical triage.",
-    collapse: "Someone collapsed in heat (Emergency 108)", saved: "Symptoms logged. Nearest Dhanvantari Rath alert updated.",
+    feelSub: "Select any symptoms from today's shift. The clinic team will see your report.",
+    collapse: "Someone collapsed in heat (Emergency 108)", saved: "Symptoms saved. The clinic team can see them.",
     urgentTitle: "Call 108 now", urgentSteps: ["Move them to shade immediately.", "Pour cool water on their skin and fan them vigorously.", "Do not give water if they are not fully alert."], call: "Call 108 Base",
     checks: "My Medical Checks", noChecks: "No check is waiting.",
-    pass: "Health Pass · સ્વાસ્થ્ય કાર્ડ", passSub: "Government of Gujarat · DISH Approved",
+    pass: "Health Pass · સ્વાસ્થ્ય કાર્ડ", passSub: "Prototype · Fictional test record",
     checkNames: { "Lung check": "Lung check", "TB test": "TB test", "Breathing test": "Breathing test", "Kidney test": "Kidney test", "Hydration check": "Hydration check", "Heat check": "Heat check", "Hearing test": "Hearing test", "Eye and skin check": "Eye & skin check", "Blood pressure check": "Blood pressure check", "Back and joint check": "Back & joint check" },
     stat: { Missed: "Missed", Due: "Due", "Follow-up open": "Follow-up open", "Doctor noted (demo)": "Doctor noted" },
   },
@@ -25,11 +25,11 @@ const I18N = {
     status: { action: ["કૃપા કરીને દવાખાને આવો", "તમારા રેકોર્ડમાં એક બાબત માટે ડૉક્ટરની જરૂર છે."], due: ["તમારી એક તપાસ બાકી છે", "સમય મળે ત્યારે દવાખાને જાઓ. વધુ સમય નહીં લાગે."], watch: ["આજે કંઈ કરવાનું નથી", "તમારા કામના જોખમ પર નજર રાખવામાં આવી રહી છે."], clear: ["બધું બરાબર છે", "કોઈ તપાસ બાકી નથી."] },
     today: "આજે કામ પર", plan: { 100: ["કામ કરવું સલામત છે", "આ કામ માટે ગરમીની વધારાની મર્યાદા નથી. પાણી પીતા રહો."], 75: ["નિયમિત આરામ લો", "45 મિનિટ કામ, પછી 15 મિનિટ છાંયડામાં આરામ અને પાણી."], 50: ["દર કલાકે અડધો સમય કામ કરો", "30 મિનિટ કામ, પછી 30 મિનિટ છાંયડામાં આરામ અને પાણી."], 25: ["મોટા ભાગે આરામ કરો", "15 મિનિટ કામ, પછી 45 મિનિટ છાંયડામાં આરામ અને પાણી."], 0: ["આ કામ બંધ કરો", "આ કામ માટે ખૂબ ગરમી છે. સુપરવાઈઝર તપાસ કરે પછી જ ફરી શરૂ કરો."] },
     feel: "લક્ષણો નોંધો / Log Daily Symptoms",
-    feelSub: "આજના શિફ્ટ દરમિયાન અનુભવાયેલા કોઈપણ તીવ્ર લક્ષણો પસંદ કરો. ગંભીર લક્ષણો તાત્કાલિક નજીકના ધનવંતરી રથને તબીબી તપાસ માટે ચેતવણી આપે છે.",
-    collapse: "ગરમીમાં કોઈ બેભાન થયું (ઇમરજન્સી 108)", saved: "લક્ષણો નોંધાયા. ધનવંતરી રથ ચેતવણી મોકલી દેવાઈ.",
+    feelSub: "આજના શિફ્ટ દરમિયાન થયેલા લક્ષણો પસંદ કરો. દવાખાનાની ટીમ તમારો રિપોર્ટ જોશે.",
+    collapse: "ગરમીમાં કોઈ બેભાન થયું (ઇમરજન્સી 108)", saved: "લક્ષણો નોંધાયા. દવાખાનાની ટીમ તે જોઈ શકે છે.",
     urgentTitle: "હમણાં 108 પર ફોન કરો", urgentSteps: ["તેમને તાત્કાલિક છાંયડામાં લઈ જાઓ.", "ચામડી પર ઠંડું પાણી રેડો અને જોરથી પવન નાખો.", "પૂરા ભાનમાં ન હોય તો પાણી પીવડાવશો નહીં."], call: "108 પર ફોન કરો",
     checks: "મારી તપાસ", noChecks: "કોઈ તપાસ બાકી નથી.",
-    pass: "સ્વાસ્થ્ય કાર્ડ · Health Pass", passSub: "ગુજરાત સરકાર · DISH માન્ય",
+    pass: "સ્વાસ્થ્ય કાર્ડ · Health Pass", passSub: "પ્રોટોટાઇપ · કાલ્પનિક ટેસ્ટ રેકોર્ડ",
     checkNames: { "Lung check": "ફેફસાંની તપાસ", "TB test": "ટીબીની તપાસ", "Breathing test": "શ્વાસની તપાસ", "Kidney test": "કિડનીની તપાસ", "Hydration check": "પાણીની ઊણપની તપાસ", "Heat check": "ગરમીની અસરની તપાસ", "Hearing test": "સાંભળવાની તપાસ", "Eye and skin check": "આંખ અને ચામડીની તપાસ", "Blood pressure check": "બ્લડ પ્રેશરની તપાસ", "Back and joint check": "કમર અને સાંધાની તપાસ" },
     stat: { Missed: "ચૂકી ગયા", Due: "બાકી", "Follow-up open": "ફરી તપાસ બાકી", "Doctor noted (demo)": "ડૉક્ટરે નોંધ્યું" },
   },
@@ -38,11 +38,11 @@ const I18N = {
     status: { action: ["कृपया क्लिनिक आइए", "आपके रिकॉर्ड में एक बात के लिए डॉक्टर की ज़रूरत है."], due: ["आपकी एक जाँच बाकी है", "समय मिलने पर क्लिनिक जाइए. ज़्यादा समय नहीं लगेगा."], watch: ["आज कुछ नहीं करना है", "आपके काम के जोखिम पर नज़र रखी जा रही है."], clear: ["सब ठीक है", "कोई जाँच बाकी नहीं है."] },
     today: "आज काम पर", plan: { 100: ["काम करना सुरक्षित है", "इस काम के लिए गर्मी की कोई अतिरिक्त सीमा नहीं है. पानी पीते रहिए."], 75: ["नियमित आराम लीजिए", "45 मिनट काम, फिर 15 मिनट छाया में आराम और पानी."], 50: ["हर घंटे आधा समय काम कीजिए", "30 मिनट काम, फिर 30 मिनट छाया में आराम और पानी."], 25: ["ज़्यादातर आराम कीजिए", "15 मिनट काम, फिर 45 मिनट छाया में आराम और पानी."], 0: ["यह काम रोक दीजिए", "इस काम के लिए बहुत गर्मी है. सुपरवाइज़र की जाँच के बाद ही फिर शुरू कीजिए."] },
     feel: "दैनिक लक्षण दर्ज करें / Log Daily Symptoms",
-    feelSub: "आज की शिफ्ट के दौरान अनुभव किए गए किसी भी लक्षण को चुनें. गंभीर लक्षण तुरंत नजदीकी धन्वंतरि रथ को अलर्ट करते हैं.",
-    collapse: "गर्मी में कोई बेहोश हो गया (इमरजेंसी 108)", saved: "लक्षण दर्ज हुए. धन्वंतरि रथ को अलर्ट भेजा गया.",
+    feelSub: "आज की शिफ्ट में हुए लक्षण चुनें. क्लिनिक की टीम आपकी रिपोर्ट देखेगी.",
+    collapse: "गर्मी में कोई बेहोश हो गया (इमरजेंसी 108)", saved: "लक्षण दर्ज हुए. क्लिनिक की टीम उन्हें देख सकती है.",
     urgentTitle: "अभी 108 पर फ़ोन कीजिए", urgentSteps: ["उन्हें तुरंत छाया में ले जाइए.", "त्वचा पर ठंडा पानी डालिए और हवा कीजिए.", "पूरी तरह होश में न हों तो पानी मत पिलाइए."], call: "108 पर फ़ोन कीजिए",
     checks: "मेरी जाँच", noChecks: "कोई जाँच बाकी नहीं है.",
-    pass: "स्वास्थ्य कार्ड · Health Pass", passSub: "गुजरात सरकार · DISH अनुमोदित",
+    pass: "स्वास्थ्य कार्ड · Health Pass", passSub: "प्रोटोटाइप · काल्पनिक टेस्ट रिकॉर्ड",
     checkNames: { "Lung check": "फेफड़ों की जाँच", "TB test": "टीबी की जाँच", "Breathing test": "साँस की जाँच", "Kidney test": "किडनी की जाँच", "Hydration check": "पानी की कमी की जाँच", "Heat check": "गर्मी के असर की जाँच", "Hearing test": "सुनने की जाँच", "Eye and skin check": "आँख और त्वचा की जाँच", "Blood pressure check": "ब्लड प्रेशर की जाँच", "Back and joint check": "कमर और जोड़ों की जाँच" },
     stat: { Missed: "छूट गई", Due: "बाकी", "Follow-up open": "दोबारा जाँच बाकी", "Doctor noted (demo)": "डॉक्टर ने नोट किया" },
   },
@@ -98,7 +98,7 @@ function renderFacilityCardsHtml(facilities) {
           <div>
             <span class="tier-badge ${tierClass}">${esc(f.facility_tier)}</span>
             <h4 class="fac-name">${esc(f.facility_name)}</h4>
-            <span class="fac-taluka">Taluka: <b>${esc(f.taluka)}</b> &bull; <span class="dist-badge">${f.distance_km} km away</span></span>
+            <span class="fac-taluka">Taluka: <b>${esc(f.taluka)}</b> &bull; <span class="dist-badge">about ${f.distance_km} km, straight line</span></span>
           </div>
           <span class="round xs bg-indigo t-indigo">${ic("hospital-circle", 18, 2)}</span>
         </div>
@@ -114,7 +114,7 @@ function renderFacilityCardsHtml(facilities) {
 
         <div class="fac-actions">
           <button type="button" class="btn btn-ghost btn-sm fac-route-btn" data-fac-id="${esc(f.facility_id)}" data-fac-name="${esc(f.facility_name)}">
-            ${ic("route", 14, 2)} Route Referral Here
+            ${ic("route", 14, 2)} Note referral
           </button>
           ${f.emergency_108_base ? `<a class="btn btn-danger btn-sm" href="tel:108" title="Call Emergency 108">${ic("phone", 13, 2)} 108</a>` : ""}
         </div>
@@ -132,14 +132,11 @@ function renderMe() {
   const icons = { action: "alert-triangle", due: "calendar-check", watch: "eye", clear: "circle-check" };
   const first = p.card.name.split(" ")[0];
 
-  const legalName = p.card.name === "Kishan P." ? "Ramjibhai S. Koli" : p.card.name;
-  const jobRoleTaluka = `${p.card.job || "Salt Raker"} · ${p.card.taluka || "Rapar"}`;
-  const maskedUan = p.card.uan || "9842-XXXX-1001";
-  const abhaAddress = p.card.abha || "ramjibhai.kutch@abdm";
-  const worksiteName = p.card.place || "Little Rann Salt Pan #3";
-  const silicaRange = p.silica_range || "1.5 – 2.3 mg/m³·hr";
-  const severeHeat = p.severe_heat_hours || "4.2 hrs";
-  const statutoryText = p.statutory_text || "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Age 45+ hazardous worker).";
+  const jobRoleTaluka = `${p.card.job} · ${p.card.taluka}`;
+  const worksiteName = p.card.place;
+  const silicaRange = p.silica_range;
+  const safeHeat = p.safe_heat_hours;
+  const statutoryText = p.statutory_text;
 
   $("#app").innerHTML = `<div class="me">
     <header class="me-top">
@@ -150,9 +147,6 @@ function renderMe() {
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
       <div class="lang" role="group" aria-label="Language">
         ${Object.entries(I18N).map(([k, v]) => `<button type="button" data-lang="${k}" aria-pressed="${k === lang}"${k === lang ? ' class="on"' : ""}>${v.name}</button>`).join("")}
-      </div>
-      <div style="display:flex;align-items:center;gap:8px">
-        <span class="pill none sm" data-tip="Verified Worker DPDP Token">${ic("shield-check", 14, 2)}TOKEN: ABDM-GJ-KCH-1001</span>
       </div>
     </div>
 
@@ -179,27 +173,23 @@ function renderMe() {
               <p class="sub">${esc(t.passSub)}</p>
             </div>
           </div>
-          <span class="pill clear sm" style="font-weight:700">ACTIVE &bull; VALID</span>
+          <span class="pill none sm" style="font-weight:700">Test pass</span>
         </div>
 
         <div class="pass-id-box">
-          <div class="pass-qr-wrap" id="pass-qr-box" title="Tap to expand QR Certificate"></div>
+          <div class="pass-qr-wrap" id="pass-qr-box" title="QR pass"></div>
           <div class="pass-fields">
             <div>
-              <label>Full Legal Name:</label>
-              <h4>${esc(legalName)}</h4>
+              <label>Name:</label>
+              <h4>${esc(p.card.name)}</h4>
             </div>
             <div>
               <label>Job Role &amp; Taluka:</label>
               <span class="role-taluka">${esc(jobRoleTaluka)}</span>
             </div>
             <div>
-              <label>Masked e-Shram UAN:</label>
-              <span class="uan-mono">${esc(maskedUan)}</span>
-            </div>
-            <div>
-              <label>ABHA PHR Address:</label>
-              <span class="abha-link">${esc(abhaAddress)}</span>
+              <label>Test record ID:</label>
+              <span class="uan-mono">${esc(p.card.id)}</span>
             </div>
           </div>
         </div>
@@ -207,8 +197,8 @@ function renderMe() {
         <!-- Feature 2: 4 Detailed Worker Metadata Tiles Grid -->
         <div class="pass-meta-grid">
           <div class="meta-item">
-            <label>Age / Gender:</label>
-            <span>${p.card.age || 48} yrs &bull; Male</span>
+            <label>Age:</label>
+            <span>${esc(p.card.age)} yrs</span>
           </div>
           <div class="meta-item">
             <label>Assigned Worksite:</label>
@@ -219,15 +209,15 @@ function renderMe() {
             <span class="t-amber">${esc(silicaRange)}</span>
           </div>
           <div class="meta-item">
-            <label>Severe Heat Hours (&gt;30°C WBGT):</label>
-            <span class="t-rose">${esc(severeHeat)}</span>
+            <label>Safe Heat Hours (Apr–Oct, model):</label>
+            <span class="t-rose">${esc(safeHeat)}</span>
           </div>
         </div>
 
         <div class="statutory-banner">
           <span class="round xs bg-indigo t-indigo">${ic("scale-outline", 14, 2)}</span>
           <div>
-            <b>Statutory Screening Status:</b>
+            <b>Legal exam:</b>
             <p>${esc(statutoryText)}</p>
           </div>
         </div>
@@ -243,7 +233,6 @@ function renderMe() {
               <p class="sub">${esc(t.feelSub)}</p>
             </div>
           </div>
-          <span class="pill due sm" style="font-weight:700">Van Route 3 Trigger</span>
         </div>
 
         <div class="symptom-checkbox-grid">
@@ -279,7 +268,7 @@ function renderMe() {
       <div class="card-head">
         <div>
           <h2>${esc(t.today)}</h2>
-          <p class="sub">Workplace heat stress mitigation protocol (ISO 7243)</p>
+          <p class="sub">Work and rest guidance from published heat tables</p>
         </div>
         <span class="pill none sm">${esc(t.testReading)}</span>
       </div>
@@ -293,9 +282,8 @@ function renderMe() {
     <section class="card facilities-connector-card">
       <div class="facilities-header">
         <div>
-          <span class="persona-tag">PERSONA 6: HEALTHCARE INFRASTRUCTURE &amp; REFERRAL ROUTING</span>
-          <h2>Kachchh Occupational Health Facilities &amp; Dhanvantari Van Network</h2>
-          <p class="sub">Diagnostic referral network with digital X-ray, spirometry, and 108 emergency ambulance bases across 10 Talukas.</p>
+          <h2>Nearest health facilities</h2>
+          <p class="sub">Sample list for testing. Confirm services with each facility.</p>
         </div>
         <div class="facilities-site-picker">
           <label for="fac-site-select">${ic("map-pin", 14, 2)} Worksite:</label>
@@ -334,7 +322,7 @@ function renderMe() {
 
   // Render QR Code in the Health Pass Card
   const qr = qrcode(0, "M");
-  qr.addData(`${location.origin}/#/workers/${p.card.id}`);
+  qr.addData(`${location.origin}${location.pathname}#/workers/${p.card.id}`);
   qr.make();
   const qrContainer = $("#pass-qr-box");
   if (qrContainer) {
@@ -363,7 +351,7 @@ function renderMe() {
       const banner = $("#symptom-feedback-banner");
       const bannerText = $("#symptom-feedback-text");
       if (banner && bannerText) {
-        bannerText.textContent = res.message || "Symptoms logged. Dhanvantari Rath alert updated.";
+        bannerText.textContent = res.message || t.saved;
         banner.hidden = false;
       }
       toast(t.saved, "good");
@@ -422,11 +410,11 @@ function renderMe() {
               disease: W_STATE.disease,
             },
           });
-          btn.innerHTML = `${ic("circle-check", 14, 2)} Referral Scheduled`;
+          btn.innerHTML = `${ic("circle-check", 14, 2)} Referral Noted`;
           btn.classList.add("btn-ink");
-          toast(reply.message || `Priority referral routed to ${facName}.`, "good");
+          toast(reply.message || `Referral to ${facName} noted.`, "good");
         } catch (err) {
-          toast(err.message || "Failed to route referral.", "action");
+          toast(err.message || "Could not note the referral.", "action");
         }
       });
     });

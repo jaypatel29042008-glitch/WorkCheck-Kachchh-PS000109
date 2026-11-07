@@ -99,13 +99,13 @@ VIEWS.wokwi = async () => {
   $("#view").innerHTML = `
     <header class="page-head">
       <div>
-        <h1>Wokwi ESP32 Hardware Node</h1>
-        <p class="lead">Interactive simulation of the solar-powered ambient environmental site node deployed across Kachchh worksites.</p>
+        <h1>Wokwi ESP32 Test Node</h1>
+        <p class="lead">Test version of the site node, simulated in Wokwi. No device is on a real site yet.</p>
       </div>
       <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
         <span id="wk-status-pill" class="pill ${initialConnected ? "clear" : "none"} sm">
           ${ic(initialConnected ? "wifi" : "wifi-off", 14, 2)}
-          ${initialConnected ? "Hardware connected" : "Waiting for telemetry"}
+          ${initialConnected ? "Simulator sending" : "Waiting for test readings"}
         </span>
         <a href="${WOKWI_PROJECT_URL}" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
           Open in Wokwi ${ic("external-link", 14, 2)}
@@ -206,7 +206,7 @@ VIEWS.wokwi = async () => {
             <span class="round xs bg-green" style="margin-right:10px;">${ic("check", 14, 2)}</span>
             <div>
               <b style="display:block;font-size:13px;">Normal Working Shift</b>
-              <small style="color:var(--ink-3);">Air: 28°C &bull; WBGT: 24.5°C &bull; PM10: 35 µg/m³ &bull; All clear</small>
+              <small style="color:var(--ink-3);">Air: 28°C &bull; WBGT: 24.5°C &bull; PM10: 35 µg/m³ &bull; Low heat and dust</small>
             </div>
           </button>
           <button type="button" class="btn btn-ghost" data-scenario="heat" style="justify-content:flex-start;text-align:left;padding:10px 14px;">
@@ -289,7 +289,7 @@ VIEWS.wokwi = async () => {
 
     // Status lamp & advice
     const lampCode = (r.jobs && r.jobs[0] && r.jobs[0].lamp) || "GREEN";
-    const advice = (r.jobs && r.jobs[0] && r.jobs[0].action) || "Conditions within safe baseline.";
+    const advice = (r.jobs && r.jobs[0] && r.jobs[0].text) || "No reading yet.";
     const lampBadge = $("#wk-lamp-badge");
     const actionText = $("#wk-action-text");
 
@@ -304,12 +304,16 @@ VIEWS.wokwi = async () => {
     const statusPill = $("#wk-status-pill");
     if (statusPill) {
       statusPill.className = "pill clear sm";
-      statusPill.innerHTML = `${ic("wifi", 14, 2)} Hardware connected`;
+      statusPill.innerHTML = `${ic("wifi", 14, 2)} Simulator sending`;
     }
   };
 
   // Telemetry sender with scenario values
   const sendPacket = async (scenario = "normal") => {
+    if (window.WORKCHECK_STATIC_DATA) {
+      toast(READ_ONLY_MESSAGE, "watch");
+      return;
+    }
     let tAir = 28.0, rh = 52.0, tGlobe = 32.0, pm10 = 35.0, uv = 4.2, noise = 68.0;
 
     if (scenario === "heat") {

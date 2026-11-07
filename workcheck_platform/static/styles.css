@@ -4112,3 +4112,4 @@ a.tile:hover {
 .fac-actions .btn {
   flex: 1;
 }
+.symptom-feedback[hidden] { display: none; }

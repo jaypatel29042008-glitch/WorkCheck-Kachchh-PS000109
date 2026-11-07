@@ -25,38 +25,36 @@ class ApiError extends Error {
   constructor(status, message) { super(message); this.status = status; }
 }
 
+const READ_ONLY_MESSAGE = "This is a read-only preview, so nothing was saved. Run the full version to try this.";
+
 async function api(path, options = {}) {
   const method = (options.method || "GET").toUpperCase();
-  const isStatic = location.hostname.endsWith("github.io") || location.protocol === "file:" || !location.port;
 
-  // If running locally with backend, try network fetch
-  if (!isStatic) {
-    try {
-      const init = { credentials: "same-origin", method, headers: {} };
-      if (options.body !== undefined) {
-        init.body = JSON.stringify(options.body);
-        init.headers["Content-Type"] = "application/json";
-      }
-      const res = await fetch(path, init);
-      if (res.ok) {
-        return await res.json().catch(() => ({}));
-      }
-      if (res.status === 401 && path !== "/api/auth/login" && path !== "/api/auth/me") {
-        S.user = null;
-        renderLogin();
-        throw new ApiError(401, "Please sign in.");
-      }
-      const data = await res.json().catch(() => ({}));
-      throw new ApiError(res.status, data.detail || "Something went wrong. Please try again.");
-    } catch (err) {
-      if (!window.WORKCHECK_STATIC_DATA) throw err;
-      // If network fails, fallback to static data
+  // With a server, its answer is final: errors are shown, never replaced by demo data.
+  if (!window.WORKCHECK_STATIC_DATA) {
+    const init = { credentials: "same-origin", method, headers: {} };
+    if (options.body !== undefined) {
+      init.body = JSON.stringify(options.body);
+      init.headers["Content-Type"] = "application/json";
     }
+    const res = await fetch(path, init);
+    const data = await res.json().catch(() => ({}));
+    if (res.status === 401 && path !== "/api/auth/login" && path !== "/api/auth/me") {
+      S.user = null;
+      renderLogin();
+    }
+    if (!res.ok) throw new ApiError(res.status, data.detail || "Something went wrong. Please try again.");
+    return data;
   }
 
   // Client-side static handler (powered by reference.db dataset for GitHub Pages)
   if (window.WORKCHECK_STATIC_DATA) {
     const D = window.WORKCHECK_STATIC_DATA;
+
+    // The preview has no server, so it must not claim that anything was saved.
+    if (method !== "GET" && path !== "/api/auth/login" && path !== "/api/auth/logout") {
+      throw new ApiError(403, READ_ONLY_MESSAGE);
+    }
 
     // 1. Auth Login
     if (path === "/api/auth/login" && method === "POST") {
@@ -126,11 +124,6 @@ async function api(path, options = {}) {
       return base;
     }
 
-    // 13. Facilities refer
-    if (path === "/api/facilities/refer") {
-      return { ok: true, message: "Referral recorded successfully" };
-    }
-
     // 14. Worker Details & actions
     if (path.startsWith("/api/workers/")) {
       const parts = path.split("/");
@@ -138,7 +131,7 @@ async function api(path, options = {}) {
       if (parts.length === 4) {
         return (D.worker_details && D.worker_details[wid]) || { worker: null };
       }
-      return { ok: true, status: "saved" };
+      return { worker: null };
     }
 
     // 15. Worker Self Today
