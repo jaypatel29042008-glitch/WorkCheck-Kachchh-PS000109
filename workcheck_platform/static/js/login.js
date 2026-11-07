@@ -56,7 +56,7 @@ function renderLogin() {
         <button class="btn btn-ink btn-full" id="login-go" type="submit">Sign in ${ic("arrow-right", 18, 2)}</button>
         <div class="divider"><span>Try a test account</span></div>
         <div class="test-accounts">${TEST_ACCOUNTS.map(([e, p, n, d, i], k) => `<button type="button" class="test-acc" data-k="${k}"><span class="round sm bg-indigo">${ic(i, 16, 2)}</span><span><b>${n}</b><small>${d}</small></span></button>`).join("")}</div>
-        <p class="fine">All workers here are fictional. Test accounts work only on this copy.</p>
+        <p class="fine">All workers here are fictional. Test accounts work only on this copy.${window.WORKCHECK_STATIC_DATA ? " This is a read-only preview, so nothing is saved." : ""}</p>
       </form>
     </section>
   </div>`;

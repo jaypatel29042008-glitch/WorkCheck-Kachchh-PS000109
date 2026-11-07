@@ -12,7 +12,7 @@ Worker health follow-up for Seva First Innovation Challenge 2026 / SSIP Gujarat,
 
 ## 🌐 Live Website (Zero Install)
 
-Open the live interactive application directly in your browser:
+Open the read-only preview directly in your browser. It has no server, so nothing you enter is saved. To try the live loop, where a worker report reaches the clinic, run the full version below.
 
 👉 **[https://jaypatel29042008-glitch.github.io/WorkCheck-Kachchh-PS000109/](https://jaypatel29042008-glitch.github.io/WorkCheck-Kachchh-PS000109/)**
 
@@ -22,7 +22,7 @@ Open the live interactive application directly in your browser:
 |---|---|---|---|
 | **Clinic team** | `clinic@workcheck.demo` | `Demo-Clinic-2026` | Today's triage, all 128 worker records, check results recording, facility referral |
 | **District office** | `ddo@workcheck.demo` | `Demo-DDO-2026` | Macro taluka totals, heat & dust map, CSV export |
-| **Site supervisor** | `site@workcheck.demo` | `Demo-Site-2026` | Real-time site monitor, heat map, and Wokwi ESP32 IoT node |
+| **Site supervisor** | `site@workcheck.demo` | `Demo-Site-2026` | Site monitor, heat map, and simulated Wokwi ESP32 node |
 | **Worker** | `worker@workcheck.demo` | `Demo-Worker-2026` | Worker health pass (Kishan P.), QR code, and symptom reporting |
 
 ---
@@ -43,7 +43,7 @@ Then open **http://localhost:8090** in your browser. On Windows, you can double-
 
 | Folder / File | What it holds |
 |---|---|
-| `index.html`, `styles.css`, `js/`, `assets/` | Modern client application deployed directly on GitHub Pages |
+| `index.html`, `styles.css`, `js/`, `assets/` | Read-only preview deployed on GitHub Pages, using a saved copy of the test data |
 | `workcheck_platform/` | The full-stack app: FastAPI backend, authentication, reference SQLite database, and tests |
 | `final_dataset/` | Complete empirical datasets (CSV tables, 128 simulated workers, ERA5 weather, CPCB PM data, data dictionary) |
 | `simulation/` | Hazard models, multi-parameter exposure calculations, and simulation outputs |

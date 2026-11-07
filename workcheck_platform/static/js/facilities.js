@@ -1,5 +1,5 @@
 "use strict";
-/* Persona 6: Healthcare Infrastructure & Referral Routing
+/* Healthcare facilities and referral notes
    Diagnostic referral network with digital X-ray, spirometry, and 108 emergency ambulance bases across 10 Talukas.
    Connected depending on each site and sorted by diseases.
 */
@@ -28,7 +28,7 @@ function renderFacilitiesCards(facilities) {
           <div>
             <span class="tier-badge ${tierClass}">${esc(f.facility_tier)}</span>
             <h4 class="fac-name">${esc(f.facility_name)}</h4>
-            <span class="fac-taluka">Taluka: <b>${esc(f.taluka)}</b> &bull; <span class="dist-badge">${f.distance_km} km away</span></span>
+            <span class="fac-taluka">Taluka: <b>${esc(f.taluka)}</b> &bull; <span class="dist-badge">about ${f.distance_km} km, straight line</span></span>
           </div>
           <span class="round xs bg-indigo t-indigo">${ic("hospital-circle", 18, 2)}</span>
         </div>
@@ -44,7 +44,7 @@ function renderFacilitiesCards(facilities) {
 
         <div class="fac-actions">
           <button type="button" class="btn btn-ghost btn-sm fac-page-route-btn" data-fac-id="${esc(f.facility_id)}" data-fac-name="${esc(f.facility_name)}">
-            ${ic("route", 14, 2)} Route Referral Here
+            ${ic("route", 14, 2)} Note referral
           </button>
           ${f.emergency_108_base ? `<a class="btn btn-danger btn-sm" href="tel:108" title="Call Emergency 108">${ic("phone", 13, 2)} 108</a>` : ""}
         </div>
@@ -60,18 +60,17 @@ function renderFacilitiesPage() {
   $("#view").innerHTML = `
     <header class="page-head">
       <div>
-        <span class="persona-tag">PERSONA 6: HEALTHCARE INFRASTRUCTURE &amp; REFERRAL ROUTING</span>
-        <h1>Kachchh Occupational Health Facilities &amp; Dhanvantari Van Network</h1>
-        <p class="lead">Diagnostic referral network with digital X-ray, spirometry, and 108 emergency ambulance bases across 10 Talukas.</p>
+        <h1>Kachchh Health Facilities</h1>
+        <p class="lead">Sample list for testing. Confirm services with each facility.</p>
       </div>
-      <span class="pill none" data-tip="12 Government, ESIC & Dhanvantari Health Centers">${ic("info-circle", 14, 2)}12 Facilities Connected</span>
+      <span class="pill none" data-tip="Services are not yet confirmed with each facility, and none is connected to this tool.">${ic("info-circle", 14, 2)}12 sample facilities</span>
     </header>
 
     <section class="card facilities-connector-card">
       <div class="facilities-header">
         <div>
           <h2 style="font-size:16px;margin:0">Active Worksite &amp; Taluka Filter</h2>
-          <p class="sub">Computes real-time road distances from industrial clusters to health facilities.</p>
+          <p class="sub">Shows straight-line distance from each worksite to each facility.</p>
         </div>
         <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
           <div class="facilities-site-picker">
@@ -153,11 +152,11 @@ function wirePageReferrals() {
             disease: FAC_STATE.disease,
           },
         });
-        btn.innerHTML = `${ic("circle-check", 14, 2)} Referral Scheduled`;
+        btn.innerHTML = `${ic("circle-check", 14, 2)} Referral Noted`;
         btn.classList.add("btn-ink");
-        toast(reply.message || `Priority referral routed to ${facName}.`, "good");
+        toast(reply.message || `Referral to ${facName} noted.`, "good");
       } catch (err) {
-        toast(err.message || "Failed to route referral.", "action");
+        toast(err.message || "Could not note the referral.", "action");
       }
     });
   });

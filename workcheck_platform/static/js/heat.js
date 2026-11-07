@@ -139,7 +139,7 @@ VIEWS.heat = async () => {
 
     if (state.layer === "compound") {
       const riskWord = avgScore >= 75 ? "Severe" : avgScore >= 50 ? "High" : avgScore >= 25 ? "Moderate" : "Low";
-      $("#heat-lead").innerHTML = `In <b>${MONTHS[state.month]}</b>, Compound Double-Hazard is <b>${riskWord}</b> across Kachchh (average score <b>${avgScore}/100</b>). Heavy work safe hours: <b>${minH}–${maxH} h/shift</b>; ambient PM10: <b>${minPm}–${maxPm} µg/m³</b>${totalCompoundDays > 0 ? ` with <b>${totalCompoundDays} compound double-hazard days</b>` : ""}.`;
+      $("#heat-lead").innerHTML = `In <b>${MONTHS[state.month]}</b>, Compound Double-Hazard is <b>${riskWord}</b> across Kachchh (test score <b>${avgScore}/100</b>, not yet validated). Heavy work safe hours: <b>${minH}–${maxH} h/shift</b>; ambient PM10: <b>${minPm}–${maxPm} µg/m³</b>${totalCompoundDays > 0 ? ` with <b>${totalCompoundDays} compound double-hazard days</b>` : ""}.`;
     } else if (state.layer === "heat") {
       $("#heat-lead").innerHTML = minH === maxH
         ? `In <b>${MONTHS[state.month]}</b>, ${esc(modeName)} has <b>${minH} safe hours</b> of a 9-hour shift across Kachchh.`

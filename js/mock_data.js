@@ -52,16 +52,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Jyoti G.",
         "initials": "JG",
         "age": 35,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-9650",
-        "abha": "jyotig..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -74,16 +70,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Vijay M.",
         "initials": "VM",
         "age": 47,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-1104",
-        "abha": "vijaym..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -96,16 +88,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Premji C.",
         "initials": "PC",
         "age": 47,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-9377",
-        "abha": "premjic..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Follow-up not recorded",
         "headline_area": null,
@@ -118,16 +106,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Pravin T.",
         "initials": "PT",
         "age": 47,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-2685",
-        "abha": "pravint..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Breathing test missed",
         "headline_area": "lungs",
@@ -140,16 +124,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kamla Z.",
         "initials": "KZ",
         "age": 35,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-8606",
-        "abha": "kamlaz..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Hydration check missed",
         "headline_area": "kidneys",
@@ -162,16 +142,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Sanjay R.",
         "initials": "SR",
         "age": 47,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-4297",
-        "abha": "sanjayr..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Breathing test missed",
         "headline_area": "lungs",
@@ -299,16 +275,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Jyoti G.",
         "initials": "JG",
         "age": 35,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-9650",
-        "abha": "jyotig..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -321,16 +293,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Vijay M.",
         "initials": "VM",
         "age": 47,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-1104",
-        "abha": "vijaym..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -343,16 +311,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Pravin T.",
         "initials": "PT",
         "age": 47,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-2685",
-        "abha": "pravint..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Breathing test missed",
         "headline_area": "lungs",
@@ -365,16 +329,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Premji C.",
         "initials": "PC",
         "age": 47,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-9377",
-        "abha": "premjic..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Follow-up not recorded",
         "headline_area": null,
@@ -387,16 +347,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kamla Z.",
         "initials": "KZ",
         "age": 35,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-8606",
-        "abha": "kamlaz..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Hydration check missed",
         "headline_area": "kidneys",
@@ -409,16 +365,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Sanjay R.",
         "initials": "SR",
         "age": 47,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-4297",
-        "abha": "sanjayr..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Breathing test missed",
         "headline_area": "lungs",
@@ -431,16 +383,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Farida P.",
         "initials": "FP",
         "age": 35,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-6290",
-        "abha": "faridap..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Breathing test missed",
         "headline_area": "lungs",
@@ -453,16 +401,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Nirmala V.",
         "initials": "NV",
         "age": 42,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-2529",
-        "abha": "nirmalav..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Breathing test missed",
         "headline_area": "lungs",
@@ -475,16 +419,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Salim T.",
         "initials": "ST",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-2467",
-        "abha": "salimt..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Legal exam overdue",
         "headline_area": null,
@@ -497,16 +437,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Shamji S.",
         "initials": "SS",
         "age": 25,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-5462",
-        "abha": "shamjis..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Breathing test missed",
         "headline_area": "lungs",
@@ -519,16 +455,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Suresh V.",
         "initials": "SV",
         "age": 25,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-1142",
-        "abha": "sureshv..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -541,16 +473,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Valji G.",
         "initials": "VG",
         "age": 42,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-5099",
-        "abha": "valjig..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Back and joint check: follow-up open",
         "headline_area": "back",
@@ -563,16 +491,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Yusuf J.",
         "initials": "YJ",
         "age": 47,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-5909",
-        "abha": "yusufj..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Follow-up not recorded",
         "headline_area": null,
@@ -585,16 +509,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Pushpa N.",
         "initials": "PN",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-1137",
-        "abha": "pushpan..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -607,16 +527,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Pushpa Z.",
         "initials": "PZ",
         "age": 42,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-6211",
-        "abha": "pushpaz..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -629,16 +545,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Rama L.",
         "initials": "RL",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-9477",
-        "abha": "ramal..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Follow-up not recorded",
         "headline_area": null,
@@ -651,16 +563,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Sarla L.",
         "initials": "SL",
         "age": 47,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-2748",
-        "abha": "sarlal..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -673,16 +581,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Usha D.",
         "initials": "UD",
         "age": 47,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-9122",
-        "abha": "ushad..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Follow-up not recorded",
         "headline_area": null,
@@ -695,16 +599,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Valji L.",
         "initials": "VL",
         "age": 42,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-5831",
-        "abha": "valjil..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -717,16 +617,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Arjan N.",
         "initials": "AN",
         "age": 35,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-6727",
-        "abha": "arjann..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -739,16 +635,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Bhavna H.",
         "initials": "BH",
         "age": 25,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-3359",
-        "abha": "bhavnah..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -761,16 +653,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Bhavna N.",
         "initials": "BN",
         "age": 35,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-7731",
-        "abha": "bhavnan..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Follow-up not recorded",
         "headline_area": null,
@@ -783,16 +671,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Hasan R.",
         "initials": "HR",
         "age": 47,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-6650",
-        "abha": "hasanr..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -805,16 +689,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Jagdish R.",
         "initials": "JR",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Crane operator",
         "icon": "crane",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-5833",
-        "abha": "jagdishr..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Follow-up not recorded",
         "headline_area": null,
@@ -827,16 +707,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Jyoti V.",
         "initials": "JV",
         "age": 35,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-2541",
-        "abha": "jyotiv..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -849,16 +725,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Lalji J.",
         "initials": "LJ",
         "age": 42,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-4840",
-        "abha": "laljij..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -871,16 +743,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Manju D.",
         "initials": "MD",
         "age": 42,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-9956",
-        "abha": "manjud..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -893,16 +761,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Meena K.",
         "initials": "MK",
         "age": 35,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-8870",
-        "abha": "meenak..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -915,16 +779,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Nanji P.",
         "initials": "NP",
         "age": 47,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Crane operator",
         "icon": "crane",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-3314",
-        "abha": "nanjip..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -937,16 +797,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Rakesh A.",
         "initials": "RA",
         "age": 42,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-7473",
-        "abha": "rakesha..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check: follow-up open",
         "headline_area": "eyes",
@@ -959,16 +815,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Sanjay T.",
         "initials": "ST",
         "age": 42,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-3099",
-        "abha": "sanjayt..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -981,16 +833,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Zubeda C.",
         "initials": "ZC",
         "age": 25,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Crane operator",
         "icon": "crane",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-2340",
-        "abha": "zubedac..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -1003,16 +851,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ajay H.",
         "initials": "AH",
         "age": 47,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-3043",
-        "abha": "ajayh..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -1025,16 +869,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Amina L.",
         "initials": "AL",
         "age": 35,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Crane operator",
         "icon": "crane",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-3096",
-        "abha": "aminal..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Hearing test missed",
         "headline_area": "ears",
@@ -1047,16 +887,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Dilip S.",
         "initials": "DS",
         "age": 47,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-6552",
-        "abha": "dilips..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Hearing test missed",
         "headline_area": "ears",
@@ -1069,16 +905,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Farida S.",
         "initials": "FS",
         "age": 35,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-7592",
-        "abha": "faridas..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Hearing test missed",
         "headline_area": "ears",
@@ -1091,16 +923,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Harish B.",
         "initials": "HB",
         "age": 47,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-4473",
-        "abha": "harishb..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Hearing test missed",
         "headline_area": "ears",
@@ -1113,16 +941,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kamla P.",
         "initials": "KP",
         "age": 42,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-6761",
-        "abha": "kamlap..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Hearing test missed",
         "headline_area": "ears",
@@ -1135,16 +959,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Manoj G.",
         "initials": "MG",
         "age": 25,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-4217",
-        "abha": "manojg..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Hearing test missed",
         "headline_area": "ears",
@@ -1157,16 +977,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Mavji V.",
         "initials": "MV",
         "age": 47,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-9933",
-        "abha": "mavjiv..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -1179,16 +995,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Nanji Z.",
         "initials": "NZ",
         "age": 47,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-3060",
-        "abha": "nanjiz..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -1201,16 +1013,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Premji D.",
         "initials": "PD",
         "age": 25,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-3255",
-        "abha": "premjid..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Hearing test missed",
         "headline_area": "ears",
@@ -1223,16 +1031,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ranchhod A.",
         "initials": "RA",
         "age": 25,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-3033",
-        "abha": "ranchhoda..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Hearing test missed",
         "headline_area": "ears",
@@ -1245,16 +1049,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Rekha C.",
         "initials": "RC",
         "age": 47,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-4293",
-        "abha": "rekhac..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -1267,16 +1067,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Vijay J.",
         "initials": "VJ",
         "age": 47,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-2048",
-        "abha": "vijayj..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -1289,16 +1085,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Vikram C.",
         "initials": "VC",
         "age": 35,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-2688",
-        "abha": "vikramc..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -1311,16 +1103,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Dinesh M.",
         "initials": "DM",
         "age": 46,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-6215",
-        "abha": "dineshm..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -1333,16 +1121,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kiran D.",
         "initials": "KD",
         "age": 25,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-7784",
-        "abha": "kirand..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -1355,16 +1139,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Rama A.",
         "initials": "RA",
         "age": 42,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-5743",
-        "abha": "ramaa..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -1377,16 +1157,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Rekha M.",
         "initials": "RM",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-5117",
-        "abha": "rekham..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -1399,16 +1175,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Savita S.",
         "initials": "SS",
         "age": 47,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-9257",
-        "abha": "savitas..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -1421,16 +1193,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Amina G.",
         "initials": "AG",
         "age": 25,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-7946",
-        "abha": "aminag..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -1443,16 +1211,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ashok K.",
         "initials": "AK",
         "age": 47,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-3462",
-        "abha": "ashokk..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -1465,16 +1229,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Dilip P.",
         "initials": "DP",
         "age": 42,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-4576",
-        "abha": "dilipp..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -1487,16 +1247,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Hari B.",
         "initials": "HB",
         "age": 35,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Crane operator",
         "icon": "crane",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-9659",
-        "abha": "harib..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -1509,16 +1265,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Hitesh L.",
         "initials": "HL",
         "age": 35,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-3246",
-        "abha": "hiteshl..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -1531,16 +1283,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ibrahim H.",
         "initials": "IH",
         "age": 47,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-5382",
-        "abha": "ibrahimh..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -1553,16 +1301,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Jignesh N.",
         "initials": "JN",
         "age": 25,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-8130",
-        "abha": "jigneshn..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -1575,16 +1319,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Karsan J.",
         "initials": "KJ",
         "age": 35,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-4643",
-        "abha": "karsanj..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -1597,16 +1337,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kishan P.",
         "initials": "KP",
         "age": 32,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-8928",
-        "abha": "kishanp..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -1619,16 +1355,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Lata T.",
         "initials": "LT",
         "age": 35,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-2782",
-        "abha": "latat..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -1641,16 +1373,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Savita P.",
         "initials": "SP",
         "age": 47,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-7229",
-        "abha": "savitap..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -1663,16 +1391,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Shamji T.",
         "initials": "ST",
         "age": 25,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-8566",
-        "abha": "shamjit..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -1685,16 +1409,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Shanta T.",
         "initials": "ST",
         "age": 47,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-6909",
-        "abha": "shantat..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -1707,16 +1427,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Anil Z.",
         "initials": "AZ",
         "age": 25,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-8932",
-        "abha": "anilz..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Hearing test due",
         "headline_area": "ears",
@@ -1729,16 +1445,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ashok A.",
         "initials": "AA",
         "age": 47,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-9166",
-        "abha": "ashoka..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -1751,16 +1463,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Bharat S.",
         "initials": "BS",
         "age": 38,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-5576",
-        "abha": "bharats..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -1773,16 +1481,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Gopal K.",
         "initials": "GK",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Crane operator",
         "icon": "crane",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-4938",
-        "abha": "gopalk..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Hearing test due",
         "headline_area": "ears",
@@ -1795,16 +1499,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Hansa K.",
         "initials": "HK",
         "age": 41,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-2831",
-        "abha": "hansak..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -1817,16 +1517,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Hari D.",
         "initials": "HD",
         "age": 35,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-1507",
-        "abha": "harid..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -1839,16 +1535,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Harish D.",
         "initials": "HD",
         "age": 47,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-3863",
-        "abha": "harishd..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -1861,16 +1553,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Hitesh G.",
         "initials": "HG",
         "age": 35,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-8927",
-        "abha": "hiteshg..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -1883,16 +1571,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Mahesh J.",
         "initials": "MJ",
         "age": 47,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-2522",
-        "abha": "maheshj..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -1905,16 +1589,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Manoj V.",
         "initials": "MV",
         "age": 47,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-5349",
-        "abha": "manojv..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -1927,16 +1607,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Naresh C.",
         "initials": "NC",
         "age": 35,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-4050",
-        "abha": "nareshc..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Hearing test due",
         "headline_area": "ears",
@@ -1949,16 +1625,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Prakash B.",
         "initials": "PB",
         "age": 42,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-4427",
-        "abha": "prakashb..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -1971,16 +1643,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ravi K.",
         "initials": "RK",
         "age": 24,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-2333",
-        "abha": "ravik..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Hearing test due",
         "headline_area": "ears",
@@ -1993,16 +1661,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Sarla G.",
         "initials": "SG",
         "age": 47,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-4139",
-        "abha": "sarlag..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -2015,16 +1679,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Usha B.",
         "initials": "UB",
         "age": 25,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-4320",
-        "abha": "ushab..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Hearing test due",
         "headline_area": "ears",
@@ -2037,16 +1697,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Varsha K.",
         "initials": "VK",
         "age": 25,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-4481",
-        "abha": "varshak..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Hearing test due",
         "headline_area": "ears",
@@ -2059,16 +1715,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Velji H.",
         "initials": "VH",
         "age": 35,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-7774",
-        "abha": "veljih..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Hearing test due",
         "headline_area": "ears",
@@ -2081,16 +1733,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ajay N.",
         "initials": "AN",
         "age": 47,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-4953",
-        "abha": "ajayn..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2103,16 +1751,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Anil P.",
         "initials": "AP",
         "age": 25,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-8005",
-        "abha": "anilp..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2125,16 +1769,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Arjan Z.",
         "initials": "AZ",
         "age": 42,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-3291",
-        "abha": "arjanz..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2147,16 +1787,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Asha R.",
         "initials": "AR",
         "age": 25,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-7146",
-        "abha": "ashar..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2169,16 +1805,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Asha T.",
         "initials": "AT",
         "age": 25,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-1789",
-        "abha": "ashat..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2191,16 +1823,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Daksha J.",
         "initials": "DJ",
         "age": 35,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-9630",
-        "abha": "dakshaj..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2213,16 +1841,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Daksha M.",
         "initials": "DM",
         "age": 35,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-3479",
-        "abha": "daksham..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2235,16 +1859,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Devji R.",
         "initials": "DR",
         "age": 35,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-2363",
-        "abha": "devjir..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2257,16 +1877,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Geeta A.",
         "initials": "GA",
         "age": 35,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-7833",
-        "abha": "geetaa..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2279,16 +1895,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Geeta L.",
         "initials": "GL",
         "age": 25,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-8970",
-        "abha": "geetal..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2301,16 +1913,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Gopal A.",
         "initials": "GA",
         "age": 35,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-6184",
-        "abha": "gopala..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2323,16 +1931,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Hasan V.",
         "initials": "HV",
         "age": 25,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-1505",
-        "abha": "hasanv..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2345,16 +1949,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ibrahim B.",
         "initials": "IB",
         "age": 47,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-1027",
-        "abha": "ibrahimb..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2367,16 +1967,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Jagdish T.",
         "initials": "JT",
         "age": 42,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-1010",
-        "abha": "jagdisht..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2389,16 +1985,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Jignesh Z.",
         "initials": "JZ",
         "age": 35,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-9802",
-        "abha": "jigneshz..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2411,16 +2003,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kanji H.",
         "initials": "KH",
         "age": 42,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-7587",
-        "abha": "kanjih..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2433,16 +2021,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kanji N.",
         "initials": "KN",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-6958",
-        "abha": "kanjin..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2455,16 +2039,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kanta B.",
         "initials": "KB",
         "age": 35,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-4542",
-        "abha": "kantab..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2477,16 +2057,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kanta H.",
         "initials": "KH",
         "age": 35,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-4010",
-        "abha": "kantah..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2499,16 +2075,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Karsan K.",
         "initials": "KK",
         "age": 35,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-5481",
-        "abha": "karsank..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2521,16 +2093,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kesar C.",
         "initials": "KC",
         "age": 42,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-3200",
-        "abha": "kesarc..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2543,16 +2111,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kesar M.",
         "initials": "KM",
         "age": 42,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-7966",
-        "abha": "kesarm..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2565,16 +2129,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kiran C.",
         "initials": "KC",
         "age": 25,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-2452",
-        "abha": "kiranc..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2587,16 +2147,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Lalji M.",
         "initials": "LM",
         "age": 47,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Crane operator",
         "icon": "crane",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-6974",
-        "abha": "laljim..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2609,16 +2165,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Lata S.",
         "initials": "LS",
         "age": 35,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-6701",
-        "abha": "latas..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2631,16 +2183,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Manju C.",
         "initials": "MC",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-6374",
-        "abha": "manjuc..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2653,16 +2201,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Mavji G.",
         "initials": "MG",
         "age": 47,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Crane operator",
         "icon": "crane",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-8556",
-        "abha": "mavjig..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2675,16 +2219,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Meena J.",
         "initials": "MJ",
         "age": 42,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-3850",
-        "abha": "meenaj..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2697,16 +2237,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Mukesh P.",
         "initials": "MP",
         "age": 35,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-5590",
-        "abha": "mukeshp..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2719,16 +2255,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Mukesh S.",
         "initials": "MS",
         "age": 42,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-6044",
-        "abha": "mukeshs..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2741,16 +2273,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Nirmala R.",
         "initials": "NR",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-2124",
-        "abha": "nirmalar..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2763,16 +2291,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Prakash D.",
         "initials": "PD",
         "age": 42,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-6475",
-        "abha": "prakashd..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2785,16 +2309,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Rafiq N.",
         "initials": "RN",
         "age": 25,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-5411",
-        "abha": "rafiqn..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2807,16 +2327,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Rafiq Z.",
         "initials": "RZ",
         "age": 25,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Crane operator",
         "icon": "crane",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-1220",
-        "abha": "rafiqz..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2829,16 +2345,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Rajesh H.",
         "initials": "RH",
         "age": 25,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-6114",
-        "abha": "rajeshh..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2851,16 +2363,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Rakesh K.",
         "initials": "RK",
         "age": 42,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-3811",
-        "abha": "rakeshk..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2873,16 +2381,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ramesh J.",
         "initials": "RJ",
         "age": 25,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-4380",
-        "abha": "rameshj..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2895,16 +2399,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ramesh K.",
         "initials": "RK",
         "age": 25,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-4454",
-        "abha": "rameshk..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2917,16 +2417,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ranchhod L.",
         "initials": "RL",
         "age": 25,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-8365",
-        "abha": "ranchhodl..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2939,16 +2435,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Shanta S.",
         "initials": "SS",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-9789",
-        "abha": "shantas..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2961,16 +2453,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Suresh R.",
         "initials": "SR",
         "age": 25,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-4173",
-        "abha": "sureshr..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -2983,16 +2471,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Varsha A.",
         "initials": "VA",
         "age": 25,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-7547",
-        "abha": "varshaa..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -3005,16 +2489,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Velji B.",
         "initials": "VB",
         "age": 25,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-4001",
-        "abha": "veljib..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -3027,16 +2507,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Vikram M.",
         "initials": "VM",
         "age": 35,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-7552",
-        "abha": "vikramm..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -3049,16 +2525,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Yusuf K.",
         "initials": "YK",
         "age": 47,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-4763",
-        "abha": "yusufk..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -3071,16 +2543,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Zubeda M.",
         "initials": "ZM",
         "age": 25,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-4230",
-        "abha": "zubedam..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -3093,16 +2561,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Devji V.",
         "initials": "DV",
         "age": 35,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-9830",
-        "abha": "devjiv..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "clear",
         "headline": "Nothing open",
         "headline_area": null,
@@ -3139,7 +2603,7 @@ window.WORKCHECK_STATIC_DATA = {
       {
         "key": "compound",
         "label": "Heat + Dust compound risk",
-        "unit": "index (0\u2013100)"
+        "unit": "index (0–100)"
       },
       {
         "key": "heat",
@@ -3149,7 +2613,7 @@ window.WORKCHECK_STATIC_DATA = {
       {
         "key": "dust",
         "label": "Dust pollution (PM10)",
-        "unit": "\u00b5g/m\u00b3"
+        "unit": "µg/m³"
       }
     ],
     "locations": [
@@ -5927,7 +5391,7 @@ window.WORKCHECK_STATIC_DATA = {
           "noise": false
         },
         "disease_match": true,
-        "match_label": "Mobile Van \u2022 Rapar"
+        "match_label": "Mobile Van • Rapar"
       },
       {
         "facility_id": "FAC-RAPAR-CHC",
@@ -5951,7 +5415,7 @@ window.WORKCHECK_STATIC_DATA = {
           "noise": false
         },
         "disease_match": true,
-        "match_label": "Chc \u2022 Rapar"
+        "match_label": "Chc • Rapar"
       },
       {
         "facility_id": "FAC-BHACHAU-CHC",
@@ -5975,7 +5439,7 @@ window.WORKCHECK_STATIC_DATA = {
           "noise": false
         },
         "disease_match": true,
-        "match_label": "Chc \u2022 Bhachau"
+        "match_label": "Chc • Bhachau"
       },
       {
         "facility_id": "FAC-GANDHI-ESIC",
@@ -5999,7 +5463,7 @@ window.WORKCHECK_STATIC_DATA = {
           "noise": true
         },
         "disease_match": true,
-        "match_label": "Esic \u2022 Gandhidham"
+        "match_label": "Esic • Gandhidham"
       },
       {
         "facility_id": "FAC-ANJAR-SDH",
@@ -6023,7 +5487,7 @@ window.WORKCHECK_STATIC_DATA = {
           "noise": false
         },
         "disease_match": true,
-        "match_label": "Sub District Hospital \u2022 Anjar"
+        "match_label": "Sub District Hospital • Anjar"
       },
       {
         "facility_id": "FAC-BHUJ-GK",
@@ -6047,7 +5511,7 @@ window.WORKCHECK_STATIC_DATA = {
           "noise": true
         },
         "disease_match": true,
-        "match_label": "District Hospital \u2022 Bhuj"
+        "match_label": "District Hospital • Bhuj"
       },
       {
         "facility_id": "FAC-MOB-VAN-01",
@@ -6071,7 +5535,7 @@ window.WORKCHECK_STATIC_DATA = {
           "noise": true
         },
         "disease_match": true,
-        "match_label": "Mobile Van \u2022 Mundra"
+        "match_label": "Mobile Van • Mundra"
       },
       {
         "facility_id": "FAC-MUNDRA-CHC",
@@ -6095,7 +5559,7 @@ window.WORKCHECK_STATIC_DATA = {
           "noise": false
         },
         "disease_match": true,
-        "match_label": "Chc \u2022 Mundra"
+        "match_label": "Chc • Mundra"
       },
       {
         "facility_id": "FAC-NAKH-CHC",
@@ -6119,7 +5583,7 @@ window.WORKCHECK_STATIC_DATA = {
           "noise": false
         },
         "disease_match": true,
-        "match_label": "Chc \u2022 Nakhatrana"
+        "match_label": "Chc • Nakhatrana"
       },
       {
         "facility_id": "FAC-MANDVI-CHC",
@@ -6143,7 +5607,7 @@ window.WORKCHECK_STATIC_DATA = {
           "noise": false
         },
         "disease_match": true,
-        "match_label": "Chc \u2022 Mandvi"
+        "match_label": "Chc • Mandvi"
       },
       {
         "facility_id": "FAC-LAKH-PHC",
@@ -6167,7 +5631,7 @@ window.WORKCHECK_STATIC_DATA = {
           "noise": false
         },
         "disease_match": true,
-        "match_label": "Phc \u2022 Lakhpat"
+        "match_label": "Phc • Lakhpat"
       },
       {
         "facility_id": "FAC-ABDASA-CHC",
@@ -6191,7 +5655,7 @@ window.WORKCHECK_STATIC_DATA = {
           "noise": false
         },
         "disease_match": true,
-        "match_label": "Chc \u2022 Abdasa"
+        "match_label": "Chc • Abdasa"
       }
     ],
     "selected_site": {
@@ -6334,16 +5798,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Jyoti G.",
         "initials": "JG",
         "age": 35,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-9650",
-        "abha": "jyotig..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -6351,9 +5811,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.4 \u2013 7.2 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "1.4–7.2 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -6705,8 +6164,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "1.4\u20137.2",
-          "unit": "mg/m\u00b3-years",
+          "value": "1.4–7.2",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "high",
           "chip": "Above review level",
@@ -6724,7 +6183,7 @@ window.WORKCHECK_STATIC_DATA = {
             7.16,
             7.19
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -6953,7 +6412,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W072": {
       "card": {
@@ -6961,16 +6421,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Vijay M.",
         "initials": "VM",
         "age": 47,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-1104",
-        "abha": "vijaym..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -6978,9 +6434,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.5 \u2013 1.6 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "8.9 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.5–1.6 mg/m³-years",
+      "statutory_text": "Gujarat Rule 9 applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -7309,8 +6764,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.5\u20131.6",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.5–1.6",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "high",
           "chip": "Above review level",
@@ -7328,7 +6783,7 @@ window.WORKCHECK_STATIC_DATA = {
             1.58,
             1.59
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -7532,7 +6987,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "4.9 hrs a shift"
     },
     "SIM-W060": {
       "card": {
@@ -7540,16 +6996,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Pravin T.",
         "initials": "PT",
         "age": 47,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-2685",
-        "abha": "pravint..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Breathing test missed",
         "headline_area": "lungs",
@@ -7557,9 +7009,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.5 \u2013 1.6 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.5–1.6 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -7897,8 +7348,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.5\u20131.6",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.5–1.6",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "high",
           "chip": "Above review level",
@@ -7916,7 +7367,7 @@ window.WORKCHECK_STATIC_DATA = {
             1.58,
             1.59
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -8120,7 +7571,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.9 hrs a shift"
     },
     "SIM-W048": {
       "card": {
@@ -8128,16 +7580,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Premji C.",
         "initials": "PC",
         "age": 47,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-9377",
-        "abha": "premjic..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Follow-up not recorded",
         "headline_area": null,
@@ -8145,9 +7593,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.5 \u2013 1.6 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.5–1.6 mg/m³-years",
+      "statutory_text": "Gujarat Rule 9 applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -8485,8 +7932,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.5\u20131.6",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.5–1.6",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "high",
           "chip": "Above review level",
@@ -8504,7 +7951,7 @@ window.WORKCHECK_STATIC_DATA = {
             1.58,
             1.59
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -8690,7 +8137,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.9 hrs a shift"
     },
     "SIM-W030": {
       "card": {
@@ -8698,16 +8146,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kamla Z.",
         "initials": "KZ",
         "age": 35,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-8606",
-        "abha": "kamlaz..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Hydration check missed",
         "headline_area": "kidneys",
@@ -8715,9 +8159,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "15.3 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -9208,7 +8651,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W070": {
       "card": {
@@ -9216,16 +8660,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Sanjay R.",
         "initials": "SR",
         "age": 47,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-4297",
-        "abha": "sanjayr..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Breathing test missed",
         "headline_area": "lungs",
@@ -9233,9 +8673,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "8.9 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.3 mg/m³-years",
+      "statutory_text": "Gujarat Rule 9 applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -9562,8 +9001,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.3",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.3",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -9581,7 +9020,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.31,
             0.32
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -9737,7 +9176,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "4.9 hrs a shift"
     },
     "SIM-W040": {
       "card": {
@@ -9745,16 +9185,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Farida P.",
         "initials": "FP",
         "age": 35,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-6290",
-        "abha": "faridap..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Breathing test missed",
         "headline_area": "lungs",
@@ -9762,9 +9198,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.2 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.2 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -10100,8 +9535,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.2",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.2",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -10119,7 +9554,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.21,
             0.21
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -10269,7 +9704,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.9 hrs a shift"
     },
     "SIM-W080": {
       "card": {
@@ -10277,16 +9713,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Nirmala V.",
         "initials": "NV",
         "age": 42,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-2529",
-        "abha": "nirmalav..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Breathing test missed",
         "headline_area": "lungs",
@@ -10294,9 +9726,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.4 \u2013 3.0 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.4–3.0 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -10642,8 +10073,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.4\u20133.0",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.4–3.0",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -10661,7 +10092,7 @@ window.WORKCHECK_STATIC_DATA = {
             3.0,
             3.02
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -10836,7 +10267,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-G": {
       "card": {
@@ -10844,16 +10276,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Salim T.",
         "initials": "ST",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-2467",
-        "abha": "salimt..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Legal exam overdue",
         "headline_area": null,
@@ -10861,9 +10289,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "15.4 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "Central Rule 5 applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -11335,7 +10762,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.2 hrs a shift"
     },
     "SIM-W050": {
       "card": {
@@ -11343,16 +10771,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Shamji S.",
         "initials": "SS",
         "age": 25,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-5462",
-        "abha": "shamjis..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Breathing test missed",
         "headline_area": "lungs",
@@ -11360,9 +10784,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.3 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -11698,8 +11121,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.3",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.3",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -11717,7 +11140,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.26,
             0.26
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -11867,7 +11290,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.9 hrs a shift"
     },
     "SIM-W063": {
       "card": {
@@ -11875,16 +11299,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Suresh V.",
         "initials": "SV",
         "age": 25,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-1142",
-        "abha": "sureshv..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -11892,9 +11312,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.4 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "8.9 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.4 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -12220,8 +11639,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.4",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.4",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -12239,7 +11658,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.42,
             0.42
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -12443,7 +11862,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "4.9 hrs a shift"
     },
     "SIM-W056": {
       "card": {
@@ -12451,16 +11871,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Valji G.",
         "initials": "VG",
         "age": 42,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-5099",
-        "abha": "valjig..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Back and joint check: follow-up open",
         "headline_area": "back",
@@ -12468,9 +11884,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.2 \u2013 0.7 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.2–0.7 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -12806,8 +12221,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.2\u20130.7",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.2–0.7",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -12825,7 +12240,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.68,
             0.69
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -12999,7 +12414,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.9 hrs a shift"
     },
     "SIM-W096": {
       "card": {
@@ -13007,16 +12423,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Yusuf J.",
         "initials": "YJ",
         "age": 47,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-5909",
-        "abha": "yusufj..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Follow-up not recorded",
         "headline_area": null,
@@ -13024,9 +12436,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "2.4 \u2013 12.0 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "2.4–12.0 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -13372,8 +12783,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "2.4\u201312.0",
-          "unit": "mg/m\u00b3-years",
+          "value": "2.4–12.0",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "high",
           "chip": "Above review level",
@@ -13391,7 +12802,7 @@ window.WORKCHECK_STATIC_DATA = {
             11.95,
             11.99
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -13626,7 +13037,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W020": {
       "card": {
@@ -13634,16 +13046,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Pushpa N.",
         "initials": "PN",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-1137",
-        "abha": "pushpan..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -13651,9 +13059,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "15.4 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "Central Rule 5 applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -14112,7 +13519,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.2 hrs a shift"
     },
     "SIM-W081": {
       "card": {
@@ -14120,16 +13528,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Pushpa Z.",
         "initials": "PZ",
         "age": 42,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-6211",
-        "abha": "pushpaz..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -14137,9 +13541,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "0.7 \u2013 5.9 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.7–5.9 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -14491,8 +13894,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.7\u20135.9",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.7–5.9",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "high",
           "chip": "Above review level",
@@ -14510,7 +13913,7 @@ window.WORKCHECK_STATIC_DATA = {
             5.86,
             5.89
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -14739,7 +14142,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W032": {
       "card": {
@@ -14747,16 +14151,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Rama L.",
         "initials": "RL",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-9477",
-        "abha": "ramal..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Follow-up not recorded",
         "headline_area": null,
@@ -14764,9 +14164,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "15.3 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "Central Rule 5 applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -15231,7 +14630,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W083": {
       "card": {
@@ -15239,16 +14639,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Sarla L.",
         "initials": "SL",
         "age": 47,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-2748",
-        "abha": "sarlal..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -15256,9 +14652,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.4 \u2013 3.7 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.4–3.7 mg/m³-years",
+      "statutory_text": "Gujarat Rule 9 applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -15603,8 +14998,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.4\u20133.7",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.4–3.7",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -15622,7 +15017,7 @@ window.WORKCHECK_STATIC_DATA = {
             3.7,
             3.72
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -15803,7 +15198,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W024": {
       "card": {
@@ -15811,16 +15207,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Usha D.",
         "initials": "UD",
         "age": 47,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-9122",
-        "abha": "ushad..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Follow-up not recorded",
         "headline_area": null,
@@ -15828,9 +15220,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "15.4 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "Central Rule 5 applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -16343,7 +15734,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.2 hrs a shift"
     },
     "SIM-W117": {
       "card": {
@@ -16351,16 +15743,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Valji L.",
         "initials": "VL",
         "age": 42,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-5831",
-        "abha": "valjil..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -16368,9 +15756,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "7.8 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -16870,7 +16257,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "5.9 hrs a shift"
     },
     "SIM-W054": {
       "card": {
@@ -16878,16 +16266,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Arjan N.",
         "initials": "AN",
         "age": 35,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-6727",
-        "abha": "arjann..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -16895,9 +16279,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.3 \u2013 1.0 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.3–1.0 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -17231,8 +16614,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.3\u20131.0",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.3–1.0",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -17250,7 +16633,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.95,
             0.95
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -17454,7 +16837,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.9 hrs a shift"
     },
     "SIM-W027": {
       "card": {
@@ -17462,16 +16846,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Bhavna H.",
         "initials": "BH",
         "age": 25,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-3359",
-        "abha": "bhavnah..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -17479,9 +16859,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "15.3 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -17981,7 +17360,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W088": {
       "card": {
@@ -17989,16 +17369,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Bhavna N.",
         "initials": "BN",
         "age": 35,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-7731",
-        "abha": "bhavnan..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Follow-up not recorded",
         "headline_area": null,
@@ -18006,9 +17382,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.3 \u2013 1.6 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.3–1.6 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -18352,8 +17727,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.3\u20131.6",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.3–1.6",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -18371,7 +17746,7 @@ window.WORKCHECK_STATIC_DATA = {
             1.56,
             1.6
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -18552,7 +17927,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W036": {
       "card": {
@@ -18560,16 +17936,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Hasan R.",
         "initials": "HR",
         "age": 47,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-6650",
-        "abha": "hasanr..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -18577,9 +17949,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "15.3 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "Central Rule 5 applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -19097,7 +18468,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W104": {
       "card": {
@@ -19105,16 +18477,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Jagdish R.",
         "initials": "JR",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Crane operator",
         "icon": "crane",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-5833",
-        "abha": "jagdishr..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Follow-up not recorded",
         "headline_area": null,
@@ -19122,9 +18490,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "4.2 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "Central Rule 5 applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -19548,7 +18915,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "9.0 hrs a shift"
     },
     "SIM-W029": {
       "card": {
@@ -19556,16 +18924,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Jyoti V.",
         "initials": "JV",
         "age": 35,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-2541",
-        "abha": "jyotiv..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -19573,9 +18937,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "7.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -20063,7 +19426,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "5.9 hrs a shift"
     },
     "SIM-W045": {
       "card": {
@@ -20071,16 +19435,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Lalji J.",
         "initials": "LJ",
         "age": 42,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-4840",
-        "abha": "laljij..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -20088,9 +19448,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "0.4 \u2013 1.4 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.0 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.4–1.4 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -20441,8 +19800,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.4\u20131.4",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.4–1.4",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -20460,7 +19819,7 @@ window.WORKCHECK_STATIC_DATA = {
             1.39,
             1.41
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -20677,7 +20036,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.0 hrs a shift"
     },
     "SIM-W092": {
       "card": {
@@ -20685,16 +20045,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Manju D.",
         "initials": "MD",
         "age": 42,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-9956",
-        "abha": "manjud..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -20702,9 +20058,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.0 \u2013 5.2 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "1.0–5.2 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -21048,8 +20403,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "1.0\u20135.2",
-          "unit": "mg/m\u00b3-years",
+          "value": "1.0–5.2",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "high",
           "chip": "Above review level",
@@ -21067,7 +20422,7 @@ window.WORKCHECK_STATIC_DATA = {
             5.16,
             5.2
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -21266,7 +20621,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W018": {
       "card": {
@@ -21274,16 +20630,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Meena K.",
         "initials": "MK",
         "age": 35,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-8870",
-        "abha": "meenak..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -21291,9 +20643,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "15.4 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -21805,7 +21156,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.2 hrs a shift"
     },
     "SIM-W108": {
       "card": {
@@ -21813,16 +21165,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Nanji P.",
         "initials": "NP",
         "age": 47,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Crane operator",
         "icon": "crane",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-3314",
-        "abha": "nanjip..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -21830,9 +21178,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "4.2 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "Central Rule 5 applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -22279,7 +21626,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "9.0 hrs a shift"
     },
     "SIM-W008": {
       "card": {
@@ -22287,16 +21635,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Rakesh A.",
         "initials": "RA",
         "age": 42,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-7473",
-        "abha": "rakesha..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check: follow-up open",
         "headline_area": "eyes",
@@ -22304,9 +21648,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 2,
         "urgent": false
       },
-      "silica_range": "0.0 \u2013 0.1 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.0–0.1 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -22664,8 +22007,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.0\u20130.1",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.0–0.1",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -22683,7 +22026,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.06,
             0.06
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -22882,7 +22225,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W009": {
       "card": {
@@ -22890,16 +22234,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Sanjay T.",
         "initials": "ST",
         "age": 42,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-3099",
-        "abha": "sanjayt..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -22907,9 +22247,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 2,
         "urgent": false
       },
-      "silica_range": "0.0 \u2013 0.1 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.0–0.1 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -23267,8 +22606,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.0\u20130.1",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.0–0.1",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -23286,7 +22625,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.06,
             0.06
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -23503,7 +22842,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W099": {
       "card": {
@@ -23511,16 +22851,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Zubeda C.",
         "initials": "ZC",
         "age": 25,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Crane operator",
         "icon": "crane",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-2340",
-        "abha": "zubedac..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Blood pressure check missed",
         "headline_area": "heart",
@@ -23528,9 +22864,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "4.2 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -23941,7 +23276,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "9.0 hrs a shift"
     },
     "SIM-W010": {
       "card": {
@@ -23949,16 +23285,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ajay H.",
         "initials": "AH",
         "age": 47,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-3043",
-        "abha": "ajayh..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -23966,9 +23298,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 2,
         "urgent": false
       },
-      "silica_range": "0.0 \u2013 0.1 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.0–0.1 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -24307,8 +23638,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.0\u20130.1",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.0–0.1",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -24326,7 +23657,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.06,
             0.06
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -24501,7 +23832,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W100": {
       "card": {
@@ -24509,16 +23841,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Amina L.",
         "initials": "AL",
         "age": 35,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Crane operator",
         "icon": "crane",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-3096",
-        "abha": "aminal..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Hearing test missed",
         "headline_area": "ears",
@@ -24526,9 +23854,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "4.2 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -24927,7 +24254,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "9.0 hrs a shift"
     },
     "SIM-W118": {
       "card": {
@@ -24935,16 +24263,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Dilip S.",
         "initials": "DS",
         "age": 47,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-6552",
-        "abha": "dilips..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Hearing test missed",
         "headline_area": "ears",
@@ -24952,9 +24276,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "4.2 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -25353,7 +24676,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "9.0 hrs a shift"
     },
     "SIM-W101": {
       "card": {
@@ -25361,16 +24685,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Farida S.",
         "initials": "FS",
         "age": 35,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-7592",
-        "abha": "faridas..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Hearing test missed",
         "headline_area": "ears",
@@ -25378,9 +24698,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "8.4 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -25842,7 +25161,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "5.5 hrs a shift"
     },
     "SIM-W119": {
       "card": {
@@ -25850,16 +25170,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Harish B.",
         "initials": "HB",
         "age": 47,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-4473",
-        "abha": "harishb..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Hearing test missed",
         "headline_area": "ears",
@@ -25867,9 +25183,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "4.2 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -26268,7 +25583,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "9.0 hrs a shift"
     },
     "SIM-W091": {
       "card": {
@@ -26276,16 +25592,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kamla P.",
         "initials": "KP",
         "age": 42,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-6761",
-        "abha": "kamlap..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Hearing test missed",
         "headline_area": "ears",
@@ -26293,9 +25605,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.3 \u2013 1.6 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.3–1.6 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -26638,8 +25949,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.3\u20131.6",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.3–1.6",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -26657,7 +25968,7 @@ window.WORKCHECK_STATIC_DATA = {
             1.56,
             1.6
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -26844,7 +26155,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W073": {
       "card": {
@@ -26852,16 +26164,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Manoj G.",
         "initials": "MG",
         "age": 25,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-4217",
-        "abha": "manojg..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Hearing test missed",
         "headline_area": "ears",
@@ -26869,9 +26177,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.8 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.8 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -27221,8 +26528,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.8",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.8",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -27240,7 +26547,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.75,
             0.78
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -27421,7 +26728,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W046": {
       "card": {
@@ -27429,16 +26737,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Mavji V.",
         "initials": "MV",
         "age": 47,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-9933",
-        "abha": "mavjiv..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -27446,9 +26750,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.3 mg/m³-years",
+      "statutory_text": "Gujarat Rule 9 applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -27781,8 +27084,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.3",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.3",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -27800,7 +27103,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.31,
             0.32
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -27956,7 +27259,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.9 hrs a shift"
     },
     "SIM-W047": {
       "card": {
@@ -27964,16 +27268,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Nanji Z.",
         "initials": "NZ",
         "age": 47,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-3060",
-        "abha": "nanjiz..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -27981,9 +27281,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.3 \u2013 0.8 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.3–0.8 mg/m³-years",
+      "statutory_text": "Gujarat Rule 9 applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -28316,8 +27615,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.3\u20130.8",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.3–0.8",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -28335,7 +27634,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.84,
             0.85
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -28491,7 +27790,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.9 hrs a shift"
     },
     "SIM-W109": {
       "card": {
@@ -28499,16 +27799,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Premji D.",
         "initials": "PD",
         "age": 25,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-3255",
-        "abha": "premjid..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Hearing test missed",
         "headline_area": "ears",
@@ -28516,9 +27812,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "7.8 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -28980,7 +28275,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "5.9 hrs a shift"
     },
     "SIM-W110": {
       "card": {
@@ -28988,16 +28284,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ranchhod A.",
         "initials": "RA",
         "age": 25,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-3033",
-        "abha": "ranchhoda..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Hearing test missed",
         "headline_area": "ears",
@@ -29005,9 +28297,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "4.2 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -29406,7 +28697,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "9.0 hrs a shift"
     },
     "SIM-W082": {
       "card": {
@@ -29414,16 +28706,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Rekha C.",
         "initials": "RC",
         "age": 47,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-4293",
-        "abha": "rekhac..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -29431,9 +28719,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.2 \u2013 1.4 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.2–1.4 mg/m³-years",
+      "statutory_text": "Gujarat Rule 9 applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -29776,8 +29063,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.2\u20131.4",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.2–1.4",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -29795,7 +29082,7 @@ window.WORKCHECK_STATIC_DATA = {
             1.37,
             1.39
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -29964,7 +29251,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W011": {
       "card": {
@@ -29972,16 +29260,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Vijay J.",
         "initials": "VJ",
         "age": 47,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-2048",
-        "abha": "vijayj..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -29989,9 +29273,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 2,
         "urgent": false
       },
-      "silica_range": "0.0 \u2013 0.1 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.0–0.1 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -30330,8 +29613,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.0\u20130.1",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.0–0.1",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -30349,7 +29632,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.06,
             0.06
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -30524,7 +29807,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W065": {
       "card": {
@@ -30532,16 +29816,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Vikram C.",
         "initials": "VC",
         "age": 35,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-2688",
-        "abha": "vikramc..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "action",
         "headline": "Eye and skin check missed",
         "headline_area": "eyes",
@@ -30549,9 +29829,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "0.2 \u2013 0.6 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.4 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.2–0.6 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "action",
         "reasons": [
@@ -30891,8 +30170,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.2\u20130.6",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.2–0.6",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -30910,7 +30189,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.58,
             0.58
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -31084,7 +30363,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.6 hrs a shift"
     },
     "SIM-F": {
       "card": {
@@ -31092,16 +30372,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Dinesh M.",
         "initials": "DM",
         "age": 46,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-6215",
-        "abha": "dineshm..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -31109,9 +30385,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.4 \u2013 3.7 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.4–3.7 mg/m³-years",
+      "statutory_text": "Gujarat Rule 9 applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -31456,8 +30731,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.4\u20133.7",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.4–3.7",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -31475,7 +30750,7 @@ window.WORKCHECK_STATIC_DATA = {
             3.7,
             3.72
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -31662,7 +30937,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W075": {
       "card": {
@@ -31670,16 +30946,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kiran D.",
         "initials": "KD",
         "age": 25,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-7784",
-        "abha": "kirand..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -31687,9 +30959,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.2 \u2013 1.9 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.2–1.9 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -32034,8 +31305,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.2\u20131.9",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.2–1.9",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -32053,7 +31324,7 @@ window.WORKCHECK_STATIC_DATA = {
             1.84,
             1.86
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -32246,7 +31517,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W093": {
       "card": {
@@ -32254,16 +31526,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Rama A.",
         "initials": "RA",
         "age": 42,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-5743",
-        "abha": "ramaa..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -32271,9 +31539,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "2.0 \u2013 9.8 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "2.0–9.8 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -32625,8 +31892,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "2.0\u20139.8",
-          "unit": "mg/m\u00b3-years",
+          "value": "2.0–9.8",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "high",
           "chip": "Above review level",
@@ -32644,7 +31911,7 @@ window.WORKCHECK_STATIC_DATA = {
             9.79,
             9.79
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -32837,7 +32104,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.7 hrs a shift"
     },
     "SIM-W021": {
       "card": {
@@ -32845,16 +32113,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Rekha M.",
         "initials": "RM",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-5117",
-        "abha": "rekham..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -32862,9 +32126,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "7.0 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "Central Rule 5 applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -33389,7 +32652,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "5.7 hrs a shift"
     },
     "SIM-W084": {
       "card": {
@@ -33397,16 +32661,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Savita S.",
         "initials": "SS",
         "age": 47,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-9257",
-        "abha": "savitas..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -33414,9 +32674,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.8 \u2013 7.0 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.8–7.0 mg/m³-years",
+      "statutory_text": "Gujarat Rule 9 applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -33761,8 +33020,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.8\u20137.0",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.8–7.0",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "high",
           "chip": "Above review level",
@@ -33780,7 +33039,7 @@ window.WORKCHECK_STATIC_DATA = {
             6.95,
             6.97
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -33997,7 +33256,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W039": {
       "card": {
@@ -34005,16 +33265,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Amina G.",
         "initials": "AG",
         "age": 25,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-7946",
-        "abha": "aminag..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -34022,9 +33278,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.4 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.4 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -34340,8 +33595,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.4",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.4",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -34359,7 +33614,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.42,
             0.42
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -34515,7 +33770,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.9 hrs a shift"
     },
     "SIM-W120": {
       "card": {
@@ -34523,16 +33779,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ashok K.",
         "initials": "AK",
         "age": 47,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-3462",
-        "abha": "ashokk..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -34540,9 +33792,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "4.2 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -34941,7 +34192,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "9.0 hrs a shift"
     },
     "SIM-W057": {
       "card": {
@@ -34949,16 +34201,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Dilip P.",
         "initials": "DP",
         "age": 42,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-4576",
-        "abha": "dilipp..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -34966,9 +34214,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "0.4 \u2013 1.4 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.0 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.4–1.4 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -35319,8 +34566,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.4\u20131.4",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.4–1.4",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -35338,7 +34585,7 @@ window.WORKCHECK_STATIC_DATA = {
             1.39,
             1.41
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -35525,7 +34772,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.0 hrs a shift"
     },
     "SIM-W102": {
       "card": {
@@ -35533,16 +34781,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Hari B.",
         "initials": "HB",
         "age": 35,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Crane operator",
         "icon": "crane",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-9659",
-        "abha": "harib..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -35550,9 +34794,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "4.2 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -35951,7 +35194,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "9.0 hrs a shift"
     },
     "SIM-W066": {
       "card": {
@@ -35959,16 +35203,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Hitesh L.",
         "initials": "HL",
         "age": 35,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-3246",
-        "abha": "hiteshl..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -35976,9 +35216,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.3 \u2013 1.0 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "8.9 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.3–1.0 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -36302,8 +35541,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.3\u20131.0",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.3–1.0",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -36321,7 +35560,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.95,
             0.95
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -36507,7 +35746,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "4.9 hrs a shift"
     },
     "SIM-W095": {
       "card": {
@@ -36515,16 +35755,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ibrahim H.",
         "initials": "IH",
         "age": 47,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-5382",
-        "abha": "ibrahimh..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -36532,9 +35768,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.3 \u2013 6.4 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "1.3–6.4 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -36878,8 +36113,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "1.3\u20136.4",
-          "unit": "mg/m\u00b3-years",
+          "value": "1.3–6.4",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "high",
           "chip": "Above review level",
@@ -36897,7 +36132,7 @@ window.WORKCHECK_STATIC_DATA = {
             6.36,
             6.39
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -37078,7 +36313,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W003": {
       "card": {
@@ -37086,16 +36322,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Jignesh N.",
         "initials": "JN",
         "age": 25,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-8130",
-        "abha": "jigneshn..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -37103,9 +36335,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 2,
         "urgent": false
       },
-      "silica_range": "0.0 \u2013 0.1 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.0–0.1 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -37445,8 +36676,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.0\u20130.1",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.0–0.1",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -37464,7 +36695,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.06,
             0.06
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -37645,7 +36876,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W113": {
       "card": {
@@ -37653,16 +36885,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Karsan J.",
         "initials": "KJ",
         "age": 35,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-4643",
-        "abha": "karsanj..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -37670,9 +36898,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "7.8 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -38135,7 +37362,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "5.9 hrs a shift"
     },
     "SIM-B": {
       "card": {
@@ -38143,16 +37371,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kishan P.",
         "initials": "KP",
         "age": 32,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-8928",
-        "abha": "kishanp..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -38160,9 +37384,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.9 \u2013 4.4 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.9–4.4 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -38506,8 +37729,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.9\u20134.4",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.9–4.4",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "high",
           "chip": "Above review level",
@@ -38525,7 +37748,7 @@ window.WORKCHECK_STATIC_DATA = {
             4.36,
             4.4
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -38724,7 +37947,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W077": {
       "card": {
@@ -38732,16 +37956,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Lata T.",
         "initials": "LT",
         "age": 35,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-2782",
-        "abha": "latat..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -38749,9 +37969,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "0.3 \u2013 2.6 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.3–2.6 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -39102,8 +38321,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.3\u20132.6",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.3–2.6",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -39121,7 +38340,7 @@ window.WORKCHECK_STATIC_DATA = {
             2.61,
             2.64
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -39308,7 +38527,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W023": {
       "card": {
@@ -39316,16 +38536,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Savita P.",
         "initials": "SP",
         "age": 47,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-7229",
-        "abha": "savitap..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -39333,9 +38549,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "15.4 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "Central Rule 5 applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -39805,7 +39020,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.2 hrs a shift"
     },
     "SIM-W111": {
       "card": {
@@ -39813,16 +39029,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Shamji T.",
         "initials": "ST",
         "age": 25,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-8566",
-        "abha": "shamjit..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -39830,9 +39042,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "4.2 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -40231,7 +39442,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "9.0 hrs a shift"
     },
     "SIM-W094": {
       "card": {
@@ -40239,16 +39451,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Shanta T.",
         "initials": "ST",
         "age": 47,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-6909",
-        "abha": "shantat..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -40256,9 +39464,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.5 \u2013 2.4 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.5–2.4 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -40602,8 +39809,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.5\u20132.4",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.5–2.4",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -40621,7 +39828,7 @@ window.WORKCHECK_STATIC_DATA = {
             2.36,
             2.4
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -40796,7 +40003,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W013": {
       "card": {
@@ -40804,16 +40012,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Anil Z.",
         "initials": "AZ",
         "age": 25,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-8932",
-        "abha": "anilz..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Hearing test due",
         "headline_area": "ears",
@@ -40821,9 +40025,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "7.0 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -41292,7 +40495,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "5.7 hrs a shift"
     },
     "SIM-W059": {
       "card": {
@@ -41300,16 +40504,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ashok A.",
         "initials": "AA",
         "age": 47,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-9166",
-        "abha": "ashoka..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -41317,9 +40517,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.3 \u2013 0.8 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.3–0.8 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -41652,8 +40851,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.3\u20130.8",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.3–0.8",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -41671,7 +40870,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.84,
             0.85
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -41827,7 +41026,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.9 hrs a shift"
     },
     "SIM-D": {
       "card": {
@@ -41835,16 +41035,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Bharat S.",
         "initials": "BS",
         "age": 38,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-5576",
-        "abha": "bharats..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -41852,9 +41048,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "0.2 \u2013 0.7 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.1 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.2–0.7 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -42204,8 +41399,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.2\u20130.7",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.2–0.7",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -42223,7 +41418,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.73,
             0.75
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -42398,7 +41593,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.0 hrs a shift"
     },
     "SIM-W103": {
       "card": {
@@ -42406,16 +41602,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Gopal K.",
         "initials": "GK",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Crane operator",
         "icon": "crane",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-4938",
-        "abha": "gopalk..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Hearing test due",
         "headline_area": "ears",
@@ -42423,9 +41615,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "4.2 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "Central Rule 5 applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -42854,7 +42045,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "9.0 hrs a shift"
     },
     "SIM-E": {
       "card": {
@@ -42862,16 +42054,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Hansa K.",
         "initials": "HK",
         "age": 41,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-2831",
-        "abha": "hansak..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -42879,9 +42067,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 2,
         "urgent": false
       },
-      "silica_range": "0.0 \u2013 0.1 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.0–0.1 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -43238,8 +42425,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.0\u20130.1",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.0–0.1",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -43257,7 +42444,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.06,
             0.06
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -43456,7 +42643,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W041": {
       "card": {
@@ -43464,16 +42652,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Hari D.",
         "initials": "HD",
         "age": 35,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-1507",
-        "abha": "harid..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -43481,9 +42665,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "0.2 \u2013 0.7 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.0 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.2–0.7 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -43833,8 +43016,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.2\u20130.7",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.2–0.7",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -43852,7 +43035,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.65,
             0.67
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -44033,7 +43216,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.0 hrs a shift"
     },
     "SIM-W058": {
       "card": {
@@ -44041,16 +43225,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Harish D.",
         "initials": "HD",
         "age": 47,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-3863",
-        "abha": "harishd..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -44058,9 +43238,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.3 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -44375,8 +43554,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.3",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.3",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -44394,7 +43573,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.31,
             0.32
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -44538,7 +43717,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.9 hrs a shift"
     },
     "SIM-W005": {
       "card": {
@@ -44546,16 +43726,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Hitesh G.",
         "initials": "HG",
         "age": 35,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-8927",
-        "abha": "hiteshg..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -44563,9 +43739,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 2,
         "urgent": false
       },
-      "silica_range": "0.0 \u2013 0.1 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.0–0.1 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -44904,8 +44079,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.0\u20130.1",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.0–0.1",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -44923,7 +44098,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.06,
             0.06
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -45092,7 +44267,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-C": {
       "card": {
@@ -45100,16 +44276,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Mahesh J.",
         "initials": "MJ",
         "age": 47,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-2522",
-        "abha": "maheshj..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -45117,9 +44289,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.4 \u2013 1.1 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.4–1.1 mg/m³-years",
+      "statutory_text": "Gujarat Rule 9 applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -45452,8 +44623,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.4\u20131.1",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.4–1.1",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -45471,7 +44642,7 @@ window.WORKCHECK_STATIC_DATA = {
             1.11,
             1.11
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -45621,7 +44792,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.9 hrs a shift"
     },
     "SIM-W012": {
       "card": {
@@ -45629,16 +44801,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Manoj V.",
         "initials": "MV",
         "age": 47,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-5349",
-        "abha": "manojv..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Blood pressure check due",
         "headline_area": "heart",
@@ -45646,9 +44814,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 2,
         "urgent": false
       },
-      "silica_range": "0.0 \u2013 0.1 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.0–0.1 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -46005,8 +45172,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.0\u20130.1",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.0–0.1",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -46024,7 +45191,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.06,
             0.06
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -46253,7 +45420,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-H": {
       "card": {
@@ -46261,16 +45429,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Naresh C.",
         "initials": "NC",
         "age": 35,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-4050",
-        "abha": "nareshc..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Hearing test due",
         "headline_area": "ears",
@@ -46278,9 +45442,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "4.2 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -46673,7 +45836,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "9.0 hrs a shift"
     },
     "SIM-W068": {
       "card": {
@@ -46681,16 +45845,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Prakash B.",
         "initials": "PB",
         "age": 42,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-4427",
-        "abha": "prakashb..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -46698,9 +45858,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.2 \u2013 0.7 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "8.9 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.2–0.7 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -47023,8 +46182,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.2\u20130.7",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.2–0.7",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -47042,7 +46201,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.68,
             0.69
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -47210,7 +46369,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "4.9 hrs a shift"
     },
     "SIM-A": {
       "card": {
@@ -47218,16 +46378,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ravi K.",
         "initials": "RK",
         "age": 24,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-2333",
-        "abha": "ravik..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Hearing test due",
         "headline_area": "ears",
@@ -47235,9 +46391,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "0.4 \u2013 1.8 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.4–1.8 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -47587,8 +46742,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.4\u20131.8",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.4–1.8",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -47606,7 +46761,7 @@ window.WORKCHECK_STATIC_DATA = {
             1.8,
             1.8
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -47781,7 +46936,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.7 hrs a shift"
     },
     "SIM-W022": {
       "card": {
@@ -47789,16 +46945,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Sarla G.",
         "initials": "SG",
         "age": 47,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-4139",
-        "abha": "sarlag..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Eye and skin check due",
         "headline_area": "eyes",
@@ -47806,9 +46958,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "15.4 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "Central Rule 5 applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -48265,7 +47416,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.2 hrs a shift"
     },
     "SIM-W085": {
       "card": {
@@ -48273,16 +47425,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Usha B.",
         "initials": "UB",
         "age": 25,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-4320",
-        "abha": "ushab..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Hearing test due",
         "headline_area": "ears",
@@ -48290,9 +47438,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "0.2 \u2013 1.0 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.2–1.0 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -48642,8 +47789,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.2\u20131.0",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.2–1.0",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -48661,7 +47808,7 @@ window.WORKCHECK_STATIC_DATA = {
             1.0,
             1.0
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -48842,7 +47989,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.7 hrs a shift"
     },
     "SIM-W086": {
       "card": {
@@ -48850,16 +47998,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Varsha K.",
         "initials": "VK",
         "age": 25,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-4481",
-        "abha": "varshak..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Hearing test due",
         "headline_area": "ears",
@@ -48867,9 +48011,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.4 \u2013 2.0 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.4–2.0 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -49212,8 +48355,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.4\u20132.0",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.4–2.0",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -49231,7 +48374,7 @@ window.WORKCHECK_STATIC_DATA = {
             1.96,
             2.0
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -49400,7 +48543,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W112": {
       "card": {
@@ -49408,16 +48552,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Velji H.",
         "initials": "VH",
         "age": 35,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-7774",
-        "abha": "veljih..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "due",
         "headline": "Hearing test due",
         "headline_area": "ears",
@@ -49425,9 +48565,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "4.2 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "due",
         "reasons": [
@@ -49820,7 +48959,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "9.0 hrs a shift"
     },
     "SIM-W071": {
       "card": {
@@ -49828,16 +48968,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ajay N.",
         "initials": "AN",
         "age": 47,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-4953",
-        "abha": "ajayn..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -49845,9 +48981,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.3 \u2013 0.8 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "8.9 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.3–0.8 mg/m³-years",
+      "statutory_text": "Gujarat Rule 9 applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -50167,8 +49302,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.3\u20130.8",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.3–0.8",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -50186,7 +49321,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.84,
             0.85
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -50348,7 +49483,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "4.9 hrs a shift"
     },
     "SIM-W074": {
       "card": {
@@ -50356,16 +49492,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Anil P.",
         "initials": "AP",
         "age": 25,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-8005",
-        "abha": "anilp..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -50373,9 +49505,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 1.2 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–1.2 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -50715,8 +49846,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20131.2",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–1.2",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -50734,7 +49865,7 @@ window.WORKCHECK_STATIC_DATA = {
             1.14,
             1.16
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -50897,7 +50028,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W115": {
       "card": {
@@ -50905,16 +50037,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Arjan Z.",
         "initials": "AZ",
         "age": 42,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-3291",
-        "abha": "arjanz..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -50922,9 +50050,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "4.2 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -51320,7 +50447,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "9.0 hrs a shift"
     },
     "SIM-W087": {
       "card": {
@@ -51328,16 +50456,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Asha R.",
         "initials": "AR",
         "age": 25,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Stone crusher operator",
         "icon": "pick",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-7146",
-        "abha": "ashar..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -51345,9 +50469,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.6 \u2013 3.2 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.6–3.2 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -51687,8 +50810,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.6\u20133.2",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.6–3.2",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "high",
           "chip": "Above review level",
@@ -51706,7 +50829,7 @@ window.WORKCHECK_STATIC_DATA = {
             3.16,
             3.2
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -51917,7 +51040,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W026": {
       "card": {
@@ -51925,16 +51049,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Asha T.",
         "initials": "AT",
         "age": 25,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-1789",
-        "abha": "ashat..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -51942,9 +51062,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "15.3 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -52368,7 +51487,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W028": {
       "card": {
@@ -52376,16 +51496,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Daksha J.",
         "initials": "DJ",
         "age": 35,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-9630",
-        "abha": "dakshaj..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -52393,9 +51509,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "15.3 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -52867,7 +51982,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W089": {
       "card": {
@@ -52875,16 +51991,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Daksha M.",
         "initials": "DM",
         "age": 35,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-3479",
-        "abha": "daksham..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -52892,9 +52004,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "0.8 \u2013 4.2 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.8–4.2 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -53241,8 +52352,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.8\u20134.2",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.8–4.2",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "high",
           "chip": "Above review level",
@@ -53260,7 +52371,7 @@ window.WORKCHECK_STATIC_DATA = {
             4.19,
             4.19
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -53453,7 +52564,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.7 hrs a shift"
     },
     "SIM-W053": {
       "card": {
@@ -53461,16 +52573,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Devji R.",
         "initials": "DR",
         "age": 35,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-2363",
-        "abha": "devjir..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -53478,9 +52586,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "0.2 \u2013 0.7 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.0 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.2–0.7 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -53827,8 +52934,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.2\u20130.7",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.2–0.7",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -53846,7 +52953,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.65,
             0.67
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -54027,7 +53134,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.0 hrs a shift"
     },
     "SIM-W076": {
       "card": {
@@ -54035,16 +53143,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Geeta A.",
         "initials": "GA",
         "age": 35,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-7833",
-        "abha": "geetaa..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -54052,9 +53156,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.9 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.9 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -54394,8 +53497,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.9",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.9",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -54413,7 +53516,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.91,
             0.93
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -54588,7 +53691,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W015": {
       "card": {
@@ -54596,16 +53700,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Geeta L.",
         "initials": "GL",
         "age": 25,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-8970",
-        "abha": "geetal..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -54613,9 +53713,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "15.4 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -55075,7 +54174,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.2 hrs a shift"
     },
     "SIM-W042": {
       "card": {
@@ -55083,16 +54183,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Gopal A.",
         "initials": "GA",
         "age": 35,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-6184",
-        "abha": "gopala..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -55100,9 +54196,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.3 \u2013 1.0 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.3–1.0 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -55432,8 +54527,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.3\u20131.0",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.3–1.0",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -55451,7 +54546,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.95,
             0.95
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -55661,7 +54756,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.9 hrs a shift"
     },
     "SIM-W097": {
       "card": {
@@ -55669,16 +54765,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Hasan V.",
         "initials": "HV",
         "age": 25,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-1505",
-        "abha": "hasanv..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -55686,9 +54778,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "8.4 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -56147,7 +55238,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "5.5 hrs a shift"
     },
     "SIM-W034": {
       "card": {
@@ -56155,16 +55247,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ibrahim B.",
         "initials": "IB",
         "age": 47,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-1027",
-        "abha": "ibrahimb..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -56172,9 +55260,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "15.3 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "Central Rule 5 applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -56634,7 +55721,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W043": {
       "card": {
@@ -56642,16 +55730,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Jagdish T.",
         "initials": "JT",
         "age": 42,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-1010",
-        "abha": "jagdisht..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -56659,9 +55743,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.2 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.2 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -56973,8 +56056,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.2",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.2",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -56992,7 +56075,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.21,
             0.21
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -57130,7 +56213,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.9 hrs a shift"
     },
     "SIM-W064": {
       "card": {
@@ -57138,16 +56222,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Jignesh Z.",
         "initials": "JZ",
         "age": 35,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-9802",
-        "abha": "jigneshz..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -57155,9 +56235,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.2 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "8.9 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.2 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -57459,8 +56538,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.2",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.2",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -57478,7 +56557,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.21,
             0.21
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -57616,7 +56695,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "4.9 hrs a shift"
     },
     "SIM-W044": {
       "card": {
@@ -57624,16 +56704,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kanji H.",
         "initials": "KH",
         "age": 42,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-7587",
-        "abha": "kanjih..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -57641,9 +56717,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.2 \u2013 0.7 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.2–0.7 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -57973,8 +57048,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.2\u20130.7",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.2–0.7",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -57992,7 +57067,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.68,
             0.69
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -58166,7 +57241,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.9 hrs a shift"
     },
     "SIM-W105": {
       "card": {
@@ -58174,16 +57250,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kanji N.",
         "initials": "KN",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-6958",
-        "abha": "kanjin..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -58191,9 +57263,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "8.4 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "Central Rule 5 applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -58700,7 +57771,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "5.5 hrs a shift"
     },
     "SIM-W017": {
       "card": {
@@ -58708,16 +57780,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kanta B.",
         "initials": "KB",
         "age": 35,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-4542",
-        "abha": "kantab..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -58725,9 +57793,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "7.0 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -59211,7 +58278,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "5.7 hrs a shift"
     },
     "SIM-W078": {
       "card": {
@@ -59219,16 +58287,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kanta H.",
         "initials": "KH",
         "age": 35,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-4010",
-        "abha": "kantah..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -59236,9 +58300,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.5 \u2013 4.2 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.5–4.2 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -59578,8 +58641,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.5\u20134.2",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.5–4.2",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -59597,7 +58660,7 @@ window.WORKCHECK_STATIC_DATA = {
             4.16,
             4.18
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -59826,7 +58889,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W052": {
       "card": {
@@ -59834,16 +58898,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Karsan K.",
         "initials": "KK",
         "age": 35,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-5481",
-        "abha": "karsank..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -59851,9 +58911,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.2 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.2 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -60165,8 +59224,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.2",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.2",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -60184,7 +59243,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.21,
             0.21
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -60322,7 +59381,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.9 hrs a shift"
     },
     "SIM-W116": {
       "card": {
@@ -60330,16 +59390,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kesar C.",
         "initials": "KC",
         "age": 42,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-3200",
-        "abha": "kesarc..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -60347,9 +59403,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "4.2 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -60745,7 +59800,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "9.0 hrs a shift"
     },
     "SIM-W055": {
       "card": {
@@ -60753,16 +59809,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kesar M.",
         "initials": "KM",
         "age": 42,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-7966",
-        "abha": "kesarm..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -60770,9 +59822,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.2 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.2 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -61102,8 +60153,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.2",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.2",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -61121,7 +60172,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.21,
             0.21
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -61277,7 +60328,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.9 hrs a shift"
     },
     "SIM-W014": {
       "card": {
@@ -61285,16 +60337,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Kiran C.",
         "initials": "KC",
         "age": 25,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-2452",
-        "abha": "kiranc..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -61302,9 +60350,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "15.4 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -61764,7 +60811,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.2 hrs a shift"
     },
     "SIM-W106": {
       "card": {
@@ -61772,16 +60820,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Lalji M.",
         "initials": "LM",
         "age": 47,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Crane operator",
         "icon": "crane",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-6974",
-        "abha": "laljim..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -61789,9 +60833,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "4.2 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "Central Rule 5 applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -62211,7 +61254,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "9.0 hrs a shift"
     },
     "SIM-W016": {
       "card": {
@@ -62219,16 +61263,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Lata S.",
         "initials": "LS",
         "age": 35,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-6701",
-        "abha": "latas..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -62236,9 +61276,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "15.4 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -62662,7 +61701,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.2 hrs a shift"
     },
     "SIM-W031": {
       "card": {
@@ -62670,16 +61710,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Manju C.",
         "initials": "MC",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-6374",
-        "abha": "manjuc..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -62687,9 +61723,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "15.3 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "Central Rule 5 applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -63143,7 +62178,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W107": {
       "card": {
@@ -63151,16 +62187,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Mavji G.",
         "initials": "MG",
         "age": 47,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Crane operator",
         "icon": "crane",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-8556",
-        "abha": "mavjig..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -63168,9 +62200,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "4.2 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "Central Rule 5 applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -63590,7 +62621,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "9.0 hrs a shift"
     },
     "SIM-W079": {
       "card": {
@@ -63598,16 +62630,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Meena J.",
         "initials": "MJ",
         "age": 42,
-        "gender": "Male",
         "employer": "Construction firm",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-3850",
-        "abha": "meenaj..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -63615,9 +62643,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.9 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.9 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -63957,8 +62984,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.9",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.9",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -63976,7 +63003,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.91,
             0.93
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -64139,7 +63166,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.1 hrs a shift"
     },
     "SIM-W006": {
       "card": {
@@ -64147,16 +63175,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Mukesh P.",
         "initials": "MP",
         "age": 35,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-5590",
-        "abha": "mukeshp..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -64164,9 +63188,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 2,
         "urgent": false
       },
-      "silica_range": "0.0 \u2013 0.1 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.0–0.1 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -64520,8 +63543,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.0\u20130.1",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.0–0.1",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -64539,7 +63562,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.06,
             0.06
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -64768,7 +63791,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W067": {
       "card": {
@@ -64776,16 +63800,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Mukesh S.",
         "initials": "MS",
         "age": 42,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-6044",
-        "abha": "mukeshs..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -64793,9 +63813,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.2 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "8.9 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.2 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -65097,8 +64116,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.2",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.2",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -65116,7 +64135,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.21,
             0.21
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -65254,7 +64273,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "4.9 hrs a shift"
     },
     "SIM-W019": {
       "card": {
@@ -65262,16 +64282,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Nirmala R.",
         "initials": "NR",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-2124",
-        "abha": "nirmalar..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -65279,9 +64295,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "15.4 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "Central Rule 5 applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -65729,7 +64744,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.2 hrs a shift"
     },
     "SIM-W007": {
       "card": {
@@ -65737,16 +64753,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Prakash D.",
         "initials": "PD",
         "age": 42,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-6475",
-        "abha": "prakashd..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -65754,9 +64766,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 2,
         "urgent": false
       },
-      "silica_range": "0.0 \u2013 0.1 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.0–0.1 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -66110,8 +65121,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.0\u20130.1",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.0–0.1",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -66129,7 +65140,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.06,
             0.06
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -66310,7 +65321,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W037": {
       "card": {
@@ -66318,16 +65330,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Rafiq N.",
         "initials": "RN",
         "age": 25,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-5411",
-        "abha": "rafiqn..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -66335,9 +65343,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.2 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.0 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.2 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -66666,8 +65673,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.2",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.2",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -66685,7 +65692,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.23,
             0.25
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -66842,7 +65849,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.0 hrs a shift"
     },
     "SIM-W098": {
       "card": {
@@ -66850,16 +65858,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Rafiq Z.",
         "initials": "RZ",
         "age": 25,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Crane operator",
         "icon": "crane",
         "place": "Kandla Port",
         "location_id": "kandla_port",
         "taluka": "Gandhidham",
-        "uan": "9842-XXXX-1220",
-        "abha": "rafiqz..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -66867,9 +65871,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "4.2 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -67265,7 +66268,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "9.0 hrs a shift"
     },
     "SIM-W061": {
       "card": {
@@ -67273,16 +66277,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Rajesh H.",
         "initials": "RH",
         "age": 25,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-6114",
-        "abha": "rajeshh..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -67290,9 +66290,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.2 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.4 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.2 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -67611,8 +66610,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.2",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.2",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -67630,7 +66629,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.15,
             0.16
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -67774,7 +66773,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.6 hrs a shift"
     },
     "SIM-W069": {
       "card": {
@@ -67782,16 +66782,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Rakesh K.",
         "initials": "RK",
         "age": 42,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-3811",
-        "abha": "rakeshk..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -67799,9 +66795,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "0.4 \u2013 1.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.4 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.4–1.3 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -68138,8 +67133,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.4\u20131.3",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.4–1.3",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "moderate",
           "chip": "Partly above",
@@ -68157,7 +67152,7 @@ window.WORKCHECK_STATIC_DATA = {
             1.32,
             1.32
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -68349,7 +67344,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.6 hrs a shift"
     },
     "SIM-W062": {
       "card": {
@@ -68357,16 +67353,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ramesh J.",
         "initials": "RJ",
         "age": 25,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement plant staff",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-4380",
-        "abha": "rameshj..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -68374,9 +67366,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "8.9 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.3 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -68678,8 +67669,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.3",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.3",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -68697,7 +67688,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.26,
             0.26
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -68835,7 +67826,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "4.9 hrs a shift"
     },
     "SIM-W001": {
       "card": {
@@ -68843,16 +67835,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ramesh K.",
         "initials": "RK",
         "age": 25,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-4454",
-        "abha": "rameshk..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -68860,9 +67848,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 2,
         "urgent": false
       },
-      "silica_range": "0.0 \u2013 0.1 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.0–0.1 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -69198,8 +68185,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.0\u20130.1",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.0–0.1",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -69217,7 +68204,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.06,
             0.06
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -69380,7 +68367,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W049": {
       "card": {
@@ -69388,16 +68376,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Ranchhod L.",
         "initials": "RL",
         "age": 25,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Construction worker",
         "icon": "helmet",
         "place": "Bhuj",
         "location_id": "bhuj",
         "taluka": "Bhuj",
-        "uan": "9842-XXXX-8365",
-        "abha": "ranchhodl..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -69405,9 +68389,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.2 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.0 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.2 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -69754,8 +68737,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.2",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.2",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -69773,7 +68756,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.23,
             0.25
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -69948,7 +68931,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "3.0 hrs a shift"
     },
     "SIM-W033": {
       "card": {
@@ -69956,16 +68940,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Shanta S.",
         "initials": "SS",
         "age": 42,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-9789",
-        "abha": "shantas..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -69973,9 +68953,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "7.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "Central Rule 5 applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -70507,7 +69486,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "5.9 hrs a shift"
     },
     "SIM-W002": {
       "card": {
@@ -70515,16 +69495,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Suresh R.",
         "initials": "SR",
         "age": 25,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-4173",
-        "abha": "sureshr..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -70532,9 +69508,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 2,
         "urgent": false
       },
-      "silica_range": "0.0 \u2013 0.1 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.0–0.1 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -70870,8 +69845,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.0\u20130.1",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.0–0.1",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -70889,7 +69864,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.06,
             0.06
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -71052,7 +70027,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W025": {
       "card": {
@@ -71060,16 +70036,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Varsha A.",
         "initials": "VA",
         "age": 25,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-7547",
-        "abha": "varshaa..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -71077,9 +70049,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 1,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "7.5 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -71551,7 +70522,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "5.9 hrs a shift"
     },
     "SIM-W051": {
       "card": {
@@ -71559,16 +70531,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Velji B.",
         "initials": "VB",
         "age": 25,
-        "gender": "Male",
         "employer": "Contract worker",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-4001",
-        "abha": "veljib..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -71576,9 +70544,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.4 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.4 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -71890,8 +70857,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.4",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.4",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -71909,7 +70876,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.42,
             0.42
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -72083,7 +71050,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.9 hrs a shift"
     },
     "SIM-W004": {
       "card": {
@@ -72091,16 +71059,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Vikram M.",
         "initials": "VM",
         "age": 35,
-        "gender": "Male",
         "employer": "Self-employed",
         "job": "Salt-pan worker",
         "icon": "salt",
         "place": "Little Rann",
         "location_id": "little_rann_kutch",
         "taluka": "Rapar",
-        "uan": "9842-XXXX-7552",
-        "abha": "vikramm..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -72108,9 +71072,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 2,
         "urgent": false
       },
-      "silica_range": "0.0 \u2013 0.1 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "13.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.0–0.1 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -72464,8 +71427,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.0\u20130.1",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.0–0.1",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -72483,7 +71446,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.06,
             0.06
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -72676,7 +71639,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W035": {
       "card": {
@@ -72684,16 +71648,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Yusuf K.",
         "initials": "YK",
         "age": 47,
-        "gender": "Male",
         "employer": "Dock worker",
         "job": "Port yard loader",
         "icon": "forklift",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-4763",
-        "abha": "yusufk..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -72701,9 +71661,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "15.3 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "Central Rule 5 applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -73169,7 +72128,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.8 hrs a shift"
     },
     "SIM-W038": {
       "card": {
@@ -73177,16 +72137,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Zubeda M.",
         "initials": "ZM",
         "age": 25,
-        "gender": "Male",
         "employer": "Factory employee",
         "job": "Cement yard loader",
         "icon": "building-factory-2",
         "place": "Abdasa",
         "location_id": "abdasa_cement",
         "taluka": "Abdasa",
-        "uan": "9842-XXXX-4230",
-        "abha": "zubedam..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "watch",
         "headline": "Being watched",
         "headline_area": null,
@@ -73194,9 +72150,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "0.1 \u2013 0.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "14.7 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "0.1–0.3 mg/m³-years",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "watch",
         "reasons": []
@@ -73508,8 +72463,8 @@ window.WORKCHECK_STATIC_DATA = {
           "key": "silica",
           "label": "Silica dust",
           "icon": "wind",
-          "value": "0.1\u20130.3",
-          "unit": "mg/m\u00b3-years",
+          "value": "0.1–0.3",
+          "unit": "mg/m³-years",
           "caption": "Dose so far, from US mine samples. Review at 0.5",
           "level": "ok",
           "chip": "Below review level",
@@ -73527,7 +72482,7 @@ window.WORKCHECK_STATIC_DATA = {
             0.26,
             0.26
           ],
-          "series_unit": "mg/m\u00b3-years",
+          "series_unit": "mg/m³-years",
           "months": [
             "Jan",
             "Feb",
@@ -73665,7 +72620,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "2.9 hrs a shift"
     },
     "SIM-W114": {
       "card": {
@@ -73673,16 +72629,12 @@ window.WORKCHECK_STATIC_DATA = {
         "name": "Devji V.",
         "initials": "DV",
         "age": 35,
-        "gender": "Male",
         "employer": "Transport worker",
         "job": "Truck driver",
         "icon": "truck",
         "place": "Mundra Port",
         "location_id": "mundra_port",
         "taluka": "Mundra",
-        "uan": "9842-XXXX-9830",
-        "abha": "devjiv..kutch@abdm",
-        "dish_status": "ACTIVE \u00b7 VALID",
         "level": "clear",
         "headline": "Nothing open",
         "headline_area": null,
@@ -73690,9 +72642,8 @@ window.WORKCHECK_STATIC_DATA = {
         "moves": 0,
         "urgent": false
       },
-      "silica_range": "1.5 \u2013 2.3 mg/m\u00b3\u00b7hr",
-      "severe_heat_hours": "4.2 hrs",
-      "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+      "silica_range": "No estimate for this job",
+      "statutory_text": "No yearly legal exam rule applies to this test record.",
       "state": {
         "level": "clear",
         "reasons": []
@@ -74100,7 +73051,8 @@ window.WORKCHECK_STATIC_DATA = {
       "symptoms": [],
       "updates": [],
       "times_opened": 2,
-      "label": "Fictional test workers on model and outside data. Not Kachchh health records."
+      "label": "Fictional test workers on model and outside data. Not Kachchh health records.",
+      "safe_heat_hours": "9.0 hrs a shift"
     }
   },
   "heat_year": {

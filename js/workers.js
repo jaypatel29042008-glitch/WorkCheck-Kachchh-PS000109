@@ -101,8 +101,8 @@ function renderWorker(p) {
       <button class="btn btn-ghost" id="w-qr" type="button">${ic("qrcode", 18)}QR pass</button>
       <div class="pass-meta-grid" style="margin-top:14px;width:100%;grid-column:1/-1">
         <div class="meta-item">
-          <label>Age / Gender:</label>
-          <span>${esc(c.age)} yrs &bull; Male</span>
+          <label>Age:</label>
+          <span>${esc(c.age)} yrs</span>
         </div>
         <div class="meta-item">
           <label>Assigned Worksite:</label>
@@ -110,11 +110,11 @@ function renderWorker(p) {
         </div>
         <div class="meta-item">
           <label>Cumulative Silica Est. Range:</label>
-          <span class="t-amber">${esc(p.silica_range || "1.5 – 2.3 mg/m³·hr")}</span>
+          <span class="t-amber">${esc(p.silica_range)}</span>
         </div>
         <div class="meta-item">
-          <label>Severe Heat Hours (&gt;30°C WBGT):</label>
-          <span class="t-rose">${esc(p.severe_heat_hours || "4.2 hrs")}</span>
+          <label>Safe Heat Hours (Apr–Oct, model):</label>
+          <span class="t-rose">${esc(p.safe_heat_hours)}</span>
         </div>
       </div>
     </header>
@@ -160,9 +160,8 @@ function renderWorker(p) {
     <section class="card facilities-connector-card" id="w-fac-card">
       <div class="facilities-header">
         <div>
-          <span class="persona-tag">PERSONA 6: REFERRAL ROUTING</span>
           <h2>Nearest Healthcare Facilities &bull; ${esc(c.place)}</h2>
-          <p class="sub">Diagnostic centers with X-Ray, spirometry and 108 base connected to this worker's worksite.</p>
+          <p class="sub">Sample list for testing. Confirm services with each facility.</p>
         </div>
       </div>
       <div class="disease-sorter-toolbar">
@@ -217,7 +216,7 @@ function renderWorker(p) {
           <div>
             <span class="tier-badge ${f.facility_tier.toLowerCase().replace(/[^a-z0-9]+/g, "-")}">${esc(f.facility_tier)}</span>
             <h4 class="fac-name">${esc(f.facility_name)}</h4>
-            <span class="fac-taluka">Taluka: <b>${esc(f.taluka)}</b> &bull; <span class="dist-badge">${f.distance_km} km away</span></span>
+            <span class="fac-taluka">Taluka: <b>${esc(f.taluka)}</b> &bull; <span class="dist-badge">about ${f.distance_km} km, straight line</span></span>
           </div>
           <span class="round xs bg-indigo t-indigo">${ic("hospital-circle", 18, 2)}</span>
         </div>
@@ -230,7 +229,7 @@ function renderWorker(p) {
         ${f.match_label ? `<div class="fac-match-pill">${esc(f.match_label)}</div>` : ""}
         <div class="fac-actions">
           <button type="button" class="btn btn-ghost btn-sm w-refer-btn" data-fac-id="${esc(f.facility_id)}" data-fac-name="${esc(f.facility_name)}">
-            ${ic("route", 14, 2)} Route Referral Here
+            ${ic("route", 14, 2)} Note referral
           </button>
           ${f.emergency_108_base ? `<a class="btn btn-danger btn-sm" href="tel:108" title="Call Emergency 108">${ic("phone", 13, 2)} 108</a>` : ""}
         </div>
@@ -244,11 +243,11 @@ function renderWorker(p) {
             method: "POST",
             body: { worker_id: c.id, facility_id: btn.dataset.facId, disease }
           });
-          btn.innerHTML = `${ic("circle-check", 14, 2)} Referral Scheduled`;
+          btn.innerHTML = `${ic("circle-check", 14, 2)} Referral Noted`;
           btn.classList.add("btn-ink");
-          toast(rep.message || `Referral scheduled to ${btn.dataset.facName}.`, "good");
+          toast(rep.message || `Referral to ${btn.dataset.facName} noted.`, "good");
         } catch (e) {
-          toast(e.message || "Failed to schedule referral.", "action");
+          toast(e.message || "Could not note the referral.", "action");
         }
       });
     });
@@ -325,7 +324,7 @@ function yearBar(places) {
 
 function openPass(c) {
   const qr = qrcode(0, "M");
-  qr.addData(`${location.origin}/#/workers/${c.id}`);
+  qr.addData(`${location.origin}${location.pathname}#/workers/${c.id}`);
   qr.make();
   openModal(`<div class="pass"><h2>${esc(c.name)}'s QR pass</h2><p class="sub">Scan at a clinic or a new job. It opens this record only after sign-in and holds no health data.</p><div class="qr">${qr.createSvgTag({ cellSize: 6, margin: 0, scalable: true })}</div><p class="tag">${esc(c.id)}</p></div>`, "QR pass");
 }

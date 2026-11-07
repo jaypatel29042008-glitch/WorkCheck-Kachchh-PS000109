@@ -409,24 +409,18 @@ def worker_card(worker_id, con):
     a = R["assignments"][worker_id][-1]
     state = worker_state(worker_id, con)
     name = R["names"][worker_id]
-    uan_num = 1000 + (abs(hash(worker_id)) % 8999)
-    clean_name = "".join(c for c in name.lower() if c.isalnum() or c == ".")
     loc_id = a.get("location_id") or TALUKA_LOCATION.get(a.get("taluka", "Rapar"), "little_rann_kutch")
     return {
         "id": worker_id,
         "name": name,
         "initials": initials(name),
         "age": w["age_on_1_jan_2025"],
-        "gender": "Male",
         "employer": EMPLOYERS.get(w["employer_type"], w["employer_type"]),
         "job": a["job"],
         "icon": a["icon"],
         "place": a["place"],
         "location_id": loc_id,
         "taluka": a["taluka"],
-        "uan": f"9842-XXXX-{uan_num}",
-        "abha": f"{clean_name}.kutch@abdm",
-        "dish_status": "ACTIVE · VALID",
         "level": state["level"],
         "headline": state["reasons"][0]["text"] if state["reasons"] else ("Being watched" if state["level"] == "watch" else "Nothing open"),
         "headline_area": state["reasons"][0]["area"] if state["reasons"] else None,
@@ -643,12 +637,16 @@ def passport(worker_id: str, user=Depends(current_user)):
     open_checks = [dict(c, area=a["key"], area_label=a["label"], icon=a["icon"]) for a in areas for c in a["checks"] if c["tone"] in ("action", "due")]
     open_checks.sort(key=lambda c: TONE_ORDER[c["tone"]])
     other_checks = [dict(c, area=a["key"], area_label=a["label"], icon=a["icon"]) for a in areas for c in a["checks"] if c["tone"] in ("clear", "watch")]
-    silica_p75 = round(max((d["p75"] for d in days if d.get("p75")), default=1.5), 1)
-    silica_p90 = round(max((d["p90"] for d in days if d.get("p90")), default=2.3), 1)
-    severe_heat = round(sum(1 for d in days if (d.get("allowed_work_hours") or 9.0) < 4.5) * 0.1, 1) or 4.2
-    return {"card": card, "silica_range": f"{silica_p75} – {silica_p90} mg/m³·hr", "severe_heat_hours": f"{severe_heat} hrs", "statutory_text": "Mandatory annual examination due under Gujarat OSH Rules 2025 Rule 9 (Hazardous worker screening).",
+    exposure = exposure_summary(days)
+    silica_p75, silica_p90 = days[-1]["p75"], days[-1]["p90"]
+    silica_range = f"{silica_p75:.1f}–{silica_p90:.1f} mg/m³-years" if silica_p90 > 0 else "No estimate for this job"
+    summer = [d["allowed_work_hours"] for d in days if "04" <= d["shift_date"][5:7] <= "10"] or [d["allowed_work_hours"] for d in days]
+    safe_heat = f"{sum(summer) / len(summer):.1f} hrs a shift"
+    rule = w["legal_rule_applying"]
+    statutory = f"{rule} applies to this test record." if rule else "No yearly legal exam rule applies to this test record."
+    return {"card": card, "silica_range": silica_range, "safe_heat_hours": safe_heat, "statutory_text": statutory,
             "state": {"level": state["level"], "reasons": [r["text"] for r in state["reasons"]]}, "next": next_step(state, card["name"]), "legal_rule": w["legal_rule_applying"] or None, "entered_via": w["entered_record_via"], "areas": areas, "open_checks": open_checks, "other_checks": other_checks,
-            "tracker": care_tracker(worker_id), "places": [{"job": a["job"], "icon": a["icon"], "place": a["place"], "start": a["start_date"], "end": a["end_date"]} for a in R["assignments"][worker_id]], "exposure": exposure_summary(days), "history": friendly_history(worker_id), "symptoms": symptoms, "updates": updates, "times_opened": opened, "label": LABEL}
+            "tracker": care_tracker(worker_id), "places": [{"job": a["job"], "icon": a["icon"], "place": a["place"], "start": a["start_date"], "end": a["end_date"]} for a in R["assignments"][worker_id]], "exposure": exposure, "history": friendly_history(worker_id), "symptoms": symptoms, "updates": updates, "times_opened": opened, "label": LABEL}
 
 
 class ConditionUpdate(BaseModel):
@@ -715,7 +713,7 @@ def report_symptoms_batch(worker_id: str, payload: SymptomBatch, user=Depends(cu
         "saved": True,
         "count": saved_count,
         "urgent": has_urgent,
-        "message": "Critical: Call 108 immediately." if has_urgent else f"Logged {saved_count} symptoms. Nearest BOCW Dhanvantari Rath alert updated."
+        "message": "Critical: Call 108 immediately." if has_urgent else f"Saved {saved_count} symptoms. The clinic team can see them."
     }
 
 
@@ -809,7 +807,7 @@ def route_referral(payload: ReferralPayload, user=Depends(current_user)):
         "facility_name": target["facility_name"],
         "facility_tier": target["facility_tier"],
         "taluka": target["taluka"],
-        "message": f"Priority referral scheduled to {target['facility_name']}. BOCW Dhanvantari Rath alert notified."
+        "message": f"Referral to {target['facility_name']} noted in this test record. Nothing was sent to the facility."
     }
 
 
