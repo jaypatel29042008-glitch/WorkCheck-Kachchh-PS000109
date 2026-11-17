@@ -3,6 +3,7 @@
 Worker health follow-up for Seva First Innovation Challenge 2026 / SSIP Gujarat, problem statement **PS000109: Digital Occupational Health Monitoring for Industrial Workers** (DDO Kachchh).
 
 [![Live Website](https://img.shields.io/badge/Live%20Platform-GitHub%20Pages-brightgreen?style=for-the-badge&logo=github)](https://jaypatel29042008-glitch.github.io/WorkCheck-Kachchh-PS000109/)
+[![System Architecture](https://img.shields.io/badge/Interactive%20Architecture-Archify-0ea5e9?style=for-the-badge)](https://jaypatel29042008-glitch.github.io/WorkCheck-Kachchh-PS000109/architecture.html)
 [![SSIP Gujarat](https://img.shields.io/badge/SSIP%20Gujarat-2026-blue?style=for-the-badge)](https://ssipgujarat.in/)
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI%20%2B%20SQLite-teal?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
 
@@ -44,6 +45,7 @@ Then open **http://localhost:8090** in your browser. On Windows, you can double-
 | Folder / File | What it holds |
 |---|---|
 | `index.html`, `styles.css`, `js/`, `assets/` | Read-only preview deployed on GitHub Pages, using a saved copy of the test data |
+| `architecture.html`, `docs/architecture.archify.json` | Interactive Archify system architecture diagram (light/dark themes, guided views, source-verified links) |
 | `workcheck_platform/` | The full-stack app: FastAPI backend, authentication, reference SQLite database, and tests |
 | `final_dataset/` | Complete empirical datasets (CSV tables, 128 simulated workers, ERA5 weather, CPCB PM data, data dictionary) |
 | `simulation/` | Hazard models, multi-parameter exposure calculations, and simulation outputs |
