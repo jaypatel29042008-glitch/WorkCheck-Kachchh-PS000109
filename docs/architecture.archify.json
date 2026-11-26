@@ -10,7 +10,7 @@
       "url": "https://github.com/jaypatel29042008-glitch/WorkCheck-Kachchh-PS000109",
       "provider": "github",
       "link_mode": "web",
-      "revision": "1907d7b2ded01460d148b8e7e1f05af8c97c56a8"
+      "revision": "474b9be7146aae2030d15b029ec8ce5d5d0d5779"
     },
     "views": [
       {
@@ -28,8 +28,8 @@
       {
         "id": "static-preview",
         "label": "GitHub Pages & offline ETL",
-        "focus": ["users", "gh_pages", "web_spa", "public_apis", "sim_pipeline", "ref_db"],
-        "note": "Inspect zero-install static preview mode with live CORS weather/pincode queries and offline WBGT physics alongside the hazard ETL pipeline."
+        "focus": ["users", "gh_pages", "web_spa", "sim_pipeline", "ref_db"],
+        "note": "Inspect zero-install static preview mode alongside the offline hazard simulation pipeline and reference database."
       }
     ]
   },
@@ -53,7 +53,7 @@
         { "path": "index.html", "line": 1, "label": "Static entry & CSP" },
         { "path": "js/core.js", "line": 99, "end_line": 270, "label": "Static API & physics router" }
       ],
-      "pos": [265, 70],
+      "pos": [275, 70],
       "size": [165, 64]
     },
     {
@@ -65,20 +65,8 @@
         { "path": "workcheck_platform/static/index.html", "line": 1, "label": "Platform SPA" },
         { "path": "styles.css", "line": 1, "label": "Design system CSS" }
       ],
-      "pos": [265, 240],
+      "pos": [275, 240],
       "size": [165, 64]
-    },
-    {
-      "id": "public_apis",
-      "type": "external",
-      "label": "Live Public APIs",
-      "sublabel": "Open-Meteo, CAMS, India Post",
-      "tag": "CORS + Cached",
-      "sources": [
-        { "path": "workcheck_platform/app/live.py", "line": 1, "end_line": 190, "label": "Cached weather & pincode clients" }
-      ],
-      "pos": [265, 420],
-      "size": [175, 64]
     },
     {
       "id": "auth_guard",
@@ -90,7 +78,7 @@
         { "path": "workcheck_platform/app/security.py", "line": 1, "end_line": 120, "label": "Headers, CSRF & rate limits" },
         { "path": "workcheck_platform/app/core.py", "line": 1, "label": "Auth, sessions & fail-closed keys" }
       ],
-      "pos": [525, 70],
+      "pos": [535, 70],
       "size": [185, 64]
     },
     {
@@ -103,8 +91,20 @@
         { "path": "workcheck_platform/app/main.py", "line": 1, "label": "Core REST API" },
         { "path": "workcheck_platform/app/trackers.py", "line": 1, "label": "Org & DPDP trackers" }
       ],
-      "pos": [525, 240],
+      "pos": [535, 240],
       "size": [185, 64]
+    },
+    {
+      "id": "public_apis",
+      "type": "external",
+      "label": "Live Public APIs",
+      "sublabel": "Open-Meteo, CAMS, India Post",
+      "tag": "15m/24h Cache",
+      "sources": [
+        { "path": "workcheck_platform/app/live.py", "line": 1, "end_line": 190, "label": "Cached weather & pincode clients" }
+      ],
+      "pos": [875, 45],
+      "size": [175, 64]
     },
     {
       "id": "runtime_db",
@@ -115,7 +115,7 @@
       "sources": [
         { "path": "workcheck_platform/app/core.py", "line": 120, "end_line": 175, "label": "Schema & migrations" }
       ],
-      "pos": [805, 165],
+      "pos": [875, 175],
       "size": [175, 64]
     },
     {
@@ -127,7 +127,7 @@
       "sources": [
         { "path": "workcheck_platform/app/main.py", "line": 920, "label": "Read-only evidence & ref DB" }
       ],
-      "pos": [805, 295],
+      "pos": [875, 305],
       "size": [175, 64]
     },
     {
@@ -139,8 +139,8 @@
       "sources": [
         { "path": "workcheck_platform/wokwi/sketch.ino", "line": 1, "label": "ESP32 firmware" }
       ],
-      "pos": [525, 420],
-      "size": [170, 64]
+      "pos": [275, 445],
+      "size": [165, 64]
     },
     {
       "id": "wokwi_bridge",
@@ -151,8 +151,8 @@
       "sources": [
         { "path": "wokwi_bridge/app.py", "line": 1, "end_line": 120, "label": "SSRF-safe bridge service" }
       ],
-      "pos": [805, 420],
-      "size": [175, 64]
+      "pos": [535, 445],
+      "size": [185, 64]
     },
     {
       "id": "sim_pipeline",
@@ -163,7 +163,7 @@
       "sources": [
         { "path": "simulation/combine_and_simulate.py", "line": 1, "label": "Hazard model" }
       ],
-      "pos": [805, 520],
+      "pos": [875, 445],
       "size": [175, 64]
     }
   ],
@@ -182,11 +182,10 @@
   "connections": [
     { "id": "users-to-spa", "from": "users", "to": "web_spa", "label": "HTTPS / PWA", "variant": "emphasis" },
     { "id": "gh-pages-to-spa", "from": "gh_pages", "to": "web_spa", "label": "static preview", "variant": "dashed", "labelDy": 64 },
-    { "id": "spa-to-public", "from": "web_spa", "to": "public_apis", "label": "direct CORS fetch", "variant": "dashed" },
     { "id": "spa-to-api", "from": "web_spa", "to": "fastapi_app", "label": "REST /api/*", "variant": "emphasis" },
-    { "id": "api-to-public", "from": "fastapi_app", "to": "public_apis", "label": "15m/24h cached fetch" },
+    { "id": "api-to-public", "from": "fastapi_app", "to": "public_apis", "label": "cached HTTP", "variant": "dashed", "fromSide": "right", "toSide": "left", "via": [[755, 272], [755, 77]], "labelAt": [815, 62] },
     { "id": "auth-to-api", "from": "auth_guard", "to": "fastapi_app", "label": "CSRF, role & org", "variant": "security", "labelDy": 64 },
-    { "id": "api-to-runtime", "from": "fastapi_app", "to": "runtime_db", "label": "org-scoped SQL" },
+    { "id": "api-to-runtime", "from": "fastapi_app", "to": "runtime_db", "label": "org-scoped SQL", "labelAt": [825, 192] },
     { "id": "api-to-ref", "from": "fastapi_app", "to": "ref_db", "label": "read-only SQL" },
     { "id": "esp32-to-bridge", "from": "esp32_node", "to": "wokwi_bridge", "label": "sensor payload" },
     { "id": "bridge-to-api", "from": "wokwi_bridge", "to": "fastapi_app", "label": "POST /v1/telemetry", "variant": "security" },
