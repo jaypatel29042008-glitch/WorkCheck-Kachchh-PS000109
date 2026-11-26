@@ -66,7 +66,7 @@ VIEWS.me = async () => {
   const [p, today, checkin] = await Promise.all([
     api(`/api/workers/${encodeURIComponent(workerId)}`),
     api("/api/me/today"),
-    isPreview() ? null : api("/api/log/today").catch(() => null),
+    api("/api/log/today").catch(() => null),
   ]);
 
   if (p.card && p.card.location_id) {

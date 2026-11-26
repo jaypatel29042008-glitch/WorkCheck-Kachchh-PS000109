@@ -54,12 +54,12 @@ function renderLogin() {
         <label class="field"><span>Password</span><span class="input">${ic("lock", 18)}<input id="password" type="password" autocomplete="current-password" placeholder="Your password" required><button type="button" class="icon-btn ghost" id="show-pw" aria-label="Show password">${ic("eye", 18)}</button></span></label>
         <p class="form-error" id="login-error" role="alert" hidden></p>
         <button class="btn btn-ink btn-full" id="login-go" type="submit">Sign in ${ic("arrow-right", 18, 2)}</button>
-        ${window.WORKCHECK_STATIC_DATA ? "" : `<div class="new-here"><a class="new-card" href="#/setup"><span class="round sm bg-indigo">${ic("building", 16, 2)}</span><span><b>New workplace</b><small>For owners</small></span>${ic("chevron-right", 16)}</a><a class="new-card" href="#/join"><span class="round sm bg-indigo">${ic("ticket", 16, 2)}</span><span><b>Join with a code</b><small>For your team</small></span>${ic("chevron-right", 16)}</a></div>`}
+        <div class="new-here"><a class="new-card" href="#/setup"><span class="round sm bg-indigo">${ic("building", 16, 2)}</span><span><b>New workplace</b><small>For owners</small></span>${ic("chevron-right", 16)}</a><a class="new-card" href="#/join"><span class="round sm bg-indigo">${ic("ticket", 16, 2)}</span><span><b>Join with a code</b><small>For your team</small></span>${ic("chevron-right", 16)}</a></div>
         <div id="demo-wrap">
           <div class="divider"><span>Try a test account</span></div>
           <div class="test-accounts">${TEST_ACCOUNTS.map(([e, p, n, d, i], k) => `<button type="button" class="test-acc" data-k="${k}"><span class="round sm bg-indigo">${ic(i, 16, 2)}</span><span><b>${n}</b><small>${d}</small></span></button>`).join("")}</div>
         </div>
-        <p class="fine">All workers here are fictional. Test accounts work only when demo mode is enabled.${window.WORKCHECK_STATIC_DATA ? " This is a read-only preview, so nothing is saved." : ""} <button type="button" class="link-inline" id="login-privacy">Privacy &amp; DPDP Notice</button></p>
+        <p class="fine">All workers here are fictional. Test accounts work only when demo mode is enabled.${window.WORKCHECK_STATIC_DATA ? " Running in browser demo mode (saves locally in this browser)." : ""} <button type="button" class="link-inline" id="login-privacy">Privacy &amp; DPDP Notice</button></p>
       </form>
     </main>
   </div>`;

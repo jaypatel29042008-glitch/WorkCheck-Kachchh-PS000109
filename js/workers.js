@@ -194,7 +194,7 @@ function renderWorker(p) {
   </div>`;
   mountSparks(box);
   wireBody(box);
-  if (!isPreview()) api(`/api/log/history/${encodeURIComponent(c.id)}?days=35`).then((h) => {
+  api(`/api/log/history/${encodeURIComponent(c.id)}?days=35`).then((h) => {
     const host = $("#w-log", box);
     if (!host || !h.logged) return;
     host.innerHTML = calendarCard(h, "en", "Daily check-ins");

@@ -214,11 +214,9 @@ async function sendWokwiSimulatedPacket() {
     const r = await api("/api/node/simulate", { method: "POST", body: payload });
     S.lastReading = r.id;
     if ($("#site-live")) renderLive(r, "Simulated ESP32 packet");
-    if (!isPreview()) {
-      const next = await api("/api/node/state").catch(() => null);
-      const dot = $("#wokwi-status");
-      if (dot && next && next.wokwi) dot.innerHTML = wokwiStatus(next.wokwi);
-    }
+    const next = await api("/api/node/state").catch(() => null);
+    const dot = $("#wokwi-status");
+    if (dot && next && next.wokwi) dot.innerHTML = wokwiStatus(next.wokwi);
   } catch (err) {
     if ($("#site-live")) toast(err.message || "Could not send simulated packet.", "action");
   }
@@ -296,7 +294,7 @@ function controlStatus(c) {
 }
 
 async function mountDeviceControls(host) {
-  if (!host || isPreview()) { if (host) host.hidden = true; return () => { }; }
+  if (!host) return () => { };
   let c = await api("/api/node/controls");
   if (!host.isConnected) return () => { };
   const values = { ...c.values };

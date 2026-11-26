@@ -1,5 +1,5 @@
 "use strict";
-const CACHE = "workcheck-shell-v2";
+const CACHE = "workcheck-shell-v3";
 const SHELL_URLS = [
   "./",
   "./index.html",
@@ -12,6 +12,7 @@ const SHELL_URLS = [
   "./assets/fonts/jakarta.woff2",
   "./icons.js",
   "./qrcode.js",
+  "./js/demo_runtime.js",
   "./js/core.js",
   "./js/charts.js",
   "./js/login.js",

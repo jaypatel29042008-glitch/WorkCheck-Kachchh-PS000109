@@ -27,15 +27,11 @@ const NAV_FULL = {
   supervisor: [["dashboard", "incidents", "compliance", "team"], ["site", "facilities", "heat", "wokwi", "evidence"]],
   worker: [["me", "facilities"], []],
 };
-const NAV_PREVIEW = {
-  clinician: [["today", "workers"], ["facilities", "heat", "site", "wokwi", "evidence"]], ddo: [["today"], ["facilities", "heat", "site", "wokwi", "evidence"]],
-  supervisor: [["site"], ["facilities", "heat", "wokwi", "evidence"]], worker: [["me", "facilities"], []],
-};
 const DEMO_ONLY = ["today", "wokwi"];
 const isPreview = () => Boolean(window.WORKCHECK_STATIC_DATA);
 const isDemoOrg = () => !S.user || !S.user.org || Boolean(S.user.org.demo);
 function navGroups(role) {
-  const groups = (isPreview() ? NAV_PREVIEW : NAV_FULL)[role];
+  const groups = NAV_FULL[role] || NAV_FULL.worker;
   return groups.map((g) => g.filter((k) => isDemoOrg() || !DEMO_ONLY.includes(k)));
 }
 const NAV = new Proxy({}, { get: (_, role) => navGroups(role).flat().map((k) => [k, PAGES[k][0], PAGES[k][1]]) });
@@ -48,7 +44,6 @@ class ApiError extends Error {
 const READ_ONLY_MESSAGE = "This is a read-only preview, so nothing was saved. Run the full version to try this.";
 
 const _STATIC_CACHE = { env: null, envTs: 0, pins: {}, roads: {} };
-const _STATIC_WORKER_OVERRIDES = {};
 const _TALUKA_ALIASES = {
   rahpar: "Rapar",
   rapar: "Rapar",
@@ -171,280 +166,24 @@ async function api(path, options = {}) {
     return data;
   }
 
-  // Client-side static handler (powered by reference.db dataset + live CORS public APIs for GitHub Pages)
-  if (window.WORKCHECK_STATIC_DATA) {
-    const D = window.WORKCHECK_STATIC_DATA;
-    const u = new URL(path, window.location.origin);
-    const p = u.pathname;
-
-    if (p === "/api/auth/options") {
-      let savedUser = null;
-      try {
-        const raw = localStorage.getItem("wc_static_user");
-        if (raw) savedUser = JSON.parse(raw);
-      } catch {
-        savedUser = null;
-      }
-      return {
-        demo: true,
-        env: "preview",
-        consent_version: (D.privacy_notice && D.privacy_notice.consent_version) || "dpdp-v1-2026",
-        authenticated: Boolean(savedUser),
-        user: savedUser,
-      };
-    }
-    if (p === "/api/privacy/notice") {
-      return D.privacy_notice || { consent_version: "dpdp-v1-2026", controller: "WorkCheck Kachchh Pilot", rights: [] };
-    }
-    if (p === "/api/privacy/consent" && method === "POST") {
-      return { ok: true, consent_version: "dpdp-v1-2026", consent_at: new Date().toISOString(), preview: true };
-    }
-
-    // 1. Auth Login
-    if (p === "/api/auth/login" && method === "POST") {
-      const { email, password } = options.body || {};
-      const found = D.users[email];
-      if (found && found.password === password) {
-        try { localStorage.setItem("wc_static_user", JSON.stringify(found.user)); } catch { /* ignore */ }
-        return found.user;
-      }
-      throw new ApiError(401, "Check your email and password.");
-    }
-
-    // 2. Auth Me
-    if (p === "/api/auth/me") {
-      try {
-        const saved = localStorage.getItem("wc_static_user");
-        if (saved) return JSON.parse(saved);
-      } catch {
-        try { localStorage.removeItem("wc_static_user"); } catch { /* ignore */ }
-      }
-      throw new ApiError(401, "Please sign in.");
-    }
-
-    // 3. Auth Logout
-    if (p === "/api/auth/logout") {
-      try { localStorage.removeItem("wc_static_user"); } catch { /* ignore */ }
-      return { ok: true };
-    }
-
-    // 4. Overview, Workers, Heat
-    if (p === "/api/overview") return D.overview;
-    if (p === "/api/workers") return D.workers;
-    if (p === "/api/heat/map") return D.heat_map;
-    if (p === "/api/heat/jobs") return D.heat_jobs;
-    if (p === "/api/heat/year") {
-      const jid = u.searchParams.get("job_id");
-      return (D.heat_year && D.heat_year[jid]) || { curve: [] };
-    }
-
-    // 5. Node state / day / replay / simulation
-    if (p === "/api/node/state") return D.node_state;
-    if (p === "/api/node/day") {
-      const lid = u.searchParams.get("location_id") || "kandla_port";
-      return (D.node_day && D.node_day[lid]) || (D.node_day && D.node_day.kandla_port) || { location_id: lid, day: "2025-05-19", hours: [] };
-    }
-    if (p === "/api/node/replay") {
-      const lid = u.searchParams.get("location_id") || "kandla_port";
-      const h = Number(u.searchParams.get("hour") || 12);
-      const day = u.searchParams.get("day") || "2025-05-19";
-      const dayObj = (D.node_day && D.node_day[lid]) || {};
-      const hr = (dayObj.hours || []).find((x) => x.hour === h);
-      const base = (D.node_replay && D.node_replay[lid]) || D.node_state.latest;
-      if (hr) {
-        const simTa = Math.round((27 + Math.max(0, hr.wbgt - 22) * 1.15) * 10) / 10;
-        return { ..._staticNodeView(D, { site_id: lid, source: "model_replay", ambient_temp_c: simTa, relative_humidity_pct: 45, pm10_0_ug_m3: base.pm10_0_ug_m3, uv_index: h >= 10 && h <= 16 ? 9 : 2 }, hr.wbgt, "Model estimate for sun"), hour: h, date: day };
-      }
-      return { ...base, hour: h, date: day };
-    }
-    if (p === "/api/node/simulate" && method === "POST") {
-      const b = options.body || {};
-      return _staticNodeView(D, { ...b, source: b.source || "browser_simulator" });
-    }
-
-    // 6. Live Open-Meteo Weather & Air Quality (CORS *) + Pincode (CORS *)
-    if (p === "/api/live/environment") {
-      const sid = u.searchParams.get("site_id");
-      const sites = D.site_coords || (D.facilities_default && D.facilities_default.sites) || [];
-      const nowMs = Date.now();
-      let payload = _STATIC_CACHE.env;
-      if (!payload || nowMs - _STATIC_CACHE.envTs > 900000) {
-        try {
-          const lats = sites.map((s) => s.lat).join(",");
-          const lons = sites.map((s) => s.lon).join(",");
-          const [wr, ar] = await Promise.all([
-            fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lats}&longitude=${lons}&current=temperature_2m,relative_humidity_2m,shortwave_radiation,wind_speed_10m,uv_index&wind_speed_unit=ms&timezone=Asia%2FKolkata`),
-            fetch(`https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${lats}&longitude=${lons}&current=pm10,pm2_5,dust&timezone=Asia%2FKolkata`),
-          ]);
-          const wRaw = await wr.json();
-          const aRaw = await ar.json();
-          const wList = Array.isArray(wRaw) ? wRaw : [wRaw];
-          const aList = Array.isArray(aRaw) ? aRaw : [aRaw];
-          const built = sites.map((s, idx) => {
-            const wc = (wList[idx] && wList[idx].current) || {}, ac = (aList[idx] && aList[idx].current) || {};
-            const ta = wc.temperature_2m, rh = wc.relative_humidity_2m, rad = wc.shortwave_radiation || 0, wind = Math.max(0.8, wc.wind_speed_10m || 1.5);
-            const tg = ta != null ? ta + (rad > 0 ? Math.min(16, (rad * 0.015) / Math.pow(wind, 0.35)) : 0) : null;
-            return {
-              site_id: s.site_id, label: s.label, taluka: s.taluka, lat: s.lat, lon: s.lon, live: true,
-              source: "Open-Meteo Forecast + CAMS Air Quality",
-              temp_c: ta, humidity_pct: rh, wind_ms: wc.wind_speed_10m, shortwave_wm2: rad, uv_index: wc.uv_index,
-              wbgt_shade_c: ta != null && rh != null ? Number(_computeWbgt(ta, rh)[0].toFixed(1)) : null,
-              wbgt_sun_est_c: ta != null && rh != null ? Number(_computeWbgt(ta, rh, tg)[0].toFixed(1)) : null,
-              pm10_ug_m3: ac.pm10, pm25_ug_m3: ac.pm2_5, dust_ug_m3: ac.dust,
-              observed_at: wc.time || ac.time || new Date().toISOString(),
-            };
-          });
-          payload = { live: true, fetched_at: new Date().toISOString(), provider: "Open-Meteo Weather Forecast & CAMS Air Quality", method_note: "Ambient gridded forecast and CAMS model estimate; not an on-site black-globe hardware sensor.", sites: built };
-          _STATIC_CACHE.env = payload;
-          _STATIC_CACHE.envTs = nowMs;
-        } catch {
-          payload = { live: false, fetched_at: new Date().toISOString(), provider: "2025 Kachchh Reference Baseline", method_note: "Live feed offline; showing saved climatology.", sites: sites.map((s) => ({ ...s, live: false, temp_c: null, humidity_pct: null, wbgt_sun_est_c: null, pm10_ug_m3: null })) };
-        }
-      }
-      if (sid && sid !== "all") return { ...payload, sites: payload.sites.filter((x) => x.site_id === sid) };
-      return payload;
-    }
-
-    if (p.startsWith("/api/live/pincode/")) {
-      const pin = decodeURIComponent(p.split("/").pop() || "").trim();
-      if (!/^\d{6}$/.test(pin)) throw new ApiError(400, "Enter a valid 6-digit Indian pincode.");
-      if (_STATIC_CACHE.pins[pin]) return _STATIC_CACHE.pins[pin];
-      let offices = [], status = "unavailable", live = false;
-      try {
-        const res = await fetch(`https://api.postalpincode.in/pincode/${pin}`);
-        const json = await res.json();
-        const entry = Array.isArray(json) ? json[0] : {};
-        if (entry && entry.Status === "Success" && Array.isArray(entry.PostOffice)) { offices = entry.PostOffice; status = "ok"; live = true; }
-        else { status = "not_found"; live = true; }
-      } catch { /* offline fallback */ }
-      const first = offices[0] || {};
-      const district = first.District || "", rawBlock = first.Block || first.Taluk || "", state = first.State || "";
-      const block = rawBlock && rawBlock.toUpperCase() !== "NA" ? rawBlock : "";
-      const facs = (D.facilities_default && D.facilities_default.facilities) || [];
-      const counts = {};
-      for (const o of offices) {
-        const hay = `${o.Block || ""} ${o.Taluk || ""} ${o.Name || ""}`.toLowerCase();
-        for (const [alias, canon] of Object.entries(_TALUKA_ALIASES)) {
-          if (hay.includes(alias)) counts[canon] = (counts[canon] || 0) + 1;
-        }
-      }
-      const matched = Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0] || "";
-      const out = {
-        pincode: pin, live, status, provider: "India Post Pincode Directory", district, taluka: matched || block, matched_taluka: matched, state,
-        in_kachchh: ["kachchh", "kutch"].includes(district.toLowerCase()),
-        post_offices: offices.slice(0, 6).map((o) => ({ name: o.Name, branch_type: o.BranchType, block: o.Block, district: o.District })),
-        matching_facilities: facs.filter((f) => matched && f.taluka === matched).slice(0, 4),
-      };
-      if (live) _STATIC_CACHE.pins[pin] = out;
-      return out;
-    }
-
-    if (p === "/api/live/road-distances") {
-      const siteId = u.searchParams.get("site_id") || "little_rann_kutch";
-      const cached = _STATIC_CACHE.roads[siteId];
-      if (cached && (Date.now() - cached.ts) < 21600000) return cached.data;
-      const base = D.facilities_default || { facilities: [], sites: [] };
-      const site = (base.sites || []).find((s) => s.site_id === siteId) || base.selected_site || { site_id: siteId, lat: 23.45, lon: 70.85 };
-      const facs = base.facilities || [];
-      const coords = [[site.lon, site.lat], ...facs.map((f) => [f.longitude, f.latitude])].map(([lo, la]) => `${lo},${la}`).join(";");
-      try {
-        const res = await fetch(`https://router.project-osrm.org/table/v1/driving/${coords}?sources=0&annotations=distance,duration`);
-        const json = await res.json();
-        const dists = (json && json.distances && json.distances[0]) || [];
-        const durs = (json && json.durations && json.durations[0]) || [];
-        if (json && json.code === "Ok" && dists.length > facs.length) {
-          const routes = {};
-          facs.forEach((f, idx) => {
-            routes[f.facility_id] = {
-              road_km: dists[idx + 1] != null ? Number((dists[idx + 1] / 1000).toFixed(1)) : null,
-              duration_min: durs[idx + 1] != null ? Math.max(1, Math.round(durs[idx + 1] / 60)) : null,
-              straight_km: _haversineKm(site.lat, site.lon, f.latitude, f.longitude),
-            };
-          });
-          const out = { live: true, provider: "OSRM OpenStreetMap Driving Router", site_id: siteId, routes };
-          _STATIC_CACHE.roads[siteId] = { ts: Date.now(), data: out };
-          return out;
-        }
-      } catch { /* offline fallback */ }
-      const fallbackRoutes = {};
-      facs.forEach((f) => {
-        fallbackRoutes[f.facility_id] = { road_km: null, duration_min: null, straight_km: _haversineKm(site.lat, site.lon, f.latitude, f.longitude) };
+  // Interactive client-side demo runtime for static GitHub Pages (localStorage + reference.db + live CORS public APIs)
+  if (window.WORKCHECK_STATIC_DATA && window.workcheckDemoApi) {
+    try {
+      return await window.workcheckDemoApi(path, method, options, {
+        ApiError,
+        computeWbgt: _computeWbgt,
+        haversineKm: _haversineKm,
+        nodeView: _staticNodeView,
+        cache: _STATIC_CACHE,
+        talukaAliases: _TALUKA_ALIASES,
       });
-      return {
-        live: false,
-        provider: "Straight-line Haversine estimate (OSRM offline)",
-        site_id: siteId,
-        routes: fallbackRoutes,
-      };
-    }
-
-    // 7. Facilities with full client-side Haversine + disease sorting
-    if (p === "/api/facilities") {
-      const siteId = u.searchParams.get("site_id") || "little_rann_kutch";
-      const taluka = u.searchParams.get("taluka");
-      const disease = u.searchParams.get("disease") || "all";
-      const base = JSON.parse(JSON.stringify(D.facilities_default || { facilities: [], sites: [], diseases: [] }));
-      const site = (base.sites || []).find((s) => s.site_id === siteId) || base.selected_site || { site_id: siteId, lat: 23.45, lon: 70.85 };
-      let list = (base.facilities || []).map((f) => {
-        const dist = _haversineKm(site.lat, site.lon, f.latitude, f.longitude);
-        const silicoOk = f.has_digital_xray && f.has_spirometer, heatOk = f.emergency_108_base, ckdOk = f.has_biochemical_lab,
-          eyeOk = /hospital|medical college|rath/i.test(f.facility_name), noiseOk = f.has_audiometry;
-        let diseaseMatch = true, matchLabel = `${f.facility_tier} • ${f.taluka}`;
-        if (disease === "silicosis") { diseaseMatch = silicoOk; matchLabel = silicoOk ? "★ Silicosis Ready: Digital X-Ray + Spirometer" : "Partial Diagnostic Facility"; }
-        else if (disease === "heatstroke") { diseaseMatch = heatOk; matchLabel = heatOk ? "🚨 108 Base & Rapid Cooling Care" : "No 108 Base Station"; }
-        else if (disease === "ckd") { diseaseMatch = ckdOk; matchLabel = ckdOk ? "💧 Biochemical Lab (Creatinine / Urine)" : "No In-House Blood Lab"; }
-        else if (disease === "eye") { diseaseMatch = eyeOk; matchLabel = eyeOk ? "👁️ Ophthalmic & Slit-Lamp Protocol" : "General Primary Clinic"; }
-        else if (disease === "noise") { diseaseMatch = noiseOk; matchLabel = noiseOk ? "🔊 Audiometric Booth Equipped" : "No Audiometer"; }
-        return { ...f, distance_km: dist, disease_match: diseaseMatch, match_label: matchLabel };
-      });
-      if (taluka && taluka !== "ALL") list = list.filter((f) => f.taluka && f.taluka.toLowerCase() === taluka.toLowerCase());
-      list.sort((a, b) => (disease !== "all" && a.disease_match !== b.disease_match ? (a.disease_match ? -1 : 1) : a.distance_km - b.distance_km));
-      return { ...base, facilities: list, selected_site: site, active_disease: disease };
-    }
-    if (p === "/api/facilities/refer" && method === "POST") {
-      const facId = (options.body && options.body.facility_id) || "";
-      const fac = ((D.facilities_default && D.facilities_default.facilities) || []).find((x) => x.facility_id === facId);
-      return { success: true, facility_name: (fac && fac.facility_name) || facId, message: "Preview note only — nothing was saved or sent to the facility." };
-    }
-
-    // 8. Worker Details & Ephemeral Preview Updates
-    if (p.startsWith("/api/workers/")) {
-      const parts = p.split("/");
-      const wid = decodeURIComponent(parts[3] || "");
-      const getWorkerCopy = () => {
-        if (_STATIC_WORKER_OVERRIDES[wid]) return _STATIC_WORKER_OVERRIDES[wid];
-        const base = D.worker_details && D.worker_details[wid];
-        if (!base) return null;
-        _STATIC_WORKER_OVERRIDES[wid] = JSON.parse(JSON.stringify(base));
-        return _STATIC_WORKER_OVERRIDES[wid];
-      };
-      if (parts.length === 4) return getWorkerCopy() || { worker: null };
-      if (method === "POST") {
-        const wk = getWorkerCopy();
-        const body = options.body || {};
-        if (parts[4] === "symptoms" && parts[6] === "review" && wk && Array.isArray(wk.symptoms)) {
-          const hit = wk.symptoms.find((s) => String(s.id) === String(parts[5]));
-          if (hit) hit.reviewed = true;
-          return { reviewed: true, preview: true, message: "Marked reviewed in preview session (resets on reload)." };
-        }
-        const urgent = body.symptom === "collapse" || (Array.isArray(body.symptoms) && body.symptoms.includes("collapse"));
-        if (parts[4] === "symptoms" && wk && Array.isArray(wk.symptoms)) {
-          const items = Array.isArray(body.symptoms) ? body.symptoms : [body.symptom || body.text || "symptom"];
-          items.forEach((txt, idx) => wk.symptoms.unshift({ id: `prev-${Date.now()}-${idx}`, text: String(txt), at: new Date().toISOString().slice(0, 10), urgent: Boolean(urgent), reviewed: false }));
-        }
-        return { saved: true, preview: true, urgent, message: urgent ? "Emergency 108 instructions opened (read-only preview)." : "Updated in preview session only (resets on reload)." };
+    } catch (err) {
+      if (err && err.status === 401 && path !== "/api/auth/login" && path !== "/api/auth/me" && path !== "/api/auth/options") {
+        S.user = null;
+        renderLogin();
       }
-      return { worker: null };
+      throw err;
     }
-
-    if (p === "/api/me/today") return D.me_today;
-    if (p === "/api/me/export") {
-      return { exported_at: new Date().toISOString(), preview: true, note: "Sample synthetic account export (no real PII held in preview).", profile: S.user };
-    }
-    if (p === "/api/evidence") return D.evidence;
-    if (p === "/api/storage") return { status: "ready", label: "Static GitHub Pages Preview" };
-
-    if (method !== "GET") throw new ApiError(403, READ_ONLY_MESSAGE);
   }
 
   throw new ApiError(404, "Endpoint not found");
@@ -572,7 +311,7 @@ async function openLegalModal(kind) {
       <p style="margin:0 0 12px"><b>Data Scope:</b> ${esc(n.data_minimisation)}</p>
       <ul style="margin:0 0 14px 18px;font-size:13.5px;color:var(--ink-2)">${(n.rights || []).map((r) => `<li style="margin-bottom:4px">${esc(r)}</li>`).join("")}</ul>
       <div style="display:flex;gap:8px;flex-wrap:wrap">
-        ${S.user && !isPreview() ? `<button type="button" class="btn btn-ink btn-sm" id="priv-consent-btn">Record Consent</button>` : ""}
+        ${S.user ? `<button type="button" class="btn btn-ink btn-sm" id="priv-consent-btn">Record Consent</button>` : ""}
         ${S.user ? `<button type="button" class="btn btn-ghost btn-sm" id="priv-export-btn">${ic("download", 14, 2)} Export My Data (JSON)</button>` : ""}
       </div>`, "Privacy & DPDP Notice");
     const cBtn = $("#priv-consent-btn");
