@@ -89,6 +89,60 @@ const WOKWI_PARTS = [
   },
 ];
 
+function wokwiDiagram() {
+  // Plain picture of the two-way link: node -> internet -> dashboard, and back.
+  return `<section class="card wk-diagram">
+    <div class="card-head"><div><h2>How it works</h2><p class="sub">The test node sends its readings to the website every few seconds. The website can send test values back, and the node uses them straight away. That is the cross-connection.</p></div></div>
+    <svg class="wk-svg" viewBox="0 0 840 300" role="img" aria-label="The site node sends readings to the WorkCheck website over the internet, and the website sends test values back to the node.">
+      <defs>
+        <marker id="wk-ar-out" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="var(--accent)"/></marker>
+        <marker id="wk-ar-in" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="var(--due)"/></marker>
+      </defs>
+
+      <!-- Site node -->
+      <g>
+        <rect x="26" y="78" width="214" height="150" rx="18" fill="var(--app)" stroke="var(--line-2)"/>
+        <text x="133" y="102" text-anchor="middle" class="wk-t-h">Site node</text>
+        <text x="133" y="119" text-anchor="middle" class="wk-t-s">ESP32, at the worksite</text>
+        <g class="wk-chip"><rect x="46" y="132" width="84" height="26" rx="13"/><text x="88" y="149" text-anchor="middle">Heat</text></g>
+        <g class="wk-chip"><rect x="136" y="132" width="84" height="26" rx="13"/><text x="178" y="149" text-anchor="middle">Dust</text></g>
+        <g class="wk-chip"><rect x="46" y="164" width="84" height="26" rx="13"/><text x="88" y="181" text-anchor="middle">Sun</text></g>
+        <g class="wk-chip"><rect x="136" y="164" width="84" height="26" rx="13"/><text x="178" y="181" text-anchor="middle">Noise</text></g>
+        <rect x="46" y="198" width="140" height="22" rx="6" fill="var(--ink)"/>
+        <text x="56" y="213" class="wk-screen">WBGT 24.5 C  OK</text>
+        <circle cx="210" cy="209" r="9" fill="var(--clear)"/>
+      </g>
+
+      <!-- Internet in the middle -->
+      <g transform="translate(420 150)">
+        <path d="M-20 6a20 20 0 0 1 40 0" fill="none" stroke="var(--ink-3)" stroke-width="3" stroke-linecap="round"/>
+        <path d="M-12 1a12 12 0 0 1 24 0" fill="none" stroke="var(--ink-3)" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="0" cy="8" r="3" fill="var(--ink-3)"/>
+        <text x="0" y="34" text-anchor="middle" class="wk-t-s">Internet</text>
+      </g>
+
+      <!-- Dashboard -->
+      <g>
+        <rect x="600" y="78" width="214" height="150" rx="18" fill="var(--app)" stroke="var(--line-2)"/>
+        <text x="707" y="102" text-anchor="middle" class="wk-t-h">WorkCheck website</text>
+        <text x="707" y="119" text-anchor="middle" class="wk-t-s">What the supervisor sees</text>
+        <path d="M662 190a45 45 0 0 1 90 0" fill="none" stroke="var(--line-2)" stroke-width="8" stroke-linecap="round"/>
+        <path d="M662 190a45 45 0 0 1 66 -39" fill="none" stroke="var(--accent)" stroke-width="8" stroke-linecap="round"/>
+        <text x="707" y="188" text-anchor="middle" class="wk-t-big">24.5&#176;</text>
+        <text x="707" y="214" text-anchor="middle" class="wk-t-s">Heat index now</text>
+      </g>
+
+      <!-- Readings out: node to website -->
+      <path d="M248 120 C 360 86, 500 86, 592 120" fill="none" stroke="var(--accent)" stroke-width="3" marker-end="url(#wk-ar-out)"/>
+      <text x="420" y="78" text-anchor="middle" class="wk-lbl" fill="var(--accent)">Readings go out</text>
+
+      <!-- Controls back: website to node -->
+      <path d="M592 198 C 480 232, 360 232, 248 198" fill="none" stroke="var(--due)" stroke-width="3" stroke-dasharray="7 5" marker-end="url(#wk-ar-in)"/>
+      <text x="420" y="258" text-anchor="middle" class="wk-lbl" fill="var(--due)">Slider values come back</text>
+    </svg>
+  </section>`;
+}
+
 VIEWS.wokwi = async () => {
   const [state, jobs] = await Promise.all([api("/api/node/state"), api("/api/heat/jobs")]);
   if (S.page !== "wokwi") return;
@@ -112,6 +166,11 @@ VIEWS.wokwi = async () => {
         </a>
       </div>
     </header>
+
+    ${wokwiDiagram()}
+
+    <!-- Website to device: sliders here change what the real Wokwi sketch shows -->
+    <section class="card" id="wokwi-controls" style="margin-bottom:24px;"></section>
 
     <!-- Windowed Interactive Simulation -->
     <section class="card" style="padding:0;overflow:hidden;margin-bottom:24px;">
@@ -245,7 +304,7 @@ VIEWS.wokwi = async () => {
       </div>
       <div style="display:flex;flex-direction:column;gap:14px;">
         ${WOKWI_PARTS.map((p) => `
-          <div style="display:grid;grid-template-columns:220px 180px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--line);align-items:start;">
+          <div class="wk-part-row">
             <div>
               <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
                 <span class="round xs bg-${p.tone} t-${p.tone}">${ic(p.icon, 14, 2)}</span>
@@ -268,6 +327,8 @@ VIEWS.wokwi = async () => {
           </div>`).join("")}
       </div>
     </section>`;
+
+  mountDeviceControls($("#wokwi-controls")).then((stop) => onCleanup(stop));
 
   // Helper to update live console meters
   const updateConsole = (r) => {
@@ -295,7 +356,7 @@ VIEWS.wokwi = async () => {
 
     if (lampBadge) {
       lampBadge.className = `pill ${lampCode === "RED_FLASH" || lampCode === "RED" ? "action" : lampCode === "ORANGE" || lampCode === "YELLOW" ? "due" : "clear"} sm`;
-      lampBadge.innerHTML = `${lamp(lampCode)} ${lampCode}`;
+      lampBadge.innerHTML = `${lamp(lampCode)} ${esc(lampCode)}`;
     }
     if (actionText) {
       actionText.textContent = advice;
@@ -310,10 +371,6 @@ VIEWS.wokwi = async () => {
 
   // Telemetry sender with scenario values
   const sendPacket = async (scenario = "normal") => {
-    if (window.WORKCHECK_STATIC_DATA) {
-      toast(READ_ONLY_MESSAGE, "watch");
-      return;
-    }
     let tAir = 28.0, rh = 52.0, tGlobe = 32.0, pm10 = 35.0, uv = 4.2, noise = 68.0;
 
     if (scenario === "heat") {
@@ -348,7 +405,7 @@ VIEWS.wokwi = async () => {
     }
 
     const payload = {
-      device_id: "wokwi-node-01",
+      device_id: "browser-stream-01",
       site_id: "kandla_port",
       source: "wokwi_simulated",
       ambient_temp_c: Math.round(tAir * 10) / 10,
@@ -360,17 +417,11 @@ VIEWS.wokwi = async () => {
       noise_dba: Math.round(noise * 10) / 10,
     };
 
-    const res = await fetch("/api/v1/telemetry", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "X-API-Key": "demo-device-key" },
-      body: JSON.stringify(payload),
-    });
-
-    if (res.ok) {
-      const next = await api("/api/node/state").catch(() => null);
-      if (next && next.latest) {
-        updateConsole(next.latest);
-      }
+    try {
+      const r = await api("/api/node/simulate", { method: "POST", body: payload });
+      updateConsole(r);
+    } catch (err) {
+      toast(err.message || "Could not simulate packet.", "action");
     }
   };
 

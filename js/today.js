@@ -59,7 +59,7 @@ async function renderDistrict(o, node, jobs) {
   const bands = ["#EEF0F8", "#D6DBFB", "#AEB7F8", "#7E8CF4", "#4656E6"];
   const byName = Object.fromEntries(o.talukas.map((t) => [t.taluka, t]));
   $("#view").innerHTML = `<header class="page-head"><div><h1>${greeting()}, ${esc(S.user.name)}</h1><p class="lead"><b>${o.levels.action + o.levels.due} of ${o.total}</b> test workers have follow-up waiting. You see totals only, no names.</p></div>
-      <div class="head-actions">${fictional()}<a class="btn btn-ink" href="/api/export/district.csv">${ic("download", 18, 2)}Export</a></div></header>
+      <div class="head-actions">${fictional()}<a class="btn btn-ink" id="ddo-export" href="/api/export/district.csv">${ic("download", 18, 2)}Export</a></div></header>
     <div class="rail-grid">
       <div class="col">
         ${levelTiles(o, false)}
@@ -84,4 +84,18 @@ async function renderDistrict(o, node, jobs) {
     p.setAttribute("data-tip-custom", "1");
   });
   await mountYearChart($("#year-card"), jobs.jobs);
+  const exp = $("#ddo-export");
+  if (exp && isPreview()) {
+    exp.addEventListener("click", (e) => {
+      e.preventDefault();
+      const lines = ["taluka,tracked,needs_action,check_due,note"];
+      o.talukas.forEach((r) => lines.push([r.taluka, r.tracked, r.action, r.due, "Fictional test data; counts under 5 are hidden"].map(_csvCell).join(",")));
+      const blob = new Blob([lines.join("\n") + "\n"], { type: "text/csv;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url; a.download = "workcheck_district_summary.csv"; a.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1500);
+      toast("Exported district summary CSV.", "good");
+    });
+  }
 }

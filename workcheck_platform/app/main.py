@@ -1,44 +1,39 @@
 """WorkCheck Kachchh platform: login, storage, plain-language risk views and device connection.
 
-Reference data is read-only (data/reference.db). Everything users create goes in data/runtime.db.
+Shared storage, sessions and settings live in app/core.py. Organisations and onboarding in app/orgs.py.
+Daily logs, incidents, medical checks, referrals, training and site checks in app/trackers.py.
 Run: python3 -m uvicorn app.main:app --port 8090
 """
 import csv
 import hashlib
 import hmac
 import io
+import logging
 import math
 import os
-import secrets
-import sqlite3
 from collections import Counter
-from datetime import date, datetime, timedelta, timezone
+from datetime import date, datetime, timedelta
 from functools import lru_cache
-from pathlib import Path
-from typing import Dict, List, Literal, Optional
+from typing import List, Literal, Optional
 
 import httpx
 from fastapi import Depends, FastAPI, Header, HTTPException, Query, Request, Response
 from fastapi.responses import FileResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
+from starlette.middleware.trustedhost import TrustedHostMiddleware
 
-ROOT = Path(__file__).resolve().parent.parent
-REFERENCE_DB = ROOT / "data" / "reference.db"
-COOKIE = "wc_session"
-SESSION_HOURS = 8
-MAX_FAILED = 5
-LOCK_MINUTES = 5
+from .core import (ALLOWED_HOSTS, CONSENT_VERSION, COOKIE, DEMO, DEMO_ORG, DEMO_USERS, ENV, HTTPS, LOCK_MINUTES, MAX_FAILED, ROOT, Login, current_user, db, device_key_secret,
+                   hash_password, log_action, normalise_identity, now, open_session, password_ok, public_user, ref, require, set_cookie)
+from .live import csv_safe, fetch_live_environment, fetch_pincode_info, safe_forward_url
+from .security import LOGIN_LIMIT, CsrfCheck, SecurityHeaders, limit
+
+log = logging.getLogger("workcheck")
+
 PM10_FLAG = 100.0
 HIGH_UV = 8.0
 WEEK_LIMIT = 55.0
 LABEL = "Fictional test workers on model and outside data. Not Kachchh health records."
-DEMO_USERS = [
-    ("ddo@workcheck.demo", "Demo-DDO-2026", "ddo", "District Office", None),
-    ("clinic@workcheck.demo", "Demo-Clinic-2026", "clinician", "Clinic Team", None),
-    ("site@workcheck.demo", "Demo-Site-2026", "supervisor", "Site Supervisor", None),
-    ("worker@workcheck.demo", "Demo-Worker-2026", "worker", "Kishan P.", "SIM-B"),
-]
 
 # Plain-language vocabulary. The dataset keeps its technical names; people see these.
 AREAS = {
@@ -149,101 +144,33 @@ def load_facilities():
                 })
     return records
 
-app = FastAPI(title="WorkCheck Kachchh", version="2.0", docs_url="/api/docs", redoc_url=None, openapi_url="/api/openapi.json")
+production = ENV == "production"
+if production:
+    if not ALLOWED_HOSTS:
+        log.warning("WC_ENV=production set without WC_ALLOWED_HOSTS; Host header allowlist is inactive.")
+    if not HTTPS:
+        log.warning("WC_ENV=production set without WC_HTTPS=1; session cookies will not carry Secure flag.")
+    if device_key_secret() is None:
+        log.warning("WC_ENV=production set without non-default WC_DEVICE_KEY; device telemetry endpoints will fail closed with 503.")
+app = FastAPI(title="WorkCheck Kachchh", version="3.1", docs_url=None if production else "/api/docs", redoc_url=None, openapi_url=None if production else "/api/openapi.json")
+app.add_middleware(SecurityHeaders)
+app.add_middleware(CsrfCheck)
+if ALLOWED_HOSTS:
+    app.add_middleware(TrustedHostMiddleware, allowed_hosts=ALLOWED_HOSTS)
+
+
+@app.get("/api/auth/options")
+def auth_options():
+    return {"demo": DEMO, "env": ENV, "consent_version": CONSENT_VERSION}
 
 
 # ---------------------------------------------------------------------------
-# Storage
+# Sign in
 # ---------------------------------------------------------------------------
-class Connection(sqlite3.Connection):
-    """Commits on success, rolls back on error, and always closes when a with-block ends."""
-
-    def __exit__(self, *args):
-        result = super().__exit__(*args)
-        self.close()
-        return result
-
-
-def ref():
-    con = sqlite3.connect(f"file:{REFERENCE_DB}?mode=ro", uri=True, factory=Connection)
-    con.row_factory = sqlite3.Row
-    return con
-
-
-def runtime_path():
-    return Path(os.environ.get("WC_RUNTIME_DB", ROOT / "data" / "runtime.db"))
-
-
-def now():
-    return datetime.now(timezone.utc)
-
-
-def hash_password(password, salt=None):
-    salt = salt or secrets.token_bytes(16)
-    return salt.hex() + "$" + hashlib.scrypt(password.encode(), salt=salt, n=2 ** 14, r=8, p=1, dklen=32).hex()
-
-
-def password_ok(password, stored):
-    salt, _ = stored.split("$")
-    return hmac.compare_digest(hash_password(password, bytes.fromhex(salt)), stored)
-
-
-def db():
-    con = sqlite3.connect(runtime_path(), factory=Connection)
-    con.row_factory = sqlite3.Row
-    con.execute("PRAGMA foreign_keys = ON")
-    con.executescript("""
-    CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, email TEXT UNIQUE NOT NULL, password_hash TEXT NOT NULL, role TEXT NOT NULL, display_name TEXT NOT NULL, worker_id TEXT, failed_logins INTEGER NOT NULL DEFAULT 0, locked_until TEXT);
-    CREATE TABLE IF NOT EXISTS sessions (token_hash TEXT PRIMARY KEY, user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE, expires_at TEXT NOT NULL);
-    CREATE TABLE IF NOT EXISTS access_log (id INTEGER PRIMARY KEY, at TEXT NOT NULL, user_id INTEGER NOT NULL, action TEXT NOT NULL, worker_id TEXT);
-    CREATE TABLE IF NOT EXISTS condition_updates (id INTEGER PRIMARY KEY, at TEXT NOT NULL, user_id INTEGER NOT NULL, worker_id TEXT NOT NULL, condition TEXT NOT NULL, status TEXT NOT NULL, note TEXT);
-    CREATE TABLE IF NOT EXISTS symptom_reports (id INTEGER PRIMARY KEY, at TEXT NOT NULL, user_id INTEGER NOT NULL, worker_id TEXT NOT NULL, symptom TEXT NOT NULL, urgent INTEGER NOT NULL, reviewed_at TEXT);
-    CREATE TABLE IF NOT EXISTS readings (id INTEGER PRIMARY KEY, at TEXT NOT NULL, device_id TEXT NOT NULL, site_id TEXT NOT NULL, job_id TEXT, source TEXT NOT NULL, ambient_temp_c REAL NOT NULL, relative_humidity_pct REAL NOT NULL, globe_temp_c REAL, natural_wet_bulb_c REAL, pm2_5_ug_m3 REAL, pm10_0_ug_m3 REAL, uv_index REAL, noise_dba REAL, wbgt_c REAL NOT NULL, wbgt_method TEXT NOT NULL, forward_status TEXT);
-    CREATE TABLE IF NOT EXISTS checkins (id INTEGER PRIMARY KEY, at TEXT NOT NULL, worker_id TEXT NOT NULL, device_id TEXT NOT NULL, site_id TEXT NOT NULL, event TEXT NOT NULL);
-    """)
-    if "reviewed_at" not in {r["name"] for r in con.execute("PRAGMA table_info(symptom_reports)")}:
-        con.execute("ALTER TABLE symptom_reports ADD COLUMN reviewed_at TEXT")
-    if con.execute("SELECT COUNT(*) FROM users").fetchone()[0] == 0:
-        for email, password, role, name, worker in DEMO_USERS:
-            con.execute("INSERT INTO users (email, password_hash, role, display_name, worker_id) VALUES (?,?,?,?,?)", (email, hash_password(password), role, name, worker))
-        con.commit()
-    return con
-
-
-# ---------------------------------------------------------------------------
-# Login
-# ---------------------------------------------------------------------------
-class Login(BaseModel):
-    email: str = Field(min_length=3, max_length=120)
-    password: str = Field(min_length=1, max_length=200)
-
-
-def current_user(request: Request):
-    token = request.cookies.get(COOKIE)
-    if not token:
-        raise HTTPException(401, "Please sign in.")
-    with db() as con:
-        row = con.execute("SELECT u.*, s.expires_at FROM sessions s JOIN users u ON u.id = s.user_id WHERE s.token_hash = ?", (hashlib.sha256(token.encode()).hexdigest(),)).fetchone()
-    if row is None or row["expires_at"] < now().isoformat():
-        raise HTTPException(401, "Your session has ended. Please sign in again.")
-    return dict(row)
-
-
-def require(*roles):
-    def check(user=Depends(current_user)):
-        if user["role"] not in roles:
-            raise HTTPException(403, "Your role cannot open this information.")
-        return user
-    return check
-
-
-def public_user(user):
-    return {"email": user["email"], "role": user["role"], "name": user["display_name"], "worker_id": user["worker_id"]}
-
-
 @app.post("/api/auth/login")
-def login(payload: Login, response: Response):
-    email = payload.email.strip().lower()
+def login(payload: Login, request: Request, response: Response):
+    limit(LOGIN_LIMIT, request, "sign-in attempts")
+    email = normalise_identity(payload.email)
     with db() as con:
         user = con.execute("SELECT * FROM users WHERE email = ?", (email,)).fetchone()
         if user is not None and user["locked_until"] and user["locked_until"] > now().isoformat():
@@ -255,13 +182,11 @@ def login(payload: Login, response: Response):
                 con.execute("UPDATE users SET failed_logins = ?, locked_until = ? WHERE id = ?", (0 if locked else failed, locked, user["id"]))
                 con.commit()  # The exception below would otherwise roll this back.
             raise HTTPException(401, "That email or password is not right.")
-        token = secrets.token_urlsafe(32)
-        con.execute("DELETE FROM sessions WHERE expires_at < ?", (now().isoformat(),))
-        con.execute("INSERT INTO sessions VALUES (?,?,?)", (hashlib.sha256(token.encode()).hexdigest(), user["id"], (now() + timedelta(hours=SESSION_HOURS)).isoformat()))
+        token = open_session(con, user["id"])
         con.execute("UPDATE users SET failed_logins = 0, locked_until = NULL WHERE id = ?", (user["id"],))
-        con.execute("INSERT INTO access_log (at, user_id, action) VALUES (?,?,?)", (now().isoformat(), user["id"], "login"))
-        response.set_cookie(COOKIE, token, httponly=True, samesite="strict", secure=os.environ.get("WC_SECURE_COOKIE") == "1", max_age=SESSION_HOURS * 3600, path="/")
-        return public_user(dict(user))
+        log_action(con, user["id"], "login")
+        set_cookie(response, token)
+        return public_user(dict(user), con)
 
 
 @app.post("/api/auth/logout")
@@ -277,6 +202,28 @@ def logout(request: Request, response: Response):
 @app.get("/api/auth/me")
 def me(user=Depends(current_user)):
     return public_user(user)
+
+
+class PasswordChange(BaseModel):
+    current: str = Field(min_length=1, max_length=200)
+    new: str = Field(min_length=1, max_length=200)
+
+
+@app.post("/api/auth/password")
+def change_password(payload: PasswordChange, request: Request, response: Response, user=Depends(current_user)):
+    from .core import password_problem
+    if not password_ok(payload.current, user["password_hash"]):
+        raise HTTPException(401, "Your current password is not right.")
+    problem = password_problem(payload.new, user["email"])
+    if problem:
+        raise HTTPException(400, problem)
+    with db() as con:
+        con.execute("UPDATE users SET password_hash = ? WHERE id = ?", (hash_password(payload.new), user["id"]))
+        con.execute("DELETE FROM sessions WHERE user_id = ?", (user["id"],))  # Every other device is signed out.
+        token = open_session(con, user["id"])
+        log_action(con, user["id"], "password_change")
+    set_cookie(response, token)
+    return {"ok": True, "message": "Password changed. Other devices were signed out."}
 
 
 # ---------------------------------------------------------------------------
@@ -453,6 +400,13 @@ def suppress(value):
 @app.get("/api/overview")
 def overview(user=Depends(require("ddo", "clinician", "supervisor"))):
     R = reference()
+    if not is_demo_org(user):
+        from .trackers import org_cards
+        with db() as con:
+            cards = org_cards(user["org_id"], con)
+        levels = Counter(c["level"] for c in cards)
+        cards.sort(key=lambda c: (not c["urgent"], TONE_ORDER[c["level"]], c["name"]))
+        return {"total": len(cards), "levels": {k: levels.get(k, 0) for k in ("action", "due", "watch", "clear")}, "first": cards[:6] if user["role"] == "clinician" else [], "checks": [], "talukas": [], "legal": {"total": 0, "done": 0}, "readings": 0, "label": "Workers who joined with an invite code."}
     levels = Counter()
     taluka = {}
     areas = {k: {"key": k, "label": v["label"], "icon": v["icon"], "missed": 0, "due": 0, "done": 0} for k, v in AREAS.items()}
@@ -504,22 +458,36 @@ def workers(search: str = "", level: str = "", user=Depends(require("clinician")
     term = search.strip().lower()
     out, counts = [], Counter()
     with db() as con:
-        for wid in R["workers"]:
-            card = worker_card(wid, con)
-            if term and term not in f"{wid} {card['name']} {card['job']} {card['place']} {card['taluka']} {card['employer']}".lower():
+        if is_demo_org(user):
+            cards = [worker_card(wid, con) for wid in R["workers"]]
+        else:
+            from .trackers import org_cards
+            cards = org_cards(user["org_id"], con)
+        for card in cards:
+            if term and term not in f"{card['id']} {card['name']} {card['job']} {card['place']} {card['taluka']} {card['employer']}".lower():
                 continue
             counts[card["level"]] += 1
             if level and card["level"] != level:
                 continue
             out.append(card)
     out.sort(key=lambda c: (not c["urgent"], TONE_ORDER[c["level"]], -c["more"], c["name"]))
-    return {"workers": out, "counts": {k: counts.get(k, 0) for k in ("action", "due", "watch", "clear")}, "all": sum(counts.values()), "label": LABEL}
+    return {"workers": out, "counts": {k: counts.get(k, 0) for k in ("action", "due", "watch", "clear")}, "all": sum(counts.values()), "label": LABEL if is_demo_org(user) else "Workers who joined with an invite code."}
 
 
 def can_open(user, worker_id):
     if user["role"] == "clinician":
-        return True
+        from .orgs import worker_belongs
+        with db() as con:
+            return worker_belongs(worker_id, user["org_id"] or 0, con)
     return user["role"] == "worker" and user["worker_id"] == worker_id
+
+
+def is_demo_org(user):
+    return (user.get("org_id") or DEMO_ORG) == DEMO_ORG
+
+
+def known_worker(worker_id, con):
+    return worker_id in reference()["workers"] or con.execute("SELECT 1 FROM org_workers WHERE id = ?", (worker_id,)).fetchone() is not None
 
 
 def exposure_summary(days):
@@ -618,10 +586,17 @@ def next_step(state, name):
 @app.get("/api/workers/{worker_id}")
 def passport(worker_id: str, user=Depends(current_user)):
     R = reference()
-    if worker_id not in R["workers"]:
-        raise HTTPException(404, "No such worker.")
     if not can_open(user, worker_id):
         raise HTTPException(403, "Your role cannot open individual health records.")
+    if worker_id not in R["workers"]:
+        from .trackers import org_passport
+        with db() as con:
+            if con.execute("SELECT 1 FROM org_workers WHERE id = ?", (worker_id,)).fetchone() is None:
+                raise HTTPException(404, "No such worker.")
+            log_action(con, user["id"], "open_record", worker_id)
+            out = org_passport(worker_id, user, con)
+            out["checkin_hours_week"] = worker_checkin_hours(worker_id, con)
+            return out
     with ref() as rc:
         days = [dict(r) for r in rc.execute("SELECT shift_date, allowed_work_hours, noise_dose_pct, uv_peak_index, shift_duration_hours, silica_cum_p75_mg_m3_yr p75, silica_cum_p90_mg_m3_yr p90 FROM sim_daily_exposure WHERE worker_id = ? ORDER BY shift_date", (worker_id,))]
     w = R["workers"][worker_id]
@@ -630,7 +605,8 @@ def passport(worker_id: str, user=Depends(current_user)):
         conditions = merged_conditions(worker_id, con)
         state = worker_state(worker_id, con)
         card = worker_card(worker_id, con)
-        symptoms = [{"id": r["id"], "at": r["at"], "text": SYMPTOMS[r["symptom"]][0], "area": SYMPTOMS[r["symptom"]][1], "urgent": bool(r["urgent"]), "reviewed": bool(r["reviewed_at"])} for r in con.execute("SELECT * FROM symptom_reports WHERE worker_id = ? ORDER BY id DESC LIMIT 12", (worker_id,))]
+        checkin_week = worker_checkin_hours(worker_id, con)
+        symptoms = [{"id": r["id"], "at": r["at"], "text": SYMPTOMS[r["symptom"]][0], "area": SYMPTOMS[r["symptom"]][1], "urgent": bool(r["urgent"]), "reviewed": bool(r["reviewed_at"])} for r in con.execute("SELECT * FROM symptom_reports WHERE worker_id = ? AND org_id = ? ORDER BY id DESC LIMIT 12", (worker_id, user.get("org_id") or DEMO_ORG))]
         updates = [{"at": r["at"], "text": f"{CHECK_NAMES.get(r['condition'], r['condition'])}: {STATUS.get(r['status'], ('', r['status']))[1].lower()}", "note": r["note"]} for r in con.execute("SELECT * FROM condition_updates WHERE worker_id = ? ORDER BY id DESC LIMIT 12", (worker_id,))]
         opened = con.execute("SELECT COUNT(*) FROM access_log WHERE worker_id = ? AND action = 'open_record'", (worker_id,)).fetchone()[0]
     areas = area_summary(conditions)
@@ -645,6 +621,7 @@ def passport(worker_id: str, user=Depends(current_user)):
     rule = w["legal_rule_applying"]
     statutory = f"{rule} applies to this test record." if rule else "No yearly legal exam rule applies to this test record."
     return {"card": card, "silica_range": silica_range, "safe_heat_hours": safe_heat, "statutory_text": statutory,
+            "checkin_hours_week": checkin_week,
             "state": {"level": state["level"], "reasons": [r["text"] for r in state["reasons"]]}, "next": next_step(state, card["name"]), "legal_rule": w["legal_rule_applying"] or None, "entered_via": w["entered_record_via"], "areas": areas, "open_checks": open_checks, "other_checks": other_checks,
             "tracker": care_tracker(worker_id), "places": [{"job": a["job"], "icon": a["icon"], "place": a["place"], "start": a["start_date"], "end": a["end_date"]} for a in R["assignments"][worker_id]], "exposure": exposure, "history": friendly_history(worker_id), "symptoms": symptoms, "updates": updates, "times_opened": opened, "label": LABEL}
 
@@ -660,6 +637,8 @@ def update_condition(worker_id: str, payload: ConditionUpdate, user=Depends(requ
     R = reference()
     if worker_id not in R["workers"]:
         raise HTTPException(404, "No such worker.")
+    if not can_open(user, worker_id):
+        raise HTTPException(403, "That worker is not in your organisation.")
     if payload.condition not in R["conditions"].get(worker_id, {}):
         raise HTTPException(400, "Unknown condition for this worker.")
     with db() as con:
@@ -674,18 +653,22 @@ class Symptom(BaseModel):
 
 @app.post("/api/workers/{worker_id}/symptoms")
 def report_symptom(worker_id: str, payload: Symptom, user=Depends(current_user)):
-    if worker_id not in reference()["workers"] or not can_open(user, worker_id):
-        raise HTTPException(403, "You can only report for your own record.")
-    urgent = payload.symptom == "collapse"
     with db() as con:
-        con.execute("INSERT INTO symptom_reports (at, user_id, worker_id, symptom, urgent) VALUES (?,?,?,?,?)", (now().isoformat(), user["id"], worker_id, payload.symptom, int(urgent)))
+        if not known_worker(worker_id, con) or not can_open(user, worker_id):
+            raise HTTPException(403, "You can only report for your own record.")
+        urgent = payload.symptom == "collapse"
+        org_id = user.get("org_id") or DEMO_ORG
+        con.execute("INSERT INTO symptom_reports (at, user_id, worker_id, symptom, urgent, org_id) VALUES (?,?,?,?,?,?)", (now().isoformat(), user["id"], worker_id, payload.symptom, int(urgent), org_id))
     return {"saved": True, "urgent": urgent, "message": "Call 108 now and start cooling." if urgent else "Saved. The clinic team can see this now."}
 
 
 @app.post("/api/workers/{worker_id}/symptoms/{symptom_id}/review")
 def review_symptom(worker_id: str, symptom_id: int, user=Depends(require("clinician"))):
+    if not can_open(user, worker_id):
+        raise HTTPException(403, "That worker is not in your organisation.")
     with db() as con:
-        cur = con.execute("UPDATE symptom_reports SET reviewed_at = ? WHERE id = ? AND worker_id = ?", (now().isoformat(), symptom_id, worker_id))
+        org_id = user.get("org_id") or DEMO_ORG
+        cur = con.execute("UPDATE symptom_reports SET reviewed_at = ? WHERE id = ? AND worker_id = ? AND org_id = ?", (now().isoformat(), symptom_id, worker_id, org_id))
         if cur.rowcount == 0:
             raise HTTPException(404, "No such report.")
     return {"reviewed": True}
@@ -697,17 +680,18 @@ class SymptomBatch(BaseModel):
 
 @app.post("/api/workers/{worker_id}/symptoms/batch")
 def report_symptoms_batch(worker_id: str, payload: SymptomBatch, user=Depends(current_user)):
-    if worker_id not in reference()["workers"] or not can_open(user, worker_id):
-        raise HTTPException(403, "You can only report for your own record.")
     saved_count = 0
     has_urgent = False
     with db() as con:
+        if not known_worker(worker_id, con) or not can_open(user, worker_id):
+            raise HTTPException(403, "You can only report for your own record.")
+        org_id = user.get("org_id") or DEMO_ORG
         for sym in payload.symptoms:
             urgent = sym == "collapse"
             if urgent:
                 has_urgent = True
-            con.execute("INSERT INTO symptom_reports (at, user_id, worker_id, symptom, urgent) VALUES (?,?,?,?,?)",
-                        (now().isoformat(), user["id"], worker_id, sym, int(urgent)))
+            con.execute("INSERT INTO symptom_reports (at, user_id, worker_id, symptom, urgent, org_id) VALUES (?,?,?,?,?,?)",
+                        (now().isoformat(), user["id"], worker_id, sym, int(urgent), org_id))
             saved_count += 1
     return {
         "saved": True,
@@ -721,7 +705,7 @@ def report_symptoms_batch(worker_id: str, payload: SymptomBatch, user=Depends(cu
 # Healthcare Facilities & Diagnostic Referral Network
 # ---------------------------------------------------------------------------
 @app.get("/api/facilities")
-def health_facilities(site_id: Optional[str] = "little_rann_kutch", taluka: Optional[str] = None, disease: Optional[str] = "all"):
+def health_facilities(site_id: Optional[str] = "little_rann_kutch", taluka: Optional[str] = None, disease: Optional[str] = "all", user=Depends(current_user)):
     facs = load_facilities()
     site = SITE_COORDS.get(site_id, SITE_COORDS["little_rann_kutch"])
     site_lat, site_lon = site["lat"], site["lon"]
@@ -785,7 +769,7 @@ def health_facilities(site_id: Optional[str] = "little_rann_kutch", taluka: Opti
 
 
 class ReferralPayload(BaseModel):
-    worker_id: Optional[str] = "SIM-B"
+    worker_id: Optional[str] = Field(default=None, max_length=64)
     facility_id: str
     disease: Optional[str] = "general"
     notes: Optional[str] = ""
@@ -797,11 +781,19 @@ def route_referral(payload: ReferralPayload, user=Depends(current_user)):
     target = next((f for f in facs if f["facility_id"] == payload.facility_id), None)
     if not target:
         raise HTTPException(404, "Unknown facility_id.")
+    clean_wid = (payload.worker_id or "").strip() or None
+    if clean_wid and clean_wid in {"GENERAL_TRIAGE", "GENERAL", "NONE"}:
+        clean_wid = None
     with db() as con:
-        con.execute(
-            "INSERT INTO access_log (at, user_id, action, worker_id) VALUES (?,?,?,?)",
-            (now().isoformat(), user["id"], f"route_referral:{target['facility_name']}:{payload.disease}", payload.worker_id)
-        )
+        if clean_wid is not None:
+            if not known_worker(clean_wid, con):
+                raise HTTPException(404, "No such worker.")
+            if not can_open(user, clean_wid):
+                raise HTTPException(403, "You can only route referrals for a worker in your organisation.")
+        log_action(con, user["id"], f"route_referral:{target['facility_name']}:{payload.disease}", clean_wid)
+        if user["role"] == "clinician" and clean_wid:
+            con.execute("INSERT INTO referrals (at, org_id, worker_id, facility_id, facility_name, reason, by_user, updated_at) VALUES (?,?,?,?,?,?,?,?)",
+                        (now().isoformat(), user.get("org_id") or DEMO_ORG, clean_wid, target["facility_id"], target["facility_name"], payload.disease or "general", user["id"], now().isoformat()))
     return {
         "success": True,
         "facility_name": target["facility_name"],
@@ -958,13 +950,19 @@ def evidence(user=Depends(current_user)):
                 "sources": [dict(r) for r in rc.execute("SELECT * FROM public_source_register")],
                 "dictionary": [dict(r) for r in rc.execute("SELECT \"table\", rows, data_class, note FROM data_dictionary")],
                 "silica": [dict(r) for r in rc.execute("SELECT * FROM msha_silica_by_commodity_job WHERE job_class = 'All jobs' ORDER BY derived_silica_p90_ug_m3 DESC")],
-                "parameters": [dict(r) for r in rc.execute("SELECT * FROM sensor_parameters")]}
+                "parameters": [dict(r) for r in rc.execute("SELECT * FROM sensor_parameters")],
+                "cpcb_stations": [dict(r) for r in rc.execute("SELECT station, COUNT(*) AS days, ROUND(AVG(\"PM2.5\"), 1) AS pm25_avg, ROUND(AVG(PM10), 1) AS pm10_avg, MIN(t) AS from_date, MAX(t) AS to_date FROM cpcb_gujarat_daily_pm GROUP BY station ORDER BY pm10_avg DESC")],
+                "nfhs5": [dict(r) for r in rc.execute("SELECT number, indicator, nfhs5_pct, nfhs4_pct, note FROM kachchh_nfhs5_health_indicators ORDER BY number")],
+                "msha_noise": [dict(r) for r in rc.execute("SELECT commodity_group, job_class, samples, p50_twa_dba_5db, p90_twa_dba_5db, pct_at_or_over_90_dba FROM msha_noise_by_commodity_job ORDER BY p90_twa_dba_5db DESC")],
+                "plfs_hours": [dict(r) for r in rc.execute("SELECT sector_sex, COUNT(*) AS quarters, ROUND(AVG(casual_labour), 1) AS casual_avg_h, ROUND(AVG(regular_salaried), 1) AS salaried_avg_h, ROUND(AVG(all_workers), 1) AS all_avg_h FROM plfs_gujarat_table41_hours GROUP BY sector_sex ORDER BY all_avg_h DESC")],
+                "lancet_heat": [dict(r) for r in rc.execute("SELECT year, geography_name, ROUND(whl_total / 1000000.0, 2) AS whl_million, whl_per_worker FROM lancet_india_hours_lost WHERE year >= 2015 ORDER BY year DESC LIMIT 12")],
+                "district_facts": [dict(r) for r in rc.execute("SELECT item, value, source, note FROM district_facts")]}
 
 
 @app.get("/api/storage")
 def storage(user=Depends(require("ddo", "supervisor", "clinician"))):
     with db() as con:
-        counts = {t: con.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0] for t in ("users", "sessions", "access_log", "condition_updates", "symptom_reports", "readings", "checkins")}
+        counts = {t: con.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0] for t in ("users", "sessions", "access_log", "condition_updates", "symptom_reports", "readings", "checkins", "organisations", "sites", "invites", "org_workers", "daily_logs", "incidents", "medical_checks", "referrals", "trainings", "site_checks", "device_controls")}
     with ref() as rc:
         tables = rc.execute("SELECT COUNT(*) FROM sqlite_master WHERE type='table'").fetchone()[0]
     return {"runtime": counts, "reference_tables": tables, "engine": "SQLite"}
@@ -977,10 +975,10 @@ def export_district(user=Depends(require("ddo"))):
     writer = csv.writer(buffer)
     writer.writerow(["taluka", "tracked", "needs_action", "check_due", "note"])
     for r in data["talukas"]:
-        writer.writerow([r["taluka"], r["tracked"], r["action"], r["due"], "Fictional test data; counts under 5 are hidden"])
+        writer.writerow([csv_safe(r["taluka"]), csv_safe(r["tracked"]), csv_safe(r["action"]), csv_safe(r["due"]), "Fictional test data; counts under 5 are hidden"])
     with db() as con:
         con.execute("INSERT INTO access_log (at, user_id, action) VALUES (?,?,?)", (now().isoformat(), user["id"], "export_district"))
-    return StreamingResponse(iter([buffer.getvalue()]), media_type="text/csv", headers={"Content-Disposition": "attachment; filename=workcheck_district_summary.csv"})
+    return StreamingResponse(iter([buffer.getvalue()]), media_type="text/csv; charset=utf-8", headers={"Content-Disposition": "attachment; filename=workcheck_district_summary.csv", "X-Content-Type-Options": "nosniff"})
 
 
 # ---------------------------------------------------------------------------
@@ -1036,6 +1034,7 @@ class Telemetry(BaseModel):
     noise_dba: Optional[float] = Field(default=None, ge=20, le=140)
     job_id: Optional[str] = None
     source: str = Field(default="wokwi_simulated", max_length=32)
+    remote_rev: Optional[int] = Field(default=None, ge=0)  # Which set of website test values the device is using, 0 for none.
 
 
 NODE_JOBS = [("Heavy work in sun", "Yard loading, salt raking, construction", "heavy", "forklift"), ("Moderate work in sun", "Plant walk-around", "moderate", "walk"), ("Light work in shade", "Crane or truck cab", "light", "truck")]
@@ -1063,49 +1062,127 @@ def node_view(row):
     return {**dict(row), "site_name": SITE_NAMES.get(row["site_id"], row["site_id"]), "wbgt_c": round(wbgt, 1), "jobs": results, "alerts": alerts}
 
 
-def store_reading(payload: Telemetry):
+def store_reading(payload: Telemetry, org_id: int = DEMO_ORG):
     if payload.job_id and payload.job_id not in reference()["jobs"]:
         raise HTTPException(404, "Unknown job_id.")
     wbgt, method = compute_wbgt(payload.ambient_temp_c, payload.relative_humidity_pct, payload.globe_temp_c, payload.natural_wet_bulb_c)
     status = "not_configured"
-    url = os.environ.get("WC_FORWARD_URL")
-    if url:
-        try:
-            status = f"http_{httpx.post(url, json=payload.model_dump(exclude={'job_id', 'source', 'noise_dba'}), timeout=3).status_code}"
-        except httpx.HTTPError as exc:
-            status = f"failed_{type(exc).__name__}"
+    raw_url = os.environ.get("WC_FORWARD_URL")
+    if raw_url:
+        url = safe_forward_url(raw_url, allow_http_local=(ENV != "production"))
+        if url is None:
+            status = "blocked_url"
+        else:
+            try:
+                status = f"http_{httpx.post(url, json=payload.model_dump(exclude={'job_id', 'source', 'noise_dba', 'remote_rev'}), timeout=3).status_code}"
+            except httpx.HTTPError as exc:
+                status = f"failed_{type(exc).__name__}"
     with db() as con:
-        cur = con.execute("INSERT INTO readings (at, device_id, site_id, job_id, source, ambient_temp_c, relative_humidity_pct, globe_temp_c, natural_wet_bulb_c, pm2_5_ug_m3, pm10_0_ug_m3, uv_index, noise_dba, wbgt_c, wbgt_method, forward_status) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-                          (now().isoformat(), payload.device_id, payload.site_id, payload.job_id, payload.source, payload.ambient_temp_c, payload.relative_humidity_pct, payload.globe_temp_c, payload.natural_wet_bulb_c, payload.pm2_5_ug_m3, payload.pm10_0_ug_m3, payload.uv_index, payload.noise_dba, wbgt, method, status))
+        cur = con.execute("INSERT INTO readings (at, device_id, site_id, job_id, source, ambient_temp_c, relative_humidity_pct, globe_temp_c, natural_wet_bulb_c, pm2_5_ug_m3, pm10_0_ug_m3, uv_index, noise_dba, wbgt_c, wbgt_method, forward_status, org_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                          (now().isoformat(), payload.device_id, payload.site_id, payload.job_id, payload.source, payload.ambient_temp_c, payload.relative_humidity_pct, payload.globe_temp_c, payload.natural_wet_bulb_c, payload.pm2_5_ug_m3, payload.pm10_0_ug_m3, payload.uv_index, payload.noise_dba, wbgt, method, status, org_id))
         con.commit()
         return node_view(con.execute("SELECT * FROM readings WHERE id = ?", (cur.lastrowid,)).fetchone())
 
 
 def device_key(x_api_key: Optional[str] = Header(default=None)):
-    expected = os.environ.get("WC_DEVICE_KEY", "demo-device-key")
+    expected = device_key_secret()
+    if expected is None:
+        raise HTTPException(503, "Device ingestion key is not configured on this server.")
     if not x_api_key or not hmac.compare_digest(x_api_key, expected):
         raise HTTPException(401, "Missing or wrong X-API-Key header.")
 
 
+# ---------------------------------------------------------------------------
+# Website to device: test values a supervisor sets on the website, picked up by the device in each reply.
+# The device swaps them in for its own sensor readings, so the link is shown working in both directions.
+# ---------------------------------------------------------------------------
+CONTROL_DEFAULTS = {"ambient_temp_c": 34.0, "relative_humidity_pct": 45.0, "globe_temp_c": 44.0, "pm10_0_ug_m3": 90.0, "uv_index": 9.0}
+DEFAULT_DEVICE = "wokwi-node-01"
+
+
+class Controls(BaseModel):
+    device_id: str = Field(default=DEFAULT_DEVICE, min_length=1, max_length=64)
+    enabled: bool
+    ambient_temp_c: float = Field(ge=20, le=50)
+    relative_humidity_pct: float = Field(ge=5, le=100)
+    globe_temp_c: float = Field(ge=20, le=70)
+    pm10_0_ug_m3: float = Field(ge=0, le=500)
+    uv_index: float = Field(ge=0, le=14)
+
+
+def controls_row(device_id, con, org_id: Optional[int] = None):
+    import json
+    row = con.execute("SELECT * FROM device_controls WHERE device_id = ?", (device_id,)).fetchone()
+    if row is None:
+        return {"device_id": device_id, "enabled": False, "values": dict(CONTROL_DEFAULTS), "rev": 0, "ack_rev": 0, "ack_at": None, "updated_at": None, "org_id": org_id or DEMO_ORG}
+    if org_id is not None and row["org_id"] != org_id:
+        raise HTTPException(403, "That device belongs to another organisation.")
+    return {"device_id": device_id, "enabled": bool(row["enabled"]), "values": {**CONTROL_DEFAULTS, **json.loads(row["settings"])}, "rev": row["rev"], "ack_rev": row["ack_rev"], "ack_at": row["ack_at"], "updated_at": row["updated_at"], "org_id": row["org_id"]}
+
+
+def controls_view(device_id, con, org_id: Optional[int] = None):
+    c = controls_row(device_id, con, org_id=org_id)
+    last = con.execute("SELECT at FROM readings WHERE device_id = ? AND org_id = ? ORDER BY id DESC LIMIT 1", (device_id, c["org_id"])).fetchone()
+    seen = (now() - datetime.fromisoformat(last["at"])).total_seconds() if last else None
+    acked = c["ack_at"] is not None and c["ack_rev"] == c["rev"]
+    c["device_seen_seconds"] = round(seen) if seen is not None else None
+    c["device_online"] = seen is not None and seen < 60
+    c["confirmed"] = bool(c["enabled"] and acked)
+    c["confirmed_seconds"] = round((now() - datetime.fromisoformat(c["ack_at"])).total_seconds()) if acked else None
+    return c
+
+
+@app.get("/api/node/controls")
+def get_controls(device_id: str = DEFAULT_DEVICE, user=Depends(require("supervisor", "ddo", "clinician"))):
+    org_id = user.get("org_id") or DEMO_ORG
+    with db() as con:
+        return controls_view(device_id, con, org_id=org_id)
+
+
+@app.post("/api/node/controls")
+def set_controls(payload: Controls, user=Depends(require("supervisor", "ddo", "clinician"))):
+    import json
+    org_id = user.get("org_id") or DEMO_ORG
+    values = {k: getattr(payload, k) for k in CONTROL_DEFAULTS}
+    with db() as con:
+        existing = con.execute("SELECT org_id FROM device_controls WHERE device_id = ?", (payload.device_id,)).fetchone()
+        if existing is not None and existing["org_id"] != org_id:
+            raise HTTPException(403, "That device belongs to another organisation.")
+        con.execute("""INSERT INTO device_controls (device_id, org_id, enabled, settings, rev, updated_at, updated_by) VALUES (?,?,?,?,1,?,?)
+                       ON CONFLICT(device_id) DO UPDATE SET enabled=excluded.enabled, settings=excluded.settings, rev=device_controls.rev+1, updated_at=excluded.updated_at, updated_by=excluded.updated_by""",
+                    (payload.device_id, org_id, int(payload.enabled), json.dumps(values), now().isoformat(), user["id"]))
+        con.commit()
+        return controls_view(payload.device_id, con, org_id=org_id)
+
+
 @app.post("/api/v1/telemetry", dependencies=[Depends(device_key)])
 def device_telemetry(payload: Telemetry):
-    view = store_reading(payload)
-    return {"reading_id": view["id"], "wbgt_c": view["wbgt_c"], "wbgt_method": view["wbgt_method"], "lamp": view["jobs"][0]["lamp"], "jobs": view["jobs"], "alerts": view["alerts"]}
+    with db() as con:
+        c = controls_row(payload.device_id, con)
+    org_id = c["org_id"]
+    view = store_reading(payload, org_id=org_id)
+    with db() as con:
+        if payload.remote_rev is not None and payload.remote_rev == c["rev"] and c["rev"] > 0:
+            con.execute("UPDATE device_controls SET ack_rev = ?, ack_at = ? WHERE device_id = ?", (payload.remote_rev, now().isoformat(), payload.device_id))
+    v = c["values"]
+    # Flat r_ keys so a small device can read them without a JSON library.
+    remote = {"r_on": 1 if c["enabled"] else 0, "r_rev": c["rev"], "r_temp": v["ambient_temp_c"], "r_rh": v["relative_humidity_pct"], "r_globe": v["globe_temp_c"], "r_pm10": v["pm10_0_ug_m3"], "r_uv": v["uv_index"]}
+    return {**remote, "reading_id": view["id"], "wbgt_c": view["wbgt_c"], "wbgt_method": view["wbgt_method"], "lamp": view["jobs"][0]["lamp"], "jobs": view["jobs"], "alerts": view["alerts"]}
 
 
 @app.post("/api/node/simulate")
 def simulate(payload: Telemetry, user=Depends(require("supervisor", "ddo", "clinician"))):
     payload.source = "browser_simulator"
     payload.device_id = "browser-node"
-    return store_reading(payload)
+    return store_reading(payload, org_id=user.get("org_id") or DEMO_ORG)
 
 
-def store_replay(location_id, day, hour):
+def store_replay(location_id, day, hour, org_id: int = DEMO_ORG):
     with ref() as rc:
         r = rc.execute("SELECT * FROM location_hourly_2025 WHERE location_id = ? AND time = ?", (location_id, f"{day} {hour:02d}:00:00")).fetchone()
     if r is None:
         raise HTTPException(404, "No model data for that place and time.")
-    view = store_reading(Telemetry(site_id=location_id, device_id="model-replay", ambient_temp_c=r["temperature_2m"], relative_humidity_pct=r["relative_humidity_2m"], pm2_5_ug_m3=r["pm2_5"], pm10_0_ug_m3=r["pm10"], uv_index=r["uv_index"], source="model_replay"))
+    view = store_reading(Telemetry(site_id=location_id, device_id="model-replay", ambient_temp_c=r["temperature_2m"], relative_humidity_pct=r["relative_humidity_2m"], pm2_5_ug_m3=r["pm2_5"], pm10_0_ug_m3=r["pm10"], uv_index=r["uv_index"], source="model_replay"), org_id=org_id)
     # Model sun WBGT comes from the full method; the stored estimate is shade only without a globe.
     with db() as con:
         con.execute("UPDATE readings SET wbgt_c = ?, wbgt_method = ? WHERE id = ?", (r["wbgt_sun"], "Model estimate for sun", view["id"]))
@@ -1115,7 +1192,7 @@ def store_replay(location_id, day, hour):
 
 @app.post("/api/node/replay")
 def replay(location_id: str = "kandla_port", day: str = "2025-05-19", hour: int = Query(default=12, ge=0, le=23), user=Depends(require("supervisor", "ddo", "clinician"))):
-    return {**node_view(store_replay(location_id, day, hour)), "hour": hour, "date": day}
+    return {**node_view(store_replay(location_id, day, hour, org_id=user.get("org_id") or DEMO_ORG)), "hour": hour, "date": day}
 
 
 @app.get("/api/node/day")
@@ -1127,30 +1204,49 @@ def replay_day(location_id: str = "kandla_port", day: str = "2025-05-19", user=D
     return {"location_id": location_id, "place": SITE_NAMES.get(location_id, location_id), "day": day, "hours": rows}
 
 
-def latest_reading():
+def worker_checkin_hours(worker_id: str, con, ref_dt: Optional[datetime] = None) -> float:
+    """Compute matched check-in/out hours during the reference ISO week."""
+    week = (ref_dt or now()).isocalendar()[:2]
+    total, started = 0.0, None
+    for r in con.execute("SELECT event, at FROM checkins WHERE worker_id = ? ORDER BY at", (worker_id,)):
+        t = datetime.fromisoformat(r["at"])
+        if r["event"] == "in":
+            started = t
+        elif started is not None:
+            if t.isocalendar()[:2] == week:
+                total += (t - started).total_seconds() / 3600
+            started = None
+    return round(total, 2)
+
+
+def latest_reading(org_id: int = DEMO_ORG):
     with db() as con:
-        row = con.execute("SELECT * FROM readings ORDER BY id DESC LIMIT 1").fetchone()
+        row = con.execute("SELECT * FROM readings WHERE org_id = ? ORDER BY id DESC LIMIT 1", (org_id,)).fetchone()
     # A fresh install shows a labelled model reading rather than an empty screen.
-    return row if row is not None else store_replay("kandla_port", "2025-05-19", 12)
+    return row if row is not None else store_replay("kandla_port", "2025-05-19", 12, org_id=org_id)
 
 
 @app.get("/api/node/state")
 def node_state(user=Depends(require("supervisor", "ddo", "clinician"))):
-    latest = latest_reading()
+    org_id = user.get("org_id") or DEMO_ORG
+    latest = latest_reading(org_id)
     with db() as con:
-        recent = [dict(r) for r in con.execute("SELECT id, at, device_id, site_id, source, wbgt_c, ambient_temp_c, relative_humidity_pct, pm10_0_ug_m3, uv_index, noise_dba FROM readings ORDER BY id DESC LIMIT 6")]
-        wokwi = con.execute("SELECT at, device_id FROM readings WHERE source = 'wokwi_simulated' ORDER BY id DESC LIMIT 1").fetchone()
+        recent = [dict(r) for r in con.execute("SELECT id, at, device_id, site_id, source, wbgt_c, ambient_temp_c, relative_humidity_pct, pm10_0_ug_m3, uv_index, noise_dba FROM readings WHERE org_id = ? ORDER BY id DESC LIMIT 6", (org_id,))]
+        wokwi = con.execute("SELECT at, device_id FROM readings WHERE source = 'wokwi_simulated' AND org_id = ? ORDER BY id DESC LIMIT 1", (org_id,)).fetchone()
     seconds = (now() - datetime.fromisoformat(wokwi["at"])).total_seconds() if wokwi else None
     return {"latest": node_view(latest), "recent": recent, "wokwi": {"connected": seconds is not None and seconds < 30, "last_seen_seconds": round(seconds) if seconds is not None else None, "device_id": wokwi["device_id"] if wokwi else None}}
 
 
 @app.get("/api/me/today")
 def my_today(user=Depends(require("worker"))):
-    R = reference()
-    mode, _ = job_mode(R["assignments"][user["worker_id"]][-1]["job_id"])
-    view = node_view(latest_reading())
+    from .trackers import worker_job
+    org_id = user.get("org_id") or DEMO_ORG
+    with db() as con:
+        mode, _ = job_mode(worker_job(user["worker_id"], con))
+        checkin_hours = worker_checkin_hours(user["worker_id"], con)
+    view = node_view(latest_reading(org_id))
     job = next(j for j in view["jobs"] if j["workload"] == MODES[mode][0])
-    return {"site": view["site_name"], "source": view["source"], "wbgt_c": job["wbgt_c"], "advice": job, "alerts": view["alerts"]}
+    return {"site": view["site_name"], "site_id": view["site_id"], "source": view["source"], "wbgt_c": job["wbgt_c"], "advice": job, "alerts": view["alerts"], "checkin_hours_week": checkin_hours, "checkin_over_55": checkin_hours >= WEEK_LIMIT}
 
 
 class CheckIn(BaseModel):
@@ -1163,21 +1259,98 @@ class CheckIn(BaseModel):
 
 @app.post("/api/v1/checkin", dependencies=[Depends(device_key)])
 def checkin(item: CheckIn):
-    at = (item.at or now()).isoformat()
+    at_dt = item.at or now()
+    at = at_dt.isoformat()
     with db() as con:
         con.execute("INSERT INTO checkins (at, worker_id, device_id, site_id, event) VALUES (?,?,?,?,?)", (at, item.worker_id, item.device_id, item.site_id, item.event))
-        rows = con.execute("SELECT event, at FROM checkins WHERE worker_id = ? ORDER BY at", (item.worker_id,)).fetchall()
-    week = datetime.fromisoformat(at).isocalendar()[:2]
-    total, started = 0.0, None
-    for r in rows:
-        t = datetime.fromisoformat(r["at"])
-        if r["event"] == "in":
-            started = t
-        elif started is not None:
-            if t.isocalendar()[:2] == week:
-                total += (t - started).total_seconds() / 3600
-            started = None
-    return {"worker_id": item.worker_id, "hours_this_week": round(total, 2), "over_55": total >= WEEK_LIMIT}
+        total = worker_checkin_hours(item.worker_id, con, ref_dt=at_dt)
+    return {"worker_id": item.worker_id, "hours_this_week": total, "over_55": total >= WEEK_LIMIT}
+
+
+# ---------------------------------------------------------------------------
+# Live public APIs (Open-Meteo weather/air quality & India Post pincode) and DPDP privacy
+# ---------------------------------------------------------------------------
+@app.get("/api/live/environment")
+def live_environment(site_id: Optional[str] = None, user=Depends(current_user)):
+    try:
+        return fetch_live_environment(SITE_COORDS, compute_wbgt, ref, site_id=site_id)
+    except KeyError:
+        raise HTTPException(404, "Unknown site_id.")
+
+
+@app.get("/api/live/pincode/{pincode}")
+def live_pincode(pincode: str, user=Depends(current_user)):
+    try:
+        return fetch_pincode_info(pincode, load_facilities())
+    except ValueError as exc:
+        raise HTTPException(400, str(exc))
+
+
+@app.get("/api/privacy/notice")
+def privacy_notice():
+    return {
+        "consent_version": CONSENT_VERSION,
+        "act": "Digital Personal Data Protection Act, 2023 (India)",
+        "controller": "WorkCheck Kachchh Pilot (Academic Research & Workplace Safety Prototype)",
+        "purpose": "Track heat/dust exposure risk, self-reported symptoms, PPE checks, and referral follow-up for consented workers.",
+        "data_minimisation": "Government ABHA/e-Shram APIs and external hospital transmissions are NOT active; sample records use synthetic data unless an organisation explicitly onboarded consented workers.",
+        "rights": [
+            "View and download your stored JSON records anytime via /api/me/export.",
+            "Request correction or account withdrawal from your site coordinator.",
+            "Aggregate district summaries suppress cells below 5 (<5) to protect worker identity.",
+        ],
+    }
+
+
+@app.post("/api/privacy/consent")
+def record_privacy_consent(user=Depends(current_user)):
+    stamp = now().isoformat()
+    with db() as con:
+        con.execute("UPDATE users SET consent_version = ?, consent_at = ? WHERE id = ?", (CONSENT_VERSION, stamp, user["id"]))
+        if user.get("worker_id"):
+            con.execute("UPDATE org_workers SET consent_version = ?, consent_at = ? WHERE id = ?", (CONSENT_VERSION, stamp, user["worker_id"]))
+        log_action(con, user["id"], "consent_accepted")
+    return {"ok": True, "consent_version": CONSENT_VERSION, "consent_at": stamp}
+
+
+@app.get("/api/me/export")
+def export_my_data(user=Depends(current_user)):
+    import json
+    with db() as con:
+        profile = public_user(user, con)
+        wid = user.get("worker_id")
+        export = {
+            "exported_at": now().isoformat(),
+            "consent_version": user.get("consent_version"),
+            "consent_at": user.get("consent_at"),
+            "profile": profile,
+            "access_log": [dict(r) for r in con.execute("SELECT at, action, worker_id FROM access_log WHERE user_id = ? ORDER BY id DESC LIMIT 100", (user["id"],))],
+        }
+        if wid:
+            export["worker_records"] = {
+                "daily_logs": [dict(r) for r in con.execute("SELECT * FROM daily_logs WHERE worker_id = ? ORDER BY day DESC", (wid,))],
+                "symptom_reports": [dict(r) for r in con.execute("SELECT * FROM symptom_reports WHERE worker_id = ? ORDER BY id DESC", (wid,))],
+                "medical_checks": [dict(r) for r in con.execute("SELECT * FROM medical_checks WHERE worker_id = ? ORDER BY done_on DESC", (wid,))],
+                "referrals": [dict(r) for r in con.execute("SELECT * FROM referrals WHERE worker_id = ? ORDER BY at DESC", (wid,))],
+                "trainings": [dict(r) for r in con.execute("SELECT * FROM trainings WHERE worker_id = ? ORDER BY done_on DESC", (wid,))],
+                "checkins": [dict(r) for r in con.execute("SELECT * FROM checkins WHERE worker_id = ? ORDER BY at DESC", (wid,))],
+                "condition_updates": [dict(r) for r in con.execute("SELECT * FROM condition_updates WHERE worker_id = ? ORDER BY id DESC", (wid,))],
+            }
+        log_action(con, user["id"], "export_personal_data")
+    body = json.dumps(export, indent=2, ensure_ascii=False)
+    return StreamingResponse(iter([body]), media_type="application/json; charset=utf-8", headers={"Content-Disposition": "attachment; filename=workcheck_personal_data_export.json", "X-Content-Type-Options": "nosniff"})
+
+
+@lru_cache(maxsize=1)
+def heat_jobs_table():
+    with ref() as rc:
+        return {r["job_id"]: r["allowed_h_apr_oct"] for r in rc.execute("SELECT job_id, allowed_h_apr_oct FROM heat_by_job_2025")}
+
+
+from .orgs import router as orgs_router  # noqa: E402  (routers need the helpers above)
+from .trackers import router as trackers_router  # noqa: E402
+app.include_router(orgs_router)
+app.include_router(trackers_router)
 
 
 # ---------------------------------------------------------------------------
@@ -1190,11 +1363,16 @@ def health():
     return {"status": "ok", "reference_rows": rows}
 
 
+ROOT_STATIC_FILES = {"architecture.html", "favicon.ico", "favicon.svg", "manifest.webmanifest", "robots.txt", "sitemap.xml", "sw.js"}
+
 app.mount("/static", StaticFiles(directory=ROOT / "static"), name="static")
+app.mount("/assets", StaticFiles(directory=ROOT / "static" / "assets"), name="assets")
 
 
 @app.get("/{path:path}", include_in_schema=False)
 def page(path: str):
     if path.startswith("api/"):
         raise HTTPException(404, "Not found.")
+    if path in ROOT_STATIC_FILES and (ROOT / "static" / path).is_file():
+        return FileResponse(ROOT / "static" / path)
     return FileResponse(ROOT / "static" / "index.html")

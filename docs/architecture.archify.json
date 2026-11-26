@@ -10,26 +10,26 @@
       "url": "https://github.com/jaypatel29042008-glitch/WorkCheck-Kachchh-PS000109",
       "provider": "github",
       "link_mode": "web",
-      "revision": "7660787906a473d6027422b8cd932882b7ed291a"
+      "revision": "474b9be7146aae2030d15b029ec8ce5d5d0d5779"
     },
     "views": [
       {
         "id": "live-loop",
-        "label": "Full-stack live loop",
-        "focus": ["users", "web_spa", "auth_guard", "fastapi_app", "runtime_db", "ref_db"],
-        "note": "Trace role-based web sessions through FastAPI to runtime writes and read-only reference datasets."
+        "label": "Full-stack & live APIs",
+        "focus": ["users", "web_spa", "auth_guard", "fastapi_app", "public_apis", "runtime_db", "ref_db"],
+        "note": "Trace role sessions through FastAPI security to tenant SQLite, cached live public APIs, and 43 reference tables."
       },
       {
         "id": "iot-telemetry",
         "label": "IoT sensor & bridge path",
         "focus": ["esp32_node", "wokwi_bridge", "auth_guard", "fastapi_app", "runtime_db"],
-        "note": "Follow ESP32 Wokwi WBGT, PM10, UV, and noise readings into the authenticated telemetry endpoint."
+        "note": "Follow ESP32 Wokwi WBGT, PM10, UV, and noise readings into the authenticated telemetry route and control loop."
       },
       {
         "id": "static-preview",
         "label": "GitHub Pages & offline ETL",
         "focus": ["users", "gh_pages", "web_spa", "sim_pipeline", "ref_db"],
-        "note": "Inspect the zero-install read-only preview mode alongside the offline hazard simulation pipeline."
+        "note": "Inspect zero-install static preview mode alongside the offline hazard simulation pipeline and reference database."
       }
     ]
   },
@@ -39,46 +39,47 @@
       "type": "external",
       "label": "Users & Roles",
       "sublabel": "Clinic, DDO, Site, Worker",
-      "pos": [40, 250],
+      "pos": [40, 240],
       "size": [155, 64]
     },
     {
       "id": "gh_pages",
       "type": "cloud",
       "label": "GitHub Pages",
-      "sublabel": "mock_data.js preview",
+      "sublabel": "PWA + mock_data.js",
       "tag": "Read-only",
       "brand": "github",
       "sources": [
-        { "path": "index.html", "line": 1, "label": "Static entry" },
-        { "path": "js/core.js", "line": 50, "end_line": 99, "label": "Static API router" }
+        { "path": "index.html", "line": 1, "label": "Static entry & CSP" },
+        { "path": "js/core.js", "line": 99, "end_line": 270, "label": "Static API & physics router" }
       ],
-      "pos": [275, 80],
-      "size": [160, 64]
+      "pos": [275, 70],
+      "size": [165, 64]
     },
     {
       "id": "web_spa",
       "type": "frontend",
       "label": "WorkCheck Web UI",
-      "sublabel": "Modular Vanilla JS SPA",
+      "sublabel": "WCAG AA Modular JS SPA",
       "sources": [
         { "path": "workcheck_platform/static/index.html", "line": 1, "label": "Platform SPA" },
-        { "path": "js/core.js", "line": 30, "end_line": 48, "label": "Live fetch client" }
+        { "path": "styles.css", "line": 1, "label": "Design system CSS" }
       ],
-      "pos": [275, 250],
-      "size": [160, 64]
+      "pos": [275, 240],
+      "size": [165, 64]
     },
     {
       "id": "auth_guard",
       "type": "security",
-      "label": "Auth & RBAC",
-      "sublabel": "wc_session + X-API-Key",
-      "tag": "Role-scoped",
+      "label": "Security & Tenant Guard",
+      "sublabel": "CSRF, Origin, Scrypt, org_id",
+      "tag": "Hardened",
       "sources": [
-        { "path": "workcheck_platform/app/main.py", "line": 244, "end_line": 277, "label": "Auth routes" }
+        { "path": "workcheck_platform/app/security.py", "line": 1, "end_line": 120, "label": "Headers, CSRF & rate limits" },
+        { "path": "workcheck_platform/app/core.py", "line": 1, "label": "Auth, sessions & fail-closed keys" }
       ],
-      "pos": [535, 80],
-      "size": [170, 64]
+      "pos": [535, 70],
+      "size": [185, 64]
     },
     {
       "id": "fastapi_app",
@@ -87,35 +88,47 @@
       "sublabel": "FastAPI + Uvicorn :8090",
       "brand": "fastapi",
       "sources": [
-        { "path": "workcheck_platform/app/main.py", "line": 453, "end_line": 1196, "label": "REST endpoints" }
+        { "path": "workcheck_platform/app/main.py", "line": 1, "label": "Core REST API" },
+        { "path": "workcheck_platform/app/trackers.py", "line": 1, "label": "Org & DPDP trackers" }
       ],
-      "pos": [535, 250],
-      "size": [170, 64]
+      "pos": [535, 240],
+      "size": [185, 64]
+    },
+    {
+      "id": "public_apis",
+      "type": "external",
+      "label": "Live Public APIs",
+      "sublabel": "Open-Meteo, CAMS, India Post",
+      "tag": "15m/24h Cache",
+      "sources": [
+        { "path": "workcheck_platform/app/live.py", "line": 1, "end_line": 190, "label": "Cached weather & pincode clients" }
+      ],
+      "pos": [875, 45],
+      "size": [175, 64]
     },
     {
       "id": "runtime_db",
       "type": "database",
       "label": "Runtime SQLite",
-      "sublabel": "sessions, triage, telemetry",
+      "sublabel": "org-scoped triage & telemetry",
       "brand": "sqlite",
       "sources": [
-        { "path": "workcheck_platform/README.md", "line": 26, "end_line": 33, "label": "Storage layout" }
+        { "path": "workcheck_platform/app/core.py", "line": 120, "end_line": 175, "label": "Schema & migrations" }
       ],
-      "pos": [815, 175],
-      "size": [170, 64]
+      "pos": [875, 175],
+      "size": [175, 64]
     },
     {
       "id": "ref_db",
       "type": "database",
       "label": "Reference SQLite",
-      "sublabel": "128 workers & rules (RO)",
+      "sublabel": "43 tables (CPCB, NFHS-5, MSHA)",
       "brand": "sqlite",
       "sources": [
-        { "path": "workcheck_platform/app/main.py", "line": 27, "label": "Read-only ref DB" },
-        { "path": "final_dataset/PS000109_final_dataset_csv/README.md", "line": 1, "label": "Dataset guide" }
+        { "path": "workcheck_platform/app/main.py", "line": 920, "label": "Read-only evidence & ref DB" }
       ],
-      "pos": [815, 305],
-      "size": [170, 64]
+      "pos": [875, 305],
+      "size": [175, 64]
     },
     {
       "id": "esp32_node",
@@ -124,11 +137,10 @@
       "sublabel": "WBGT, PM10, UV, Noise",
       "tag": "Wokwi sim",
       "sources": [
-        { "path": "workcheck_platform/wokwi/sketch.ino", "line": 1, "label": "ESP32 firmware" },
-        { "path": "workcheck_platform/wokwi/diagram.json", "line": 1, "label": "Circuit wiring" }
+        { "path": "workcheck_platform/wokwi/sketch.ino", "line": 1, "label": "ESP32 firmware" }
       ],
       "pos": [275, 445],
-      "size": [160, 64]
+      "size": [165, 64]
     },
     {
       "id": "wokwi_bridge",
@@ -137,22 +149,22 @@
       "sublabel": "FastAPI :8080 relay",
       "brand": "fastapi",
       "sources": [
-        { "path": "wokwi_bridge/app.py", "line": 41, "end_line": 100, "label": "Bridge service" }
+        { "path": "wokwi_bridge/app.py", "line": 1, "end_line": 120, "label": "SSRF-safe bridge service" }
       ],
       "pos": [535, 445],
-      "size": [170, 64]
+      "size": [185, 64]
     },
     {
       "id": "sim_pipeline",
       "type": "backend",
       "label": "Hazard Simulation",
-      "sublabel": "ERA5, CPCB, OSHA ETL",
+      "sublabel": "ERA5, CAMS, MSHA ETL",
       "brand": "python",
       "sources": [
         { "path": "simulation/combine_and_simulate.py", "line": 1, "label": "Hazard model" }
       ],
-      "pos": [815, 445],
-      "size": [170, 64]
+      "pos": [875, 445],
+      "size": [175, 64]
     }
   ],
   "boundaries": [
@@ -163,97 +175,45 @@
     },
     {
       "kind": "security-group",
-      "label": "Authenticated API Layer",
+      "label": "Hardened Auth & Tenant Boundary",
       "wraps": ["auth_guard", "fastapi_app"]
     }
   ],
   "connections": [
-    {
-      "id": "users-to-spa",
-      "from": "users",
-      "to": "web_spa",
-      "label": "HTTPS",
-      "variant": "emphasis"
-    },
-    {
-      "id": "gh-pages-to-spa",
-      "from": "gh_pages",
-      "to": "web_spa",
-      "label": "static preview",
-      "variant": "dashed",
-      "labelDy": 64
-    },
-    {
-      "id": "spa-to-api",
-      "from": "web_spa",
-      "to": "fastapi_app",
-      "label": "REST /api/*",
-      "variant": "emphasis"
-    },
-    {
-      "id": "auth-to-api",
-      "from": "auth_guard",
-      "to": "fastapi_app",
-      "label": "verify role & key",
-      "variant": "security",
-      "labelDy": 64
-    },
-    {
-      "id": "api-to-runtime",
-      "from": "fastapi_app",
-      "to": "runtime_db",
-      "label": "read/write SQL"
-    },
-    {
-      "id": "api-to-ref",
-      "from": "fastapi_app",
-      "to": "ref_db",
-      "label": "read-only SQL"
-    },
-    {
-      "id": "esp32-to-bridge",
-      "from": "esp32_node",
-      "to": "wokwi_bridge",
-      "label": "sensor payload"
-    },
-    {
-      "id": "bridge-to-api",
-      "from": "wokwi_bridge",
-      "to": "fastapi_app",
-      "label": "POST /v1/telemetry",
-      "variant": "security"
-    },
-    {
-      "id": "sim-to-ref",
-      "from": "sim_pipeline",
-      "to": "ref_db",
-      "label": "builds dataset",
-      "variant": "dashed"
-    }
+    { "id": "users-to-spa", "from": "users", "to": "web_spa", "label": "HTTPS / PWA", "variant": "emphasis" },
+    { "id": "gh-pages-to-spa", "from": "gh_pages", "to": "web_spa", "label": "static preview", "variant": "dashed", "labelDy": 64 },
+    { "id": "spa-to-api", "from": "web_spa", "to": "fastapi_app", "label": "REST /api/*", "variant": "emphasis" },
+    { "id": "api-to-public", "from": "fastapi_app", "to": "public_apis", "label": "cached HTTP", "variant": "dashed", "fromSide": "right", "toSide": "left", "via": [[755, 272], [755, 77]], "labelAt": [815, 62] },
+    { "id": "auth-to-api", "from": "auth_guard", "to": "fastapi_app", "label": "CSRF, role & org", "variant": "security", "labelDy": 64 },
+    { "id": "api-to-runtime", "from": "fastapi_app", "to": "runtime_db", "label": "org-scoped SQL", "labelAt": [825, 192] },
+    { "id": "api-to-ref", "from": "fastapi_app", "to": "ref_db", "label": "read-only SQL" },
+    { "id": "esp32-to-bridge", "from": "esp32_node", "to": "wokwi_bridge", "label": "sensor payload" },
+    { "id": "bridge-to-api", "from": "wokwi_bridge", "to": "fastapi_app", "label": "POST /v1/telemetry", "variant": "security" },
+    { "id": "sim-to-ref", "from": "sim_pipeline", "to": "ref_db", "label": "builds 43 tables", "variant": "dashed" }
   ],
   "cards": [
     {
       "dot": "cyan",
-      "title": "Dual Web Delivery",
+      "title": "Dual Delivery & Live Public APIs",
       "items": [
-        "Live FastAPI mode saves clinic triage, referrals, and symptom reports",
-        "GitHub Pages serves a zero-install read-only preview via mock_data.js"
+        "FastAPI mode saves tenant-isolated triage, consent, and DPDP JSON exports",
+        "Open-Meteo Forecast + CAMS + India Post Pincode work live across both modes"
       ]
     },
     {
       "dot": "emerald",
-      "title": "Split SQLite Storage",
+      "title": "Split SQLite & Activated Evidence",
       "items": [
-        "reference.db holds read-only hazard tables and 128 test workers",
-        "runtime.db isolates sessions, audit logs, and live sensor readings"
+        "reference.db exposes 43 read-only tables including CPCB Gujarat, NFHS-5, PLFS, Lancet & MSHA",
+        "runtime.db enforces org_id tenant isolation and additive migrations"
       ]
     },
     {
       "dot": "rose",
-      "title": "Security & IoT Telemetry",
+      "title": "Zero-Trust Hardening & Verification",
       "items": [
-        "Cookie sessions enforce Clinic, DDO, Supervisor, and Worker roles",
-        "Wokwi ESP32 bridge posts WBGT, PM10, and UV via X-API-Key header"
+        "Strict CSP, Origin CSRF checks, scrypt, SSRF blocking, and fail-closed prod keys",
+        "72 automated pytest checks across API security, live APIs, and Wokwi bridge"
       ]
     }
   ]

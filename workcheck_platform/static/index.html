@@ -3,13 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>WorkCheck Kachchh — Occupational Health Monitoring</title>
-  <meta name="description" content="Worker health follow-up for Kachchh, Gujarat.">
-  <meta name="theme-color" content="#E7E9F3">
+  <title>WorkCheck Kachchh — Occupational Health &amp; Heat Monitoring</title>
+  <meta name="description" content="Occupational heat stress (WBGT), air quality, worker symptom reporting, and Kachchh district health facility routing platform.">
+  <meta property="og:title" content="WorkCheck Kachchh — Occupational Health &amp; Heat Monitoring">
+  <meta property="og:description" content="Real-time heat stress, dust alerts, worker QR health pass, and 108 referral routing across Kachchh worksites.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#4656E6">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.webmanifest">
   <link rel="preload" href="/static/assets/fonts/jakarta.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <div id="app"></div>
   <div id="tip" class="tip" hidden></div>
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
@@ -27,6 +35,11 @@
   <script src="/static/js/evidence.js"></script>
   <script src="/static/js/wokwi.js"></script>
   <script src="/static/js/facilities.js"></script>
-  <script>boot();</script>
+  <script src="/static/js/checkin.js"></script>
+  <script src="/static/js/onboard.js"></script>
+  <script src="/static/js/dashboard.js"></script>
+  <script src="/static/js/trackers.js"></script>
+  <script src="/static/js/team.js"></script>
+  <script src="/static/js/boot.js"></script>
 </body>
 </html>

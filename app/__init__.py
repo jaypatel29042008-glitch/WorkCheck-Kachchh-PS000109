@@ -1,1 +1,0 @@
-"""WorkCheck Kachchh Application Package."""

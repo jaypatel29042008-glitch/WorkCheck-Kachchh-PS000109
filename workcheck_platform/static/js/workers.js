@@ -5,7 +5,7 @@ VIEWS.workers = async (id) => {
     $("#view").innerHTML = `<div class="md">
       <section class="md-list" aria-label="Workers">
         <div class="md-list-top">
-          <div class="md-title"><h1>Workers</h1>${fictional("Fictional")}</div>
+          <div class="md-title"><h1>Workers</h1>${isDemoOrg() ? fictional("Fictional") : ""}</div>
           <label class="input search">${ic("search", 18)}<span class="sr">Search workers</span><input id="wsearch" type="search" placeholder="Search name, job or place" value="${esc(S.wf.search)}"></label>
           <div class="filters" id="wfilters"></div>
         </div>
@@ -85,6 +85,7 @@ async function openWorker(id) {
 const EXP_TONE = { high: "action", moderate: "due", ok: "clear", none: "none" };
 
 function renderWorker(p) {
+  if (p.kind === "org") return renderOrgWorker(p);
   const c = p.card;
   const reports = p.symptoms.filter((s) => !s.reviewed);
   const nextIcon = p.state.level === "action" ? "alert-triangle" : p.state.level === "due" ? "calendar-check" : p.state.level === "watch" ? "eye" : "circle-check";
@@ -127,6 +128,8 @@ function renderWorker(p) {
 
     ${reports.length ? `<section class="card" id="w-reports"><div class="card-head"><h2>Reported by the worker</h2></div>${reports.map((r) => `<div class="report"><span class="round sm bg-${r.urgent ? "action t-action" : "due t-due"}">${ic(r.urgent ? "alert-triangle" : "mood-sick", 16, 2)}</span><div><b>${esc(r.text)}</b><small>${fmtDate(r.at)}</small></div><button class="btn btn-ghost btn-sm" data-review="${r.id}" type="button">Mark reviewed</button></div>`).join("")}</section>` : ""}
 
+    <section class="card" id="w-log" hidden></section>
+
     <section class="card">
       <div class="card-head"><h2>What this job exposes them to</h2></div>
       <div class="exp-grid">${p.exposure.map((m) => {
@@ -136,7 +139,7 @@ function renderWorker(p) {
           ${m.series.length ? spark(m.series, tone, m.months, m.series_unit) : `<div class="spark-empty"></div>`}
           <span class="pill sm ${tone}" data-tip="${esc(m.caption)}">${esc(m.chip)}</span></div>`;
       }).join("")}</div>
-      <p class="fine">${p.exposure.map((m) => `${m.label}: ${m.caption}.`).join(" ")}</p>
+      <p class="fine">${esc(p.exposure.map((m) => `${m.label}: ${m.caption}.`).join(" "))}</p>
     </section>
 
     <div class="two">
@@ -191,6 +194,12 @@ function renderWorker(p) {
   </div>`;
   mountSparks(box);
   wireBody(box);
+  if (!isPreview()) api(`/api/log/history/${encodeURIComponent(c.id)}?days=35`).then((h) => {
+    const host = $("#w-log", box);
+    if (!host || !h.logged) return;
+    host.innerHTML = calendarCard(h, "en", "Daily check-ins");
+    host.hidden = false;
+  }).catch(() => { });
   $("#w-qr").addEventListener("click", () => openPass(c));
   const cta = $("#w-cta");
   if (cta) cta.addEventListener("click", () => {
@@ -199,10 +208,16 @@ function renderWorker(p) {
   });
   $$("[data-record]", box).forEach((b) => b.addEventListener("click", () => openRecord(p, b.dataset.record)));
   $$("[data-review]", box).forEach((b) => b.addEventListener("click", async () => {
-    await api(`/api/workers/${encodeURIComponent(c.id)}/symptoms/${b.dataset.review}/review`, { method: "POST" });
-    toast("Marked as reviewed.");
-    await loadWorkers();
-    await openWorker(c.id);
+    b.disabled = true;
+    try {
+      await api(`/api/workers/${encodeURIComponent(c.id)}/symptoms/${b.dataset.review}/review`, { method: "POST" });
+      toast("Marked as reviewed.", "good");
+      await loadWorkers();
+      await openWorker(c.id);
+    } catch (err) {
+      b.disabled = false;
+      toast(err.message || "Could not mark reviewed.", "action");
+    }
   }));
 
   const loadWorkerFacilities = async (disease = "all") => {
@@ -354,4 +369,78 @@ function openRecord(p, condition) {
       const box = $("#rec-err", m.el); box.textContent = err.message; box.hidden = false;
     }
   });
+}
+
+
+/* A worker who joined with an invite: what they told us, and what the team recorded. */
+function renderOrgWorker(p) {
+  const c = p.card;
+  const reports = (p.symptoms || []).filter((s) => !s.reviewed);
+  const box = $("#wdetail");
+  const nextIcon = p.state.level === "action" ? "alert-triangle" : p.state.level === "due" ? "calendar-check" : "eye";
+  const again = async () => { await loadWorkers(); await openWorker(c.id); };
+  box.innerHTML = `<div class="detail">
+    <a class="back" href="#/workers">${ic("chevron-left", 18, 2)}All workers</a>
+    <header class="w-head card">
+      ${avatar(c, true)}
+      <div class="w-head-main">
+        <div class="w-name"><h2>${esc(c.name)}</h2>${pill(p.state.level)}</div>
+        <p class="sub">${esc(c.job)} · ${esc(c.place)}${c.age ? ` · Age ${esc(c.age)}` : ""}</p>
+        <p class="w-tags"><span class="tag">${esc(c.id)}</span><span class="tag">Joined ${fmtDate(p.joined)}</span>${p.checkin_hours_week ? `<span class="tag">${p.checkin_hours_week}h gate hours this week</span>` : ""}</p>
+      </div>
+      <button class="btn btn-ghost" id="w-med" type="button">${ic("plus", 18)}Record a check</button>
+    </header>
+
+    <section class="next ${p.state.level}">
+      <span class="round">${ic(nextIcon, 22, 2)}</span>
+      <div><h3>${esc(p.next.title)}</h3><p>${esc(p.next.body)}</p></div>
+    </section>
+
+    ${reports.length ? `<section class="card" id="w-reports"><div class="card-head"><h2>Reported by the worker</h2></div>${reports.map((r) => `<div class="report"><span class="round sm bg-${r.urgent ? "action t-action" : "due t-due"}">${ic(r.urgent ? "alert-triangle" : "mood-sick", 16, 2)}</span><div><b>${esc(r.text)}</b><small>${fmtDate(r.at)}</small></div><button class="btn btn-ghost btn-sm" data-review="${r.id}" type="button">Mark reviewed</button></div>`).join("")}</section>` : ""}
+
+    <div class="two">
+      <section class="card">${p.log.logged ? calendarCard(p.log, "en", "Daily check-ins") : `<div class="card-head"><h2>Daily check-ins</h2></div><div class="empty small">${ic("clipboard-check", 24)}<p>${esc(c.name.split(" ")[0])} has not checked in yet.</p></div>`}</section>
+      <section class="card"><div class="card-head"><h2>What this job exposes them to</h2></div>
+        <div class="exp-grid two-up">${p.exposure.map((m) => { const tone = EXP_TONE[m.level]; return `<div class="exp"><div class="exp-top"><span class="round xs bg-${tone} t-${tone}">${ic(m.icon, 15, 2)}</span>${esc(m.label)}</div><div class="exp-val">${esc(m.value)}</div><div class="exp-unit">${esc(m.unit || " ")}</div><span class="pill sm ${tone}" data-tip="${esc(m.caption)}">${esc(m.chip)}</span></div>`; }).join("")}</div>
+        <p class="fine">${esc(p.exposure.map((m) => `${m.label}: ${m.caption}.`).join(" "))}</p></section>
+    </div>
+
+    <div class="two">
+      <section class="card"><div class="card-head"><h2>Medical checks</h2><span class="sub">${p.medical.length} recorded</span></div>
+        ${p.medical.length ? `<div class="todo">${p.medical.map((k) => `<div class="todo-row"><span class="round sm bg-${k.tone} t-${k.tone}">${ic("stethoscope", 16, 2)}</span><div><b>${esc(k.check_name)}</b><small>${fmtDate(k.done_on)} · ${esc(k.result_label)}${k.next_due ? ` · next ${fmtDate(k.next_due)}` : ""}${k.note ? ` · ${esc(k.note)}` : ""}</small></div></div>`).join("")}</div>` : `<div class="empty small">${ic("stethoscope", 24)}<p>No checks recorded yet.</p></div>`}</section>
+      <section class="card"><div class="card-head"><h2>Referrals and training</h2></div>
+        ${p.referrals.length || p.trainings.length ? `<div class="todo">${p.referrals.map((r) => `<div class="todo-row"><span class="round sm bg-indigo">${ic("route", 16, 2)}</span><div><b>${esc(r.facility_name)}</b><small>${fmtDate(r.at)} · ${esc(r.reason)} · ${esc((REF_STATUS[r.status] || [r.status])[0])}${r.outcome ? ` · ${esc(r.outcome)}` : ""}</small></div></div>`).join("")}${p.trainings.map((x) => `<div class="todo-row"><span class="round sm bg-clear t-clear">${ic("certificate", 16, 2)}</span><div><b>${esc(x.course_label)}</b><small>${fmtDate(x.done_on)} · valid until ${fmtDate(x.valid_until)}</small></div></div>`).join("")}</div>` : `<div class="empty small">${ic("route", 24)}<p>Nothing recorded yet.</p></div>`}</section>
+    </div>
+
+    <section class="card facilities-connector-card"><div class="facilities-header"><div><h2>Nearest health facilities</h2><p class="sub">Sample list. Confirm services with each facility before sending anyone.</p></div></div><div class="facilities-grid" id="w-fac-grid"><div class="skel-block" style="grid-column:1/-1;height:120px"></div></div></section>
+    <p class="fine center">${ic("shield-lock", 14)} Every opening of this record is logged. ${esc(p.label)}</p>
+  </div>`;
+  $("#w-med").addEventListener("click", async () => {
+    const data = await api("/api/medical");
+    openMedicalForm([c], data.catalogue, c.id, again);
+  });
+  $$("[data-review]", box).forEach((b) => b.addEventListener("click", async () => {
+    b.disabled = true;
+    try {
+      await api(`/api/workers/${encodeURIComponent(c.id)}/symptoms/${b.dataset.review}/review`, { method: "POST" });
+      toast("Marked as reviewed.", "good");
+      await again();
+    } catch (err) {
+      b.disabled = false;
+      toast(err.message || "Could not mark reviewed.", "action");
+    }
+  }));
+  api(`/api/facilities?site_id=${encodeURIComponent(c.location_id)}&disease=all`).then((res) => {
+    const grid = $("#w-fac-grid", box);
+    if (!grid) return;
+    grid.innerHTML = res.facilities.slice(0, 6).map((f) => `<div class="facility-card"><div class="fac-card-top"><div><span class="tier-badge ${f.facility_tier.toLowerCase().replace(/[^a-z0-9]+/g, "-")}">${esc(f.facility_tier)}</span><h4 class="fac-name">${esc(f.facility_name)}</h4><span class="fac-taluka">Taluka: <b>${esc(f.taluka)}</b> &bull; <span class="dist-badge">about ${f.distance_km} km, straight line</span></span></div></div>
+      <div class="fac-actions"><button type="button" class="btn btn-ghost btn-sm" data-fac="${esc(f.facility_id)}" data-name="${esc(f.facility_name)}">${ic("route", 14, 2)} Note referral</button></div></div>`).join("");
+    $$("[data-fac]", grid).forEach((b) => b.addEventListener("click", () => {
+      const m = openModal(`<h2>Note a referral</h2><p class="sub">To ${esc(b.dataset.name)}. Nothing is sent to the facility; this is your own record.</p><form id="rf"><label class="field"><span>Why are they going?</span><textarea id="rf-why" rows="2" maxlength="200" required placeholder="For example: chest X-ray after a long cough."></textarea></label><p class="form-error" role="alert" hidden></p><button class="btn btn-ink btn-full" type="submit">Save</button></form>`, "Note a referral");
+      $("#rf", m.el).addEventListener("submit", async (e) => {
+        e.preventDefault();
+        try { const res = await api("/api/referrals", { method: "POST", body: { worker_id: c.id, facility_id: b.dataset.fac, facility_name: b.dataset.name, reason: $("#rf-why", m.el).value.trim() } }); m.close(); toast(res.message, "good"); again(); } catch (err) { formError(m.el, err.status === 422 ? new Error("Write a few words about why.") : err); }
+      });
+    }));
+  }).catch(() => { });
 }

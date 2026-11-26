@@ -1,24 +1,32 @@
 """Connection service between a Wokwi or real ESP32 site node and the PS000109 data.
 
-Run: uvicorn app:app --host 0.0.0.0 --port 8080
+Run: uvicorn app:app --host 127.0.0.1 --port 8080
 Optional settings:
+  BRIDGE_ENV              local (default) | production (requires BRIDGE_API_KEY)
   BRIDGE_API_KEY          require this value in the X-API-Key header on device routes
-  DASHBOARD_TELEMETRY_URL also forward each reading, e.g. http://host:8000/api/telemetry
+  BRIDGE_DATA_DB          override path to reference SQLite DB
+  DASHBOARD_TELEMETRY_URL forward each reading, e.g. https://workcheck.example/api/v1/telemetry
+  DASHBOARD_API_KEY       X-API-Key sent when forwarding to DASHBOARD_TELEMETRY_URL
   BRIDGE_DB               location of the runtime database
 """
+import hmac
+import ipaddress
 import math
 import os
 import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Literal, Optional
+from urllib.parse import urlparse
 
 import httpx
 from fastapi import Depends, FastAPI, Header, HTTPException, Query
 from pydantic import BaseModel, Field
 
 HERE = Path(__file__).resolve().parent
-DATA_DB = HERE.parent / "final_dataset" / "ps000109_final.db"
+_LEGACY_DB = HERE.parent / "final_dataset" / "ps000109_final.db"
+_PLATFORM_DB = HERE.parent / "workcheck_platform" / "data" / "reference.db"
+DATA_DB = Path(os.environ.get("BRIDGE_DATA_DB", str(_LEGACY_DB if _LEGACY_DB.exists() else _PLATFORM_DB)))
 LABEL = "Replay of model data, not a worksite measurement"
 LAMP = {100: "GREEN", 75: "YELLOW", 50: "ORANGE", 25: "RED", 0: "RED_FLASH"}
 ACTION = {
@@ -178,18 +186,45 @@ class Session(BaseModel):
 
 
 def check_key(x_api_key: Optional[str] = Header(default=None)):
-    expected = os.environ.get("BRIDGE_API_KEY")
-    if expected and x_api_key != expected:
+    env = os.environ.get("BRIDGE_ENV", os.environ.get("WC_ENV", "local"))
+    expected = os.environ.get("BRIDGE_API_KEY", "").strip()
+    if env == "production" and not expected:
+        raise HTTPException(503, "BRIDGE_API_KEY must be configured in production.")
+    if expected and (not x_api_key or not hmac.compare_digest(x_api_key, expected)):
         raise HTTPException(401, "Missing or wrong X-API-Key header.")
+
+
+def _safe_forward_url(raw: str) -> bool:
+    try:
+        u = urlparse(raw)
+    except ValueError:
+        return False
+    if u.scheme not in ("http", "https") or not u.hostname:
+        return False
+    if os.environ.get("BRIDGE_ENV", os.environ.get("WC_ENV", "local")) == "production" and u.scheme != "https":
+        return False
+    try:
+        ip = ipaddress.ip_address(u.hostname)
+        if ip.is_link_local or ip.is_unspecified or ip.is_multicast:
+            return False
+    except ValueError:
+        pass
+    return True
 
 
 def forward(payload: Telemetry):
     url = os.environ.get("DASHBOARD_TELEMETRY_URL")
     if not url:
         return "not_configured"
+    if not _safe_forward_url(url):
+        return "blocked_unsafe_url"
     body = payload.model_dump(exclude={"job_id", "source", "noise_dba", "urine_colour_score", "sample_minutes"})
+    fwd_key = os.environ.get("DASHBOARD_API_KEY", "").strip()
     try:
-        response = httpx.post(url, json=body, timeout=3.0)
+        if fwd_key:
+            response = httpx.post(url, json=body, headers={"X-API-Key": fwd_key}, timeout=3.0)
+        else:
+            response = httpx.post(url, json=body, timeout=3.0)
         return f"http_{response.status_code}"
     except httpx.HTTPError as exc:
         return f"failed_{type(exc).__name__}"

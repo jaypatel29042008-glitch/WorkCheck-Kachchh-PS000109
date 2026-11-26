@@ -7,7 +7,9 @@ from fastapi.testclient import TestClient
 
 import app as bridge
 
-DATA = Path(__file__).resolve().parent.parent / "final_dataset" / "ps000109_final.db"
+_LEGACY = Path(__file__).resolve().parent.parent / "final_dataset" / "ps000109_final.db"
+_PLATFORM = Path(__file__).resolve().parent.parent / "workcheck_platform" / "data" / "reference.db"
+DATA = _LEGACY if _LEGACY.exists() else _PLATFORM
 
 
 @pytest.fixture()
@@ -91,6 +93,14 @@ def test_api_key(client, monkeypatch):
     monkeypatch.setenv("BRIDGE_API_KEY", "secret")
     assert client.post("/api/v1/telemetry", json=reading()).status_code == 401
     assert client.post("/api/v1/telemetry", json=reading(), headers={"X-API-Key": "secret"}).status_code == 200
+
+
+def test_production_requires_bridge_api_key(client, monkeypatch):
+    monkeypatch.setenv("BRIDGE_ENV", "production")
+    monkeypatch.delenv("BRIDGE_API_KEY", raising=False)
+    assert client.post("/api/v1/telemetry", json=reading()).status_code == 503
+    monkeypatch.setenv("BRIDGE_API_KEY", "prod-bridge-secret")
+    assert client.post("/api/v1/telemetry", json=reading(), headers={"X-API-Key": "prod-bridge-secret"}).status_code == 200
 
 
 def test_noise_dose_matches_formula_and_accumulates(client):

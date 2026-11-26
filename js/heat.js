@@ -47,13 +47,13 @@ VIEWS.heat = async () => {
     <section class="card map-card">
       <div class="map-controls">
         <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-          <div class="seg" id="layer-seg">
-            <button type="button" data-layer="compound" class="on">${ic("flame", 14, 2)}Compound (Heat + Dust)</button>
-            <button type="button" data-layer="heat">${ic("sun", 14, 2)}Heat stress</button>
-            <button type="button" data-layer="dust">${ic("wind", 14, 2)}Dust (PM10)</button>
+          <div class="seg" role="tablist" id="layer-seg">
+            <button type="button" role="tab" aria-selected="true" data-layer="compound" class="on">${ic("flame", 14, 2)}Compound (Heat + Dust)</button>
+            <button type="button" role="tab" aria-selected="false" data-layer="heat">${ic("sun", 14, 2)}Heat stress</button>
+            <button type="button" role="tab" aria-selected="false" data-layer="dust">${ic("wind", 14, 2)}Dust (PM10)</button>
           </div>
-          <div class="seg" id="mode-seg">
-            ${data.modes.map((m) => `<button type="button" data-mode="${m.key}"${m.key === state.mode ? ' class="on"' : ""}>${esc(m.label)}</button>`).join("")}
+          <div class="seg" role="tablist" id="mode-seg">
+            ${data.modes.map((m) => `<button type="button" role="tab" aria-selected="${m.key === state.mode}" data-mode="${m.key}"${m.key === state.mode ? ' class="on"' : ""}>${esc(m.label)}</button>`).join("")}
           </div>
         </div>
         <div class="months">
@@ -97,7 +97,8 @@ VIEWS.heat = async () => {
             </div>`).join("")}
         </div>
       </section>
-    </div>`;
+    </div>
+    <section class="card" id="heat-live-strip" hidden style="margin-top:20px"></section>`;
 
   const getTalukaStats = (talName) => ({
     name: talName,
@@ -202,15 +203,15 @@ VIEWS.heat = async () => {
 
     $$("#heat-rank .rank-row").forEach((row) => {
       row.addEventListener("mouseenter", () => {
-        const p = $(`#heat-map .tal[data-name="${row.dataset.name}"]`);
+        const p = $(`#heat-map .tal[data-name="${CSS.escape(row.dataset.name)}"]`);
         if (p) p.classList.add("hot");
       });
       row.addEventListener("mouseleave", () => $$("#heat-map .tal.hot").forEach((p) => p.classList.remove("hot")));
     });
 
     $$(".months [data-month]").forEach((b) => b.classList.toggle("on", Number(b.dataset.month) === state.month));
-    $$("#layer-seg button").forEach((b) => b.classList.toggle("on", b.dataset.layer === state.layer));
-    $$("#mode-seg button").forEach((b) => b.classList.toggle("on", b.dataset.mode === state.mode));
+    $$("#layer-seg button").forEach((b) => { const on = b.dataset.layer === state.layer; b.classList.toggle("on", on); b.setAttribute("aria-selected", String(on)); });
+    $$("#mode-seg button").forEach((b) => { const on = b.dataset.mode === state.mode; b.classList.toggle("on", on); b.setAttribute("aria-selected", String(on)); });
   };
 
   const stop = () => {
@@ -278,5 +279,14 @@ VIEWS.heat = async () => {
   });
 
   paint();
+  api("/api/live/environment").then((env) => {
+    const box = $("#heat-live-strip");
+    if (!box || S.page !== "heat" || !env || !env.sites || !env.sites.length) return;
+    const rows = env.sites.filter((s) => s.temp_c != null);
+    if (!rows.length) return;
+    box.hidden = false;
+    box.innerHTML = `<div class="card-head"><div><h2>Live Ambient Feed · 12 Kachchh Sites</h2><p class="sub">${esc(env.provider)} · ${esc(env.method_note)}</p></div><span class="pill ${env.live ? "clear" : "none"} sm">${env.live ? "Live now" : "Baseline"}</span></div>
+      <div class="live-grid">${rows.map((s) => `<div><span>${esc(s.taluka)} (${esc(s.label.split(" (")[0])})</span><b>${Number(s.temp_c).toFixed(1)}°C · Sun WBGT ~${s.wbgt_sun_est_c ?? "--"}°C</b><small>PM10 ${s.pm10_ug_m3 != null ? Math.round(s.pm10_ug_m3) : "--"} µg/m³ · UV ${s.uv_index != null ? Number(s.uv_index).toFixed(1) : "--"}</small></div>`).join("")}</div>`;
+  }).catch(() => { });
   await mountYearChart($("#year-card"), jobs.jobs);
 };
