@@ -1,11 +1,15 @@
 "use strict";
-const CACHE = "workcheck-shell-v1";
+const CACHE = "workcheck-shell-v2";
 const SHELL_URLS = [
   "./",
   "./index.html",
+  "./404.html",
   "./styles.css",
+  "./favicon.ico",
   "./favicon.svg",
   "./manifest.webmanifest",
+  "./assets/kachchh_map.json",
+  "./assets/fonts/jakarta.woff2",
   "./icons.js",
   "./qrcode.js",
   "./js/core.js",
@@ -19,6 +23,11 @@ const SHELL_URLS = [
   "./js/evidence.js",
   "./js/wokwi.js",
   "./js/facilities.js",
+  "./js/checkin.js",
+  "./js/onboard.js",
+  "./js/dashboard.js",
+  "./js/trackers.js",
+  "./js/team.js",
   "./js/boot.js",
 ];
 

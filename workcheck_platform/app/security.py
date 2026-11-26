@@ -22,7 +22,7 @@ CSP = "; ".join([
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data:",
     "font-src 'self'",
-    "connect-src 'self' https://api.open-meteo.com https://air-quality-api.open-meteo.com https://api.postalpincode.in",
+    "connect-src 'self' https://api.open-meteo.com https://air-quality-api.open-meteo.com https://api.postalpincode.in https://router.project-osrm.org",
     "frame-src https://wokwi.com",  # The Wokwi node page embeds the team's simulator project.
     "object-src 'none'",
     "frame-ancestors 'none'",

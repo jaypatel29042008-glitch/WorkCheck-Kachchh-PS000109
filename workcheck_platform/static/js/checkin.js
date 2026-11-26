@@ -110,7 +110,7 @@ function mountCheckin(host, data, opts = {}) {
       return;
     }
     const steps = [stepFeeling, stepBody, stepGear];
-    host.innerHTML = `<div class="card-head"><div><h2>${esc(t.title)}</h2><p class="sub">${esc(t.sub)}</p></div><span class="ci-steps" aria-label="${esc(t.step(st.step + 1))}">${[0, 1, 2].map((i) => `<i class="${i < st.step ? "done" : i === st.step ? "on" : ""}"></i>`).join("")}</span></div>
+    host.innerHTML = `<div class="card-head"><div><h2>${esc(t.title)}</h2><p class="sub">${esc(t.sub)}</p></div><span class="ci-steps" role="img" aria-label="${esc(t.step(st.step + 1))}">${[0, 1, 2].map((i) => `<i class="${i < st.step ? "done" : i === st.step ? "on" : ""}"></i>`).join("")}</span></div>
       <div class="ci-step">${steps[st.step]()}</div>
       <p class="form-error" role="alert" hidden></p>
       <div class="ci-actions">
@@ -161,7 +161,7 @@ function logCalendar(h, lang = "en", days = 35) {
     const bits = [`${dayName(x.day)} ${fmtDate(x.day, false)}`, x.feeling ? t.feelings[x.feeling] : t.noLog];
     if (x.symptoms.length) bits.push(x.symptoms.join(", "));
     if (x.ppe_missing.length) bits.push(`${t.missing}: ${x.ppe_missing.join(", ")}`);
-    return `<span class="cal-day ${x.feeling ? FEEL_TONE[x.feeling] : "none"}${x.ppe_missing.length ? " gap" : ""}${x.day === today ? " today" : ""}" tabindex="0" data-tip="${esc(bits.join(". "))}" aria-label="${esc(bits.join(". "))}">${x.icon ? ic(x.icon, 17, 1.9) : `<small>${Number(x.day.slice(8))}</small>`}</span>`;
+    return `<span class="cal-day ${x.feeling ? FEEL_TONE[x.feeling] : "none"}${x.ppe_missing.length ? " gap" : ""}${x.day === today ? " today" : ""}" role="img" tabindex="0" data-tip="${esc(bits.join(". "))}" aria-label="${esc(bits.join(". "))}">${x.icon ? ic(x.icon, 17, 1.9) : `<small>${Number(x.day.slice(8))}</small>`}</span>`;
   };
   return `<div class="cal"><div class="cal-head">${["M", "T", "W", "T", "F", "S", "S"].map((w) => `<span>${w}</span>`).join("")}</div>
     <div class="cal-grid">${"<span></span>".repeat(pad)}${list.map(cell).join("")}</div></div>

@@ -17,40 +17,10 @@ VIEWS.facilities = async () => {
 };
 
 function renderFacilitiesCards(facilities) {
-  if (!facilities || !facilities.length) {
-    return `<div class="empty small" style="grid-column: 1 / -1">${ic("hospital-circle", 28)}<p>No health facilities match the selected filters.</p></div>`;
-  }
-  return facilities.map((f) => {
-    const tierClass = f.facility_tier.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-    return `
-      <div class="facility-card${f.disease_match ? " matched" : ""}" data-facility-id="${esc(f.facility_id)}">
-        <div class="fac-card-top">
-          <div>
-            <span class="tier-badge ${tierClass}">${esc(f.facility_tier)}</span>
-            <h3 class="fac-name">${esc(f.facility_name)}</h3>
-            <span class="fac-taluka">Taluka: <b>${esc(f.taluka)}</b> &bull; <span class="dist-badge">about ${f.distance_km} km, straight line</span></span>
-          </div>
-          <span class="round xs bg-indigo t-indigo">${ic("hospital-circle", 18, 2)}</span>
-        </div>
-
-        <div class="fac-capabilities">
-          <span class="${f.has_digital_xray ? "yes" : "no"}">&bull; Digital X-Ray: <b>${f.has_digital_xray ? "YES" : "NO"}</b></span>
-          <span class="${f.has_spirometer ? "yes" : "no"}">&bull; Spirometer: <b>${f.has_spirometer ? "YES" : "NO"}</b></span>
-          <span class="${f.has_biochemical_lab ? "yes" : "no"}">&bull; Blood Lab: <b>${f.has_biochemical_lab ? "YES" : "NO"}</b></span>
-          <span class="${f.emergency_108_base ? "yes alert-108" : "no"}">&bull; 108 Base: <b>${f.emergency_108_base ? "YES" : "NO"}</b></span>
-        </div>
-
-        ${f.match_label ? `<div class="fac-match-pill">${esc(f.match_label)}</div>` : ""}
-
-        <div class="fac-actions">
-          <button type="button" class="btn btn-ghost btn-sm fac-page-route-btn" data-fac-id="${esc(f.facility_id)}" data-fac-name="${esc(f.facility_name)}">
-            ${ic("route", 14, 2)} Note referral
-          </button>
-          ${f.emergency_108_base ? `<a class="btn btn-danger btn-sm" href="tel:108" title="Call Emergency 108">${ic("phone", 13, 2)} 108</a>` : ""}
-        </div>
-      </div>
-    `;
-  }).join("");
+  return renderFacilityCardsHtml(facilities, {
+    routeBtnClass: "fac-page-route-btn",
+    emptyMsg: "No health facilities match the selected filters.",
+  });
 }
 
 function renderFacilitiesPage() {
@@ -61,16 +31,16 @@ function renderFacilitiesPage() {
     <header class="page-head">
       <div>
         <h1>Kachchh Health Facilities</h1>
-        <p class="lead">Sample list for testing. Confirm services with each facility.</p>
+        <p class="lead">Verified Kachchh facility names, pincodes &amp; landlines (kachchh.nic.in &amp; GBOCWWB). Confirm services by phone before dispatch.</p>
       </div>
-      <span class="pill none" data-tip="Services are not yet confirmed with each facility, and none is connected to this tool.">${ic("info-circle", 14, 2)}12 sample facilities</span>
+      <span class="pill none" data-tip="Names, talukas, pincodes, addresses and phone numbers match official kachchh.nic.in &amp; GBOCWWB directories; X-ray/spirometer/lab flags remain sample baseline estimates until field check.">${ic("info-circle", 14, 2)}12 Kachchh facilities</span>
     </header>
 
     <section class="card facilities-connector-card">
       <div class="facilities-header">
         <div>
           <h2 style="font-size:16px;margin:0">Active Worksite &amp; Taluka Filter</h2>
-          <p class="sub">Shows straight-line distance from each worksite to each facility.</p>
+          <p class="sub">Straight-line distance sorted first, enriched live with OSRM road distance &amp; driving ETA when online.</p>
         </div>
         <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
           <div class="facilities-site-picker">
@@ -136,38 +106,49 @@ function renderFacilitiesPage() {
   const runPin = async () => {
     const pin = ($("#fac-pin")?.value || "").trim();
     const msg = $("#fac-pin-msg");
+    const btn = $("#fac-pin-btn");
     if (!pin) return;
+    if (msg) { msg.hidden = false; msg.textContent = "Looking up India Post directory..."; }
+    if (btn) btn.disabled = true;
     try {
       const info = await api(`/api/live/pincode/${encodeURIComponent(pin)}`);
+      const matched = info.matched_taluka || (talukas.includes(info.taluka) ? info.taluka : "");
+      const talSelect = $("#fac-page-taluka");
+      const didFilter = Boolean(info.in_kachchh && matched && talSelect);
       if (msg) {
         msg.hidden = false;
         if (info.status === "ok") {
-          msg.textContent = `PIN ${info.pincode}: ${info.district || "Unknown"}, ${info.state || ""}${info.taluka ? ` (Block/Taluka: ${info.taluka})` : ""}${info.in_kachchh ? " — filtered nearest taluka." : " — outside Kachchh."}`;
+          msg.textContent = `PIN ${info.pincode}: ${info.district || "Unknown"}, ${info.state || ""}${info.taluka ? ` (Block/Taluka: ${info.taluka})` : ""}${didFilter ? ` — filtered to ${matched} taluka.` : info.in_kachchh ? " — in Kachchh." : " — outside Kachchh."}`;
         } else {
           msg.textContent = `PIN ${info.pincode}: No post office found (${info.status}).`;
         }
       }
-      const talSelect = $("#fac-page-taluka");
-      if (info.in_kachchh && info.taluka && talukas.includes(info.taluka) && talSelect) {
-        FAC_STATE.taluka = info.taluka;
-        talSelect.value = info.taluka;
+      if (didFilter) {
+        FAC_STATE.taluka = matched;
+        talSelect.value = matched;
         await refreshFacilities();
       }
     } catch (err) {
       if (msg) { msg.hidden = false; msg.textContent = err.message || "Enter 6 digits."; }
+    } finally {
+      if (btn) btn.disabled = false;
     }
   };
   $("#fac-pin-btn")?.addEventListener("click", runPin);
   $("#fac-pin")?.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); runPin(); } });
 
   wirePageReferrals();
+  attachRoadDistances($("#fac-page-grid"), FAC_STATE.siteId);
 }
 
 async function refreshFacilities() {
   const updated = await api(`/api/facilities?site_id=${encodeURIComponent(FAC_STATE.siteId)}&disease=${encodeURIComponent(FAC_STATE.disease)}&taluka=${encodeURIComponent(FAC_STATE.taluka)}`);
   FAC_STATE.data = updated;
   const grid = $("#fac-page-grid");
-  if (grid) grid.innerHTML = renderFacilitiesCards(updated.facilities);
+  if (grid) {
+    grid.innerHTML = renderFacilitiesCards(updated.facilities);
+    attachRoadDistances(grid, FAC_STATE.siteId);
+  }
   wirePageReferrals();
 }
 

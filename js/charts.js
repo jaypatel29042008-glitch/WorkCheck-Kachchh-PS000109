@@ -82,6 +82,7 @@ async function mountYearChart(root, jobs, jobId = "port_yard_kandla") {
     ${legend([["9am to 6pm shift", YEAR_COLORS[0]], ["6am to 3pm shift", YEAR_COLORS[1]]])}`;
   const load = async (id) => {
     const y = await api(`/api/heat/year?job_id=${encodeURIComponent(id)}`);
+    if (!root.isConnected || !$("#yc-sub", root)) return;
     $("#yc-sub", root).textContent = `Hours of a 9-hour shift inside the heat limit. Model estimate for 2025.`;
     const gain = y.summer["6-15"] - y.summer["9-18"];
     $("#yc-insight", root).innerHTML = gain >= 0.1

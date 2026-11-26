@@ -102,19 +102,19 @@ function renderWorker(p) {
       <button class="btn btn-ghost" id="w-qr" type="button">${ic("qrcode", 18)}QR pass</button>
       <div class="pass-meta-grid" style="margin-top:14px;width:100%;grid-column:1/-1">
         <div class="meta-item">
-          <label>Age:</label>
+          <span class="meta-label">Age:</span>
           <span>${esc(c.age)} yrs</span>
         </div>
         <div class="meta-item">
-          <label>Assigned Worksite:</label>
+          <span class="meta-label">Assigned Worksite:</span>
           <span class="t-indigo">${esc(c.place)}</span>
         </div>
         <div class="meta-item">
-          <label>Cumulative Silica Est. Range:</label>
+          <span class="meta-label">Cumulative Silica Est. Range:</span>
           <span class="t-amber">${esc(p.silica_range)}</span>
         </div>
         <div class="meta-item">
-          <label>Safe Heat Hours (Apr–Oct, model):</label>
+          <span class="meta-label">Safe Heat Hours (Apr–Oct, model):</span>
           <span class="t-rose">${esc(p.safe_heat_hours)}</span>
         </div>
       </div>
@@ -225,31 +225,8 @@ function renderWorker(p) {
     const facRes = await api(`/api/facilities?site_id=${encodeURIComponent(locId)}&disease=${encodeURIComponent(disease)}`);
     const grid = $("#w-fac-grid", box);
     if (!grid) return;
-    grid.innerHTML = facRes.facilities.map((f) => `
-      <div class="facility-card${f.disease_match ? " matched" : ""}">
-        <div class="fac-card-top">
-          <div>
-            <span class="tier-badge ${f.facility_tier.toLowerCase().replace(/[^a-z0-9]+/g, "-")}">${esc(f.facility_tier)}</span>
-            <h4 class="fac-name">${esc(f.facility_name)}</h4>
-            <span class="fac-taluka">Taluka: <b>${esc(f.taluka)}</b> &bull; <span class="dist-badge">about ${f.distance_km} km, straight line</span></span>
-          </div>
-          <span class="round xs bg-indigo t-indigo">${ic("hospital-circle", 18, 2)}</span>
-        </div>
-        <div class="fac-capabilities">
-          <span class="${f.has_digital_xray ? "yes" : "no"}">&bull; Digital X-Ray: <b>${f.has_digital_xray ? "YES" : "NO"}</b></span>
-          <span class="${f.has_spirometer ? "yes" : "no"}">&bull; Spirometer: <b>${f.has_spirometer ? "YES" : "NO"}</b></span>
-          <span class="${f.has_biochemical_lab ? "yes" : "no"}">&bull; Blood Lab: <b>${f.has_biochemical_lab ? "YES" : "NO"}</b></span>
-          <span class="${f.emergency_108_base ? "yes alert-108" : "no"}">&bull; 108 Base: <b>${f.emergency_108_base ? "YES" : "NO"}</b></span>
-        </div>
-        ${f.match_label ? `<div class="fac-match-pill">${esc(f.match_label)}</div>` : ""}
-        <div class="fac-actions">
-          <button type="button" class="btn btn-ghost btn-sm w-refer-btn" data-fac-id="${esc(f.facility_id)}" data-fac-name="${esc(f.facility_name)}">
-            ${ic("route", 14, 2)} Note referral
-          </button>
-          ${f.emergency_108_base ? `<a class="btn btn-danger btn-sm" href="tel:108" title="Call Emergency 108">${ic("phone", 13, 2)} 108</a>` : ""}
-        </div>
-      </div>
-    `).join("");
+    grid.innerHTML = renderFacilityCardsHtml(facRes.facilities, { routeBtnClass: "w-refer-btn" });
+    attachRoadDistances(grid, locId);
 
     $$(".w-refer-btn", grid).forEach((btn) => {
       btn.addEventListener("click", async () => {
@@ -433,8 +410,8 @@ function renderOrgWorker(p) {
   api(`/api/facilities?site_id=${encodeURIComponent(c.location_id)}&disease=all`).then((res) => {
     const grid = $("#w-fac-grid", box);
     if (!grid) return;
-    grid.innerHTML = res.facilities.slice(0, 6).map((f) => `<div class="facility-card"><div class="fac-card-top"><div><span class="tier-badge ${f.facility_tier.toLowerCase().replace(/[^a-z0-9]+/g, "-")}">${esc(f.facility_tier)}</span><h4 class="fac-name">${esc(f.facility_name)}</h4><span class="fac-taluka">Taluka: <b>${esc(f.taluka)}</b> &bull; <span class="dist-badge">about ${f.distance_km} km, straight line</span></span></div></div>
-      <div class="fac-actions"><button type="button" class="btn btn-ghost btn-sm" data-fac="${esc(f.facility_id)}" data-name="${esc(f.facility_name)}">${ic("route", 14, 2)} Note referral</button></div></div>`).join("");
+    grid.innerHTML = renderFacilityCardsHtml(res.facilities.slice(0, 6), { compact: true });
+    attachRoadDistances(grid, c.location_id);
     $$("[data-fac]", grid).forEach((b) => b.addEventListener("click", () => {
       const m = openModal(`<h2>Note a referral</h2><p class="sub">To ${esc(b.dataset.name)}. Nothing is sent to the facility; this is your own record.</p><form id="rf"><label class="field"><span>Why are they going?</span><textarea id="rf-why" rows="2" maxlength="200" required placeholder="For example: chest X-ray after a long cough."></textarea></label><p class="form-error" role="alert" hidden></p><button class="btn btn-ink btn-full" type="submit">Save</button></form>`, "Note a referral");
       $("#rf", m.el).addEventListener("submit", async (e) => {

@@ -1,13 +1,13 @@
-facility_id,facility_name,facility_tier,taluka,latitude,longitude,has_digital_xray,has_spirometer,has_audiometry,has_biochemical_lab,has_cbnaat_tb_testing,emergency_108_base
-FAC-BHUJ-GK,GK General Hospital (Govt Medical College),DISTRICT_HOSPITAL,Bhuj,23.2504,69.6644,True,True,True,True,True,True
-FAC-GANDHI-ESIC,ESIC Model Hospital Gandhidham,ESIC,Gandhidham,23.0753,70.1337,True,True,True,True,True,True
-FAC-MUNDRA-CHC,Mundra Community Health Centre,CHC,Mundra,22.8415,69.7214,True,True,False,True,False,True
-FAC-ANJAR-SDH,Anjar Sub-District Hospital,SUB_DISTRICT_HOSPITAL,Anjar,23.1165,70.0287,True,True,False,True,True,True
-FAC-MANDVI-CHC,Mandvi Referal Hospital & CHC,CHC,Mandvi,22.8328,69.3558,True,True,False,True,False,True
-FAC-ABDASA-CHC,Naliya CHC (Abdasa),CHC,Abdasa,23.258,68.8315,True,False,False,True,False,True
-FAC-NAKH-CHC,Nakhatrana Community Health Centre,CHC,Nakhatrana,23.3512,69.2625,True,True,False,True,False,True
-FAC-RAPAR-CHC,Rapar Community Health Centre,CHC,Rapar,23.5714,70.6385,True,False,False,True,False,True
-FAC-LAKH-PHC,Dayapar Primary Health Centre (Lakhpat),PHC,Lakhpat,23.6821,68.8812,False,False,False,True,False,True
-FAC-BHACHAU-CHC,Bhachau Community Health Centre,CHC,Bhachau,23.2842,70.3541,True,True,False,True,False,True
-FAC-MOB-VAN-01,BOCW Dhanvantari Arogya Rath #1 (Mundra/Kandla),MOBILE_VAN,Mundra,22.8395,69.7258,True,True,True,True,False,True
-FAC-MOB-VAN-02,BOCW Dhanvantari Arogya Rath #2 (Little Rann Salt),MOBILE_VAN,Rapar,23.35,71.05,True,True,False,True,False,True
+facility_id,facility_name,facility_tier,taluka,latitude,longitude,has_digital_xray,has_spirometer,has_audiometry,has_biochemical_lab,has_cbnaat_tb_testing,emergency_108_base,pincode,phone,address_note,source
+FAC-BHUJ-GK,GK General Hospital (Govt Medical College / GAIMS),DISTRICT_HOSPITAL,Bhuj,23.2504,69.6644,True,True,True,True,True,True,370001,02832-250150,"Opp. Lotus Colony, Madhapar Road, Bhuj",kachchh.nic.in
+FAC-GANDHI-ESIC,Rambaug Sub-District Hospital & ESIC Network (Adipur-Gandhidham),SUB_DISTRICT_HOSPITAL,Gandhidham,23.0753,70.1337,True,True,True,True,True,True,370205,02836-261626,"Hospital Road, Rambaug, Adipur (Gandhidham)",kachchh.nic.in
+FAC-MUNDRA-CHC,Mundra Community Health Centre (CHC),CHC,Mundra,22.8415,69.7214,True,True,False,True,False,True,370421,02838-222144,"Mundra Town, Kachchh",kachchh.nic.in
+FAC-ANJAR-SDH,Anjar Community Health Centre & Sub-District Hospital,SUB_DISTRICT_HOSPITAL,Anjar,23.1165,70.0287,True,True,False,True,True,True,370110,02836-245753,"Anjar Town, Kachchh",kachchh.nic.in
+FAC-MANDVI-CHC,Mandvi Sub-District Referral Hospital & CHC,SUB_DISTRICT_HOSPITAL,Mandvi,22.8328,69.3558,True,True,False,True,False,True,370465,02834-223207,"Mandvi Town, Kachchh",kachchh.nic.in
+FAC-ABDASA-CHC,"Naliya Community Health Centre (CHC, Abdasa)",CHC,Abdasa,23.258,68.8315,True,False,False,True,False,True,370655,02831-222127,"Naliya, Abdasa Taluka",kachchh.nic.in
+FAC-NAKH-CHC,Nakhatrana Community Health Centre (CHC),CHC,Nakhatrana,23.3512,69.2625,True,True,False,True,False,True,370615,02835-222304,"Nakhatrana, Kachchh",kachchh.nic.in
+FAC-RAPAR-CHC,Rapar Community Health Centre (CHC),CHC,Rapar,23.5714,70.6385,True,False,False,True,False,True,370165,02830-220080,"Rapar Town, Kachchh",kachchh.nic.in
+FAC-LAKH-PHC,"Dayapar Community Health Centre (CHC, Lakhpat)",CHC,Lakhpat,23.6821,68.8812,False,False,False,True,False,True,370630,02839-233326,"Dayapar, Lakhpat Taluka",kachchh.nic.in
+FAC-BHACHAU-CHC,Bhachau Community Health Centre (CHC),CHC,Bhachau,23.2842,70.3541,True,True,False,True,False,True,370140,02837-224034,"Bhachau Town, Kachchh",kachchh.nic.in
+FAC-MOB-VAN-01,BOCW Dhanvantari Arogya Rath #1 (Mundra/Kandla),MOBILE_VAN,Mundra,22.8395,69.7258,True,True,True,True,False,True,370421,108,"Mobile Medical Unit (GBOCWWB) — Mundra/Kandla Belt",gbocwwb.gujarat.gov.in
+FAC-MOB-VAN-02,BOCW Dhanvantari Arogya Rath #2 (Little Rann Salt),MOBILE_VAN,Rapar,23.35,71.05,True,True,False,True,False,True,370165,108,"Mobile Medical Unit (GBOCWWB) — Rapar/Little Rann Belt",gbocwwb.gujarat.gov.in

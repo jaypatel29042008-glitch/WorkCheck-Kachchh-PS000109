@@ -26,7 +26,7 @@ These are for local demos. Change them before putting the platform on the intern
 ## What a new workplace does
 
 1. On the sign-in page, choose **New workplace**. Three steps: the company, the first site, your account. You become its supervisor.
-2. On **Team & invites**, choose **Invite people**. You get a 6-letter code (also a link and a QR code).
+2. On **Team & invites**, choose **Invite people**. You get an 8-character code (also a link and a QR code).
 3. Workers open the app, choose **Join with a code**, and set a name, mobile number or email, and a password.
 4. Each morning a worker does the **daily check-in**: how they feel, anything bothering them (tap the body), and whether they had their safety gear.
 5. The supervisor's **Daily check-ins** page lists what needs doing today. Clinic staff, invited the same way, see symptoms and record medical checks.

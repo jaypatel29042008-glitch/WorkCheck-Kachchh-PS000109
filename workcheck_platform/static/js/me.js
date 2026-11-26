@@ -80,43 +80,6 @@ VIEWS.me = async () => {
   renderMe();
 };
 
-function renderFacilityCardsHtml(facilities) {
-  if (!facilities || !facilities.length) {
-    return `<div class="empty small">${ic("hospital-circle", 24)}<p>No health facilities match this criteria.</p></div>`;
-  }
-  return facilities.map((f) => {
-    const tierClass = f.facility_tier.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-    return `
-      <div class="facility-card${f.disease_match ? " matched" : ""}" data-facility-id="${esc(f.facility_id)}">
-        <div class="fac-card-top">
-          <div>
-            <span class="tier-badge ${tierClass}">${esc(f.facility_tier)}</span>
-            <h3 class="fac-name">${esc(f.facility_name)}</h3>
-            <span class="fac-taluka">Taluka: <b>${esc(f.taluka)}</b> &bull; <span class="dist-badge">about ${f.distance_km} km, straight line</span></span>
-          </div>
-          <span class="round xs bg-indigo t-indigo">${ic("hospital-circle", 18, 2)}</span>
-        </div>
-
-        <div class="fac-capabilities">
-          <span class="${f.has_digital_xray ? "yes" : "no"}">&bull; Digital X-Ray: <b>${f.has_digital_xray ? "YES" : "NO"}</b></span>
-          <span class="${f.has_spirometer ? "yes" : "no"}">&bull; Spirometer: <b>${f.has_spirometer ? "YES" : "NO"}</b></span>
-          <span class="${f.has_biochemical_lab ? "yes" : "no"}">&bull; Blood Lab: <b>${f.has_biochemical_lab ? "YES" : "NO"}</b></span>
-          <span class="${f.emergency_108_base ? "yes alert-108" : "no"}">&bull; 108 Base: <b>${f.emergency_108_base ? "YES" : "NO"}</b></span>
-        </div>
-
-        ${f.match_label ? `<div class="fac-match-pill">${esc(f.match_label)}</div>` : ""}
-
-        <div class="fac-actions">
-          <button type="button" class="btn btn-ghost btn-sm fac-route-btn" data-fac-id="${esc(f.facility_id)}" data-fac-name="${esc(f.facility_name)}">
-            ${ic("route", 14, 2)} Note referral
-          </button>
-          ${f.emergency_108_base ? `<a class="btn btn-danger btn-sm" href="tel:108" title="Call Emergency 108">${ic("phone", 13, 2)} 108</a>` : ""}
-        </div>
-      </div>
-    `;
-  }).join("");
-}
-
 function renderMe() {
   const { p, today, facData, checkin } = S.mine;
   const org = p.kind === "org";
@@ -181,15 +144,15 @@ function renderMe() {
           <div class="pass-qr-wrap" id="pass-qr-box" title="QR pass"></div>
           <div class="pass-fields">
             <div>
-              <label>Name:</label>
+              <span class="meta-label">Name:</span>
               <h3>${esc(p.card.name)}</h3>
             </div>
             <div>
-              <label>${org ? "Job &amp; site:" : "Job Role &amp; Taluka:"}</label>
+              <span class="meta-label">${org ? "Job &amp; site:" : "Job Role &amp; Taluka:"}</span>
               <span class="role-taluka">${esc(org ? `${p.card.job} · ${p.card.place}` : jobRoleTaluka)}</span>
             </div>
             <div>
-              <label>${org ? "Record ID:" : "Test record ID:"}</label>
+              <span class="meta-label">${org ? "Record ID:" : "Test record ID:"}</span>
               <span class="uan-mono">${esc(p.card.id)}</span>
             </div>
           </div>
@@ -197,19 +160,19 @@ function renderMe() {
 
         ${org ? "" : `<div class="pass-meta-grid">
           <div class="meta-item">
-            <label>Age:</label>
+            <span class="meta-label">Age:</span>
             <span>${esc(p.card.age)} yrs</span>
           </div>
           <div class="meta-item">
-            <label>Assigned Worksite:</label>
+            <span class="meta-label">Assigned Worksite:</span>
             <span class="t-indigo">${esc(worksiteName)}</span>
           </div>
           <div class="meta-item">
-            <label>Cumulative Silica Est. Range:</label>
+            <span class="meta-label">Cumulative Silica Est. Range:</span>
             <span class="t-amber">${esc(silicaRange)}</span>
           </div>
           <div class="meta-item">
-            <label>Safe Heat Hours (Apr–Oct, model):</label>
+            <span class="meta-label">Safe Heat Hours (Apr–Oct, model):</span>
             <span class="t-rose">${esc(safeHeat)}</span>
           </div>
         </div>
@@ -326,7 +289,10 @@ function renderMe() {
       W_STATE.facData = updated;
       S.mine.facData = updated;
       const grid = $("#facilities-grid");
-      if (grid) grid.innerHTML = renderFacilityCardsHtml(updated.facilities);
+      if (grid) {
+        grid.innerHTML = renderFacilityCardsHtml(updated.facilities);
+        attachRoadDistances(grid, W_STATE.siteId);
+      }
       wireReferrals();
     });
   }
@@ -341,7 +307,10 @@ function renderMe() {
       W_STATE.facData = updated;
       S.mine.facData = updated;
       const grid = $("#facilities-grid");
-      if (grid) grid.innerHTML = renderFacilityCardsHtml(updated.facilities);
+      if (grid) {
+        grid.innerHTML = renderFacilityCardsHtml(updated.facilities);
+        attachRoadDistances(grid, W_STATE.siteId);
+      }
       wireReferrals();
     });
   });
@@ -371,4 +340,5 @@ function renderMe() {
   }
 
   wireReferrals();
+  attachRoadDistances($("#facilities-grid"), W_STATE.siteId);
 }

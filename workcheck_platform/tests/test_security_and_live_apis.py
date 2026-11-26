@@ -217,3 +217,74 @@ def test_pincode_validation_and_lookup(client):
 
     info = live.fetch_pincode_info("370001", main.load_facilities(), http_get=lambda url, timeout=8.0: _PinResp())
     assert info["in_kachchh"] is True and info["taluka"] == "Bhuj" and len(info["matching_facilities"]) >= 1
+
+
+def test_pincode_aliases_road_distances_and_auth_options(client):
+    # Unauthenticated /api/auth/options returns 200 without raising 401 on boot
+    opt_anon = client.get("/api/auth/options")
+    assert opt_anon.status_code == 200
+    assert opt_anon.json()["authenticated"] is False
+    assert opt_anon.json()["user"] is None
+
+    # India Post uses "Rahpar" for Rapar (370165) and "Dayapar" (Lakhpat, 370630)
+    class _AliasResp:
+        def __init__(self, offices):
+            self._offices = offices
+
+        def raise_for_status(self):
+            return None
+
+        def json(self):
+            return [{"Status": "Success", "PostOffice": self._offices}]
+
+    rapar = live.fetch_pincode_info(
+        "370165",
+        main.load_facilities(),
+        http_get=lambda url, timeout=8.0: _AliasResp([{"Name": "Rapar MDG", "BranchType": "Sub Post Office", "Block": "Rahpar", "District": "Kachchh", "State": "Gujarat"}]),
+    )
+    assert rapar["matched_taluka"] == "Rapar" and rapar["taluka"] == "Rapar"
+    assert any(f["taluka"] == "Rapar" for f in rapar["matching_facilities"])
+
+    dayapar = live.fetch_pincode_info(
+        "370630",
+        main.load_facilities(),
+        http_get=lambda url, timeout=8.0: _AliasResp([{"Name": "Dayapar SO", "BranchType": "Sub Post Office", "Block": "Dayapar", "District": "Kachchh", "State": "Gujarat"}]),
+    )
+    assert dayapar["matched_taluka"] == "Lakhpat" and dayapar["taluka"] == "Lakhpat"
+
+    # Authenticated session reflects user inside /api/auth/options + facility phone/pincode + expanded evidence + OSRM routing
+    assert client.post("/api/auth/login", json={"email": "clinic@workcheck.demo", "password": "Demo-Clinic-2026"}).status_code == 200
+    opt_auth = client.get("/api/auth/options")
+    assert opt_auth.status_code == 200 and opt_auth.json()["authenticated"] is True
+    assert opt_auth.json()["user"]["email"] == "clinic@workcheck.demo"
+
+    facs = client.get("/api/facilities?site_id=little_rann_kutch").json()["facilities"]
+    assert all(f.get("pincode") and f.get("phone") and f.get("source") for f in facs)
+
+    ev = client.get("/api/evidence").json()
+    for key in ("silica_scenarios", "niosh_noise", "plfs_bands", "lancet_outdoor", "locality_priority"):
+        assert key in ev and len(ev[key]) > 0
+
+    class _OsrmResp:
+        def raise_for_status(self):
+            return None
+
+        def json(self):
+            return {"code": "Ok", "distances": [[0] + [30900 for _ in facs]], "durations": [[0] + [2160 for _ in facs]]}
+
+    roads = live.fetch_road_distances(
+        main.SITE_COORDS["little_rann_kutch"],
+        facs,
+        main.haversine_km,
+        http_get=lambda url, params=None, timeout=10.0: _OsrmResp(),
+    )
+    first_fid = facs[0]["facility_id"]
+    assert roads["live"] is True and roads["routes"][first_fid]["road_km"] == 30.9 and roads["routes"][first_fid]["duration_min"] == 36
+    assert client.get("/api/live/road-distances?site_id=nonexistent_site").status_code == 404
+
+    def _osrm_down(url, params=None, timeout=10.0):
+        raise httpx.ConnectError("offline")
+
+    roads_fb = live.fetch_road_distances(main.SITE_COORDS["kandla_port"], facs, main.haversine_km, http_get=_osrm_down)
+    assert roads_fb["live"] is False and len(roads_fb["routes"]) == len(facs) and roads_fb["routes"][first_fid]["road_km"] is None
+

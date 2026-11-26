@@ -47,7 +47,26 @@ class ApiError extends Error {
 
 const READ_ONLY_MESSAGE = "This is a read-only preview, so nothing was saved. Run the full version to try this.";
 
-const _STATIC_CACHE = { env: null, envTs: 0, pins: {} };
+const _STATIC_CACHE = { env: null, envTs: 0, pins: {}, roads: {} };
+const _STATIC_WORKER_OVERRIDES = {};
+const _TALUKA_ALIASES = {
+  rahpar: "Rapar",
+  rapar: "Rapar",
+  naliya: "Abdasa",
+  abdasa: "Abdasa",
+  dayapar: "Lakhpat",
+  lakhpat: "Lakhpat",
+  adipur: "Gandhidham",
+  kandla: "Gandhidham",
+  gandhidham: "Gandhidham",
+  samakhiali: "Bhachau",
+  bhachau: "Bhachau",
+  bhuj: "Bhuj",
+  mundra: "Mundra",
+  anjar: "Anjar",
+  mandvi: "Mandvi",
+  nakhatrana: "Nakhatrana",
+};
 
 function _csvCell(v) {
   const s = String(v ?? "");
@@ -159,7 +178,20 @@ async function api(path, options = {}) {
     const p = u.pathname;
 
     if (p === "/api/auth/options") {
-      return { demo: true, env: "preview", consent_version: (D.privacy_notice && D.privacy_notice.consent_version) || "dpdp-v1-2026" };
+      let savedUser = null;
+      try {
+        const raw = localStorage.getItem("wc_static_user");
+        if (raw) savedUser = JSON.parse(raw);
+      } catch {
+        savedUser = null;
+      }
+      return {
+        demo: true,
+        env: "preview",
+        consent_version: (D.privacy_notice && D.privacy_notice.consent_version) || "dpdp-v1-2026",
+        authenticated: Boolean(savedUser),
+        user: savedUser,
+      };
     }
     if (p === "/api/privacy/notice") {
       return D.privacy_notice || { consent_version: "dpdp-v1-2026", controller: "WorkCheck Kachchh Pilot", rights: [] };
@@ -286,18 +318,64 @@ async function api(path, options = {}) {
         else { status = "not_found"; live = true; }
       } catch { /* offline fallback */ }
       const first = offices[0] || {};
-      const district = first.District || "", block = first.Block || first.Taluk || "", state = first.State || "";
+      const district = first.District || "", rawBlock = first.Block || first.Taluk || "", state = first.State || "";
+      const block = rawBlock && rawBlock.toUpperCase() !== "NA" ? rawBlock : "";
       const facs = (D.facilities_default && D.facilities_default.facilities) || [];
-      const talukas = [...new Set(facs.map((f) => f.taluka))];
-      const matched = talukas.find((t) => `${block} ${first.Name || ""}`.toLowerCase().includes(t.toLowerCase())) || "";
+      const counts = {};
+      for (const o of offices) {
+        const hay = `${o.Block || ""} ${o.Taluk || ""} ${o.Name || ""}`.toLowerCase();
+        for (const [alias, canon] of Object.entries(_TALUKA_ALIASES)) {
+          if (hay.includes(alias)) counts[canon] = (counts[canon] || 0) + 1;
+        }
+      }
+      const matched = Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0] || "";
       const out = {
-        pincode: pin, live, status, provider: "India Post Pincode Directory", district, taluka: matched || block, state,
+        pincode: pin, live, status, provider: "India Post Pincode Directory", district, taluka: matched || block, matched_taluka: matched, state,
         in_kachchh: ["kachchh", "kutch"].includes(district.toLowerCase()),
         post_offices: offices.slice(0, 6).map((o) => ({ name: o.Name, branch_type: o.BranchType, block: o.Block, district: o.District })),
         matching_facilities: facs.filter((f) => matched && f.taluka === matched).slice(0, 4),
       };
       if (live) _STATIC_CACHE.pins[pin] = out;
       return out;
+    }
+
+    if (p === "/api/live/road-distances") {
+      const siteId = u.searchParams.get("site_id") || "little_rann_kutch";
+      const cached = _STATIC_CACHE.roads[siteId];
+      if (cached && (Date.now() - cached.ts) < 21600000) return cached.data;
+      const base = D.facilities_default || { facilities: [], sites: [] };
+      const site = (base.sites || []).find((s) => s.site_id === siteId) || base.selected_site || { site_id: siteId, lat: 23.45, lon: 70.85 };
+      const facs = base.facilities || [];
+      const coords = [[site.lon, site.lat], ...facs.map((f) => [f.longitude, f.latitude])].map(([lo, la]) => `${lo},${la}`).join(";");
+      try {
+        const res = await fetch(`https://router.project-osrm.org/table/v1/driving/${coords}?sources=0&annotations=distance,duration`);
+        const json = await res.json();
+        const dists = (json && json.distances && json.distances[0]) || [];
+        const durs = (json && json.durations && json.durations[0]) || [];
+        if (json && json.code === "Ok" && dists.length > facs.length) {
+          const routes = {};
+          facs.forEach((f, idx) => {
+            routes[f.facility_id] = {
+              road_km: dists[idx + 1] != null ? Number((dists[idx + 1] / 1000).toFixed(1)) : null,
+              duration_min: durs[idx + 1] != null ? Math.max(1, Math.round(durs[idx + 1] / 60)) : null,
+              straight_km: _haversineKm(site.lat, site.lon, f.latitude, f.longitude),
+            };
+          });
+          const out = { live: true, provider: "OSRM OpenStreetMap Driving Router", site_id: siteId, routes };
+          _STATIC_CACHE.roads[siteId] = { ts: Date.now(), data: out };
+          return out;
+        }
+      } catch { /* offline fallback */ }
+      const fallbackRoutes = {};
+      facs.forEach((f) => {
+        fallbackRoutes[f.facility_id] = { road_km: null, duration_min: null, straight_km: _haversineKm(site.lat, site.lon, f.latitude, f.longitude) };
+      });
+      return {
+        live: false,
+        provider: "Straight-line Haversine estimate (OSRM offline)",
+        site_id: siteId,
+        routes: fallbackRoutes,
+      };
     }
 
     // 7. Facilities with full client-side Haversine + disease sorting
@@ -329,14 +407,32 @@ async function api(path, options = {}) {
       return { success: true, facility_name: (fac && fac.facility_name) || facId, message: "Preview note only — nothing was saved or sent to the facility." };
     }
 
-    // 8. Worker Details & Ephemeral Symptoms
+    // 8. Worker Details & Ephemeral Preview Updates
     if (p.startsWith("/api/workers/")) {
       const parts = p.split("/");
       const wid = decodeURIComponent(parts[3] || "");
-      if (parts.length === 4) return (D.worker_details && D.worker_details[wid]) || { worker: null };
+      const getWorkerCopy = () => {
+        if (_STATIC_WORKER_OVERRIDES[wid]) return _STATIC_WORKER_OVERRIDES[wid];
+        const base = D.worker_details && D.worker_details[wid];
+        if (!base) return null;
+        _STATIC_WORKER_OVERRIDES[wid] = JSON.parse(JSON.stringify(base));
+        return _STATIC_WORKER_OVERRIDES[wid];
+      };
+      if (parts.length === 4) return getWorkerCopy() || { worker: null };
       if (method === "POST") {
-        const urgent = (options.body && options.body.symptom === "collapse") || (Array.isArray(options.body && options.body.symptoms) && options.body.symptoms.includes("collapse"));
-        return { saved: true, preview: true, urgent, message: urgent ? "Emergency 108 instructions opened (read-only preview)." : "Read-only preview: symptom not saved to a server." };
+        const wk = getWorkerCopy();
+        const body = options.body || {};
+        if (parts[4] === "symptoms" && parts[6] === "review" && wk && Array.isArray(wk.symptoms)) {
+          const hit = wk.symptoms.find((s) => String(s.id) === String(parts[5]));
+          if (hit) hit.reviewed = true;
+          return { reviewed: true, preview: true, message: "Marked reviewed in preview session (resets on reload)." };
+        }
+        const urgent = body.symptom === "collapse" || (Array.isArray(body.symptoms) && body.symptoms.includes("collapse"));
+        if (parts[4] === "symptoms" && wk && Array.isArray(wk.symptoms)) {
+          const items = Array.isArray(body.symptoms) ? body.symptoms : [body.symptom || body.text || "symptom"];
+          items.forEach((txt, idx) => wk.symptoms.unshift({ id: `prev-${Date.now()}-${idx}`, text: String(txt), at: new Date().toISOString().slice(0, 10), urgent: Boolean(urgent), reviewed: false }));
+        }
+        return { saved: true, preview: true, urgent, message: urgent ? "Emergency 108 instructions opened (read-only preview)." : "Updated in preview session only (resets on reload)." };
       }
       return { worker: null };
     }
@@ -618,10 +714,80 @@ async function route() {
 }
 addEventListener("hashchange", route);
 
+function renderFacilityCardsHtml(facilities, options = {}) {
+  const {
+    compact = false,
+    routeBtnClass = "fac-route-btn",
+    emptyMsg = "No health facilities match this criteria.",
+  } = options;
+  if (!facilities || !facilities.length) {
+    return `<div class="empty small" style="grid-column: 1 / -1">${ic("hospital-circle", 24)}<p>${esc(emptyMsg)}</p></div>`;
+  }
+  return facilities.map((f) => {
+    const tierClass = String(f.facility_tier || "clinic").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    const telHref = f.phone ? String(f.phone).replace(/[^+\d]/g, "") : "";
+    return `
+      <div class="facility-card${f.disease_match ? " matched" : ""}" data-facility-id="${esc(f.facility_id)}">
+        <div class="fac-card-top">
+          <div>
+            <span class="tier-badge ${tierClass}">${esc(f.facility_tier)}</span>
+            <h3 class="fac-name">${esc(f.facility_name)}</h3>
+            <span class="fac-taluka">Taluka: <b>${esc(f.taluka)}</b> &bull; <span class="dist-badge">about ${f.distance_km} km, straight line</span><span class="road-badge" data-road-fac="${esc(f.facility_id)}"></span></span>
+          </div>
+          <span class="round xs bg-indigo t-indigo">${ic("hospital-circle", 18, 2)}</span>
+        </div>
+
+        ${(f.address_note || f.pincode || f.phone) ? `<div class="fac-meta">
+          ${f.address_note ? `<span>${esc(f.address_note)}${f.pincode ? ` (${esc(f.pincode)})` : ""}</span>` : ""}
+          ${f.phone ? `<a class="fac-phone" href="tel:${esc(telHref)}" title="Call ${esc(f.facility_name)}">${ic("phone", 12, 2)} ${esc(f.phone)}</a>` : ""}
+        </div>` : ""}
+
+        ${compact ? "" : `<div class="fac-capabilities">
+          <span class="${f.has_digital_xray ? "yes" : "no"}">&bull; Digital X-Ray: <b>${f.has_digital_xray ? "YES" : "NO"}</b></span>
+          <span class="${f.has_spirometer ? "yes" : "no"}">&bull; Spirometer: <b>${f.has_spirometer ? "YES" : "NO"}</b></span>
+          <span class="${f.has_biochemical_lab ? "yes" : "no"}">&bull; Blood Lab: <b>${f.has_biochemical_lab ? "YES" : "NO"}</b></span>
+          <span class="${f.emergency_108_base ? "yes alert-108" : "no"}">&bull; 108 Base: <b>${f.emergency_108_base ? "YES" : "NO"}</b></span>
+        </div>`}
+
+        ${!compact && f.match_label ? `<div class="fac-match-pill">${esc(f.match_label)}</div>` : ""}
+
+        <div class="fac-actions">
+          <button type="button" class="btn btn-ghost btn-sm ${esc(routeBtnClass)}" data-fac-id="${esc(f.facility_id)}" data-fac="${esc(f.facility_id)}" data-fac-name="${esc(f.facility_name)}" data-name="${esc(f.facility_name)}">
+            ${ic("route", 14, 2)} Note referral
+          </button>
+          ${!compact && f.emergency_108_base ? `<a class="btn btn-danger btn-sm" href="tel:108" title="Call Emergency 108">${ic("phone", 13, 2)} 108</a>` : ""}
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+async function attachRoadDistances(container, siteId) {
+  if (!container || !siteId) return;
+  try {
+    const res = await api(`/api/live/road-distances?site_id=${encodeURIComponent(siteId)}`);
+    if (!container.isConnected || !res || !res.live || !res.routes || typeof res.routes !== "object") return;
+    Object.entries(res.routes).forEach(([facId, rt]) => {
+      if (!rt || rt.road_km == null) return;
+      const el = container.querySelector(`[data-road-fac="${CSS.escape(facId)}"]`);
+      if (el) el.textContent = `· ~${rt.road_km} km by road (${rt.duration_min ?? "?"} min, OSRM)`;
+    });
+  } catch { /* keep straight-line Haversine distance when OSRM is unavailable */ }
+}
+
 async function boot() {
   if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
     navigator.serviceWorker.register("./sw.js").catch(() => { });
   }
-  try { S.user = await api("/api/auth/me"); } catch { S.user = null; }
+  try {
+    const opts = await api("/api/auth/options");
+    if (opts && Object.prototype.hasOwnProperty.call(opts, "authenticated")) {
+      S.user = opts.authenticated ? opts.user : null;
+    } else {
+      S.user = await api("/api/auth/me");
+    }
+  } catch {
+    S.user = null;
+  }
   route();
 }

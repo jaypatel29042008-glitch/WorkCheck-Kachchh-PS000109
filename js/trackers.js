@@ -73,9 +73,19 @@ function openMedicalForm(workers, cat, chosen, onSaved) {
       <button class="btn btn-ink btn-full" type="submit">Save</button>
     </form>`, "Record a medical check");
   const setNext = () => {
-    const months = Number($("#med-check", m.el).selectedOptions[0].dataset.months);
-    const d = new Date($("#med-date", m.el).value || todayIso());
-    d.setMonth(d.getMonth() + months);
+    const opt = $("#med-check", m.el)?.selectedOptions?.[0];
+    const months = Number(opt?.dataset?.months || 12);
+    const raw = $("#med-date", m.el).value || todayIso();
+    const parts = raw.split("-").map(Number);
+    const d = parts.length === 3 && parts.every(Number.isFinite)
+      ? new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]))
+      : new Date();
+    if (Number.isNaN(d.getTime())) return;
+    const origDay = d.getUTCDate();
+    d.setUTCDate(1);
+    d.setUTCMonth(d.getUTCMonth() + months);
+    const lastDay = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 0)).getUTCDate();
+    d.setUTCDate(Math.min(origDay, lastDay));
     $("#med-next", m.el).value = d.toISOString().slice(0, 10);
   };
   setNext();
@@ -135,7 +145,7 @@ function openTrainingForm(data, course, onSaved) {
       <div class="form-two"><label class="field"><span>Course</span><span class="select wide"><select id="tr-course">${data.catalogue.courses.map((x) => `<option value="${x.key}"${x.key === c.key ? " selected" : ""}>${esc(x.label)} (valid ${x.months} months)</option>`).join("")}</select>${ic("chevron-down", 16, 2)}</span></label>
       <label class="field"><span>Date</span><span class="input"><input id="tr-date" type="date" value="${todayIso()}" max="${todayIso()}" required></span></label></div>
       <div class="field"><span>Who attended? <button type="button" class="link-btn" id="tr-all">Tick everyone</button></span>
-        <div class="ticks">${data.workers.map((w) => `<label><input type="checkbox" value="${esc(w.id)}"><span>${esc(w.name)}<small>${esc(w.job)}</small></span></label>`).join("") || `<p class="sub">No workers have joined yet.</p>`}</div></div>
+        <div class="ticks">${data.workers.map((w) => `<label for="tr-worker-${esc(w.id)}"><input type="checkbox" id="tr-worker-${esc(w.id)}" name="tr_worker_${esc(w.id)}" value="${esc(w.id)}"><span>${esc(w.name)}<small>${esc(w.job)}</small></span></label>`).join("") || `<p class="sub">No workers have joined yet.</p>`}</div></div>
       <p class="form-error" role="alert" hidden></p>
       <button class="btn btn-ink btn-full" type="submit">Save</button>
     </form>`, "Record training");

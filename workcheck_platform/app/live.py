@@ -1,4 +1,5 @@
-"""Cached public API integrations (Open-Meteo weather/air quality, India Post pincode) and safety helpers."""
+"""Cached public API integrations (Open-Meteo weather/air quality, India Post pincode, OSRM road routing) and safety helpers."""
+from collections import Counter
 import ipaddress
 import re
 import socket
@@ -11,11 +12,41 @@ import httpx
 OPEN_METEO_FORECAST_URL = "https://api.open-meteo.com/v1/forecast"
 OPEN_METEO_AIR_URL = "https://air-quality-api.open-meteo.com/v1/air-quality"
 INDIA_POST_PIN_URL = "https://api.postalpincode.in/pincode/{pincode}"
+OSRM_TABLE_URL = "https://router.project-osrm.org/table/v1/driving/{coords}"
+_USER_AGENT = "WorkCheck-Kachchh/3.1 (SSIP-PS000109)"
 
 _ENV_CACHE: dict = {"ts": 0.0, "sites": None, "fetched_at": None}
 _PIN_CACHE: dict = {}
+_ROAD_CACHE: dict = {}
 _ENV_TTL_SEC = 900
 _PIN_TTL_SEC = 86400
+_ROAD_TTL_SEC = 21600
+
+# India Post spellings & Kachchh block/headquarter aliases -> canonical facility taluka names.
+TALUKA_ALIASES = {
+    "rahpar": "Rapar",
+    "rapar": "Rapar",
+    "chitrod": "Rapar",
+    "bhimasar": "Rapar",
+    "naliya": "Abdasa",
+    "abdasa": "Abdasa",
+    "dayapar": "Lakhpat",
+    "lakhpat": "Lakhpat",
+    "narayan sarovar": "Lakhpat",
+    "kandla": "Gandhidham",
+    "adipur": "Gandhidham",
+    "gandhidham": "Gandhidham",
+    "bhuj": "Bhuj",
+    "madhapar": "Bhuj",
+    "khavda": "Bhuj",
+    "mundra": "Mundra",
+    "adani port": "Mundra",
+    "anjar": "Anjar",
+    "mandvi": "Mandvi",
+    "nakhatrana": "Nakhatrana",
+    "bhachau": "Bhachau",
+    "samakhiali": "Bhachau",
+}
 
 
 def clear_live_caches() -> None:
@@ -24,6 +55,7 @@ def clear_live_caches() -> None:
     _ENV_CACHE["sites"] = None
     _ENV_CACHE["fetched_at"] = None
     _PIN_CACHE.clear()
+    _ROAD_CACHE.clear()
 
 
 def csv_safe(value):
@@ -62,6 +94,27 @@ def safe_forward_url(url: Optional[str], allow_http_local: bool = False) -> Opti
         if (ip.is_private or ip.is_loopback or ip.is_reserved) and not allow_http_local:
             return None
     return url.strip()
+
+
+def _http_get_retry(url: str, params: Optional[dict] = None, timeout: float = 8.0, http_get: Optional[Callable] = None):
+    """Fetch JSON endpoint with 1 retry on transient network/5xx errors when using real httpx."""
+    if http_get is not None:
+        return http_get(url, params=params, timeout=timeout) if params is not None else http_get(url, timeout=timeout)
+
+    headers = {"User-Agent": _USER_AGENT}
+    last_exc = None
+    for attempt in range(2):
+        try:
+            res = httpx.get(url, params=params, headers=headers, timeout=timeout)
+            if res.status_code >= 500 and attempt == 0:
+                time.sleep(0.25)
+                continue
+            return res
+        except httpx.HTTPError as exc:
+            last_exc = exc
+            if attempt == 0:
+                time.sleep(0.25)
+    raise last_exc
 
 
 def _estimate_sun_globe(temp_c: float, shortwave_wm2: Optional[float], wind_ms: Optional[float]) -> float:
@@ -134,12 +187,11 @@ def fetch_live_environment(
         ordered = list(site_coords.values())
         lats = ",".join(str(s["lat"]) for s in ordered)
         lons = ",".join(str(s["lon"]) for s in ordered)
-        getter = http_get or httpx.get
         sites_data = None
         live_flag = False
         fetched_at = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
         try:
-            w_res = getter(
+            w_res = _http_get_retry(
                 OPEN_METEO_FORECAST_URL,
                 params={
                     "latitude": lats,
@@ -149,8 +201,9 @@ def fetch_live_environment(
                     "timezone": "Asia/Kolkata",
                 },
                 timeout=8.0,
+                http_get=http_get,
             )
-            a_res = getter(
+            a_res = _http_get_retry(
                 OPEN_METEO_AIR_URL,
                 params={
                     "latitude": lats,
@@ -159,6 +212,7 @@ def fetch_live_environment(
                     "timezone": "Asia/Kolkata",
                 },
                 timeout=8.0,
+                http_get=http_get,
             )
             w_res.raise_for_status()
             a_res.raise_for_status()
@@ -222,6 +276,23 @@ def fetch_live_environment(
     }
 
 
+def _match_taluka(offices: list[dict], talukas: set[str]) -> Optional[str]:
+    votes: Counter = Counter()
+    for o in offices:
+        haystack = f"{o.get('Block') or ''} {o.get('Taluk') or ''} {o.get('Name') or ''}".lower()
+        found = None
+        for alias, canon in TALUKA_ALIASES.items():
+            if alias in haystack and canon in talukas:
+                found = canon
+                break
+        if found is None:
+            found = next((t for t in talukas if t.lower() in haystack), None)
+        if found:
+            weight = 3 if "head" in (o.get("BranchType") or "").lower() or "sub" in (o.get("BranchType") or "").lower() else 1
+            votes[found] += weight
+    return votes.most_common(1)[0][0] if votes else None
+
+
 def fetch_pincode_info(pincode: str, facilities: list, http_get: Optional[Callable] = None) -> dict:
     """Resolve an Indian 6-digit pincode via api.postalpincode.in and match local Kachchh facilities."""
     pin = (pincode or "").strip()
@@ -233,12 +304,11 @@ def fetch_pincode_info(pincode: str, facilities: list, http_get: Optional[Callab
     if use_cache and pin in _PIN_CACHE and (now_ts - _PIN_CACHE[pin]["ts"] < _PIN_TTL_SEC):
         return _PIN_CACHE[pin]["data"]
 
-    getter = http_get or httpx.get
     offices = []
     status_label = "fallback"
     live = False
     try:
-        res = getter(INDIA_POST_PIN_URL.format(pincode=pin), timeout=8.0)
+        res = _http_get_retry(INDIA_POST_PIN_URL.format(pincode=pin), timeout=8.0, http_get=http_get)
         res.raise_for_status()
         body = res.json()
         entry = body[0] if isinstance(body, list) and body else {}
@@ -253,12 +323,13 @@ def fetch_pincode_info(pincode: str, facilities: list, http_get: Optional[Callab
         status_label = "unavailable"
 
     first = offices[0] if offices else {}
-    district = first.get("District", "")
-    block = first.get("Block", "") or first.get("Taluk", "")
+    raw_district = (first.get("District") or "").strip()
+    district = "Kachchh" if raw_district.lower() in {"kachchh", "kutch"} else raw_district
+    block = first.get("Block") or first.get("Taluk") or ""
     state = first.get("State", "")
-    in_kachchh = district.lower() in {"kachchh", "kutch"}
+    in_kachchh = raw_district.lower() in {"kachchh", "kutch"}
     talukas = {f["taluka"] for f in facilities}
-    matched_taluka = next((t for t in talukas if t.lower() in f"{block} {first.get('Name', '')}".lower()), None)
+    matched_taluka = _match_taluka(offices, talukas)
     matching_facilities = [f for f in facilities if matched_taluka and f["taluka"] == matched_taluka]
 
     payload = {
@@ -268,6 +339,7 @@ def fetch_pincode_info(pincode: str, facilities: list, http_get: Optional[Callab
         "provider": "India Post Pincode Directory (api.postalpincode.in)",
         "district": district,
         "taluka": matched_taluka or block,
+        "matched_taluka": matched_taluka,
         "state": state,
         "in_kachchh": in_kachchh,
         "post_offices": [
@@ -281,4 +353,61 @@ def fetch_pincode_info(pincode: str, facilities: list, http_get: Optional[Callab
             oldest = min(_PIN_CACHE, key=lambda k: _PIN_CACHE[k]["ts"])
             _PIN_CACHE.pop(oldest, None)
         _PIN_CACHE[pin] = {"ts": now_ts, "data": payload}
+    return payload
+
+
+def fetch_road_distances(
+    site: dict,
+    facilities: list[dict],
+    haversine_fn: Callable,
+    http_get: Optional[Callable] = None,
+) -> dict:
+    """Compute driving road distance (km) & ETA (minutes) from site to all facilities via OSRM Table API."""
+    sid = site["site_id"]
+    now_ts = time.time()
+    use_cache = http_get is None
+    if use_cache and sid in _ROAD_CACHE and (now_ts - _ROAD_CACHE[sid]["ts"] < _ROAD_TTL_SEC):
+        return _ROAD_CACHE[sid]["data"]
+
+    routes = {}
+    live = False
+    if facilities:
+        coords = f"{site['lon']},{site['lat']};" + ";".join(f"{f['longitude']},{f['latitude']}" for f in facilities)
+        url = OSRM_TABLE_URL.format(coords=coords)
+        try:
+            res = _http_get_retry(url, params={"sources": "0", "annotations": "distance,duration"}, timeout=10.0, http_get=http_get)
+            res.raise_for_status()
+            body = res.json()
+            if body.get("code") == "Ok" and body.get("distances") and body.get("durations"):
+                dists = body["distances"][0][1:]
+                durs = body["durations"][0][1:]
+                for f, d_m, dur_s in zip(facilities, dists, durs):
+                    routes[f["facility_id"]] = {
+                        "road_km": round(d_m / 1000.0, 1) if d_m is not None else None,
+                        "duration_min": max(1, round(dur_s / 60.0)) if dur_s is not None else None,
+                        "straight_km": haversine_fn(site["lat"], site["lon"], f["latitude"], f["longitude"]),
+                    }
+                live = True
+        except (httpx.HTTPError, ValueError, KeyError, IndexError, TypeError):
+            live = False
+
+    if not routes:
+        for f in facilities:
+            routes[f["facility_id"]] = {
+                "road_km": None,
+                "duration_min": None,
+                "straight_km": haversine_fn(site["lat"], site["lon"], f["latitude"], f["longitude"]),
+            }
+
+    payload = {
+        "site_id": sid,
+        "live": live,
+        "provider": "OSRM OpenStreetMap Driving Engine" if live else "Straight-line Haversine estimate",
+        "routes": routes,
+    }
+    if use_cache and live:
+        if len(_ROAD_CACHE) >= 64:
+            oldest = min(_ROAD_CACHE, key=lambda k: _ROAD_CACHE[k]["ts"])
+            _ROAD_CACHE.pop(oldest, None)
+        _ROAD_CACHE[sid] = {"ts": now_ts, "data": payload}
     return payload

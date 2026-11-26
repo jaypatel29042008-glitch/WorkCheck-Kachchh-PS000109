@@ -25,7 +25,7 @@ from starlette.middleware.trustedhost import TrustedHostMiddleware
 
 from .core import (ALLOWED_HOSTS, CONSENT_VERSION, COOKIE, DEMO, DEMO_ORG, DEMO_USERS, ENV, HTTPS, LOCK_MINUTES, MAX_FAILED, ROOT, Login, current_user, db, device_key_secret,
                    hash_password, log_action, normalise_identity, now, open_session, password_ok, public_user, ref, require, set_cookie)
-from .live import csv_safe, fetch_live_environment, fetch_pincode_info, safe_forward_url
+from .live import csv_safe, fetch_live_environment, fetch_pincode_info, fetch_road_distances, safe_forward_url
 from .security import LOGIN_LIMIT, CsrfCheck, SecurityHeaders, limit
 
 log = logging.getLogger("workcheck")
@@ -141,6 +141,10 @@ def load_facilities():
                     "has_biochemical_lab": r["has_biochemical_lab"] == "True",
                     "has_cbnaat_tb_testing": r["has_cbnaat_tb_testing"] == "True",
                     "emergency_108_base": r["emergency_108_base"] == "True",
+                    "pincode": r.get("pincode", ""),
+                    "phone": r.get("phone", ""),
+                    "address_note": r.get("address_note", ""),
+                    "source": r.get("source", "kachchh.nic.in"),
                 })
     return records
 
@@ -160,8 +164,15 @@ if ALLOWED_HOSTS:
 
 
 @app.get("/api/auth/options")
-def auth_options():
-    return {"demo": DEMO, "env": ENV, "consent_version": CONSENT_VERSION}
+def auth_options(request: Request):
+    session_user = None
+    token = request.cookies.get(COOKIE)
+    if token:
+        with db() as con:
+            row = con.execute("SELECT u.*, s.expires_at FROM sessions s JOIN users u ON u.id = s.user_id WHERE s.token_hash = ?", (hashlib.sha256(token.encode()).hexdigest(),)).fetchone()
+            if row is not None and row["expires_at"] >= now().isoformat():
+                session_user = public_user(dict(row), con)
+    return {"demo": DEMO, "env": ENV, "consent_version": CONSENT_VERSION, "authenticated": session_user is not None, "user": session_user}
 
 
 # ---------------------------------------------------------------------------
@@ -950,12 +961,17 @@ def evidence(user=Depends(current_user)):
                 "sources": [dict(r) for r in rc.execute("SELECT * FROM public_source_register")],
                 "dictionary": [dict(r) for r in rc.execute("SELECT \"table\", rows, data_class, note FROM data_dictionary")],
                 "silica": [dict(r) for r in rc.execute("SELECT * FROM msha_silica_by_commodity_job WHERE job_class = 'All jobs' ORDER BY derived_silica_p90_ug_m3 DESC")],
+                "silica_scenarios": [dict(r) for r in rc.execute("SELECT * FROM silica_scenarios ORDER BY p90_ug_m3 DESC")],
                 "parameters": [dict(r) for r in rc.execute("SELECT * FROM sensor_parameters")],
                 "cpcb_stations": [dict(r) for r in rc.execute("SELECT station, COUNT(*) AS days, ROUND(AVG(\"PM2.5\"), 1) AS pm25_avg, ROUND(AVG(PM10), 1) AS pm10_avg, MIN(t) AS from_date, MAX(t) AS to_date FROM cpcb_gujarat_daily_pm GROUP BY station ORDER BY pm10_avg DESC")],
                 "nfhs5": [dict(r) for r in rc.execute("SELECT number, indicator, nfhs5_pct, nfhs4_pct, note FROM kachchh_nfhs5_health_indicators ORDER BY number")],
                 "msha_noise": [dict(r) for r in rc.execute("SELECT commodity_group, job_class, samples, p50_twa_dba_5db, p90_twa_dba_5db, pct_at_or_over_90_dba FROM msha_noise_by_commodity_job ORDER BY p90_twa_dba_5db DESC")],
+                "niosh_noise": [dict(r) for r in rc.execute("SELECT sector, COUNT(*) AS samples, ROUND(AVG(niosh_rel_dba), 1) AS avg_rel_dba, ROUND(MAX(niosh_rel_dba), 1) AS max_rel_dba FROM niosh_hhe_noise_personal WHERE niosh_rel_dba IS NOT NULL GROUP BY sector ORDER BY samples DESC LIMIT 8")],
                 "plfs_hours": [dict(r) for r in rc.execute("SELECT sector_sex, COUNT(*) AS quarters, ROUND(AVG(casual_labour), 1) AS casual_avg_h, ROUND(AVG(regular_salaried), 1) AS salaried_avg_h, ROUND(AVG(all_workers), 1) AS all_avg_h FROM plfs_gujarat_table41_hours GROUP BY sector_sex ORDER BY all_avg_h DESC")],
+                "plfs_bands": [dict(r) for r in rc.execute("SELECT sector_sex, ROUND(AVG(gujarat_over_48), 1) AS guj_over_48_pct, ROUND(AVG(gujarat_over_60), 1) AS guj_over_60_pct, ROUND(AVG(all_india_over_48), 1) AS ind_over_48_pct FROM plfs_gujarat_table43_bands GROUP BY sector_sex ORDER BY guj_over_60_pct DESC")],
                 "lancet_heat": [dict(r) for r in rc.execute("SELECT year, geography_name, ROUND(whl_total / 1000000.0, 2) AS whl_million, whl_per_worker FROM lancet_india_hours_lost WHERE year >= 2015 ORDER BY year DESC LIMIT 12")],
+                "lancet_outdoor": [dict(r) for r in rc.execute("SELECT year, ROUND(outdoor_workers_thousands / 1000.0, 1) AS outdoor_millions, ROUND(outdoor_workers_pct, 1) AS outdoor_pct FROM lancet_india_outdoor_workers ORDER BY year DESC LIMIT 8")],
+                "locality_priority": [dict(r) for r in rc.execute("SELECT heat_rank, label, taluka, heavy_sun_allowed_h_apr_oct, hours_sun_over_27_5, shift_pm10_mean, days_pm10_over_100 FROM locality_heat_priority_2025 ORDER BY heat_rank")],
                 "district_facts": [dict(r) for r in rc.execute("SELECT item, value, source, note FROM district_facts")]}
 
 
@@ -1286,6 +1302,14 @@ def live_pincode(pincode: str, user=Depends(current_user)):
         raise HTTPException(400, str(exc))
 
 
+@app.get("/api/live/road-distances")
+def live_road_distances(site_id: str = "little_rann_kutch", user=Depends(current_user)):
+    site = SITE_COORDS.get(site_id)
+    if site is None:
+        raise HTTPException(404, "Unknown site_id.")
+    return fetch_road_distances(site, load_facilities(), haversine_km)
+
+
 @app.get("/api/privacy/notice")
 def privacy_notice():
     return {
@@ -1363,7 +1387,7 @@ def health():
     return {"status": "ok", "reference_rows": rows}
 
 
-ROOT_STATIC_FILES = {"architecture.html", "favicon.ico", "favicon.svg", "manifest.webmanifest", "robots.txt", "sitemap.xml", "sw.js"}
+ROOT_STATIC_FILES = {"404.html", "architecture.html", "favicon.ico", "favicon.svg", "manifest.webmanifest", "robots.txt", "sitemap.xml", "sw.js"}
 
 app.mount("/static", StaticFiles(directory=ROOT / "static"), name="static")
 app.mount("/assets", StaticFiles(directory=ROOT / "static" / "assets"), name="assets")
@@ -1371,8 +1395,12 @@ app.mount("/assets", StaticFiles(directory=ROOT / "static" / "assets"), name="as
 
 @app.get("/{path:path}", include_in_schema=False)
 def page(path: str):
-    if path.startswith("api/"):
+    clean = path.lstrip("/")
+    if clean.startswith("api/") or clean.startswith(".well-known/"):
         raise HTTPException(404, "Not found.")
-    if path in ROOT_STATIC_FILES and (ROOT / "static" / path).is_file():
-        return FileResponse(ROOT / "static" / path)
+    if clean in ROOT_STATIC_FILES and (ROOT / "static" / clean).is_file():
+        return FileResponse(ROOT / "static" / clean)
+    last_seg = clean.rsplit("/", 1)[-1]
+    if "." in last_seg and not last_seg.endswith(".html"):
+        raise HTTPException(404, "Not found.")
     return FileResponse(ROOT / "static" / "index.html")

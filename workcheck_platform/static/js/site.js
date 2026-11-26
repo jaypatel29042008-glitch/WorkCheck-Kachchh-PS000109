@@ -100,16 +100,21 @@ async function tabReplay(panel) {
   const stop = () => { clearInterval(timer); timer = null; S.replaying = false; const b = $("#rp-play"); if (b) b.innerHTML = `${ic("player-play", 16, 2)}Play the day`; };
   const show = async (h) => {
     hour = h;
-    const r = await api(`/api/node/replay?location_id=${$("#rp-place").value}&day=${$("#rp-day").value}&hour=${h}`, { method: "POST" });
+    const placeEl = $("#rp-place");
+    const dayEl = $("#rp-day");
+    if (!panel.isConnected || !placeEl || !dayEl) return;
+    const r = await api(`/api/node/replay?location_id=${placeEl.value}&day=${dayEl.value}&hour=${h}`, { method: "POST" });
+    if (!panel.isConnected) return;
     S.lastReading = r.id;
     const stamp = `Model replay, ${fmtDate(r.date)}, ${String(h).padStart(2, "0")}:00`;
     renderLive(r, stamp);
-    $("#rp-now").textContent = `${String(h).padStart(2, "0")}:00, heat index ${r.wbgt_c}°C`;
+    const nowEl = $("#rp-now");
+    if (nowEl) nowEl.textContent = `${String(h).padStart(2, "0")}:00, heat index ${r.wbgt_c}°C`;
     draw();
   };
   const draw = () => {
     const host = $("#rp-chart");
-    if (!host || !data || !Array.isArray(data.hours) || !data.hours.length) return;
+    if (!panel.isConnected || !host || !data || !Array.isArray(data.hours) || !data.hours.length) return;
     const pt = data.hours[hour] || data.hours[0];
     lineChart(host, {
       labels, height: 190, yMin: 15, yMax: 40, yTicks: [20, 25, 30, 35, 40], unit: "°C", aria: "Heat index by hour",
@@ -123,7 +128,12 @@ async function tabReplay(panel) {
     });
   };
   const load = async () => {
-    data = await api(`/api/node/day?location_id=${$("#rp-place").value}&day=${$("#rp-day").value}`);
+    const placeEl = $("#rp-place");
+    const dayEl = $("#rp-day");
+    if (!panel.isConnected || !placeEl || !dayEl) return;
+    const res = await api(`/api/node/day?location_id=${placeEl.value}&day=${dayEl.value}`);
+    if (!panel.isConnected) return;
+    data = res;
     draw();
   };
   $("#rp-place").addEventListener("change", async () => { stop(); await load(); show(hour); });
@@ -134,7 +144,7 @@ async function tabReplay(panel) {
     $("#rp-play").innerHTML = `${ic("player-pause", 16, 2)}Pause`;
     let h = hour >= 23 ? 0 : hour;
     show(h);
-    timer = setInterval(() => { h += 1; if (h > 23) return stop(); show(h); }, 1100);
+    timer = setInterval(() => { h += 1; if (!panel.isConnected || h > 23) return stop(); show(h); }, 1100);
   });
   await load();
   return stop;
@@ -203,14 +213,14 @@ async function sendWokwiSimulatedPacket() {
   try {
     const r = await api("/api/node/simulate", { method: "POST", body: payload });
     S.lastReading = r.id;
-    renderLive(r, "Simulated ESP32 packet");
+    if ($("#site-live")) renderLive(r, "Simulated ESP32 packet");
     if (!isPreview()) {
       const next = await api("/api/node/state").catch(() => null);
       const dot = $("#wokwi-status");
       if (dot && next && next.wokwi) dot.innerHTML = wokwiStatus(next.wokwi);
     }
   } catch (err) {
-    toast(err.message || "Could not send simulated packet.", "action");
+    if ($("#site-live")) toast(err.message || "Could not send simulated packet.", "action");
   }
 }
 
@@ -257,6 +267,7 @@ async function tabWokwi(panel) {
       } else {
         toast("Streaming simulated Wokwi ESP32 telemetry...");
         await sendWokwiSimulatedPacket();
+        if (!panel.isConnected) return;
         btnStream.innerHTML = `${ic("player-stop", 16, 2)} Stop Live Stream`;
         wokwiStreamTimer = setInterval(sendWokwiSimulatedPacket, 3000);
       }
@@ -318,7 +329,12 @@ async function mountDeviceControls(host) {
   const poll = setInterval(async () => {
     if (!host.isConnected) return;
     const [next, state] = await Promise.all([api("/api/node/controls").catch(() => null), api("/api/node/state").catch(() => null)]);
-    if (next) { c = next; $("#ctl-status", host).innerHTML = controlStatus(c); }
+    if (!host.isConnected) return;
+    if (next) {
+      c = next;
+      const ctlEl = $("#ctl-status", host);
+      if (ctlEl) ctlEl.innerHTML = controlStatus(c);
+    }
     if (state && state.latest.id !== lastReading) {
       lastReading = state.latest.id; S.lastReading = lastReading;
       if ($("#site-live")) renderLive(state.latest, state.latest.source === "wokwi_simulated" ? "Sent by the Wokwi device" : undefined);

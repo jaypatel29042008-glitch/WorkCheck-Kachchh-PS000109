@@ -3766,7 +3766,8 @@ a.tile:hover {
   gap: 6px;
   min-width: 0;
 }
-.pass-fields label {
+.pass-fields label,
+.pass-fields .meta-label {
   display: block;
   font-size: 10px;
   font-weight: 600;
@@ -3774,6 +3775,7 @@ a.tile:hover {
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
+.pass-fields h3,
 .pass-fields h4 {
   font-size: 15px;
   font-weight: 700;
@@ -3810,13 +3812,16 @@ a.tile:hover {
   border: 1px solid var(--line);
   border-radius: 12px;
 }
-.pass-meta-grid .meta-item label {
+.pass-meta-grid .meta-item label,
+.pass-meta-grid .meta-item .meta-label {
   display: block;
   font-size: 10.5px;
+  font-weight: 500;
+  font-family: inherit;
   color: var(--ink-3);
   margin-bottom: 3px;
 }
-.pass-meta-grid .meta-item span {
+.pass-meta-grid .meta-item > span:not(.meta-label) {
   display: block;
   font-size: 13px;
   font-weight: 700;
@@ -4076,6 +4081,33 @@ a.tile:hover {
   font-weight: 700;
   color: #087f5b;
 }
+.road-badge {
+  display: inline-block;
+  font-weight: 600;
+  color: #3b5bdb;
+  margin-left: 4px;
+}
+.fac-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  font-size: 11px;
+  color: var(--ink-3);
+  line-height: 1.4;
+}
+.fac-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+.fac-phone:hover {
+  text-decoration: underline;
+  color: #3b5bdb;
+}
 .fac-capabilities {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -4089,7 +4121,7 @@ a.tile:hover {
   font-weight: 600;
 }
 .fac-capabilities span.no {
-  color: #94a3b8;
+  color: var(--ink-3);
 }
 .fac-capabilities span.alert-108 {
   color: #b91c1c;
@@ -4256,7 +4288,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .cal-head { margin-bottom: 6px }
 .cal-head span { text-align: center; font-size: 11px; font-weight: 600; color: var(--ink-3) }
 .cal-day { aspect-ratio: 1; border-radius: 11px; display: grid; place-items: center; position: relative; cursor: default; outline-offset: 1px }
-.cal-day small { font-size: 11px; color: #A3A9BF; font-weight: 600 }
+.cal-day small { font-size: 11px; color: var(--ink-3); font-weight: 600 }
 .cal-day.none { background: transparent; box-shadow: inset 0 0 0 1px var(--line-2) }
 .cal-day.clear { background: var(--clear-bg); color: var(--clear) }
 .cal-day.watch { background: var(--watch-bg); color: var(--watch) }

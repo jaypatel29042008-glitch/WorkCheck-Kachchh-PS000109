@@ -14,7 +14,7 @@ function onboardFrame(steps, at, title, lead, body) {
         <ol class="ob-steps">${steps.map(([name, hint], i) => `<li class="${i < at ? "done" : i === at ? "on" : ""}"><span>${i < at ? ic("check", 14, 2.6) : i + 1}</span><div><b>${esc(name)}</b><small>${esc(hint)}</small></div></li>`).join("")}</ol>
       </div>
     </section>
-    <section class="login-form">${body}</section>
+    <main class="login-form" id="main" tabindex="-1">${body}</main>
   </div>`;
 }
 
@@ -107,8 +107,8 @@ async function renderJoin(code) {
           <p class="form-error" role="alert" hidden></p>
           <div class="ob-actions"><button class="btn btn-ghost" type="button" id="ob-back">${ic("arrow-left", 16, 2)}Back</button><button class="btn btn-ink" type="submit" id="ob-next">Join ${ic("arrow-right", 18, 2)}</button></div>
         </form>`
-      : `<form id="ob-form" novalidate><h2>Join your workplace</h2><p class="sub">Enter the 6-letter code your supervisor gave you.</p>
-          <label class="field"><span>Invite code</span><span class="input code">${ic("ticket", 18)}<input id="ob-code" value="${esc(value)}" placeholder="ABC-123" maxlength="8" autocomplete="off" autocapitalize="characters" spellcheck="false" required></span></label>
+      : `<form id="ob-form" novalidate><h2>Join your workplace</h2><p class="sub">Enter the 8-character invite code your supervisor gave you.</p>
+          <label class="field"><span>Invite code</span><span class="input code">${ic("ticket", 18)}<input id="ob-code" value="${esc(value)}" placeholder="ABCD-2345" maxlength="12" autocomplete="off" autocapitalize="characters" spellcheck="false" required></span></label>
           <p class="form-error" role="alert"${error ? "" : " hidden"}>${esc(error || "")}</p>
           <div class="ob-actions"><button class="btn btn-ink" type="submit" id="ob-next">Continue ${ic("arrow-right", 18, 2)}</button></div>
           <p class="fine center-text">No code? Ask your supervisor, or <a href="#/setup">set up a new workplace</a>. <a href="#/">Sign in</a></p>
