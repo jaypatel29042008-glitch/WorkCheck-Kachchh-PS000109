@@ -46,7 +46,7 @@ function renderLogin() {
       <div class="float-card fc1"><span class="av av1" aria-hidden="true">KP<i>${ic("pick", 12, 2)}</i></span><div><b>Kishan P.</b><span>Stone crusher operator</span></div>${pill("due", "Hearing test due", true)}</div>
       <div class="float-card fc2"><span class="round sm bg-action t-action">${ic("temperature-sun", 16, 2)}</span><div><b>2.3 safe hours</b><span>Per shift, April to October</span></div></div>
     </section>
-    <section class="login-form">
+    <main class="login-form" id="main" tabindex="-1">
       <form id="login-form" novalidate>
         <h2>Sign in</h2>
         <p class="sub">Use your WorkCheck account.</p>
@@ -55,12 +55,20 @@ function renderLogin() {
         <p class="form-error" id="login-error" role="alert" hidden></p>
         <button class="btn btn-ink btn-full" id="login-go" type="submit">Sign in ${ic("arrow-right", 18, 2)}</button>
         ${window.WORKCHECK_STATIC_DATA ? "" : `<div class="new-here"><a class="new-card" href="#/setup"><span class="round sm bg-indigo">${ic("building", 16, 2)}</span><span><b>New workplace</b><small>For owners</small></span>${ic("chevron-right", 16)}</a><a class="new-card" href="#/join"><span class="round sm bg-indigo">${ic("ticket", 16, 2)}</span><span><b>Join with a code</b><small>For your team</small></span>${ic("chevron-right", 16)}</a></div>`}
-        <div class="divider"><span>Try a test account</span></div>
-        <div class="test-accounts">${TEST_ACCOUNTS.map(([e, p, n, d, i], k) => `<button type="button" class="test-acc" data-k="${k}"><span class="round sm bg-indigo">${ic(i, 16, 2)}</span><span><b>${n}</b><small>${d}</small></span></button>`).join("")}</div>
-        <p class="fine">All workers here are fictional. Test accounts work only on this copy.${window.WORKCHECK_STATIC_DATA ? " This is a read-only preview, so nothing is saved." : ""}</p>
+        <div id="demo-wrap">
+          <div class="divider"><span>Try a test account</span></div>
+          <div class="test-accounts">${TEST_ACCOUNTS.map(([e, p, n, d, i], k) => `<button type="button" class="test-acc" data-k="${k}"><span class="round sm bg-indigo">${ic(i, 16, 2)}</span><span><b>${n}</b><small>${d}</small></span></button>`).join("")}</div>
+        </div>
+        <p class="fine">All workers here are fictional. Test accounts work only when demo mode is enabled.${window.WORKCHECK_STATIC_DATA ? " This is a read-only preview, so nothing is saved." : ""} <button type="button" class="link-inline" id="login-privacy">Privacy &amp; DPDP Notice</button></p>
       </form>
-    </section>
+    </main>
   </div>`;
+  api("/api/auth/options").then((opts) => {
+    const wrap = $("#demo-wrap");
+    if (wrap && opts && opts.demo === false) wrap.hidden = true;
+  }).catch(() => { });
+  const privBtn = $("#login-privacy");
+  if (privBtn && window.openLegalModal) privBtn.addEventListener("click", () => openLegalModal("privacy"));
   const form = $("#login-form");
   const go = async (email, password) => {
     const err = $("#login-error"), btn = $("#login-go");

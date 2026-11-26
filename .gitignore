@@ -41,3 +41,9 @@ ENV/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Runtime databases & caches
+.pytest_cache/
+workcheck_platform/data/runtime.db*
+wokwi_bridge/bridge_runtime.db*
+*.log

@@ -15,6 +15,7 @@ def client(tmp_path, monkeypatch):
     main.LOGIN_LIMIT.hits.clear()
     from app import security
     security.SIGNUP_LIMIT.hits.clear()
+    security.JOIN_LIMIT.hits.clear()
     return TestClient(main.app, headers=HEADERS)
 
 
@@ -47,7 +48,7 @@ def test_company_signup_invite_and_worker_join(client):
     assert weak.status_code == 400 and "10 characters" in weak.json()["detail"]
     invite = client.post("/api/org/invites", json={"role": "worker", "site_id": out["site_id"], "job_id": "salt_raking", "label": "Morning gang", "max_uses": 5}).json()
     code = invite["code"]
-    assert len(code) == 7 and "-" in code
+    assert len(code) == 9 and "-" in code
     preview = client.get(f"/api/join/{code.lower()}").json()
     assert preview["org"] == "Rann Salt Co" and preview["job"] == "Salt-pan worker" and preview["site"] == "Pan 7"
     client.post("/api/auth/logout")

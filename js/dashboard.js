@@ -45,18 +45,20 @@ VIEWS.dashboard = async () => {
   if (S.page !== "dashboard") return;
   const staff = S.user.role !== "ddo";
   const demo = Boolean(d.org.demo);
-  const rate = d.workers_total ? Math.round((d.checked_in / d.workers_total) * 100) : 0;
+  const rate = typeof d.workers_total === "number" && typeof d.checked_in === "number" && d.workers_total ? Math.round((d.checked_in / d.workers_total) * 100) : null;
   const tiles = [
-    ["indigo", "clipboard-check", "Checked in today", `${d.checked_in}`, `of ${d.workers_total} workers (${rate}%)`, "watch"],
+    ["indigo", "clipboard-check", "Checked in today", `${d.checked_in}`, rate !== null ? `of ${d.workers_total} workers (${rate}%)` : "Under-5 privacy threshold", "watch"],
     ["amber", "mood-sad", "Not well today", `${d.unwell_count}`, d.unwell_count ? "Said so in their check-in" : "No one said they were unwell", "due"],
     ["rose", "first-aid-kit", "Open incidents", `${d.incidents.open}`, d.incidents.open ? "Waiting to be closed" : "Nothing open", "action"],
     ["green", "stethoscope", "Medical checks overdue", `${d.medical.overdue}`, d.medical.soon ? `${d.medical.soon} more due within 30 days` : "None due in the next 30 days", "clear"],
   ];
+  const unreviewed = S.user.role === "clinician" && d.unreviewed_reports ? `<section class="next due" style="margin-bottom:18px"><span class="round">${ic("stethoscope", 20, 2)}</span><div><h3>${esc(String(d.unreviewed_reports))} unreviewed symptom reports waiting</h3><p>Open Workers to review patient symptom logs.</p></div><a class="btn btn-ink btn-sm" href="#/workers">Review queue</a></section>` : "";
   const lead = d.workers_total
-    ? `<b>${d.checked_in} of ${d.workers_total}</b> workers have checked in today${d.unwell_count ? `, and <b>${d.unwell_count}</b> said they are not well` : ""}.`
+    ? `<b>${esc(d.checked_in)} of ${esc(d.workers_total)}</b> workers have checked in today${d.unwell_count ? `, and <b>${esc(d.unwell_count)}</b> said they are not well` : ""}.`
     : "No workers have joined yet. Invite them to start seeing check-ins here.";
   $("#view").innerHTML = `<header class="page-head"><div><h1>${staff && !S.user.org.demo ? `${greeting()}, ${esc(S.user.name.split(" ")[0])}` : "Daily check-ins"}</h1><p class="lead">${lead}</p></div>
       <div class="head-actions">${demo ? `<span class="pill none" data-tip="These check-ins, incidents and training records are made up so the page has something to show.">${ic("info-circle", 14, 2)}Fictional sample entries</span>` : ""}${!staff ? `<span class="pill none" data-tip="The district office sees counts only, never names.">Totals only</span>` : ""}</div></header>
+    ${unreviewed}
     ${!demo && staff ? startChecklist(d) : ""}
     <section class="card needs"><div class="card-head"><h2>What needs you today</h2><span class="sub">${fmtDate(d.day)}</span></div>
       <div class="needs-list">${d.todo.map((t) => `<${t.href && staff ? `a href="${t.href}"` : "div"} class="need ${t.tone}"><i></i><span>${esc(t.text)}</span>${t.href && staff && t.href !== "#/dashboard" ? ic("chevron-right", 18) : ""}</${t.href && staff ? "a" : "div"}>`).join("")}</div></section>

@@ -304,7 +304,7 @@ VIEWS.wokwi = async () => {
       </div>
       <div style="display:flex;flex-direction:column;gap:14px;">
         ${WOKWI_PARTS.map((p) => `
-          <div style="display:grid;grid-template-columns:220px 180px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--line);align-items:start;">
+          <div class="wk-part-row">
             <div>
               <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
                 <span class="round xs bg-${p.tone} t-${p.tone}">${ic(p.icon, 14, 2)}</span>
@@ -356,7 +356,7 @@ VIEWS.wokwi = async () => {
 
     if (lampBadge) {
       lampBadge.className = `pill ${lampCode === "RED_FLASH" || lampCode === "RED" ? "action" : lampCode === "ORANGE" || lampCode === "YELLOW" ? "due" : "clear"} sm`;
-      lampBadge.innerHTML = `${lamp(lampCode)} ${lampCode}`;
+      lampBadge.innerHTML = `${lamp(lampCode)} ${esc(lampCode)}`;
     }
     if (actionText) {
       actionText.textContent = advice;
@@ -371,10 +371,6 @@ VIEWS.wokwi = async () => {
 
   // Telemetry sender with scenario values
   const sendPacket = async (scenario = "normal") => {
-    if (window.WORKCHECK_STATIC_DATA) {
-      toast(READ_ONLY_MESSAGE, "watch");
-      return;
-    }
     let tAir = 28.0, rh = 52.0, tGlobe = 32.0, pm10 = 35.0, uv = 4.2, noise = 68.0;
 
     if (scenario === "heat") {
@@ -421,17 +417,11 @@ VIEWS.wokwi = async () => {
       noise_dba: Math.round(noise * 10) / 10,
     };
 
-    const res = await fetch("/api/v1/telemetry", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "X-API-Key": "demo-device-key" },
-      body: JSON.stringify(payload),
-    });
-
-    if (res.ok) {
-      const next = await api("/api/node/state").catch(() => null);
-      if (next && next.latest) {
-        updateConsole(next.latest);
-      }
+    try {
+      const r = await api("/api/node/simulate", { method: "POST", body: payload });
+      updateConsole(r);
+    } catch (err) {
+      toast(err.message || "Could not simulate packet.", "action");
     }
   };
 

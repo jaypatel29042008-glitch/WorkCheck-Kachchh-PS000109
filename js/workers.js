@@ -139,7 +139,7 @@ function renderWorker(p) {
           ${m.series.length ? spark(m.series, tone, m.months, m.series_unit) : `<div class="spark-empty"></div>`}
           <span class="pill sm ${tone}" data-tip="${esc(m.caption)}">${esc(m.chip)}</span></div>`;
       }).join("")}</div>
-      <p class="fine">${p.exposure.map((m) => `${m.label}: ${m.caption}.`).join(" ")}</p>
+      <p class="fine">${esc(p.exposure.map((m) => `${m.label}: ${m.caption}.`).join(" "))}</p>
     </section>
 
     <div class="two">
@@ -208,10 +208,16 @@ function renderWorker(p) {
   });
   $$("[data-record]", box).forEach((b) => b.addEventListener("click", () => openRecord(p, b.dataset.record)));
   $$("[data-review]", box).forEach((b) => b.addEventListener("click", async () => {
-    await api(`/api/workers/${encodeURIComponent(c.id)}/symptoms/${b.dataset.review}/review`, { method: "POST" });
-    toast("Marked as reviewed.");
-    await loadWorkers();
-    await openWorker(c.id);
+    b.disabled = true;
+    try {
+      await api(`/api/workers/${encodeURIComponent(c.id)}/symptoms/${b.dataset.review}/review`, { method: "POST" });
+      toast("Marked as reviewed.", "good");
+      await loadWorkers();
+      await openWorker(c.id);
+    } catch (err) {
+      b.disabled = false;
+      toast(err.message || "Could not mark reviewed.", "action");
+    }
   }));
 
   const loadWorkerFacilities = async (disease = "all") => {
@@ -369,6 +375,7 @@ function openRecord(p, condition) {
 /* A worker who joined with an invite: what they told us, and what the team recorded. */
 function renderOrgWorker(p) {
   const c = p.card;
+  const reports = (p.symptoms || []).filter((s) => !s.reviewed);
   const box = $("#wdetail");
   const nextIcon = p.state.level === "action" ? "alert-triangle" : p.state.level === "due" ? "calendar-check" : "eye";
   const again = async () => { await loadWorkers(); await openWorker(c.id); };
@@ -379,7 +386,7 @@ function renderOrgWorker(p) {
       <div class="w-head-main">
         <div class="w-name"><h2>${esc(c.name)}</h2>${pill(p.state.level)}</div>
         <p class="sub">${esc(c.job)} · ${esc(c.place)}${c.age ? ` · Age ${esc(c.age)}` : ""}</p>
-        <p class="w-tags"><span class="tag">${esc(c.id)}</span><span class="tag">Joined ${fmtDate(p.joined)}</span></p>
+        <p class="w-tags"><span class="tag">${esc(c.id)}</span><span class="tag">Joined ${fmtDate(p.joined)}</span>${p.checkin_hours_week ? `<span class="tag">${p.checkin_hours_week}h gate hours this week</span>` : ""}</p>
       </div>
       <button class="btn btn-ghost" id="w-med" type="button">${ic("plus", 18)}Record a check</button>
     </header>
@@ -389,11 +396,13 @@ function renderOrgWorker(p) {
       <div><h3>${esc(p.next.title)}</h3><p>${esc(p.next.body)}</p></div>
     </section>
 
+    ${reports.length ? `<section class="card" id="w-reports"><div class="card-head"><h2>Reported by the worker</h2></div>${reports.map((r) => `<div class="report"><span class="round sm bg-${r.urgent ? "action t-action" : "due t-due"}">${ic(r.urgent ? "alert-triangle" : "mood-sick", 16, 2)}</span><div><b>${esc(r.text)}</b><small>${fmtDate(r.at)}</small></div><button class="btn btn-ghost btn-sm" data-review="${r.id}" type="button">Mark reviewed</button></div>`).join("")}</section>` : ""}
+
     <div class="two">
       <section class="card">${p.log.logged ? calendarCard(p.log, "en", "Daily check-ins") : `<div class="card-head"><h2>Daily check-ins</h2></div><div class="empty small">${ic("clipboard-check", 24)}<p>${esc(c.name.split(" ")[0])} has not checked in yet.</p></div>`}</section>
       <section class="card"><div class="card-head"><h2>What this job exposes them to</h2></div>
         <div class="exp-grid two-up">${p.exposure.map((m) => { const tone = EXP_TONE[m.level]; return `<div class="exp"><div class="exp-top"><span class="round xs bg-${tone} t-${tone}">${ic(m.icon, 15, 2)}</span>${esc(m.label)}</div><div class="exp-val">${esc(m.value)}</div><div class="exp-unit">${esc(m.unit || " ")}</div><span class="pill sm ${tone}" data-tip="${esc(m.caption)}">${esc(m.chip)}</span></div>`; }).join("")}</div>
-        <p class="fine">${p.exposure.map((m) => `${m.label}: ${m.caption}.`).join(" ")}</p></section>
+        <p class="fine">${esc(p.exposure.map((m) => `${m.label}: ${m.caption}.`).join(" "))}</p></section>
     </div>
 
     <div class="two">
@@ -410,6 +419,17 @@ function renderOrgWorker(p) {
     const data = await api("/api/medical");
     openMedicalForm([c], data.catalogue, c.id, again);
   });
+  $$("[data-review]", box).forEach((b) => b.addEventListener("click", async () => {
+    b.disabled = true;
+    try {
+      await api(`/api/workers/${encodeURIComponent(c.id)}/symptoms/${b.dataset.review}/review`, { method: "POST" });
+      toast("Marked as reviewed.", "good");
+      await again();
+    } catch (err) {
+      b.disabled = false;
+      toast(err.message || "Could not mark reviewed.", "action");
+    }
+  }));
   api(`/api/facilities?site_id=${encodeURIComponent(c.location_id)}&disease=all`).then((res) => {
     const grid = $("#w-fac-grid", box);
     if (!grid) return;

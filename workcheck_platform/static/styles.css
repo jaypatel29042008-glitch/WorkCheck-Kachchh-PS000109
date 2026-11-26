@@ -44,7 +44,7 @@
   --card: #fff;
   --ink: #14182B;
   --ink-2: #565C72;
-  --ink-3: #6B7186;
+  --ink-3: #52576B;
   --line: #ECEEF5;
   --line-2: #DFE2EE;
   --accent: #4656E6;
@@ -1587,7 +1587,7 @@ a.tile:hover {
   min-width: 0
 }
 
-.next h3 {
+.next h2, .next h3 {
   font-size: 16px;
   margin-bottom: 1px
 }
@@ -2462,7 +2462,7 @@ a.tile:hover {
   flex: 1 1 auto
 }
 
-.me-status h3 {
+.me-status h2, .me-status h3 {
   font-size: 18px;
   line-height: 1.3
 }
@@ -3723,7 +3723,7 @@ a.tile:hover {
   align-items: center;
   gap: 12px;
 }
-.pass-title-group h3 {
+.pass-title-group h2, .pass-title-group h3 {
   font-size: 15px;
   font-weight: 700;
   color: var(--ink);
@@ -4440,3 +4440,114 @@ a.need:hover span { text-decoration: underline; text-decoration-color: var(--lin
 .wk-svg .wk-chip rect { fill: var(--accent-soft) }
 .wk-svg .wk-chip text { font-size: 12.5px; font-weight: 600; fill: var(--accent) }
 @media (max-width: 760px) { .wk-svg { max-width: none } }
+
+/* Official accessibility, DPDP footer, live public API strips, pincode lookup & mobile overflow fixes */
+.skip-link {
+  position: fixed;
+  left: -9999px;
+  top: 12px;
+  z-index: 200;
+  background: var(--accent, #4656E6);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 13.5px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(23, 28, 66, .22)
+}
+.skip-link:focus { left: 12px }
+
+.site-footer {
+  margin-top: 28px;
+  padding: 16px 4px 10px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  font-size: 12.5px;
+  color: var(--ink-3)
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  align-items: center
+}
+.footer-links button, .footer-links a, .link-inline {
+  border: 0;
+  background: none;
+  padding: 4px 2px;
+  font: inherit;
+  color: var(--ink-2);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px
+}
+.footer-links button:hover, .footer-links a:hover, .link-inline:hover { color: var(--accent) }
+
+.live-strip { margin: 18px 0 }
+.live-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 10px;
+  margin-top: 10px
+}
+.live-grid > div {
+  background: var(--app);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px
+}
+.live-grid > div span { font-size: 11.5px; color: var(--ink-3); font-weight: 600 }
+.live-grid > div b { font-size: 13.5px; color: var(--ink) }
+.live-grid > div small { font-size: 11.5px; color: var(--ink-2) }
+
+.pincode-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap
+}
+.pincode-bar input {
+  width: 160px;
+  max-width: 100%;
+  min-height: 36px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--line-2);
+  background: #fff;
+  font: inherit;
+  font-size: 13px
+}
+
+.wk-part-row {
+  display: grid;
+  grid-template-columns: 220px 180px minmax(0, 1fr);
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  align-items: start
+}
+
+@media (max-width: 760px) {
+  html, body { overflow-x: clip }
+  .map-controls { flex-direction: column; align-items: stretch; gap: 10px }
+  .map-controls > div { max-width: 100%; min-width: 0 }
+  .months { width: 100%; gap: 4px }
+  .months button:not(.play) { min-width: 44px; min-height: 44px; padding: 8px 6px }
+  .play { min-width: 44px; min-height: 44px }
+  .seg { width: 100%; flex-wrap: wrap; border-radius: 16px }
+  .seg button { min-height: 44px; padding: 8px 12px; flex: 1 1 auto; text-align: center }
+  .disease-pills .pill-btn, .fpill, .btn-sm { min-height: 44px }
+  .wk-part-row { grid-template-columns: minmax(0, 1fr); gap: 8px }
+  .map-body { grid-template-columns: minmax(0, 1fr) }
+  .pincode-bar { width: 100% }
+  .pincode-bar input { flex: 1 1 auto; min-height: 44px }
+}

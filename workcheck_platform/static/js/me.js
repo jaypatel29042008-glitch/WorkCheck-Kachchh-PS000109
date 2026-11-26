@@ -48,13 +48,6 @@ const I18N = {
   },
 };
 
-const SYMPTOM_DEFINITIONS = [
-  { id: "dark_urine", title: "Dark Urine (કાળો / ઘેરો પેશાબ)", sub: "Key clinical dehydration & CKD marker", icon: "droplet" },
-  { id: "dizzy", title: "Dizziness / Fainting (ચક્કર આવવા)", sub: "Acute heat exhaustion warning", icon: "alert-triangle" },
-  { id: "cough", title: "Persistent Cough (લાંબા સમયની ખાંસી)", sub: "Respirable quartz / silica warning", icon: "lungs" },
-  { id: "eye_skin", title: "Eye Burning / Glare (આંખોમાં બળતરા)", sub: "Solar UV & salt brine reflection", icon: "eye" },
-];
-
 function getLang() { try { return localStorage.getItem("wc-lang") || "en"; } catch { return "en"; } }
 function setLang(l) { try { localStorage.setItem("wc-lang", l); } catch { /* ignore */ } }
 
@@ -98,7 +91,7 @@ function renderFacilityCardsHtml(facilities) {
         <div class="fac-card-top">
           <div>
             <span class="tier-badge ${tierClass}">${esc(f.facility_tier)}</span>
-            <h4 class="fac-name">${esc(f.facility_name)}</h4>
+            <h3 class="fac-name">${esc(f.facility_name)}</h3>
             <span class="fac-taluka">Taluka: <b>${esc(f.taluka)}</b> &bull; <span class="dist-badge">about ${f.distance_km} km, straight line</span></span>
           </div>
           <span class="round xs bg-indigo t-indigo">${ic("hospital-circle", 18, 2)}</span>
@@ -141,7 +134,7 @@ function renderMe() {
   const safeHeat = p.safe_heat_hours;
   const statutoryText = p.statutory_text;
 
-  $("#app").innerHTML = `<div class="me">
+  $("#app").innerHTML = `<main class="me" id="main" tabindex="-1">
     <header class="me-top">
       ${logo()}
       <button class="icon-btn" id="sign-out" type="button" aria-label="${esc(t.signout)}">${ic("logout", 18)}</button>
@@ -159,7 +152,7 @@ function renderMe() {
     <section class="next ${level} me-status">
       <span class="round">${ic(icons[level], 24, 2)}</span>
       <div>
-        <h3>${esc(t.status[level][0])}</h3>
+        <h2>${esc(t.status[level][0])}</h2>
         <p>${esc(t.status[level][1])}</p>
       </div>
     </section>
@@ -177,7 +170,7 @@ function renderMe() {
           <div class="pass-title-group">
             <span class="round sm bg-green t-green">${ic("shield-check", 22, 2)}</span>
             <div>
-              <h3>${esc(t.pass)}</h3>
+              <h2>${esc(t.pass)}</h2>
               <p class="sub">${esc(org ? (S.user.org ? S.user.org.name : "") : t.passSub)}</p>
             </div>
           </div>
@@ -189,7 +182,7 @@ function renderMe() {
           <div class="pass-fields">
             <div>
               <label>Name:</label>
-              <h4>${esc(p.card.name)}</h4>
+              <h3>${esc(p.card.name)}</h3>
             </div>
             <div>
               <label>${org ? "Job &amp; site:" : "Job Role &amp; Taluka:"}</label>
@@ -234,7 +227,7 @@ function renderMe() {
     </div>
 
     <!-- Today Work-Rest Heat Guidance Bar -->
-    <section class="card"${org && today.site_id !== p.card.location_id ? " hidden" : ""}>
+    <section class="card">
       <div class="card-head">
         <div>
           <h2>${esc(t.today)}</h2>
@@ -288,7 +281,8 @@ function renderMe() {
     </section>
 
     <p class="fine center">${esc(org ? p.label : t.fictional)}</p>
-  </div>`;
+    ${window.siteFooterHtml ? siteFooterHtml() : ""}
+  </main>`;
 
   // Render QR Code in the Health Pass Card
   const qr = qrcode(0, "M");
@@ -300,6 +294,7 @@ function renderMe() {
   }
 
   $("#sign-out").addEventListener("click", signOut);
+  if (window.wireSiteFooter) wireSiteFooter($("#app"));
 
   $$("[data-lang]").forEach((b) => b.addEventListener("click", () => {
     setLang(b.dataset.lang);
@@ -316,7 +311,9 @@ function renderMe() {
 
   // Emergency 108 collapse handler
   $("#collapse").addEventListener("click", async () => {
-    await api(`/api/workers/${encodeURIComponent(p.card.id)}/symptoms`, { method: "POST", body: { symptom: "collapse" } });
+    try {
+      await api(`/api/workers/${encodeURIComponent(p.card.id)}/symptoms`, { method: "POST", body: { symptom: "collapse" } });
+    } catch { /* Always show 108 guidance even if offline or read-only */ }
     openModal(`<div class="urgent"><span class="round bg-action t-action">${ic("ambulance", 26, 2)}</span><h2>${esc(t.urgentTitle)}</h2><ol>${t.urgentSteps.map((s) => `<li>${esc(s)}</li>`).join("")}</ol><a class="btn btn-danger btn-full" href="tel:108">${ic("phone", 20, 2)}${esc(t.call)}</a></div>`, t.urgentTitle);
   });
 

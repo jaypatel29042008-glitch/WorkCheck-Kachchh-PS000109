@@ -12,9 +12,11 @@ const PRESETS = {
 const SLIDERS = [["ambient_temp_c", "Air temperature", 20, 50, 1, "°C"], ["relative_humidity_pct", "Humidity", 5, 100, 1, "%"], ["globe_temp_c", "Globe temperature", 20, 70, 1, "°C"], ["pm10_0_ug_m3", "Dust (PM10)", 0, 500, 5, "µg/m³"], ["uv_index", "UV index", 0, 14, 0.5, ""], ["noise_dba", "Noise", 40, 120, 1, "dBA"]];
 
 function renderLive(r, stamp) {
+  const host = $("#site-live");
+  if (!host || !r || !r.jobs || !r.jobs.length) return;
   const main = r.jobs[0];
   const value = (v, unit, digits = 0) => (v === null || v === undefined ? `<b>Not measured</b>` : `<b>${Number(v).toFixed(digits)}<small>${unit}</small></b>`);
-  $("#site-live").innerHTML = `
+  host.innerHTML = `
     <div class="site-top">
       <section class="card gauge-card">
         <div class="card-head"><div><h2>${esc(r.site_name)}</h2><p class="sub">${esc(stamp || "Latest reading")}</p></div><span class="pill none sm" data-tip="${esc(r.wbgt_method)}">${esc(sourceLabel(r.source))}</span></div>
@@ -42,20 +44,34 @@ VIEWS.site = async () => {
   S.lastReading = state.latest.id;
   $("#view").innerHTML = `<header class="page-head"><div><h1>Site monitor</h1><p class="lead">What the sensor node reads, and what workers should do this hour.</p></div></header>
     <div id="site-live"></div>
+    <section class="card live-strip" id="site-ambient-live" hidden></section>
     <section class="card test-card">
       <div class="card-head"><div><h2>Test it yourself</h2><p class="sub">Every reading is saved in the database and labelled with where it came from.</p></div>
         <div class="seg" role="tablist" id="test-tabs"><button type="button" data-tab="replay" class="on">Replay a real day</button><button type="button" data-tab="sliders">Move the sliders</button><button type="button" data-tab="wokwi">Wokwi device</button></div></div>
       <div id="test-panel"></div>
     </section>`;
   renderLive(state.latest);
+  api(`/api/live/environment?site_id=${encodeURIComponent(state.latest.site_id || "kandla_port")}`).then((env) => {
+    const box = $("#site-ambient-live");
+    const row = env && env.sites && env.sites[0];
+    if (!box || !row || row.temp_c == null) return;
+    box.hidden = false;
+    box.innerHTML = `<div class="card-head"><div><h2>Live Ambient Reference (${esc(row.label || row.site_id)})</h2><p class="sub">${esc(env.provider)} · ${esc(env.method_note)}</p></div><span class="pill ${env.live ? "clear" : "none"} sm">${env.live ? "Live model feed" : "Baseline"}</span></div>
+      <div class="live-grid">
+        <div><span>Ambient Air</span><b>${Number(row.temp_c).toFixed(1)}°C</b></div>
+        <div><span>Humidity</span><b>${Math.round(row.humidity_pct || 0)}%</b></div>
+        <div><span>Sun WBGT (est.)</span><b>${row.wbgt_sun_est_c != null ? `${row.wbgt_sun_est_c}°C` : "--"}</b></div>
+        <div><span>PM10 / PM2.5</span><b>${row.pm10_ug_m3 != null ? Math.round(row.pm10_ug_m3) : "--"} / ${row.pm25_ug_m3 != null ? Math.round(row.pm25_ug_m3) : "--"} µg/m³</b></div>
+        <div><span>UV Index</span><b>${row.uv_index != null ? Number(row.uv_index).toFixed(1) : "--"}</b></div>
+      </div>`;
+  }).catch(() => { });
   const tabs = { replay: tabReplay, sliders: tabSliders, wokwi: tabWokwi };
   let stopTab = () => { };
   const open = async (key) => {
     stopTab();
-    $$("#test-tabs button").forEach((b) => b.classList.toggle("on", b.dataset.tab === key));
     stopTab = (await tabs[key]($("#test-panel"))) || (() => { });
   };
-  $("#test-tabs").addEventListener("click", (e) => { const b = e.target.closest("[data-tab]"); if (b) open(b.dataset.tab); });
+  wireTabs($("#test-tabs"), (b) => open(b.dataset.tab));
   onCleanup(() => stopTab());
   await open("replay");
   // A connected device should appear without pressing anything.
@@ -93,7 +109,8 @@ async function tabReplay(panel) {
   };
   const draw = () => {
     const host = $("#rp-chart");
-    if (!host || !data) return;
+    if (!host || !data || !Array.isArray(data.hours) || !data.hours.length) return;
+    const pt = data.hours[hour] || data.hours[0];
     lineChart(host, {
       labels, height: 190, yMin: 15, yMax: 40, yTicks: [20, 25, 30, 35, 40], unit: "°C", aria: "Heat index by hour",
       tipTitle: (i) => `${String(i).padStart(2, "0")}:00`,
@@ -101,7 +118,7 @@ async function tabReplay(panel) {
       onClick: (i) => { stop(); show(i); },
       after: (root, x, y) => {
         const svg = $("svg", root);
-        svg.insertAdjacentHTML("beforeend", `<circle cx="${x(hour)}" cy="${y(data.hours[hour].wbgt)}" r="6.5" fill="#fff" stroke="#14182B" stroke-width="3" pointer-events="none"/>`);
+        if (svg && pt) svg.insertAdjacentHTML("beforeend", `<circle cx="${x(hour)}" cy="${y(pt.wbgt)}" r="6.5" fill="#fff" stroke="#14182B" stroke-width="3" pointer-events="none"/>`);
       },
     });
   };
@@ -132,6 +149,7 @@ function tabSliders(panel) {
   const sync = () => SLIDERS.forEach(([k, , , , , u]) => { $(`#s-${k}`).value = values[k]; $(`#v-${k}`).textContent = `${values[k]} ${u}`; });
   const send = async () => {
     const r = await api("/api/node/simulate", { method: "POST", body: { ...values, device_id: "browser-node", site_id: "kandla_port" } });
+    if (S.page !== "site" || !panel.isConnected) return;
     S.lastReading = r.id;
     renderLive(r, "Test values from the sliders");
   };
@@ -182,19 +200,17 @@ async function sendWokwiSimulatedPacket() {
     noise_dba: Math.round(noise * 10) / 10,
   };
 
-  const res = await fetch("/api/v1/telemetry", {
-    method: "POST",
-    headers: { "Content-Type": "application/json", "X-API-Key": "demo-device-key" },
-    body: JSON.stringify(payload),
-  });
-  if (res.ok) {
-    const next = await api("/api/node/state").catch(() => null);
-    if (next) {
-      S.lastReading = next.latest.id;
-      renderLive(next.latest);
+  try {
+    const r = await api("/api/node/simulate", { method: "POST", body: payload });
+    S.lastReading = r.id;
+    renderLive(r, "Simulated ESP32 packet");
+    if (!isPreview()) {
+      const next = await api("/api/node/state").catch(() => null);
       const dot = $("#wokwi-status");
-      if (dot && next.wokwi) dot.innerHTML = wokwiStatus(next.wokwi);
+      if (dot && next && next.wokwi) dot.innerHTML = wokwiStatus(next.wokwi);
     }
+  } catch (err) {
+    toast(err.message || "Could not send simulated packet.", "action");
   }
 }
 

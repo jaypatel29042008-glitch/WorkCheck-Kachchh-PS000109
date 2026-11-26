@@ -27,7 +27,7 @@ function renderFacilitiesCards(facilities) {
         <div class="fac-card-top">
           <div>
             <span class="tier-badge ${tierClass}">${esc(f.facility_tier)}</span>
-            <h4 class="fac-name">${esc(f.facility_name)}</h4>
+            <h3 class="fac-name">${esc(f.facility_name)}</h3>
             <span class="fac-taluka">Taluka: <b>${esc(f.taluka)}</b> &bull; <span class="dist-badge">about ${f.distance_km} km, straight line</span></span>
           </div>
           <span class="round xs bg-indigo t-indigo">${ic("hospital-circle", 18, 2)}</span>
@@ -85,8 +85,14 @@ function renderFacilitiesPage() {
               ${talukas.map((t) => `<option value="${t}"${t === FAC_STATE.taluka ? " selected" : ""}>${t === "ALL" ? "All Talukas (12 Facilities)" : t}</option>`).join("")}
             </select>
           </div>
+          <div class="pincode-bar">
+            <label class="sr" for="fac-pin">Search by Indian pincode</label>
+            <input id="fac-pin" type="text" inputmode="numeric" maxlength="6" placeholder="Pincode (e.g. 370001)">
+            <button type="button" class="btn btn-ghost btn-sm" id="fac-pin-btn">${ic("search", 14, 2)}Lookup</button>
+          </div>
         </div>
       </div>
+      <p class="sub" id="fac-pin-msg" hidden style="margin-top:8px"></p>
 
       <div class="disease-sorter-toolbar">
         <span class="sorter-label">${ic("adjustments-horizontal", 14, 2)} Sort &amp; Filter by Disease:</span>
@@ -127,6 +133,33 @@ function renderFacilitiesPage() {
     });
   });
 
+  const runPin = async () => {
+    const pin = ($("#fac-pin")?.value || "").trim();
+    const msg = $("#fac-pin-msg");
+    if (!pin) return;
+    try {
+      const info = await api(`/api/live/pincode/${encodeURIComponent(pin)}`);
+      if (msg) {
+        msg.hidden = false;
+        if (info.status === "ok") {
+          msg.textContent = `PIN ${info.pincode}: ${info.district || "Unknown"}, ${info.state || ""}${info.taluka ? ` (Block/Taluka: ${info.taluka})` : ""}${info.in_kachchh ? " — filtered nearest taluka." : " — outside Kachchh."}`;
+        } else {
+          msg.textContent = `PIN ${info.pincode}: No post office found (${info.status}).`;
+        }
+      }
+      const talSelect = $("#fac-page-taluka");
+      if (info.in_kachchh && info.taluka && talukas.includes(info.taluka) && talSelect) {
+        FAC_STATE.taluka = info.taluka;
+        talSelect.value = info.taluka;
+        await refreshFacilities();
+      }
+    } catch (err) {
+      if (msg) { msg.hidden = false; msg.textContent = err.message || "Enter 6 digits."; }
+    }
+  };
+  $("#fac-pin-btn")?.addEventListener("click", runPin);
+  $("#fac-pin")?.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); runPin(); } });
+
   wirePageReferrals();
 }
 
@@ -147,7 +180,7 @@ function wirePageReferrals() {
         const reply = await api("/api/facilities/refer", {
           method: "POST",
           body: {
-            worker_id: (S.user && S.user.worker_id) || "GENERAL_TRIAGE",
+            worker_id: (S.user && S.user.worker_id) || null,
             facility_id: facId,
             disease: FAC_STATE.disease,
           },

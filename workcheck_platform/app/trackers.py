@@ -176,7 +176,7 @@ def save_log(payload: DailyLog, user=Depends(require("worker"))):
         for c in payload.symptoms:
             code = SYMPTOMS[c][3]
             if code and code not in existing:
-                con.execute("INSERT INTO symptom_reports (at, user_id, worker_id, symptom, urgent) VALUES (?,?,?,?,?)", (now().isoformat(), user["id"], user["worker_id"], code, int(SYMPTOMS[c][2])))
+                con.execute("INSERT INTO symptom_reports (at, user_id, worker_id, symptom, urgent, org_id) VALUES (?,?,?,?,?,?)", (now().isoformat(), user["id"], user["worker_id"], code, int(SYMPTOMS[c][2]), user.get("org_id") or DEMO_ORG))
                 existing.add(code)
         log_action(con, user["id"], "daily_log", user["worker_id"])
         row = con.execute("SELECT * FROM daily_logs WHERE worker_id = ? AND day = ?", (user["worker_id"], today())).fetchone()
@@ -589,12 +589,16 @@ def dashboard(user=Depends(require("supervisor", "clinician", "ddo"))):
         todo.append({"tone": "watch", "text": f"Only {len(rows_today)} of {len(by_id)} workers have checked in today.", "href": "#/dashboard"})
     if not todo:
         todo.append({"tone": "clear", "text": "Nothing is waiting. Everyone who checked in is well and the site items are in place.", "href": None})
-    return {"day": t, "org": org, "workers_total": len(by_id), "checked_in": len(rows_today), "feelings": {k: feelings.get(k, 0) for k in FEELINGS}, "feeling_labels": {k: v[0] for k, v in FEELINGS.items()},
-            "unwell": unwell if staff else [], "unwell_count": len(unwell), "ppe": ppe_gaps if staff else [{k: v for k, v in g.items() if k != "names"} for g in ppe_gaps],
-            "incidents": {"open": len(open_inc), "list": open_inc[:5] if staff else []},
-            "medical": {"overdue": len(med_over), "soon": len(med_soon), "never": len(never), "list": (sorted(med_over + med_soon, key=lambda x: x["days"])[:8]) if staff else []},
-            "training": {"expired": tr_expired, "expiring": tr_soon, "never": len(by_id) - len(trained), "list": [{"name": n, "course": course_names.get(c, c)} for n, c in tr_names[:8]] if staff else []},
-            "sites": site_state, "trend": series, "todo": todo, "unreviewed_reports": unreviewed}
+    # Enforce <5 small-cell suppression for district office (ddo) privacy on org aggregates.
+    mask = (lambda n: "<5" if 0 < n < 5 else n) if not staff else (lambda n: n)
+    if not staff:
+        todo = [item for item in todo if "Urgent" not in item["text"] and "reported" not in item["text"].lower()]
+    return {"day": t, "org": org, "workers_total": mask(len(by_id)), "checked_in": mask(len(rows_today)), "feelings": {k: mask(feelings.get(k, 0)) for k in FEELINGS}, "feeling_labels": {k: v[0] for k, v in FEELINGS.items()},
+            "unwell": unwell if staff else [], "unwell_count": mask(len(unwell)), "ppe": ppe_gaps if staff else [{k: (mask(v) if k in ("missing", "of") else v) for k, v in g.items() if k != "names"} for g in ppe_gaps],
+            "incidents": {"open": mask(len(open_inc)), "list": open_inc[:5] if staff else []},
+            "medical": {"overdue": mask(len(med_over)), "soon": mask(len(med_soon)), "never": mask(len(never)), "list": (sorted(med_over + med_soon, key=lambda x: x["days"])[:8]) if staff else []},
+            "training": {"expired": mask(tr_expired), "expiring": mask(tr_soon), "never": mask(len(by_id) - len(trained)), "list": [{"name": n, "course": course_names.get(c, c)} for n, c in tr_names[:8]] if staff else []},
+            "sites": site_state, "trend": series if staff else [], "todo": todo, "unreviewed_reports": mask(unreviewed)}
 
 
 # --- A worker record for people who joined with an invite ---------------------------------
@@ -630,8 +634,14 @@ def org_cards(org_id, con):
 
 
 def org_passport(worker_id, user, con):
-    from .main import LABEL, heat_jobs_table
-    card = next((c for c in org_cards(user["org_id"] if user["role"] != "worker" else con.execute("SELECT org_id FROM org_workers WHERE id = ?", (worker_id,)).fetchone()["org_id"], con) if c["id"] == worker_id), None)
+    from .main import LABEL, SYMPTOMS as CLINIC_SYMPTOMS, heat_jobs_table
+    row_w = con.execute("SELECT org_id FROM org_workers WHERE id = ?", (worker_id,)).fetchone()
+    if row_w is None:
+        raise HTTPException(404, "No such worker.")
+    target_org = row_w["org_id"]
+    if user["role"] != "worker" and user.get("org_id") != target_org:
+        raise HTTPException(403, "That worker is not in your organisation.")
+    card = next((c for c in org_cards(target_org, con) if c["id"] == worker_id), None)
     if card is None:
         raise HTTPException(404, "No such worker.")
     level, reasons = org_level(worker_id, con)
@@ -641,16 +651,16 @@ def org_passport(worker_id, user, con):
     if heat:
         lvl = "high" if heat < 4.5 else "moderate" if heat < 7 else "ok"
         exposure.append({"key": "heat", "label": "Heat", "icon": "temperature-sun", "value": f"{heat:.1f}", "unit": "safe hours a shift", "caption": "April to October, model estimate for this job", "level": lvl, "chip": {"high": "High", "moderate": "Moderate", "ok": "Low"}[lvl], "series": [], "months": []})
-    hours = [d for d in con.execute("SELECT hours FROM daily_logs WHERE worker_id = ? AND day >= ? AND hours IS NOT NULL", (worker_id, (local_date() - timedelta(days=6)).isoformat()))]
+    hours = [d for d in con.execute("SELECT hours FROM daily_logs WHERE worker_id = ? AND org_id = ? AND day >= ? AND hours IS NOT NULL", (worker_id, target_org, (local_date() - timedelta(days=6)).isoformat()))]
     total = sum(r["hours"] for r in hours)
     if hours:
         exposure.append({"key": "hours", "label": "Work hours", "icon": "clock-hour-9", "value": f"{total:.0f}", "unit": "hours in the last 7 days", "caption": "From the worker's own check-ins", "level": "high" if total >= 55 else "ok", "chip": "Over 55 hours" if total >= 55 else "Under 55 hours", "series": [], "months": []})
     else:
         exposure.append({"key": "hours", "label": "Work hours", "icon": "clock-hour-9", "value": "None", "unit": "entered in the last 7 days", "caption": "From the worker's own check-ins", "level": "none", "chip": "No data", "series": [], "months": []})
-    checks = [dict(r) | {"result_label": RESULTS[r["result"]][0], "tone": RESULTS[r["result"]][1]} for r in con.execute("SELECT * FROM medical_checks WHERE worker_id = ? ORDER BY done_on DESC LIMIT 12", (worker_id,))]
-    referrals = [dict(r) for r in con.execute("SELECT * FROM referrals WHERE worker_id = ? ORDER BY at DESC LIMIT 12", (worker_id,))]
-    trainings = [dict(r) | {"course_label": dict((k, l) for k, l, _ in COURSES).get(r["course"], r["course"])} for r in con.execute("SELECT * FROM trainings WHERE worker_id = ? ORDER BY done_on DESC LIMIT 12", (worker_id,))]
-    symptoms = [{"id": r["id"], "at": r["at"], "text": r["symptom"], "urgent": bool(r["urgent"]), "reviewed": bool(r["reviewed_at"])} for r in con.execute("SELECT * FROM symptom_reports WHERE worker_id = ? ORDER BY id DESC LIMIT 12", (worker_id,))]
+    checks = [dict(r) | {"result_label": RESULTS[r["result"]][0], "tone": RESULTS[r["result"]][1]} for r in con.execute("SELECT * FROM medical_checks WHERE worker_id = ? AND org_id = ? ORDER BY done_on DESC LIMIT 12", (worker_id, target_org))]
+    referrals = [dict(r) for r in con.execute("SELECT * FROM referrals WHERE worker_id = ? AND org_id = ? ORDER BY at DESC LIMIT 12", (worker_id, target_org))]
+    trainings = [dict(r) | {"course_label": dict((k, l) for k, l, _ in COURSES).get(r["course"], r["course"])} for r in con.execute("SELECT * FROM trainings WHERE worker_id = ? AND org_id = ? ORDER BY done_on DESC LIMIT 12", (worker_id, target_org))]
+    symptoms = [{"id": r["id"], "at": r["at"], "text": CLINIC_SYMPTOMS.get(r["symptom"], (r["symptom"],))[0], "urgent": bool(r["urgent"]), "reviewed": bool(r["reviewed_at"])} for r in con.execute("SELECT * FROM symptom_reports WHERE worker_id = ? AND org_id = ? ORDER BY id DESC LIMIT 12", (worker_id, target_org))]
     first = card["name"].split(" ")[0]
     if reasons and reasons[0]["urgent"]:
         nxt = {"title": f"{first} reported an emergency symptom", "body": "If this is happening now, call 108. Check on them today.", "cta": "Record a check"}

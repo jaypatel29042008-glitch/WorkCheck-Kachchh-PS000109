@@ -47,6 +47,91 @@ class ApiError extends Error {
 
 const READ_ONLY_MESSAGE = "This is a read-only preview, so nothing was saved. Run the full version to try this.";
 
+const _STATIC_CACHE = { env: null, envTs: 0, pins: {} };
+
+function _csvCell(v) {
+  const s = String(v ?? "");
+  const safe = /^[=+\-@\t\r]/.test(s) ? "'" + s : s;
+  return `"${safe.replace(/"/g, '""')}"`;
+}
+
+function _sat(t) { return 6.106 * Math.exp((17.27 * t) / (237.3 + t)); }
+function _wetBulb(ta, rh) {
+  const g = Math.log(Math.max(rh, 1) / 100) + (17.27 * ta) / (237.3 + ta);
+  const td = (237.3 * g) / (17.27 - g);
+  const ed = _sat(td);
+  let lo = td, hi = ta;
+  for (let i = 0; i < 40; i++) {
+    const mid = (lo + hi) / 2;
+    const ew = _sat(mid);
+    if (1556 * ed - 1.484 * ed * mid - 1556 * ew + 1.484 * ew * mid + 1010 * (ta - mid) > 0) lo = mid;
+    else hi = mid;
+  }
+  return (lo + hi) / 2;
+}
+function _natWetBulb(ta, rh, tg, v = 1.0) {
+  const ws = Math.max(v, 0.3), tp = _wetBulb(ta, rh);
+  if (tg - ta >= 4) return tp + 0.25 * (tg - ta) + 0.1 / Math.pow(ws, 1.1) - 0.2;
+  if (ws > 3) return tp;
+  return ta - (0.96 + 0.069 * Math.log10(ws)) * (ta - tp);
+}
+function _computeWbgt(ta, rh, tg = null) {
+  if (tg !== null && tg !== undefined) return [0.7 * _natWetBulb(ta, rh, tg) + 0.2 * tg + 0.1 * ta, "Measured globe, estimated wet bulb"];
+  return [0.7 * _natWetBulb(ta, rh, ta) + 0.3 * ta, "No globe: shade estimate"];
+}
+function _allowedPct(D, wbgt, workload) {
+  const rows = (D.heat_rules && D.heat_rules[workload]) || [[27.5, 100], [29, 75], [30.5, 50], [32, 25]];
+  for (const [lim, pct] of rows) { if (wbgt <= lim) return pct; }
+  return 0;
+}
+function _staticNodeView(D, p, overrideWbgt = null, methodNote = null) {
+  const [rawW, meth] = _computeWbgt(p.ambient_temp_c, p.relative_humidity_pct, p.globe_temp_c);
+  const wbgt = Number((overrideWbgt ?? rawW).toFixed(1));
+  const lampMap = D.lamp || { "100": "GREEN", "75": "YELLOW", "50": "ORANGE", "25": "RED", "0": "RED_FLASH" };
+  const planMap = D.plan || {};
+  const specs = [
+    ["Heavy work in sun", "Yard loading, salt raking, construction", "heavy", "forklift"],
+    ["Moderate work in sun", "Plant walk-around", "moderate", "walk"],
+    ["Light work in shade", "Crane or truck cab", "light", "truck"],
+  ];
+  const [shadeW] = _computeWbgt(p.ambient_temp_c, p.relative_humidity_pct, null);
+  const jobs = specs.map(([label, examples, workload, icon]) => {
+    const val = workload === "light" ? Number(shadeW.toFixed(1)) : wbgt;
+    const pct = _allowedPct(D, val, workload);
+    const plan = planMap[String(pct)] || { title: "Check limit", work: Math.round(pct * 0.6), rest: 60 - Math.round(pct * 0.6), text: "" };
+    return { label, examples, workload, icon, wbgt_c: val, allowed_work_pct: pct, lamp: lampMap[String(pct)] || "GREEN", ...plan };
+  });
+  const alerts = [];
+  if (p.pm10_0_ug_m3 != null && p.pm10_0_ug_m3 > 100) alerts.push({ code: "DUST_FLAG", icon: "wind", text: "Dust is high. Check water spray and masks. This does not measure silica." });
+  if (p.uv_index != null && p.uv_index >= 8) alerts.push({ code: "UV_HIGH", icon: "sun", text: "UV is very high. Use eye protection, a hat and shade breaks." });
+  if (p.noise_dba != null && p.noise_dba >= 85) alerts.push({ code: "NOISE_85", icon: "volume", text: "Noise is 85 dBA or more. Use ear protection." });
+  const siteMeta = (D.site_coords || []).find((s) => s.site_id === p.site_id);
+  return {
+    id: Date.now(),
+    at: new Date().toISOString(),
+    device_id: p.device_id || "preview-node",
+    site_id: p.site_id || "kandla_port",
+    site_name: (siteMeta && siteMeta.label.split(" (")[0]) || p.site_id || "Kandla Port",
+    source: p.source || "browser_simulator",
+    ambient_temp_c: p.ambient_temp_c,
+    relative_humidity_pct: p.relative_humidity_pct,
+    globe_temp_c: p.globe_temp_c ?? null,
+    pm10_0_ug_m3: p.pm10_0_ug_m3 ?? null,
+    pm2_5_ug_m3: p.pm2_5_ug_m3 ?? null,
+    uv_index: p.uv_index ?? null,
+    noise_dba: p.noise_dba ?? null,
+    wbgt_c: wbgt,
+    wbgt_method: methodNote || meth,
+    jobs,
+    alerts,
+  };
+}
+function _haversineKm(lat1, lon1, lat2, lon2) {
+  const rad = Math.PI / 180, dlat = (lat2 - lat1) * rad, dlon = (lon2 - lon1) * rad;
+  const a = Math.sin(dlat / 2) ** 2 + Math.cos(lat1 * rad) * Math.cos(lat2 * rad) * Math.sin(dlon / 2) ** 2;
+  return Math.round(2 * 6371 * Math.asin(Math.sqrt(a)) * 10) / 10;
+}
+
 async function api(path, options = {}) {
   const method = (options.method || "GET").toUpperCase();
 
@@ -59,7 +144,7 @@ async function api(path, options = {}) {
     }
     const res = await fetch(path, init);
     const data = await res.json().catch(() => ({}));
-    if (res.status === 401 && path !== "/api/auth/login" && path !== "/api/auth/me") {
+    if (res.status === 401 && path !== "/api/auth/login" && path !== "/api/auth/me" && path !== "/api/auth/options") {
       S.user = null;
       renderLogin();
     }
@@ -67,106 +152,203 @@ async function api(path, options = {}) {
     return data;
   }
 
-  // Client-side static handler (powered by reference.db dataset for GitHub Pages)
+  // Client-side static handler (powered by reference.db dataset + live CORS public APIs for GitHub Pages)
   if (window.WORKCHECK_STATIC_DATA) {
     const D = window.WORKCHECK_STATIC_DATA;
+    const u = new URL(path, window.location.origin);
+    const p = u.pathname;
 
-    // The preview has no server, so it must not claim that anything was saved.
-    if (method !== "GET" && path !== "/api/auth/login" && path !== "/api/auth/logout") {
-      throw new ApiError(403, READ_ONLY_MESSAGE);
+    if (p === "/api/auth/options") {
+      return { demo: true, env: "preview", consent_version: (D.privacy_notice && D.privacy_notice.consent_version) || "dpdp-v1-2026" };
+    }
+    if (p === "/api/privacy/notice") {
+      return D.privacy_notice || { consent_version: "dpdp-v1-2026", controller: "WorkCheck Kachchh Pilot", rights: [] };
+    }
+    if (p === "/api/privacy/consent" && method === "POST") {
+      return { ok: true, consent_version: "dpdp-v1-2026", consent_at: new Date().toISOString(), preview: true };
     }
 
     // 1. Auth Login
-    if (path === "/api/auth/login" && method === "POST") {
+    if (p === "/api/auth/login" && method === "POST") {
       const { email, password } = options.body || {};
       const found = D.users[email];
       if (found && found.password === password) {
-        localStorage.setItem("wc_static_user", JSON.stringify(found.user));
+        try { localStorage.setItem("wc_static_user", JSON.stringify(found.user)); } catch { /* ignore */ }
         return found.user;
       }
       throw new ApiError(401, "Check your email and password.");
     }
 
     // 2. Auth Me
-    if (path === "/api/auth/me") {
-      const saved = localStorage.getItem("wc_static_user");
-      if (saved) return JSON.parse(saved);
+    if (p === "/api/auth/me") {
+      try {
+        const saved = localStorage.getItem("wc_static_user");
+        if (saved) return JSON.parse(saved);
+      } catch {
+        try { localStorage.removeItem("wc_static_user"); } catch { /* ignore */ }
+      }
       throw new ApiError(401, "Please sign in.");
     }
 
     // 3. Auth Logout
-    if (path === "/api/auth/logout") {
-      localStorage.removeItem("wc_static_user");
+    if (p === "/api/auth/logout") {
+      try { localStorage.removeItem("wc_static_user"); } catch { /* ignore */ }
       return { ok: true };
     }
 
-    // 4. Overview
-    if (path === "/api/overview") return D.overview;
-
-    // 5. Workers list
-    if (path === "/api/workers") return D.workers;
-
-    // 6. Heat map
-    if (path === "/api/heat/map") return D.heat_map;
-
-    // 7. Heat jobs
-    if (path === "/api/heat/jobs") return D.heat_jobs;
-
-    // 8. Heat year
-    if (path.startsWith("/api/heat/year")) {
-      const jid = new URL(path, window.location.origin).searchParams.get("job_id");
+    // 4. Overview, Workers, Heat
+    if (p === "/api/overview") return D.overview;
+    if (p === "/api/workers") return D.workers;
+    if (p === "/api/heat/map") return D.heat_map;
+    if (p === "/api/heat/jobs") return D.heat_jobs;
+    if (p === "/api/heat/year") {
+      const jid = u.searchParams.get("job_id");
       return (D.heat_year && D.heat_year[jid]) || { curve: [] };
     }
 
-    // 9. Node state
-    if (path === "/api/node/state") return D.node_state;
-
-    // 10. Node day
-    if (path.startsWith("/api/node/day")) {
-      const lid = new URL(path, window.location.origin).searchParams.get("location_id") || "kandla_port";
-      return (D.node_day && D.node_day[lid]) || { points: [] };
+    // 5. Node state / day / replay / simulation
+    if (p === "/api/node/state") return D.node_state;
+    if (p === "/api/node/day") {
+      const lid = u.searchParams.get("location_id") || "kandla_port";
+      return (D.node_day && D.node_day[lid]) || (D.node_day && D.node_day.kandla_port) || { location_id: lid, day: "2025-05-19", hours: [] };
     }
-
-    // 11. Node replay
-    if (path.startsWith("/api/node/replay")) {
-      const lid = new URL(path, window.location.origin).searchParams.get("location_id") || "kandla_port";
-      return (D.node_replay && D.node_replay[lid]) || { points: [] };
-    }
-
-    // 12. Facilities
-    if (path.startsWith("/api/facilities")) {
-      const u = new URL(path, window.location.origin);
-      const taluka = u.searchParams.get("taluka");
-      const base = JSON.parse(JSON.stringify(D.facilities_default || { facilities: [] }));
-      if (taluka && taluka !== "ALL" && base.facilities) {
-        base.facilities = base.facilities.filter(f => f.taluka && f.taluka.toUpperCase() === taluka.toUpperCase());
+    if (p === "/api/node/replay") {
+      const lid = u.searchParams.get("location_id") || "kandla_port";
+      const h = Number(u.searchParams.get("hour") || 12);
+      const day = u.searchParams.get("day") || "2025-05-19";
+      const dayObj = (D.node_day && D.node_day[lid]) || {};
+      const hr = (dayObj.hours || []).find((x) => x.hour === h);
+      const base = (D.node_replay && D.node_replay[lid]) || D.node_state.latest;
+      if (hr) {
+        const simTa = Math.round((27 + Math.max(0, hr.wbgt - 22) * 1.15) * 10) / 10;
+        return { ..._staticNodeView(D, { site_id: lid, source: "model_replay", ambient_temp_c: simTa, relative_humidity_pct: 45, pm10_0_ug_m3: base.pm10_0_ug_m3, uv_index: h >= 10 && h <= 16 ? 9 : 2 }, hr.wbgt, "Model estimate for sun"), hour: h, date: day };
       }
-      return base;
+      return { ...base, hour: h, date: day };
+    }
+    if (p === "/api/node/simulate" && method === "POST") {
+      const b = options.body || {};
+      return _staticNodeView(D, { ...b, source: b.source || "browser_simulator" });
     }
 
-    // 14. Worker Details & actions
-    if (path.startsWith("/api/workers/")) {
-      const parts = path.split("/");
-      const wid = parts[3];
-      if (parts.length === 4) {
-        return (D.worker_details && D.worker_details[wid]) || { worker: null };
+    // 6. Live Open-Meteo Weather & Air Quality (CORS *) + Pincode (CORS *)
+    if (p === "/api/live/environment") {
+      const sid = u.searchParams.get("site_id");
+      const sites = D.site_coords || (D.facilities_default && D.facilities_default.sites) || [];
+      const nowMs = Date.now();
+      let payload = _STATIC_CACHE.env;
+      if (!payload || nowMs - _STATIC_CACHE.envTs > 900000) {
+        try {
+          const lats = sites.map((s) => s.lat).join(",");
+          const lons = sites.map((s) => s.lon).join(",");
+          const [wr, ar] = await Promise.all([
+            fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lats}&longitude=${lons}&current=temperature_2m,relative_humidity_2m,shortwave_radiation,wind_speed_10m,uv_index&wind_speed_unit=ms&timezone=Asia%2FKolkata`),
+            fetch(`https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${lats}&longitude=${lons}&current=pm10,pm2_5,dust&timezone=Asia%2FKolkata`),
+          ]);
+          const wRaw = await wr.json();
+          const aRaw = await ar.json();
+          const wList = Array.isArray(wRaw) ? wRaw : [wRaw];
+          const aList = Array.isArray(aRaw) ? aRaw : [aRaw];
+          const built = sites.map((s, idx) => {
+            const wc = (wList[idx] && wList[idx].current) || {}, ac = (aList[idx] && aList[idx].current) || {};
+            const ta = wc.temperature_2m, rh = wc.relative_humidity_2m, rad = wc.shortwave_radiation || 0, wind = Math.max(0.8, wc.wind_speed_10m || 1.5);
+            const tg = ta != null ? ta + (rad > 0 ? Math.min(16, (rad * 0.015) / Math.pow(wind, 0.35)) : 0) : null;
+            return {
+              site_id: s.site_id, label: s.label, taluka: s.taluka, lat: s.lat, lon: s.lon, live: true,
+              source: "Open-Meteo Forecast + CAMS Air Quality",
+              temp_c: ta, humidity_pct: rh, wind_ms: wc.wind_speed_10m, shortwave_wm2: rad, uv_index: wc.uv_index,
+              wbgt_shade_c: ta != null && rh != null ? Number(_computeWbgt(ta, rh)[0].toFixed(1)) : null,
+              wbgt_sun_est_c: ta != null && rh != null ? Number(_computeWbgt(ta, rh, tg)[0].toFixed(1)) : null,
+              pm10_ug_m3: ac.pm10, pm25_ug_m3: ac.pm2_5, dust_ug_m3: ac.dust,
+              observed_at: wc.time || ac.time || new Date().toISOString(),
+            };
+          });
+          payload = { live: true, fetched_at: new Date().toISOString(), provider: "Open-Meteo Weather Forecast & CAMS Air Quality", method_note: "Ambient gridded forecast and CAMS model estimate; not an on-site black-globe hardware sensor.", sites: built };
+          _STATIC_CACHE.env = payload;
+          _STATIC_CACHE.envTs = nowMs;
+        } catch {
+          payload = { live: false, fetched_at: new Date().toISOString(), provider: "2025 Kachchh Reference Baseline", method_note: "Live feed offline; showing saved climatology.", sites: sites.map((s) => ({ ...s, live: false, temp_c: null, humidity_pct: null, wbgt_sun_est_c: null, pm10_ug_m3: null })) };
+        }
+      }
+      if (sid && sid !== "all") return { ...payload, sites: payload.sites.filter((x) => x.site_id === sid) };
+      return payload;
+    }
+
+    if (p.startsWith("/api/live/pincode/")) {
+      const pin = decodeURIComponent(p.split("/").pop() || "").trim();
+      if (!/^\d{6}$/.test(pin)) throw new ApiError(400, "Enter a valid 6-digit Indian pincode.");
+      if (_STATIC_CACHE.pins[pin]) return _STATIC_CACHE.pins[pin];
+      let offices = [], status = "unavailable", live = false;
+      try {
+        const res = await fetch(`https://api.postalpincode.in/pincode/${pin}`);
+        const json = await res.json();
+        const entry = Array.isArray(json) ? json[0] : {};
+        if (entry && entry.Status === "Success" && Array.isArray(entry.PostOffice)) { offices = entry.PostOffice; status = "ok"; live = true; }
+        else { status = "not_found"; live = true; }
+      } catch { /* offline fallback */ }
+      const first = offices[0] || {};
+      const district = first.District || "", block = first.Block || first.Taluk || "", state = first.State || "";
+      const facs = (D.facilities_default && D.facilities_default.facilities) || [];
+      const talukas = [...new Set(facs.map((f) => f.taluka))];
+      const matched = talukas.find((t) => `${block} ${first.Name || ""}`.toLowerCase().includes(t.toLowerCase())) || "";
+      const out = {
+        pincode: pin, live, status, provider: "India Post Pincode Directory", district, taluka: matched || block, state,
+        in_kachchh: ["kachchh", "kutch"].includes(district.toLowerCase()),
+        post_offices: offices.slice(0, 6).map((o) => ({ name: o.Name, branch_type: o.BranchType, block: o.Block, district: o.District })),
+        matching_facilities: facs.filter((f) => matched && f.taluka === matched).slice(0, 4),
+      };
+      if (live) _STATIC_CACHE.pins[pin] = out;
+      return out;
+    }
+
+    // 7. Facilities with full client-side Haversine + disease sorting
+    if (p === "/api/facilities") {
+      const siteId = u.searchParams.get("site_id") || "little_rann_kutch";
+      const taluka = u.searchParams.get("taluka");
+      const disease = u.searchParams.get("disease") || "all";
+      const base = JSON.parse(JSON.stringify(D.facilities_default || { facilities: [], sites: [], diseases: [] }));
+      const site = (base.sites || []).find((s) => s.site_id === siteId) || base.selected_site || { site_id: siteId, lat: 23.45, lon: 70.85 };
+      let list = (base.facilities || []).map((f) => {
+        const dist = _haversineKm(site.lat, site.lon, f.latitude, f.longitude);
+        const silicoOk = f.has_digital_xray && f.has_spirometer, heatOk = f.emergency_108_base, ckdOk = f.has_biochemical_lab,
+          eyeOk = /hospital|medical college|rath/i.test(f.facility_name), noiseOk = f.has_audiometry;
+        let diseaseMatch = true, matchLabel = `${f.facility_tier} • ${f.taluka}`;
+        if (disease === "silicosis") { diseaseMatch = silicoOk; matchLabel = silicoOk ? "★ Silicosis Ready: Digital X-Ray + Spirometer" : "Partial Diagnostic Facility"; }
+        else if (disease === "heatstroke") { diseaseMatch = heatOk; matchLabel = heatOk ? "🚨 108 Base & Rapid Cooling Care" : "No 108 Base Station"; }
+        else if (disease === "ckd") { diseaseMatch = ckdOk; matchLabel = ckdOk ? "💧 Biochemical Lab (Creatinine / Urine)" : "No In-House Blood Lab"; }
+        else if (disease === "eye") { diseaseMatch = eyeOk; matchLabel = eyeOk ? "👁️ Ophthalmic & Slit-Lamp Protocol" : "General Primary Clinic"; }
+        else if (disease === "noise") { diseaseMatch = noiseOk; matchLabel = noiseOk ? "🔊 Audiometric Booth Equipped" : "No Audiometer"; }
+        return { ...f, distance_km: dist, disease_match: diseaseMatch, match_label: matchLabel };
+      });
+      if (taluka && taluka !== "ALL") list = list.filter((f) => f.taluka && f.taluka.toLowerCase() === taluka.toLowerCase());
+      list.sort((a, b) => (disease !== "all" && a.disease_match !== b.disease_match ? (a.disease_match ? -1 : 1) : a.distance_km - b.distance_km));
+      return { ...base, facilities: list, selected_site: site, active_disease: disease };
+    }
+    if (p === "/api/facilities/refer" && method === "POST") {
+      const facId = (options.body && options.body.facility_id) || "";
+      const fac = ((D.facilities_default && D.facilities_default.facilities) || []).find((x) => x.facility_id === facId);
+      return { success: true, facility_name: (fac && fac.facility_name) || facId, message: "Preview note only — nothing was saved or sent to the facility." };
+    }
+
+    // 8. Worker Details & Ephemeral Symptoms
+    if (p.startsWith("/api/workers/")) {
+      const parts = p.split("/");
+      const wid = decodeURIComponent(parts[3] || "");
+      if (parts.length === 4) return (D.worker_details && D.worker_details[wid]) || { worker: null };
+      if (method === "POST") {
+        const urgent = (options.body && options.body.symptom === "collapse") || (Array.isArray(options.body && options.body.symptoms) && options.body.symptoms.includes("collapse"));
+        return { saved: true, preview: true, urgent, message: urgent ? "Emergency 108 instructions opened (read-only preview)." : "Read-only preview: symptom not saved to a server." };
       }
       return { worker: null };
     }
 
-    // 15. Worker Self Today
-    if (path === "/api/me/today") return D.me_today;
-
-    // 16. Evidence
-    if (path === "/api/evidence") return D.evidence;
-
-    // 17. Storage
-    if (path === "/api/storage") return { status: "ready", label: "Static GitHub Pages Preview" };
-
-    // 18. Simulate
-    if (path === "/api/node/simulate") {
-      return { points: (D.node_day && D.node_day["kandla_port"])?.points || [] };
+    if (p === "/api/me/today") return D.me_today;
+    if (p === "/api/me/export") {
+      return { exported_at: new Date().toISOString(), preview: true, note: "Sample synthetic account export (no real PII held in preview).", profile: S.user };
     }
+    if (p === "/api/evidence") return D.evidence;
+    if (p === "/api/storage") return { status: "ready", label: "Static GitHub Pages Preview" };
+
+    if (method !== "GET") throw new ApiError(403, READ_ONLY_MESSAGE);
   }
 
   throw new ApiError(404, "Endpoint not found");
@@ -248,6 +430,115 @@ function logoMark(size = 38) {
 }
 const logo = () => `<div class="logo">${logoMark()}<div><b>WorkCheck</b><span>Kachchh</span></div></div>`;
 
+function wireTabs(bar, onSelect) {
+  if (!bar) return;
+  const btns = $$("button", bar);
+  const sync = (activeBtn) => {
+    btns.forEach((b) => {
+      const on = b === activeBtn;
+      b.setAttribute("role", "tab");
+      b.setAttribute("aria-selected", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+      b.classList.toggle("on", on);
+    });
+  };
+  sync(btns.find((b) => b.classList.contains("on")) || btns[0]);
+  bar.addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    sync(b);
+    onSelect(b);
+  });
+  bar.addEventListener("keydown", (e) => {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    const idx = btns.indexOf(document.activeElement);
+    if (idx < 0) return;
+    e.preventDefault();
+    const next = btns[(idx + (e.key === "ArrowRight" ? 1 : -1) + btns.length) % btns.length];
+    next.focus();
+    sync(next);
+    onSelect(next);
+  });
+}
+
+async function openLegalModal(kind) {
+  if (kind === "privacy") {
+    const n = await api("/api/privacy/notice").catch(() => ({
+      consent_version: "dpdp-v1-2026",
+      controller: "WorkCheck Kachchh Pilot",
+      purpose: "Track heat/dust risk, symptoms, and safety referrals.",
+      data_minimisation: "Not connected to hospital systems or ABHA/e-Shram servers.",
+      rights: ["Download your records anytime.", "Request correction from your coordinator."],
+    }));
+    openModal(`<h2>Privacy &amp; DPDP Act Notice</h2>
+      <p class="sub">Version ${esc(n.consent_version)} · ${esc(n.controller || "WorkCheck Kachchh")}</p>
+      <p style="margin:12px 0 8px"><b>Purpose:</b> ${esc(n.purpose)}</p>
+      <p style="margin:0 0 12px"><b>Data Scope:</b> ${esc(n.data_minimisation)}</p>
+      <ul style="margin:0 0 14px 18px;font-size:13.5px;color:var(--ink-2)">${(n.rights || []).map((r) => `<li style="margin-bottom:4px">${esc(r)}</li>`).join("")}</ul>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        ${S.user && !isPreview() ? `<button type="button" class="btn btn-ink btn-sm" id="priv-consent-btn">Record Consent</button>` : ""}
+        ${S.user ? `<button type="button" class="btn btn-ghost btn-sm" id="priv-export-btn">${ic("download", 14, 2)} Export My Data (JSON)</button>` : ""}
+      </div>`, "Privacy & DPDP Notice");
+    const cBtn = $("#priv-consent-btn");
+    if (cBtn) cBtn.addEventListener("click", async () => { await api("/api/privacy/consent", { method: "POST" }); toast("Privacy consent timestamp recorded.", "good"); });
+    const eBtn = $("#priv-export-btn");
+    if (eBtn) eBtn.addEventListener("click", () => downloadPersonalExport());
+  } else if (kind === "terms") {
+    openModal(`<h2>Terms &amp; Clinical Disclaimer</h2>
+      <p class="sub">Decision-support and occupational exposure prototype</p>
+      <p style="margin:12px 0 8px">1. WorkCheck Kachchh is a workplace heat, dust, and follow-up aid. It <b>does not diagnose disease</b> or replace a medical practitioner.</p>
+      <p style="margin:0 0 8px">2. District summaries marked as fictional use synthetic worker timelines derived from published Indian, MSHA, ERA5, and CAMS datasets for pilot testing.</p>
+      <p style="margin:0 0 8px">3. In any acute heatstroke or medical emergency, call <b>108</b> immediately regardless of sensor readings.</p>
+      <p style="margin:0">4. Live Open-Meteo and India Post datasets carry upstream attribution and are cached ambient estimates, not on-site calibrated globe thermometers.</p>`, "Terms & Disclaimer");
+  } else {
+    openModal(`<h2>Accessibility Statement (WCAG 2.1 AA)</h2>
+      <p class="sub">Keyboard navigation, contrast, and low-literacy support</p>
+      <ul style="margin:12px 0 0 18px;font-size:13.5px;color:var(--ink-2)">
+        <li style="margin-bottom:6px">Skip-to-content link, landmark regions, and Escape-dismissible modal dialogs.</li>
+        <li style="margin-bottom:6px">Full keyboard arrow navigation across tab bars and role-based queues.</li>
+        <li style="margin-bottom:6px">Trilingual worker interface (ગુજરાતી, हिंदी, English) and 44px mobile touch targets.</li>
+        <li>Reduced-motion CSS compliance for animations.</li>
+      </ul>`, "Accessibility Statement");
+  }
+}
+
+async function downloadPersonalExport() {
+  try {
+    if (isPreview()) {
+      const data = await api("/api/me/export");
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json;charset=utf-8" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "workcheck_preview_account_export.json";
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1500);
+      toast("Downloaded preview JSON snapshot.", "good");
+    } else {
+      window.location.href = "/api/me/export";
+    }
+  } catch (err) { toast(err.message || "Could not export data.", "action"); }
+}
+
+function siteFooterHtml() {
+  return `<footer class="site-footer" role="contentinfo">
+    <span>WorkCheck Kachchh · Occupational Heat &amp; Health Prototype</span>
+    <span class="footer-links">
+      <button type="button" data-legal="privacy">DPDP Privacy</button>
+      <button type="button" data-legal="terms">Clinical Disclaimer</button>
+      <button type="button" data-legal="a11y">Accessibility</button>
+      ${S.user ? `<button type="button" data-legal="export">Export My Data</button>` : ""}
+      <a href="./architecture.html" target="_blank" rel="noopener">Architecture</a>
+    </span>
+  </footer>`;
+}
+
+function wireSiteFooter(root = document) {
+  $$("[data-legal]", root).forEach((el) => el.addEventListener("click", () => {
+    if (el.dataset.legal === "export") downloadPersonalExport();
+    else openLegalModal(el.dataset.legal);
+  }));
+}
+
 function renderShell() {
   const [daily, places] = navGroups(S.user.role);
   const initials = S.user.name.replace(".", "").split(" ").map((p) => p[0]).slice(0, 2).join("");
@@ -265,9 +556,10 @@ function renderShell() {
         <button class="icon-btn" id="sign-out" type="button" aria-label="Sign out" data-tip="Sign out">${ic("logout", 18)}</button>
       </div>
     </aside>
-    <main class="main" id="main"><div id="view"></div></main>
+    <main class="main" id="main" tabindex="-1"><div id="view"></div>${siteFooterHtml()}</main>
   </div>`;
   $("#sign-out").addEventListener("click", signOut);
+  wireSiteFooter($("#app"));
   const more = $("#nav-more");
   if (more) more.addEventListener("click", () => {
     const m = openModal(`<h2>All pages</h2><div class="more-list">${all.map((k) => `<a href="#/${k}">${ic(PAGES[k][1], 20)}<span>${PAGES[k][0]}</span>${ic("chevron-right", 16)}</a>`).join("")}</div>`, "All pages");
@@ -303,7 +595,7 @@ async function route() {
   const allowed = NAV[S.user.role].map((n) => n[0]);
   if (!allowed.includes(page)) { location.replace(`#/${allowed[0]}`); return; }
   if (S.user.role === "worker") {
-    if (!$(".me")) $("#app").innerHTML = `<div class="me">${skeleton()}</div>`;
+    if (!$(".me")) $("#app").innerHTML = `<main class="me" id="main" tabindex="-1">${skeleton()}</main>`;
     return VIEWS.me();
   }
   if (!$("#view")) { renderShell(); S.page = null; }
@@ -327,6 +619,9 @@ async function route() {
 addEventListener("hashchange", route);
 
 async function boot() {
+  if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+    navigator.serviceWorker.register("./sw.js").catch(() => { });
+  }
   try { S.user = await api("/api/auth/me"); } catch { S.user = null; }
   route();
 }

@@ -6,9 +6,9 @@ from typing import Literal, Optional
 from fastapi import APIRouter, Depends, HTTPException, Request, Response
 from pydantic import BaseModel, Field
 
-from .core import (DEMO_ORG, ROLE_NAMES, current_user, db, hash_password, log_action, normalise_identity, now, open_session, password_problem,
-                   public_user, require, set_cookie, today)
-from .security import SIGNUP_LIMIT, limit
+from .core import (CONSENT_VERSION, DEMO_ORG, ROLE_NAMES, current_user, db, hash_password, log_action, normalise_identity, now, open_session,
+                   password_problem, public_user, require, set_cookie, today)
+from .security import JOIN_LIMIT, SIGNUP_LIMIT, limit
 
 router = APIRouter(prefix="/api")
 
@@ -22,8 +22,8 @@ CODE_ALPHABET = "ABCDEFGHJKMNPQRSTUVWXYZ23456789"  # No 0/O or 1/I/L, so codes r
 
 
 def new_code():
-    raw = "".join(secrets.choice(CODE_ALPHABET) for _ in range(6))
-    return f"{raw[:3]}-{raw[3:]}"
+    raw = "".join(secrets.choice(CODE_ALPHABET) for _ in range(8))
+    return f"{raw[:4]}-{raw[4:]}"
 
 
 def new_worker_id(con):
@@ -81,8 +81,9 @@ def register(payload: Register, request: Request, response: Response):
         cur = con.execute("INSERT INTO organisations (name, kind, created_at) VALUES (?,?,?)", (payload.org_name.strip(), payload.org_kind, now().isoformat()))
         org_id = cur.lastrowid
         site_id = con.execute("INSERT INTO sites (org_id, name, location_id, created_at) VALUES (?,?,?,?)", (org_id, payload.site_name.strip(), payload.location_id, now().isoformat())).lastrowid
-        user_id = con.execute("INSERT INTO users (email, password_hash, role, display_name, org_id, site_id, created_at) VALUES (?,?,?,?,?,?,?)",
-                              (email, hash_password(payload.password), "supervisor", payload.admin_name.strip(), org_id, site_id, now().isoformat())).lastrowid
+        stamp = now().isoformat()
+        user_id = con.execute("INSERT INTO users (email, password_hash, role, display_name, org_id, site_id, created_at, consent_version, consent_at) VALUES (?,?,?,?,?,?,?,?,?)",
+                              (email, hash_password(payload.password), "supervisor", payload.admin_name.strip(), org_id, site_id, stamp, CONSENT_VERSION, stamp)).lastrowid
         con.execute("UPDATE organisations SET created_by = ? WHERE id = ?", (user_id, org_id))
         token = open_session(con, user_id)
         log_action(con, user_id, "org_register")
@@ -142,6 +143,8 @@ class NewInvite(BaseModel):
 def create_invite(payload: NewInvite, user=Depends(require("supervisor"))):
     if payload.role == "worker" and payload.job_id not in dict(JOB_CHOICES):
         raise HTTPException(400, "Choose the job this invite is for.")
+    # Staff/clinician invites are strictly single-use on the server.
+    effective_uses = payload.max_uses if payload.role == "worker" else 1
     with db() as con:
         org = org_of(user, con)
         if payload.site_id is not None and not con.execute("SELECT 1 FROM sites WHERE id = ? AND org_id = ?", (payload.site_id, org["id"])).fetchone():
@@ -150,9 +153,9 @@ def create_invite(payload: NewInvite, user=Depends(require("supervisor"))):
         while con.execute("SELECT 1 FROM invites WHERE code = ?", (code,)).fetchone():
             code = new_code()
         con.execute("INSERT INTO invites (code, org_id, site_id, role, job_id, label, created_by, created_at, expires_at, max_uses) VALUES (?,?,?,?,?,?,?,?,?,?)",
-                    (code, org["id"], payload.site_id, payload.role, payload.job_id if payload.role == "worker" else None, payload.label.strip(), user["id"], now().isoformat(), (now() + timedelta(days=payload.days)).isoformat(), payload.max_uses))
+                    (code, org["id"], payload.site_id, payload.role, payload.job_id if payload.role == "worker" else None, payload.label.strip(), user["id"], now().isoformat(), (now() + timedelta(days=payload.days)).isoformat(), effective_uses))
         log_action(con, user["id"], f"invite_create:{payload.role}")
-    return {"code": code, "expires_in_days": payload.days}
+    return {"code": code, "expires_in_days": payload.days, "max_uses": effective_uses}
 
 
 @router.delete("/org/invites/{code}")
@@ -175,7 +178,8 @@ def valid_invite(code, con):
 
 
 @router.get("/join/{code}")
-def join_preview(code: str):
+def join_preview(code: str, request: Request):
+    limit(JOIN_LIMIT, request, "invite lookups")
     with db() as con:
         inv = valid_invite(code, con)
     return {"org": inv["org_name"], "kind": inv["org_kind"], "site": inv["site_name"], "role": inv["role"], "role_name": ROLE_NAMES[inv["role"]], "job": dict(JOB_CHOICES).get(inv["job_id"]), "label": inv["label"]}
@@ -204,11 +208,12 @@ def join(code: str, payload: Join, request: Request, response: Response):
         worker_id = None
         if inv["role"] == "worker":
             worker_id = new_worker_id(con)
-        user_id = con.execute("INSERT INTO users (email, password_hash, role, display_name, worker_id, org_id, site_id, created_at) VALUES (?,?,?,?,?,?,?,?)",
-                              (identity, hash_password(payload.password), inv["role"], payload.name.strip(), worker_id, inv["org_id"], inv["site_id"], now().isoformat())).lastrowid
+        stamp = now().isoformat()
+        user_id = con.execute("INSERT INTO users (email, password_hash, role, display_name, worker_id, org_id, site_id, created_at, consent_version, consent_at) VALUES (?,?,?,?,?,?,?,?,?,?)",
+                              (identity, hash_password(payload.password), inv["role"], payload.name.strip(), worker_id, inv["org_id"], inv["site_id"], stamp, CONSENT_VERSION, stamp)).lastrowid
         if worker_id:
-            con.execute("INSERT INTO org_workers (id, org_id, site_id, user_id, name, age, phone, job_id, joined_at) VALUES (?,?,?,?,?,?,?,?,?)",
-                        (worker_id, inv["org_id"], inv["site_id"], user_id, payload.name.strip(), payload.age, identity if identity.isdigit() else None, inv["job_id"], today()))
+            con.execute("INSERT INTO org_workers (id, org_id, site_id, user_id, name, age, phone, job_id, joined_at, consent_version, consent_at) VALUES (?,?,?,?,?,?,?,?,?,?,?)",
+                        (worker_id, inv["org_id"], inv["site_id"], user_id, payload.name.strip(), payload.age, identity if identity.isdigit() else None, inv["job_id"], today(), CONSENT_VERSION, stamp))
         con.execute("UPDATE invites SET uses = uses + 1 WHERE code = ?", (inv["code"],))
         token = open_session(con, user_id)
         log_action(con, user_id, f"join:{inv['role']}")

@@ -114,12 +114,13 @@ See [`wokwi_bridge/README.md`](./wokwi_bridge/README.md) and [`workcheck_platfor
 
 | Path | Purpose |
 | :--- | :--- |
-| [`index.html`](./index.html), [`styles.css`](./styles.css), [`js/`](./js/), [`assets/`](./assets/) | Static read-only web preview deployed to GitHub Pages (using `js/mock_data.js`) |
-| [`architecture.html`](./architecture.html), [`docs/architecture.archify.json`](./docs/architecture.archify.json) | Interactive Archify system architecture viewer (live on GitHub Pages) and its validated JSON specification |
-| [`workcheck_platform/`](./workcheck_platform/) | Full-stack application: FastAPI backend (`app/main.py`), role auth, SQLite storage (`data/`), SPA assets (`static/`), Wokwi firmware (`wokwi/`), and tests (`tests/`) |
+| [`index.html`](./index.html), [`styles.css`](./styles.css), [`js/`](./js/), [`assets/`](./assets/), [`manifest.webmanifest`](./manifest.webmanifest), [`sw.js`](./sw.js) | Static read-only PWA preview deployed to GitHub Pages (with client-side ISO WBGT math & live Open-Meteo / India Post CORS calls) |
+| [`architecture.html`](./architecture.html), [`docs/`](./docs/) | Interactive Archify system architecture viewer plus [`PRD.md`](./docs/PRD.md), [`ARCHITECTURE.md`](./docs/ARCHITECTURE.md), [`DESIGN.md`](./docs/DESIGN.md), [`API.md`](./docs/API.md), and [`TEST_PLAN.md`](./docs/TEST_PLAN.md) |
+| [`SECURITY.md`](./SECURITY.md), [`PRIVACY.md`](./PRIVACY.md), [`.env.example`](./.env.example), [`CHANGELOG.md`](./CHANGELOG.md) | Hardened production checklist, DPDP Act 2023 alignment, environment template, and release notes |
+| [`workcheck_platform/`](./workcheck_platform/) | Full-stack application: hardened FastAPI backend (`app/`), live public API proxy (`live.py`), SQLite storage (`data/`), SPA assets (`static/`), Wokwi firmware (`wokwi/`), and tests (`tests/`) |
 | [`wokwi_bridge/`](./wokwi_bridge/) | Standalone FastAPI IoT sensor relay (`app.py`), fake device tester (`fake_device.py`), and bridge tests (`test_bridge.py`) |
 | [`simulation/`](./simulation/) | Multi-parameter occupational hazard simulation scripts (`combine_and_simulate.py`) and generated CSV outputs (`output/`) |
-| [`final_dataset/`](./final_dataset/) | Empirical & modeled CSV datasets (ERA5 weather, CPCB PM10, UV, OSHA/MSHA/NIOSH reference tables, 128 simulated workers, data dictionary) |
+| [`final_dataset/`](./final_dataset/) | Empirical & modeled CSV datasets (ERA5 weather, CPCB PM10, NFHS-5, PLFS, Lancet Countdown, OSHA/MSHA/NIOSH reference tables, 128 simulated workers, data dictionary) |
 | [`charts/`](./charts/) | High-resolution analytical plots for heat, compound hazards, shift rescheduling, shade, and dust traces |
 | [`final_synopsis/`](./final_synopsis/) | PS000109 Final Synopsis documents (HTML & PDF) and [`WorkCheck_SFIC_Synopsis.pptx`](./WorkCheck_SFIC_Synopsis.pptx) |
 | [`INSIGHTS.md`](./INSIGHTS.md), [`REPORT.md`](./REPORT.md), [`MASTER_DATA_GUIDE.md`](./MASTER_DATA_GUIDE.md) | Deep analytical write-ups, data provenance documentation, and methodology guides |
@@ -128,14 +129,14 @@ See [`wokwi_bridge/README.md`](./wokwi_bridge/README.md) and [`workcheck_platfor
 
 ## 🧪 Automated Tests
 
-Run both test suites from their respective directories:
+Run both test suites from their respective directories (72 passing tests):
 
 ```bash
-# 1. Full-stack platform tests
+# 1. Full-stack platform, security & live-API tests (38 tests)
 cd workcheck_platform
 python -m pytest tests -q
 
-# 2. Wokwi IoT bridge tests
+# 2. Wokwi IoT bridge tests (34 tests)
 cd ../wokwi_bridge
 python -m pytest test_bridge.py -q
 ```
@@ -145,10 +146,10 @@ python -m pytest test_bridge.py -q
 ## 🔒 Before Internet Deployment
 
 Before exposing the full-stack platform publicly:
-1. Enable `WC_SECURE_COOKIE=1` and serve strictly over HTTPS.
-2. Configure a strong private `WC_DEVICE_KEY` (and `BRIDGE_API_KEY` if running the bridge).
-3. Replace all local demo accounts (`*.demo`).
-4. Review Gujarati/Hindi translations with a fluent speaker and have all alert thresholds clinically validated.
+1. Copy [`.env.example`](./.env.example) to `.env`, set `WC_ENV=production`, `WC_HTTPS=1`, and restrict `WC_ALLOWED_HOSTS` and `WC_TRUSTED_PROXIES`.
+2. Configure a strong non-default `WC_DEVICE_KEY` (and `BRIDGE_API_KEY` if running the bridge; production mode fails closed with `503` otherwise).
+3. Disable seeded demo accounts (`WC_DEMO=0`) and replace local test users (`*.demo`).
+4. Review [`SECURITY.md`](./SECURITY.md) & [`PRIVACY.md`](./PRIVACY.md) and have all alert thresholds clinically validated.
 
 ---
 
