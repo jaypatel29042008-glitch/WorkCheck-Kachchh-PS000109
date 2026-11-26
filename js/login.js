@@ -50,10 +50,11 @@ function renderLogin() {
       <form id="login-form" novalidate>
         <h2>Sign in</h2>
         <p class="sub">Use your WorkCheck account.</p>
-        <label class="field"><span>Email</span><span class="input">${ic("mail", 18)}<input id="email" type="email" autocomplete="username" placeholder="you@example.com" required></span></label>
+        <label class="field"><span>Email or mobile number</span><span class="input">${ic("mail", 18)}<input id="email" type="text" inputmode="email" autocomplete="username" placeholder="you@example.com" required></span></label>
         <label class="field"><span>Password</span><span class="input">${ic("lock", 18)}<input id="password" type="password" autocomplete="current-password" placeholder="Your password" required><button type="button" class="icon-btn ghost" id="show-pw" aria-label="Show password">${ic("eye", 18)}</button></span></label>
         <p class="form-error" id="login-error" role="alert" hidden></p>
         <button class="btn btn-ink btn-full" id="login-go" type="submit">Sign in ${ic("arrow-right", 18, 2)}</button>
+        ${window.WORKCHECK_STATIC_DATA ? "" : `<div class="new-here"><a class="new-card" href="#/setup"><span class="round sm bg-indigo">${ic("building", 16, 2)}</span><span><b>New workplace</b><small>For owners</small></span>${ic("chevron-right", 16)}</a><a class="new-card" href="#/join"><span class="round sm bg-indigo">${ic("ticket", 16, 2)}</span><span><b>Join with a code</b><small>For your team</small></span>${ic("chevron-right", 16)}</a></div>`}
         <div class="divider"><span>Try a test account</span></div>
         <div class="test-accounts">${TEST_ACCOUNTS.map(([e, p, n, d, i], k) => `<button type="button" class="test-acc" data-k="${k}"><span class="round sm bg-indigo">${ic(i, 16, 2)}</span><span><b>${n}</b><small>${d}</small></span></button>`).join("")}</div>
         <p class="fine">All workers here are fictional. Test accounts work only on this copy.${window.WORKCHECK_STATIC_DATA ? " This is a read-only preview, so nothing is saved." : ""}</p>

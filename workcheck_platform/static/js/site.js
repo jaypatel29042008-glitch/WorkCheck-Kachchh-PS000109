@@ -170,7 +170,7 @@ async function sendWokwiSimulatedPacket() {
   const noise = Math.max(65, 82.0 + Math.sin(Date.now() / 8000) * 7.0 + (Math.random() - 0.5) * 3);
 
   const payload = {
-    device_id: "wokwi-node-01",
+    device_id: "browser-stream-01",
     site_id: "kandla_port",
     source: "wokwi_simulated",
     ambient_temp_c: Math.round(tAir * 10) / 10,
@@ -223,11 +223,12 @@ async function tabWokwi(panel) {
         <span>Click <b>"Quick Stream to Monitor"</b> above to stream simulated packets and watch the WBGT dial, dust alarm, and supervisor rest directives update in real time.</span>
       </li>
       <li>
-        <b>Connect Online Wokwi via Public Tunnel</b>
-        <span>Run <code>npx localtunnel --port 8090</code> in terminal, paste the public URL into <code>wokwi/sketch.ino</code>, and run the simulation directly in Wokwi.</span>
+        <b>Connect the real Wokwi sketch</b>
+        <span>Run <code>cloudflared tunnel --url http://localhost:8090</code>, paste the address it prints into the sketch (the edits are in <code>wokwi/wokwi_platform_patch.ino</code>), and press play in Wokwi. Keep the Wokwi tab in front.</span>
       </li>
     </ol>
-  </div>`;
+  </div>
+  <div class="device-controls" id="device-controls"></div>`;
 
   const btnStream = $("#btn-stream-wokwi");
   if (btnStream) {
@@ -246,10 +247,67 @@ async function tabWokwi(panel) {
     });
   }
 
+  const stopControls = await mountDeviceControls($("#device-controls", panel));
+
   return () => {
+    stopControls();
     if (wokwiStreamTimer) {
       clearInterval(wokwiStreamTimer);
       wokwiStreamTimer = null;
     }
   };
+}
+
+/* Website to device: sliders here set test values, the Wokwi device picks them up, uses them, and reports back. */
+const CONTROL_SLIDERS = [["ambient_temp_c", "Air temperature", 20, 50, 0.5, "°C"], ["relative_humidity_pct", "Humidity", 5, 100, 1, "%"], ["globe_temp_c", "Globe temperature", 20, 70, 0.5, "°C"], ["pm10_0_ug_m3", "Dust (PM10)", 0, 500, 5, "µg/m³"], ["uv_index", "UV index", 0, 14, 0.5, ""]];
+
+function controlStatus(c) {
+  if (!c.enabled) return `<span class="pill none">${ic("hand-stop", 14, 2)}Off. The device uses its own sensors</span>`;
+  if (c.confirmed) return `<span class="pill clear">${ic("circle-check", 14, 2)}Device is using these values, confirmed ${c.confirmed_seconds}s ago</span>`;
+  if (c.device_online) return `<span class="pill due">${ic("broadcast", 14, 2)}Sent. Waiting for the device to pick them up</span>`;
+  return `<span class="pill none">${ic("wifi-off", 14, 2)}Saved. No device is connected yet</span>`;
+}
+
+async function mountDeviceControls(host) {
+  if (!host || isPreview()) { if (host) host.hidden = true; return () => { }; }
+  let c = await api("/api/node/controls");
+  if (!host.isConnected) return () => { };
+  const values = { ...c.values };
+  let enabled = c.enabled, timer, lastReading = S.lastReading;
+  host.innerHTML = `<div class="card-head"><div><h2>Control the device from here</h2><p class="sub">Move a slider and the Wokwi device takes the value, shows it on its own screen and lamp, and sends it back. These are test values, not sensor readings.</p></div>
+      <div class="yn" role="radiogroup" aria-label="Website control"><button type="button" role="radio" id="ctl-on" data-v="1">On</button><button type="button" role="radio" id="ctl-off" data-v="0">Off</button></div></div>
+    <div id="ctl-status" class="ctl-status"></div>
+    <div class="sliders" id="ctl-sliders">${CONTROL_SLIDERS.map(([k, t, min, max, step]) => `<label class="slider"><span>${t}<b id="cv-${k}"></b></span><input type="range" id="c-${k}" min="${min}" max="${max}" step="${step}"></label>`).join("")}</div>`;
+  const draw = () => {
+    $("#ctl-on", host).className = enabled ? "on yes" : "";
+    $("#ctl-off", host).className = enabled ? "" : "on no";
+    $("#ctl-on", host).setAttribute("aria-checked", enabled); $("#ctl-off", host).setAttribute("aria-checked", !enabled);
+    $("#ctl-sliders", host).classList.toggle("off", !enabled);
+    CONTROL_SLIDERS.forEach(([k, , , , , u]) => { $(`#c-${k}`, host).value = values[k]; $(`#c-${k}`, host).disabled = !enabled; $(`#cv-${k}`, host).textContent = `${values[k]} ${u}`; });
+    $("#ctl-status", host).innerHTML = controlStatus(c);
+  };
+  const send = async () => {
+    try { c = await api("/api/node/controls", { method: "POST", body: { enabled, ...values } }); draw(); } catch (err) { toast(err.message, "action"); }
+  };
+  CONTROL_SLIDERS.forEach(([k]) => $(`#c-${k}`, host).addEventListener("input", (e) => {
+    values[k] = Number(e.target.value);
+    $(`#cv-${k}`, host).textContent = `${values[k]} ${CONTROL_SLIDERS.find((x) => x[0] === k)[5]}`;
+    clearTimeout(timer);
+    timer = setTimeout(send, 250);
+  }));
+  $("#ctl-on", host).addEventListener("click", () => { enabled = true; send(); });
+  $("#ctl-off", host).addEventListener("click", () => { enabled = false; send(); });
+  draw();
+  // Every 2 seconds: has the device confirmed, and has it sent a new reading to show above?
+  const poll = setInterval(async () => {
+    if (!host.isConnected) return;
+    const [next, state] = await Promise.all([api("/api/node/controls").catch(() => null), api("/api/node/state").catch(() => null)]);
+    if (next) { c = next; $("#ctl-status", host).innerHTML = controlStatus(c); }
+    if (state && state.latest.id !== lastReading) {
+      lastReading = state.latest.id; S.lastReading = lastReading;
+      if ($("#site-live")) renderLive(state.latest, state.latest.source === "wokwi_simulated" ? "Sent by the Wokwi device" : undefined);
+      const dot = $("#wokwi-status"); if (dot) dot.innerHTML = wokwiStatus(state.wokwi);
+    }
+  }, 2000);
+  return () => { clearInterval(poll); clearTimeout(timer); };
 }

@@ -13,12 +13,32 @@ const LEVELS = {
   watch: { label: "Watching", icon: "eye", hint: "Exposed, but nothing triggered yet", tile: "indigo" },
   clear: { label: "All clear", icon: "circle-check", hint: "Nothing waiting", tile: "green" },
 };
-const NAV = {
-  clinician: [["today", "Today", "home"], ["workers", "Workers", "users"], ["facilities", "Health facilities", "hospital-circle"], ["heat", "Heat & Dust map", "map-2"], ["site", "Site monitor", "device-heart-monitor"], ["wokwi", "Wokwi node", "cpu"], ["evidence", "Evidence", "book-2"]],
-  ddo: [["today", "Today", "home"], ["facilities", "Health facilities", "hospital-circle"], ["heat", "Heat & Dust map", "map-2"], ["site", "Site monitor", "device-heart-monitor"], ["wokwi", "Wokwi node", "cpu"], ["evidence", "Evidence", "book-2"]],
-  supervisor: [["site", "Site monitor", "device-heart-monitor"], ["facilities", "Health facilities", "hospital-circle"], ["heat", "Heat & Dust map", "map-2"], ["wokwi", "Wokwi node", "cpu"], ["evidence", "Evidence", "book-2"]],
-  worker: [["me", "Health pass & Symptoms", "heartbeat"], ["facilities", "Nearest hospitals", "hospital-circle"]],
+/* Pages by role. The second group sits under a quiet label. */
+const PAGES = {
+  today: ["Today", "home"], dashboard: ["Daily check-ins", "clipboard-check"], workers: ["Workers", "users"], care: ["Medical checks", "stethoscope"], incidents: ["Incidents", "first-aid-kit"],
+  compliance: ["Training & site checks", "list-check"], team: ["Team & invites", "user-plus"], facilities: ["Health facilities", "hospital-circle"], heat: ["Heat & Dust map", "map-2"],
+  site: ["Site monitor", "device-heart-monitor"], wokwi: ["Wokwi node", "cpu"], evidence: ["Evidence", "book-2"], me: ["My health", "heartbeat"],
 };
+/* Short names for the phone's bottom bar, where there is room for one word. */
+const SHORT = { dashboard: "Check-ins", care: "Medical", compliance: "Site checks", team: "Team", facilities: "Facilities", heat: "Map", site: "Monitor", wokwi: "Wokwi" };
+const NAV_FULL = {
+  clinician: [["today", "dashboard", "workers", "care", "incidents"], ["facilities", "heat", "site", "wokwi", "evidence"]],
+  ddo: [["today", "dashboard"], ["facilities", "heat", "site", "wokwi", "evidence"]],
+  supervisor: [["dashboard", "incidents", "compliance", "team"], ["site", "facilities", "heat", "wokwi", "evidence"]],
+  worker: [["me", "facilities"], []],
+};
+const NAV_PREVIEW = {
+  clinician: [["today", "workers"], ["facilities", "heat", "site", "wokwi", "evidence"]], ddo: [["today"], ["facilities", "heat", "site", "wokwi", "evidence"]],
+  supervisor: [["site"], ["facilities", "heat", "wokwi", "evidence"]], worker: [["me", "facilities"], []],
+};
+const DEMO_ONLY = ["today", "wokwi"];
+const isPreview = () => Boolean(window.WORKCHECK_STATIC_DATA);
+const isDemoOrg = () => !S.user || !S.user.org || Boolean(S.user.org.demo);
+function navGroups(role) {
+  const groups = (isPreview() ? NAV_PREVIEW : NAV_FULL)[role];
+  return groups.map((g) => g.filter((k) => isDemoOrg() || !DEMO_ONLY.includes(k)));
+}
+const NAV = new Proxy({}, { get: (_, role) => navGroups(role).flat().map((k) => [k, PAGES[k][0], PAGES[k][1]]) });
 const ROLE_NAMES = { clinician: "Clinic team", ddo: "District office", supervisor: "Site supervisor", worker: "Worker" };
 
 class ApiError extends Error {
@@ -32,7 +52,7 @@ async function api(path, options = {}) {
 
   // With a server, its answer is final: errors are shown, never replaced by demo data.
   if (!window.WORKCHECK_STATIC_DATA) {
-    const init = { credentials: "same-origin", method, headers: {} };
+    const init = { credentials: "same-origin", method, headers: { "X-Requested-With": "WorkCheck" } };
     if (options.body !== undefined) {
       init.body = JSON.stringify(options.body);
       init.headers["Content-Type"] = "application/json";
@@ -229,12 +249,16 @@ function logoMark(size = 38) {
 const logo = () => `<div class="logo">${logoMark()}<div><b>WorkCheck</b><span>Kachchh</span></div></div>`;
 
 function renderShell() {
-  const nav = NAV[S.user.role];
+  const [daily, places] = navGroups(S.user.role);
   const initials = S.user.name.replace(".", "").split(" ").map((p) => p[0]).slice(0, 2).join("");
+  const all = [...daily, ...places];
+  const link = (k) => `<a href="#/${k}" data-nav="${k}" title="${PAGES[k][0]}"${all.indexOf(k) > 3 ? ' class="extra"' : ""}>${ic(PAGES[k][1], 20)}<span class="lbl">${PAGES[k][0]}</span><span class="lbl-s">${SHORT[k] || PAGES[k][0]}</span></a>`;
+  const org = S.user.org;
   $("#app").innerHTML = `<div class="frame">
     <aside class="side">
       ${logo()}
-      <nav aria-label="Main">${nav.map(([k, t, i]) => `<a href="#/${k}" data-nav="${k}" data-tip-rail="${t}">${ic(i, 20)}<span>${t}</span></a>`).join("")}</nav>
+      ${org ? `<div class="side-org" data-tip="${org.demo ? "Sample organisation with fictional workers" : "Your organisation"}">${ic("building", 15, 2)}<span>${esc(org.name)}</span>${org.demo ? `<em>Sample</em>` : ""}</div>` : ""}
+      <nav aria-label="Main">${daily.map(link).join("")}${places.length ? `<span class="nav-label">Places and evidence</span>${places.map(link).join("")}` : ""}${all.length > 4 ? `<button type="button" class="nav-more" id="nav-more">${ic("list-check", 20)}<span>More</span></button>` : ""}</nav>
       <div class="side-user">
         <span class="av av2" aria-hidden="true">${esc(initials)}</span>
         <div class="side-user-text"><b>${esc(S.user.name)}</b><span>${ROLE_NAMES[S.user.role]}</span></div>
@@ -244,6 +268,11 @@ function renderShell() {
     <main class="main" id="main"><div id="view"></div></main>
   </div>`;
   $("#sign-out").addEventListener("click", signOut);
+  const more = $("#nav-more");
+  if (more) more.addEventListener("click", () => {
+    const m = openModal(`<h2>All pages</h2><div class="more-list">${all.map((k) => `<a href="#/${k}">${ic(PAGES[k][1], 20)}<span>${PAGES[k][0]}</span>${ic("chevron-right", 16)}</a>`).join("")}</div>`, "All pages");
+    $$("a", m.el).forEach((a) => a.addEventListener("click", () => m.close()));
+  });
 }
 
 async function signOut() {
@@ -254,14 +283,29 @@ async function signOut() {
   renderLogin();
 }
 
+const todayIso = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
+const plural = (n, one, many) => `${n} ${n === 1 ? one : many || `${one}s`}`;
+const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+function dayName(iso) { const [y, m, d] = iso.split("-").map(Number); return WEEKDAYS[new Date(y, m - 1, d).getDay()]; }
+function who(w, extra = "") { return `<span class="who">${avatar(w)}<span><b>${esc(w.name)}</b><small>${esc(w.job || "")}${extra}</small></span></span>`; }
+function formError(root, err) { const box = $(".form-error", root); if (box) { box.textContent = err.message || String(err); box.hidden = false; } }
+async function copyText(text) { try { await navigator.clipboard.writeText(text); toast("Copied.", "good"); } catch { toast(text); } }
+
 const skeleton = () => `<div class="skel-title"></div><div class="skel-grid"><div></div><div></div><div></div><div></div></div><div class="skel-block"></div>`;
 
 async function route() {
+  $("#modal-root").innerHTML = "";  // A dialog never outlives the page it was opened on.
+  const [first = "", code] = location.hash.replace(/^#\/?/, "").split("/");
+  if (!S.user && first === "setup" && window.renderSetup) return renderSetup();
+  if (!S.user && first === "join" && window.renderJoin) return renderJoin(code);
   if (!S.user) return renderLogin();
   const [page = "", arg] = location.hash.replace(/^#\/?/, "").split("/");
   const allowed = NAV[S.user.role].map((n) => n[0]);
   if (!allowed.includes(page)) { location.replace(`#/${allowed[0]}`); return; }
-  if (S.user.role === "worker") return VIEWS.me();
+  if (S.user.role === "worker") {
+    if (!$(".me")) $("#app").innerHTML = `<div class="me">${skeleton()}</div>`;
+    return VIEWS.me();
+  }
   if (!$("#view")) { renderShell(); S.page = null; }
   $$("[data-nav]").forEach((a) => { if (a.dataset.nav === page) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
   if (S.page !== page) {
@@ -276,7 +320,8 @@ async function route() {
   } catch (err) {
     if (err.status === 401) return;
     console.error(err);
-    $("#view").innerHTML = `<div class="empty card">${ic("alert-triangle", 28)}<h2>This page could not open</h2><p>${esc(err.message)}</p><button class="btn btn-ink" type="button" onclick="route()">Try again</button></div>`;
+    $("#view").innerHTML = `<div class="empty card">${ic("alert-triangle", 28)}<h2>This page could not open</h2><p>${esc(err.message)}</p><button class="btn btn-ink" type="button" id="retry">Try again</button></div>`;
+    $("#retry").addEventListener("click", route);
   }
 }
 addEventListener("hashchange", route);

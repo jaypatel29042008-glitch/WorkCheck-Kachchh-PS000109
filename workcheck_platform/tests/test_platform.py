@@ -9,7 +9,8 @@ from app import main
 def client(tmp_path, monkeypatch):
     monkeypatch.setenv("WC_RUNTIME_DB", str(tmp_path / "runtime.db"))
     monkeypatch.delenv("WC_FORWARD_URL", raising=False)
-    return TestClient(main.app)
+    main.LOGIN_LIMIT.hits.clear()  # Every test is a fresh connection.
+    return TestClient(main.app, headers={"X-Requested-With": "WorkCheck"})
 
 
 def signin(client, email):

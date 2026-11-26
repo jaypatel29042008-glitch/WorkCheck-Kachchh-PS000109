@@ -8,7 +8,7 @@
 const PLAN_KEYS = [100, 75, 50, 25, 0];
 const I18N = {
   en: {
-    name: "English", pauseHour: "Pause this hour", minWord: "min", testReading: "Test reading", hello: "Hello", fictional: "Fictional test record", signout: "Sign out",
+    name: "English", report: "Report a problem at work", pauseHour: "Pause this hour", minWord: "min", testReading: "Test reading", hello: "Hello", fictional: "Fictional test record", signout: "Sign out",
     status: { action: ["Please visit the clinic", "Something on your record needs a doctor."], due: ["A check is waiting for you", "Visit the clinic when you can. It will not take long."], watch: ["Nothing to do today", "The risks of your work are being watched."], clear: ["You are all clear", "No check is waiting."] },
     today: "Today at work", plan: { 100: ["Safe to work", "No extra heat limit for this work. Keep drinking water."], 75: ["Take regular breaks", "Work 45 minutes, then rest 15 minutes in shade with water."], 50: ["Work half of each hour", "Work 30 minutes, then rest 30 minutes in shade with water."], 25: ["Mostly rest", "Work 15 minutes, then rest 45 minutes in shade with water."], 0: ["Pause this work", "Too hot for this work. A supervisor must review before it continues."] },
     feel: "Log Daily Symptoms / લક્ષણો નોંધો",
@@ -21,7 +21,7 @@ const I18N = {
     stat: { Missed: "Missed", Due: "Due", "Follow-up open": "Follow-up open", "Doctor noted (demo)": "Doctor noted" },
   },
   gu: {
-    name: "ગુજરાતી", pauseHour: "આ કલાકે કામ બંધ", minWord: "મિનિટ", testReading: "ટેસ્ટ રીડિંગ", hello: "નમસ્તે", fictional: "કાલ્પનિક ટેસ્ટ રેકોર્ડ", signout: "બહાર નીકળો",
+    name: "ગુજરાતી", report: "કામ પરની સમસ્યા જણાવો", pauseHour: "આ કલાકે કામ બંધ", minWord: "મિનિટ", testReading: "ટેસ્ટ રીડિંગ", hello: "નમસ્તે", fictional: "કાલ્પનિક ટેસ્ટ રેકોર્ડ", signout: "બહાર નીકળો",
     status: { action: ["કૃપા કરીને દવાખાને આવો", "તમારા રેકોર્ડમાં એક બાબત માટે ડૉક્ટરની જરૂર છે."], due: ["તમારી એક તપાસ બાકી છે", "સમય મળે ત્યારે દવાખાને જાઓ. વધુ સમય નહીં લાગે."], watch: ["આજે કંઈ કરવાનું નથી", "તમારા કામના જોખમ પર નજર રાખવામાં આવી રહી છે."], clear: ["બધું બરાબર છે", "કોઈ તપાસ બાકી નથી."] },
     today: "આજે કામ પર", plan: { 100: ["કામ કરવું સલામત છે", "આ કામ માટે ગરમીની વધારાની મર્યાદા નથી. પાણી પીતા રહો."], 75: ["નિયમિત આરામ લો", "45 મિનિટ કામ, પછી 15 મિનિટ છાંયડામાં આરામ અને પાણી."], 50: ["દર કલાકે અડધો સમય કામ કરો", "30 મિનિટ કામ, પછી 30 મિનિટ છાંયડામાં આરામ અને પાણી."], 25: ["મોટા ભાગે આરામ કરો", "15 મિનિટ કામ, પછી 45 મિનિટ છાંયડામાં આરામ અને પાણી."], 0: ["આ કામ બંધ કરો", "આ કામ માટે ખૂબ ગરમી છે. સુપરવાઈઝર તપાસ કરે પછી જ ફરી શરૂ કરો."] },
     feel: "લક્ષણો નોંધો / Log Daily Symptoms",
@@ -34,7 +34,7 @@ const I18N = {
     stat: { Missed: "ચૂકી ગયા", Due: "બાકી", "Follow-up open": "ફરી તપાસ બાકી", "Doctor noted (demo)": "ડૉક્ટરે નોંધ્યું" },
   },
   hi: {
-    name: "हिंदी", pauseHour: "इस घंटे काम बंद", minWord: "मिनट", testReading: "टेस्ट रीडिंग", hello: "नमस्ते", fictional: "काल्पनिक टेस्ट रिकॉर्ड", signout: "बाहर निकलें",
+    name: "हिंदी", report: "काम की समस्या बताइए", pauseHour: "इस घंटे काम बंद", minWord: "मिनट", testReading: "टेस्ट रीडिंग", hello: "नमस्ते", fictional: "काल्पनिक टेस्ट रिकॉर्ड", signout: "बाहर निकलें",
     status: { action: ["कृपया क्लिनिक आइए", "आपके रिकॉर्ड में एक बात के लिए डॉक्टर की ज़रूरत है."], due: ["आपकी एक जाँच बाकी है", "समय मिलने पर क्लिनिक जाइए. ज़्यादा समय नहीं लगेगा."], watch: ["आज कुछ नहीं करना है", "आपके काम के जोखिम पर नज़र रखी जा रही है."], clear: ["सब ठीक है", "कोई जाँच बाकी नहीं है."] },
     today: "आज काम पर", plan: { 100: ["काम करना सुरक्षित है", "इस काम के लिए गर्मी की कोई अतिरिक्त सीमा नहीं है. पानी पीते रहिए."], 75: ["नियमित आराम लीजिए", "45 मिनट काम, फिर 15 मिनट छाया में आराम और पानी."], 50: ["हर घंटे आधा समय काम कीजिए", "30 मिनट काम, फिर 30 मिनट छाया में आराम और पानी."], 25: ["ज़्यादातर आराम कीजिए", "15 मिनट काम, फिर 45 मिनट छाया में आराम और पानी."], 0: ["यह काम रोक दीजिए", "इस काम के लिए बहुत गर्मी है. सुपरवाइज़र की जाँच के बाद ही फिर शुरू कीजिए."] },
     feel: "दैनिक लक्षण दर्ज करें / Log Daily Symptoms",
@@ -70,9 +70,10 @@ VIEWS.me = async () => {
   const workerId = (S.user && S.user.worker_id) || W_STATE.workerId || "SIM-B";
   W_STATE.workerId = workerId;
 
-  const [p, today] = await Promise.all([
+  const [p, today, checkin] = await Promise.all([
     api(`/api/workers/${encodeURIComponent(workerId)}`),
     api("/api/me/today"),
+    isPreview() ? null : api("/api/log/today").catch(() => null),
   ]);
 
   if (p.card && p.card.location_id) {
@@ -82,7 +83,7 @@ VIEWS.me = async () => {
   const facData = await api(`/api/facilities?site_id=${encodeURIComponent(W_STATE.siteId)}&disease=${encodeURIComponent(W_STATE.disease)}`);
   W_STATE.facData = facData;
 
-  S.mine = { p, today, facData };
+  S.mine = { p, today, facData, checkin };
   renderMe();
 };
 
@@ -124,7 +125,9 @@ function renderFacilityCardsHtml(facilities) {
 }
 
 function renderMe() {
-  const { p, today, facData } = S.mine;
+  const { p, today, facData, checkin } = S.mine;
+  const org = p.kind === "org";
+  const openChecks = p.open_checks || [];
   const lang = getLang(), t = I18N[lang];
   const level = p.state.level;
   document.documentElement.lang = lang;
@@ -161,19 +164,24 @@ function renderMe() {
       </div>
     </section>
 
-    <!-- Top Grid: Health Pass (Features 1 & 2) on Left, Symptoms Logger (Feature 1 Right) on Right -->
+    <!-- Daily check-in: the one thing to do each morning -->
+    ${checkin ? `<section class="card checkin-card" id="checkin-host"></section>` : `<section class="card"><p class="sub">The daily check-in works in the full version. This preview is read-only.</p></section>`}
+    <div class="me-quick">
+      <button type="button" class="btn btn-ghost danger" id="collapse">${ic("ambulance", 18, 2)} ${esc(t.call)}</button>
+      ${checkin ? `<button type="button" class="btn btn-ghost" id="me-incident">${ic("alert-triangle", 18, 2)} ${esc(t.report)}</button>` : ""}
+    </div>
+
     <div class="worker-dashboard-grid">
-      <!-- Feature 1 & 2: Health Pass Card -->
       <section class="card health-pass-card">
         <div class="pass-header">
           <div class="pass-title-group">
             <span class="round sm bg-green t-green">${ic("shield-check", 22, 2)}</span>
             <div>
               <h3>${esc(t.pass)}</h3>
-              <p class="sub">${esc(t.passSub)}</p>
+              <p class="sub">${esc(org ? (S.user.org ? S.user.org.name : "") : t.passSub)}</p>
             </div>
           </div>
-          <span class="pill none sm" style="font-weight:700">Test pass</span>
+          ${org ? "" : `<span class="pill none sm" style="font-weight:700">Test pass</span>`}
         </div>
 
         <div class="pass-id-box">
@@ -184,18 +192,17 @@ function renderMe() {
               <h4>${esc(p.card.name)}</h4>
             </div>
             <div>
-              <label>Job Role &amp; Taluka:</label>
-              <span class="role-taluka">${esc(jobRoleTaluka)}</span>
+              <label>${org ? "Job &amp; site:" : "Job Role &amp; Taluka:"}</label>
+              <span class="role-taluka">${esc(org ? `${p.card.job} · ${p.card.place}` : jobRoleTaluka)}</span>
             </div>
             <div>
-              <label>Test record ID:</label>
+              <label>${org ? "Record ID:" : "Test record ID:"}</label>
               <span class="uan-mono">${esc(p.card.id)}</span>
             </div>
           </div>
         </div>
 
-        <!-- Feature 2: 4 Detailed Worker Metadata Tiles Grid -->
-        <div class="pass-meta-grid">
+        ${org ? "" : `<div class="pass-meta-grid">
           <div class="meta-item">
             <label>Age:</label>
             <span>${esc(p.card.age)} yrs</span>
@@ -220,51 +227,14 @@ function renderMe() {
             <b>Legal exam:</b>
             <p>${esc(statutoryText)}</p>
           </div>
-        </div>
+        </div>`}
       </section>
 
-      <!-- Feature 1 (Right): Log Daily Symptoms Panel -->
-      <section class="card symptoms-card">
-        <div class="card-head">
-          <div class="symptom-title-group">
-            <span class="round sm bg-amber t-amber">${ic("alert-triangle", 20, 2)}</span>
-            <div>
-              <h2>${esc(t.feel)}</h2>
-              <p class="sub">${esc(t.feelSub)}</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="symptom-checkbox-grid">
-          ${SYMPTOM_DEFINITIONS.map((s) => `
-            <label class="symptom-checkbox-tile">
-              <input type="checkbox" name="acute-symptom" value="${s.id}" id="symp-${s.id}" />
-              <div class="tile-content">
-                <b>${esc(s.title)}</b>
-                <small>${esc(s.sub)}</small>
-              </div>
-            </label>
-          `).join("")}
-        </div>
-
-        <div class="symptom-actions">
-          <button type="button" class="btn btn-ink" id="btn-submit-symptoms" style="flex:2">
-            ${ic("clipboard-check", 18, 2)} Submit Clinical Symptoms
-          </button>
-          <button type="button" class="btn btn-danger" id="collapse" style="flex:1">
-            ${ic("ambulance", 18, 2)} ${esc(t.call)}
-          </button>
-        </div>
-
-        <div id="symptom-feedback-banner" class="symptom-feedback good" hidden>
-          ${ic("circle-check", 18, 2)}
-          <span id="symptom-feedback-text"></span>
-        </div>
-      </section>
+      ${checkin ? `<section class="card" id="calendar-host">${calendarCard(checkin.history, lang)}</section>` : ""}
     </div>
 
     <!-- Today Work-Rest Heat Guidance Bar -->
-    <section class="card">
+    <section class="card"${org && today.site_id !== p.card.location_id ? " hidden" : ""}>
       <div class="card-head">
         <div>
           <h2>${esc(t.today)}</h2>
@@ -314,10 +284,10 @@ function renderMe() {
       <div class="card-head">
         <h2>${esc(t.checks)}</h2>
       </div>
-      ${p.open_checks.length ? `<div class="todo">${p.open_checks.map((k) => `<div class="todo-row"><span class="round sm bg-${k.tone} t-${k.tone}">${ic(k.icon, 16, 2)}</span><div><b>${esc(t.checkNames[k.check] || k.check)}</b><small class="t-${k.tone}">${esc(t.stat[k.text] || k.text)}</small></div></div>`).join("")}</div>` : `<div class="empty small">${ic("circle-check", 24)}<p>${esc(t.noChecks)}</p></div>`}
+      ${openChecks.length ? `<div class="todo">${openChecks.map((k) => `<div class="todo-row"><span class="round sm bg-${k.tone} t-${k.tone}">${ic(k.icon, 16, 2)}</span><div><b>${esc(t.checkNames[k.check] || k.check)}</b><small class="t-${k.tone}">${esc(t.stat[k.text] || k.text)}</small></div></div>`).join("")}</div>` : (org && p.state.reasons.length ? `<div class="todo">${p.state.reasons.map((r) => `<div class="todo-row"><span class="round sm bg-due t-due">${ic("calendar-check", 16, 2)}</span><div><b>${esc(r)}</b></div></div>`).join("")}</div>` : `<div class="empty small">${ic("circle-check", 24)}<p>${esc(t.noChecks)}</p></div>`)}
     </section>
 
-    <p class="fine center">${esc(t.fictional)}</p>
+    <p class="fine center">${esc(org ? p.label : t.fictional)}</p>
   </div>`;
 
   // Render QR Code in the Health Pass Card
@@ -336,30 +306,13 @@ function renderMe() {
     renderMe();
   }));
 
-  // Submit Clinical Symptoms (Multi-checkbox)
-  $("#btn-submit-symptoms").addEventListener("click", async () => {
-    const checked = $$('input[name="acute-symptom"]:checked').map((el) => el.value);
-    if (!checked.length) {
-      toast("Please check at least one symptom to log.", "watch");
-      return;
-    }
-    try {
-      const res = await api(`/api/workers/${encodeURIComponent(p.card.id)}/symptoms/batch`, {
-        method: "POST",
-        body: { symptoms: checked },
-      });
-      const banner = $("#symptom-feedback-banner");
-      const bannerText = $("#symptom-feedback-text");
-      if (banner && bannerText) {
-        bannerText.textContent = res.message || t.saved;
-        banner.hidden = false;
-      }
-      toast(t.saved, "good");
-      $$('input[name="acute-symptom"]').forEach((el) => { el.checked = false; });
-    } catch (err) {
-      toast(err.message || "Failed to log symptoms.", "action");
-    }
-  });
+  if (checkin) {
+    mountCheckin($("#checkin-host"), checkin, { lang, onSaved: () => VIEWS.me() });
+    $("#me-incident").addEventListener("click", async () => {
+      const cat = checkin.catalogue;
+      openIncidentForm({ catalogue: cat, sites: [], workers: [] }, null, true);
+    });
+  }
 
   // Emergency 108 collapse handler
   $("#collapse").addEventListener("click", async () => {
