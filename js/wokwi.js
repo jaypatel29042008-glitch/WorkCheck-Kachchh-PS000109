@@ -89,10 +89,26 @@ const WOKWI_PARTS = [
   },
 ];
 
+const WOKWI_SCENARIO_PRESETS = {
+  normal: { ambient_temp_c: 28.5, relative_humidity_pct: 55, globe_temp_c: 33.0, pm10_0_ug_m3: 42, uv_index: 4.8, noise_dba: 70 },
+  heat: { ambient_temp_c: 38.5, relative_humidity_pct: 44, globe_temp_c: 51.2, pm10_0_ug_m3: 65, uv_index: 10.2, noise_dba: 74 },
+  dust: { ambient_temp_c: 32.0, relative_humidity_pct: 40, globe_temp_c: 38.0, pm10_0_ug_m3: 275, uv_index: 6.5, noise_dba: 86 },
+  compound: { ambient_temp_c: 37.0, relative_humidity_pct: 50, globe_temp_c: 49.5, pm10_0_ug_m3: 210, uv_index: 9.5, noise_dba: 82 },
+};
+
+function buildWokwiSketchSnippet(telemetryUrl) {
+  return `// Paste your public tunnel URL + device API key to link wokwi.com sliders live:
+const char* TELEMETRY_URL = "${telemetryUrl}";
+const char* DEVICE_KEY    = "YOUR_WC_DEVICE_KEY"; // Set WC_DEVICE_KEY on server
+
+// Parses r_on, r_rev, r_temp, r_rh, r_globe, r_pm10, r_uv, r_noise from HTTP POST reply:
+// Send "remote_rev": remoteOn ? remoteRev : 0 in telemetry JSON to confirm on website.`;
+}
+
 function wokwiDiagram() {
   // Plain picture of the two-way link: node -> internet -> dashboard, and back.
   return `<section class="card wk-diagram">
-    <div class="card-head"><div><h2>How it works</h2><p class="sub">The test node sends its readings to the website every few seconds. The website can send test values back, and the node uses them straight away. That is the cross-connection.</p></div></div>
+    <div class="card-head"><div><h2>How it works</h2><p class="sub">The test node sends its readings to the website every few seconds. Moving any slider pushes values straight into the simulation and confirms back.</p></div></div>
     <svg class="wk-svg" viewBox="0 0 840 300" role="img" aria-label="The site node sends readings to the WorkCheck website over the internet, and the website sends test values back to the node.">
       <defs>
         <marker id="wk-ar-out" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6Z" fill="var(--accent)"/></marker>
@@ -109,8 +125,8 @@ function wokwiDiagram() {
         <g class="wk-chip"><rect x="46" y="164" width="84" height="26" rx="13"/><text x="88" y="181" text-anchor="middle">Sun</text></g>
         <g class="wk-chip"><rect x="136" y="164" width="84" height="26" rx="13"/><text x="178" y="181" text-anchor="middle">Noise</text></g>
         <rect x="46" y="198" width="140" height="22" rx="6" fill="var(--ink)"/>
-        <text x="56" y="213" class="wk-screen">WBGT 24.5 C  OK</text>
-        <circle cx="210" cy="209" r="9" fill="var(--clear)"/>
+        <text x="54" y="213" class="wk-screen" id="wk-svg-oled">WBGT 24.5C OK</text>
+        <circle cx="210" cy="209" r="9" fill="var(--clear)" id="wk-svg-led"/>
       </g>
 
       <!-- Internet in the middle -->
@@ -127,34 +143,42 @@ function wokwiDiagram() {
         <text x="707" y="102" text-anchor="middle" class="wk-t-h">WorkCheck website</text>
         <text x="707" y="119" text-anchor="middle" class="wk-t-s">What the supervisor sees</text>
         <path d="M662 190a45 45 0 0 1 90 0" fill="none" stroke="var(--line-2)" stroke-width="8" stroke-linecap="round"/>
-        <path d="M662 190a45 45 0 0 1 66 -39" fill="none" stroke="var(--accent)" stroke-width="8" stroke-linecap="round"/>
-        <text x="707" y="188" text-anchor="middle" class="wk-t-big">24.5&#176;</text>
+        <path d="M662 190a45 45 0 0 1 90 0" fill="none" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" id="wk-svg-arc" stroke-dasharray="90 142"/>
+        <text x="707" y="188" text-anchor="middle" class="wk-t-big" id="wk-svg-wbgt">24.5&#176;</text>
         <text x="707" y="214" text-anchor="middle" class="wk-t-s">Heat index now</text>
       </g>
 
       <!-- Readings out: node to website -->
       <path d="M248 120 C 360 86, 500 86, 592 120" fill="none" stroke="var(--accent)" stroke-width="3" marker-end="url(#wk-ar-out)"/>
-      <text x="420" y="78" text-anchor="middle" class="wk-lbl" fill="var(--accent)">Readings go out</text>
+      <text x="420" y="78" text-anchor="middle" class="wk-lbl" fill="var(--accent)" id="wk-svg-out-lbl">Readings go out</text>
 
       <!-- Controls back: website to node -->
-      <path d="M592 198 C 480 232, 360 232, 248 198" fill="none" stroke="var(--due)" stroke-width="3" stroke-dasharray="7 5" marker-end="url(#wk-ar-in)"/>
-      <text x="420" y="258" text-anchor="middle" class="wk-lbl" fill="var(--due)">Slider values come back</text>
+      <path d="M592 198 C 480 232, 360 232, 248 198" fill="none" stroke="var(--due)" stroke-width="3" stroke-dasharray="7 5" marker-end="url(#wk-ar-in)" id="wk-svg-ctrl-path"/>
+      <text x="420" y="258" text-anchor="middle" class="wk-lbl" fill="var(--due)" id="wk-svg-ctrl-lbl">Slider values come back</text>
     </svg>
   </section>`;
 }
 
 VIEWS.wokwi = async () => {
-  const [state, jobs] = await Promise.all([api("/api/node/state"), api("/api/heat/jobs")]);
+  const [state, initialControls] = await Promise.all([
+    api("/api/node/state"),
+    api("/api/node/controls").catch(() => null),
+  ]);
   if (S.page !== "wokwi") return;
 
   const initialConnected = state.wokwi && state.wokwi.connected;
   let activeScenario = "normal";
+  let controlsHandle = null;
+  let lastControls = initialControls;
+  const defaultTunnel = location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname.endsWith("github.io")
+    ? "https://your-tunnel.trycloudflare.com"
+    : location.origin;
 
   $("#view").innerHTML = `
     <header class="page-head">
       <div>
         <h1>Wokwi ESP32 Test Node</h1>
-        <p class="lead">Test version of the site node, simulated in Wokwi. No device is on a real site yet.</p>
+        <p class="lead">Control sliders on this page drive the simulated ESP32 OLED, alert lamp, buzzer, and telemetry feed in real time.</p>
       </div>
       <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
         <span id="wk-status-pill" class="pill ${initialConnected ? "clear" : "none"} sm">
@@ -169,7 +193,7 @@ VIEWS.wokwi = async () => {
 
     ${wokwiDiagram()}
 
-    <!-- Website to device: sliders here change what the real Wokwi sketch shows -->
+    <!-- Website to device: sliders here drive the Wokwi simulation and external hardware sketch -->
     <section class="card" id="wokwi-controls" style="margin-bottom:24px;"></section>
 
     <!-- Windowed Interactive Simulation -->
@@ -188,9 +212,18 @@ VIEWS.wokwi = async () => {
           </button>
         </div>
       </div>
+      <div class="wk-hw-bar" id="wk-hw-bar" aria-live="polite">
+        <div class="wk-oled" id="wk-hw-oled">OLED: WBGT --.- C | OK</div>
+        <div class="wk-hw-indicators">
+          <span class="wk-hw-chip"><span class="wk-led-dot" id="wk-hw-led"></span><span id="wk-hw-led-txt">LED Clear</span></span>
+          <span class="wk-hw-chip" id="wk-hw-buzzer">${ic("volume", 14, 2)} Buzzer Quiet</span>
+          <span class="wk-hw-chip" id="wk-hw-mode">${ic("adjustments-horizontal", 14, 2)} Autonomous loop</span>
+        </div>
+      </div>
       <div style="position:relative;width:100%;height:540px;background:#181824;">
         <iframe
           id="wk-iframe"
+          title="Wokwi ESP32 site sensor circuit"
           src="${WOKWI_PROJECT_URL}?view=diagram"
           width="100%"
           height="100%"
@@ -198,6 +231,15 @@ VIEWS.wokwi = async () => {
           allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
         </iframe>
       </div>
+      <details class="wk-tunnel-box">
+        <summary style="cursor:pointer;font-weight:600;color:var(--ink);">Connect external Wokwi.com sketch to sliders (for local/cloud ESP32 HTTP link)</summary>
+        <p style="margin:6px 0 0 0;">Browser sliders apply immediately to the in-page virtual ESP32 node above. To push slider changes into the embedded Wokwi.com cloud ESP32 runtime, run <code>cloudflared tunnel --url http://localhost:8090</code>, enter the public URL below, and copy the bidirectional sketch snippet into Wokwi.</p>
+        <div class="wk-tunnel-row">
+          <label for="wk-tunnel-url" class="sr">Backend or tunnel URL</label>
+          <input id="wk-tunnel-url" type="url" value="${esc(defaultTunnel)}" aria-label="Backend or tunnel URL">
+          <button type="button" class="btn btn-ghost btn-sm" id="wk-btn-copy-ino">${ic("copy", 14, 2)} Copy sketch.ino Config</button>
+        </div>
+      </details>
     </section>
 
     <!-- Live Telemetry Console & Scenario Injector -->
@@ -254,35 +296,35 @@ VIEWS.wokwi = async () => {
         <div class="card-head">
           <div>
             <h2>Test Hazard Scenarios</h2>
-            <p class="sub">Simulate worksite conditions and observe platform rules engine response.</p>
+            <p class="sub">Simulate worksite conditions and synchronize control sliders automatically.</p>
           </div>
         </div>
         <p style="font-size:12.5px;color:var(--ink-2);margin-bottom:14px;line-height:1.4;">
-          Click a scenario to immediately inject corresponding sensor voltages into the platform without waiting:
+          Click a scenario to set the device sliders and immediately drive the platform &amp; hardware alarms:
         </p>
         <div style="display:flex;flex-direction:column;gap:10px;">
-          <button type="button" class="btn btn-ghost" data-scenario="normal" style="justify-content:flex-start;text-align:left;padding:10px 14px;">
+          <button type="button" class="btn btn-ghost wk-scenario-btn" data-scenario="normal" style="justify-content:flex-start;text-align:left;padding:10px 14px;">
             <span class="round xs bg-green" style="margin-right:10px;">${ic("check", 14, 2)}</span>
             <div>
               <b style="display:block;font-size:13px;">Normal Working Shift</b>
-              <small style="color:var(--ink-3);">Air: 28°C &bull; WBGT: 24.5°C &bull; PM10: 35 µg/m³ &bull; Low heat and dust</small>
+              <small style="color:var(--ink-3);">Air: 28.5°C &bull; WBGT: ~24.8°C &bull; PM10: 42 µg/m³ &bull; Low heat and dust</small>
             </div>
           </button>
-          <button type="button" class="btn btn-ghost" data-scenario="heat" style="justify-content:flex-start;text-align:left;padding:10px 14px;">
+          <button type="button" class="btn btn-ghost wk-scenario-btn" data-scenario="heat" style="justify-content:flex-start;text-align:left;padding:10px 14px;">
             <span class="round xs bg-amber" style="margin-right:10px;">${ic("sun", 14, 2)}</span>
             <div>
               <b style="display:block;font-size:13px;">Peak Heat Stress Alert</b>
-              <small style="color:var(--ink-3);">Air: 38°C &bull; Globe: 51°C &bull; WBGT: 33.1°C &bull; Mandatory 45m rest/hour</small>
+              <small style="color:var(--ink-3);">Air: 38.5°C &bull; Globe: 51.2°C &bull; WBGT: > 32°C &bull; Mandatory rest/hour</small>
             </div>
           </button>
-          <button type="button" class="btn btn-ghost" data-scenario="dust" style="justify-content:flex-start;text-align:left;padding:10px 14px;">
+          <button type="button" class="btn btn-ghost wk-scenario-btn" data-scenario="dust" style="justify-content:flex-start;text-align:left;padding:10px 14px;">
             <span class="round xs bg-rose" style="margin-right:10px;">${ic("wind", 14, 2)}</span>
             <div>
               <b style="display:block;font-size:13px;">Concrete / Quarry Dust Spike</b>
-              <small style="color:var(--ink-3);">PM10: 275 µg/m³ &bull; PM2.5: 120 µg/m³ &bull; Water spray &amp; N95 mask alert</small>
+              <small style="color:var(--ink-3);">PM10: 275 µg/m³ &bull; Noise: 86 dBA &bull; Water spray &amp; N95 mask alert</small>
             </div>
           </button>
-          <button type="button" class="btn btn-ghost" data-scenario="compound" style="justify-content:flex-start;text-align:left;padding:10px 14px;">
+          <button type="button" class="btn btn-ghost wk-scenario-btn" data-scenario="compound" style="justify-content:flex-start;text-align:left;padding:10px 14px;">
             <span class="round xs bg-rose" style="margin-right:10px;">${ic("flame", 14, 2)}</span>
             <div>
               <b style="display:block;font-size:13px;">Double-Hazard Emergency</b>
@@ -328,15 +370,15 @@ VIEWS.wokwi = async () => {
       </div>
     </section>`;
 
-  mountDeviceControls($("#wokwi-controls")).then((stop) => onCleanup(stop));
-
-  // Helper to update live console meters
-  const updateConsole = (r) => {
-    if (!r) return;
+  // Update visual circuit, virtual OLED/LED/buzzer, telemetry cards & directive
+  const updateConsole = (r, ctrl = lastControls) => {
+    if (!r || S.page !== "wokwi") return;
+    if (ctrl) lastControls = ctrl;
     const airT = r.ambient_temp_c !== null && r.ambient_temp_c !== undefined ? `${Number(r.ambient_temp_c).toFixed(1)}°C` : "--";
     const rh = r.relative_humidity_pct !== null && r.relative_humidity_pct !== undefined ? `${Math.round(r.relative_humidity_pct)}%` : "--";
     const globeT = r.globe_temp_c !== null && r.globe_temp_c !== undefined ? `${Number(r.globe_temp_c).toFixed(1)}°C` : "--";
-    const wbgt = r.wbgt_c !== null && r.wbgt_c !== undefined ? `${Number(r.wbgt_c).toFixed(1)}°C` : "--";
+    const wbgtNum = r.wbgt_c !== null && r.wbgt_c !== undefined ? Number(r.wbgt_c) : null;
+    const wbgt = wbgtNum !== null ? `${wbgtNum.toFixed(1)}°C` : "--";
     const pm10 = r.pm10_0_ug_m3 !== null && r.pm10_0_ug_m3 !== undefined ? `${Math.round(r.pm10_0_ug_m3)} µg` : "--";
     const pm25 = r.pm2_5_ug_m3 !== null && r.pm2_5_ug_m3 !== undefined ? `${Math.round(r.pm2_5_ug_m3)} µg` : "--";
     const noise = r.noise_dba !== null && r.noise_dba !== undefined ? `${Math.round(r.noise_dba)} dBA` : "--";
@@ -348,64 +390,126 @@ VIEWS.wokwi = async () => {
     $("#wk-val-noise").textContent = `${noise} • ${uv}`;
     $("#wk-last-time").textContent = `Updated ${new Date().toLocaleTimeString()}`;
 
-    // Status lamp & advice
     const lampCode = (r.jobs && r.jobs[0] && r.jobs[0].lamp) || "GREEN";
     const advice = (r.jobs && r.jobs[0] && r.jobs[0].text) || "No reading yet.";
+    const alerts = r.alerts || [];
+    const hasDust = alerts.some((a) => a.code === "DUST_FLAG") || (r.pm10_0_ug_m3 != null && r.pm10_0_ug_m3 > 100);
+    const hasNoise = alerts.some((a) => a.code === "NOISE_85") || (r.noise_dba != null && r.noise_dba >= 85);
+    const isFlash = lampCode === "RED_FLASH";
+    const isRed = lampCode === "RED" || isFlash;
+    const isWarn = lampCode === "ORANGE" || lampCode === "YELLOW";
+    const shortCall = isFlash ? "STOP" : isRed ? "25%" : lampCode === "ORANGE" ? "50%" : lampCode === "YELLOW" ? "75%" : "OK";
+    const ctrlOn = Boolean(lastControls && lastControls.enabled);
+
     const lampBadge = $("#wk-lamp-badge");
     const actionText = $("#wk-action-text");
-
     if (lampBadge) {
-      lampBadge.className = `pill ${lampCode === "RED_FLASH" || lampCode === "RED" ? "action" : lampCode === "ORANGE" || lampCode === "YELLOW" ? "due" : "clear"} sm`;
+      lampBadge.className = `pill ${isRed ? "action" : isWarn ? "due" : "clear"} sm`;
       lampBadge.innerHTML = `${lamp(lampCode)} ${esc(lampCode)}`;
     }
     if (actionText) {
-      actionText.textContent = advice;
+      const alertSummary = alerts.length ? ` Alerts: ${alerts.map((a) => a.code).join(", ")}.` : "";
+      actionText.textContent = `${advice}${alertSummary}`;
+    }
+
+    // Virtual ESP32 Hardware Bar (OLED, Red LED strobe, Piezo buzzer, Control mode)
+    const oled = $("#wk-hw-oled");
+    const ledDot = $("#wk-hw-led");
+    const ledTxt = $("#wk-hw-led-txt");
+    const buzEl = $("#wk-hw-buzzer");
+    const modeEl = $("#wk-hw-mode");
+    if (oled) {
+      const dustTag = hasDust ? " | DUST!" : "";
+      const remTag = ctrlOn ? " [REM]" : "";
+      oled.textContent = `OLED: WBGT ${wbgtNum !== null ? wbgtNum.toFixed(1) : "--"}C ${shortCall}${dustTag}${remTag}`;
+    }
+    if (ledDot && ledTxt) {
+      ledDot.className = `wk-led-dot ${isFlash ? "flash" : isRed ? "crit" : isWarn ? "warn" : ""}`;
+      ledTxt.textContent = isFlash ? "Red Strobe Flashing" : isRed ? "Red Alert LED" : isWarn ? "Caution Amber LED" : "LED Clear";
+    }
+    if (buzEl) {
+      const alarm = isFlash || hasDust || hasNoise;
+      buzEl.innerHTML = alarm ? `${ic("volume", 14, 2)} Buzzer 1.8 kHz ON` : `${ic("volume", 14, 2)} Buzzer Quiet`;
+      buzEl.style.opacity = alarm ? "1" : ".72";
+      buzEl.style.background = alarm ? "rgba(239,68,68,.24)" : "";
+    }
+    if (modeEl) {
+      modeEl.innerHTML = ctrlOn
+        ? `${ic("adjustments-horizontal", 14, 2)} Slider override (rev #${lastControls.rev || 1})`
+        : `${ic("cpu", 14, 2)} Autonomous loop`;
+      modeEl.style.background = ctrlOn ? "rgba(70,86,230,.32)" : "";
+    }
+
+    // Live-sync top schematic SVG diagram
+    const svgOled = $("#wk-svg-oled");
+    const svgLed = $("#wk-svg-led");
+    const svgWbgt = $("#wk-svg-wbgt");
+    const svgArc = $("#wk-svg-arc");
+    const svgCtrlPath = $("#wk-svg-ctrl-path");
+    const svgCtrlLbl = $("#wk-svg-ctrl-lbl");
+    if (svgOled) svgOled.textContent = `WBGT ${wbgtNum !== null ? wbgtNum.toFixed(1) : "--"}C ${shortCall}`;
+    if (svgLed) {
+      svgLed.setAttribute("fill", isRed ? "var(--action)" : isWarn ? "var(--due)" : "var(--clear)");
+      svgLed.setAttribute("class", isFlash ? "wk-led-flash" : "");
+    }
+    if (svgWbgt) svgWbgt.textContent = `${wbgtNum !== null ? wbgtNum.toFixed(1) : "--"}°`;
+    if (svgArc && wbgtNum !== null) {
+      const ratio = Math.max(0.08, Math.min(1, (wbgtNum - 18) / 20));
+      svgArc.setAttribute("stroke-dasharray", `${(ratio * 141.4).toFixed(1)} 142`);
+      svgArc.setAttribute("stroke", isRed ? "var(--action)" : isWarn ? "var(--due)" : "var(--accent)");
+    }
+    if (svgCtrlPath && svgCtrlLbl) {
+      svgCtrlPath.setAttribute("opacity", ctrlOn ? "1" : "0.35");
+      svgCtrlLbl.textContent = ctrlOn ? "Slider override active" : "Slider override off";
     }
 
     const statusPill = $("#wk-status-pill");
+    const activeWokwi = ctrlOn || r.source === "wokwi_simulated" || initialConnected;
     if (statusPill) {
-      statusPill.className = "pill clear sm";
-      statusPill.innerHTML = `${ic("wifi", 14, 2)} Simulator sending`;
+      statusPill.className = `pill ${activeWokwi ? "clear" : "none"} sm`;
+      statusPill.innerHTML = activeWokwi
+        ? `${ic("wifi", 14, 2)} ${ctrlOn ? "Sliders linked to simulator" : "Simulator sending"}`
+        : `${ic("wifi-off", 14, 2)} Waiting for test readings`;
     }
   };
 
-  // Telemetry sender with scenario values
-  const sendPacket = async (scenario = "normal") => {
-    let tAir = 28.0, rh = 52.0, tGlobe = 32.0, pm10 = 35.0, uv = 4.2, noise = 68.0;
+  // Telemetry sender: obeys Control sliders whenever Control is On; otherwise runs scenario loop
+  const sendPacket = async (scenario = activeScenario, ctrlSnapshot = null) => {
+    const stateNow = controlsHandle && controlsHandle.getState ? controlsHandle.getState() : null;
+    const cMeta = ctrlSnapshot || (stateNow && stateNow.controls) || lastControls;
+    const ctrlEnabled = stateNow ? stateNow.enabled : Boolean(cMeta && cMeta.enabled);
+    const v = stateNow ? stateNow.values : (cMeta && cMeta.values) || {};
 
-    if (scenario === "heat") {
+    let tAir, rh, tGlobe, pm10, uv, noise;
+    if (ctrlEnabled && v.ambient_temp_c !== undefined) {
+      tAir = Number(v.ambient_temp_c);
+      rh = Number(v.relative_humidity_pct);
+      tGlobe = Number(v.globe_temp_c);
+      pm10 = Number(v.pm10_0_ug_m3);
+      uv = Number(v.uv_index);
+      noise = Number(v.noise_dba ?? 78);
+    } else if (scenario === "heat") {
       tAir = 38.5 + (Math.random() - 0.5) * 0.8;
       rh = 44.0 + (Math.random() - 0.5) * 2;
       tGlobe = 51.2 + (Math.random() - 0.5) * 1.0;
-      pm10 = 65.0;
-      uv = 10.2;
-      noise = 74.0;
+      pm10 = 65.0; uv = 10.2; noise = 74.0;
     } else if (scenario === "dust") {
-      tAir = 32.0;
-      rh = 40.0;
-      tGlobe = 38.0;
+      tAir = 32.0; rh = 40.0; tGlobe = 38.0;
       pm10 = 275.0 + (Math.random() - 0.5) * 25.0;
-      uv = 6.5;
-      noise = 86.0;
+      uv = 6.5; noise = 86.0;
     } else if (scenario === "compound") {
-      tAir = 37.0;
-      rh = 50.0;
-      tGlobe = 49.5;
-      pm10 = 210.0;
-      uv = 9.5;
-      noise = 82.0;
+      tAir = 37.0; rh = 50.0; tGlobe = 49.5;
+      pm10 = 210.0; uv = 9.5; noise = 82.0;
     } else {
-      // Normal drift
       tAir = 28.5 + (Math.random() - 0.5) * 0.5;
       rh = 55.0 + (Math.random() - 0.5) * 2;
       tGlobe = 33.0 + (Math.random() - 0.5) * 0.8;
       pm10 = 42.0 + (Math.random() - 0.5) * 5;
-      uv = 4.8;
-      noise = 70.0;
+      uv = 4.8; noise = 70.0;
     }
 
     const payload = {
-      device_id: "browser-stream-01",
+      device_id: "wokwi-node-01",
       site_id: "kandla_port",
       source: "wokwi_simulated",
       ambient_temp_c: Math.round(tAir * 10) / 10,
@@ -415,29 +519,91 @@ VIEWS.wokwi = async () => {
       pm2_5_ug_m3: Math.round((pm10 * 0.44) * 10) / 10,
       uv_index: Math.round(uv * 10) / 10,
       noise_dba: Math.round(noise * 10) / 10,
+      remote_rev: ctrlEnabled && cMeta && cMeta.rev ? Number(cMeta.rev) : 0,
     };
 
     try {
       const r = await api("/api/node/simulate", { method: "POST", body: payload });
-      updateConsole(r);
+      if (S.page !== "wokwi") return;
+      S.lastReading = r.id;
+      if (r.controls) {
+        lastControls = r.controls;
+        if (controlsHandle && controlsHandle.applyStatus) controlsHandle.applyStatus(r.controls);
+      }
+      updateConsole(r, lastControls);
     } catch (err) {
       toast(err.message || "Could not simulate packet.", "action");
     }
   };
 
-  // Populate initial values
+  // Mount "Control the device from here" and connect slider movements straight into simulation
+  mountDeviceControls($("#wokwi-controls"), {
+    onSliderInput: (liveVals, ctrlMeta) => {
+      if (!liveVals.enabled) return;
+      const svgOled = $("#wk-svg-oled");
+      const oled = $("#wk-hw-oled");
+      if (oled) oled.textContent = `OLED: Updating Air ${liveVals.ambient_temp_c}°C | Globe ${liveVals.globe_temp_c}°C...`;
+      if (svgOled) svgOled.textContent = `SYNC ${Number(liveVals.ambient_temp_c).toFixed(1)}C`;
+      lastControls = { ...(ctrlMeta || lastControls || {}), enabled: true, values: liveVals };
+    },
+    onControlsUpdated: async (c, meta) => {
+      lastControls = c;
+      if (!S.page || S.page !== "wokwi") return;
+      if (c.enabled || (meta && meta.userAction)) {
+        await sendPacket(activeScenario, c);
+      }
+    },
+    onNodeState: (nextState) => {
+      if (nextState && nextState.latest) updateConsole(nextState.latest, lastControls);
+    },
+  }).then((stop) => {
+    controlsHandle = stop;
+    onCleanup(stop);
+  });
+
+  // Populate initial values (before/unless remote control init already overwrote it)
   if (state.latest) {
-    updateConsole(state.latest);
+    updateConsole(state.latest, initialControls);
   }
 
-  // Bind scenario buttons
+  // Bind scenario buttons to also sync sliders and trigger remote override simulation
   $$("[data-scenario]").forEach((btn) => {
     btn.addEventListener("click", async () => {
       activeScenario = btn.dataset.scenario;
-      toast(`Simulating: ${btn.querySelector("b").textContent}`);
-      await sendPacket(activeScenario);
+      $$("[data-scenario]").forEach((b) => b.classList.toggle("on", b === btn));
+      toast(`Applying & simulating: ${btn.querySelector("b").textContent}`);
+      const preset = WOKWI_SCENARIO_PRESETS[activeScenario];
+      if (preset && controlsHandle && controlsHandle.setPreset) {
+        await controlsHandle.setPreset(preset, true);
+      } else {
+        await sendPacket(activeScenario);
+      }
     });
   });
+
+  // Copy full bidirectional sketch.ino (with public tunnel URL injected & secret redacted)
+  const copyBtn = $("#wk-btn-copy-ino");
+  if (copyBtn) {
+    copyBtn.addEventListener("click", async () => {
+      const rawUrl = ($("#wk-tunnel-url") && $("#wk-tunnel-url").value.trim().replace(/\/+$/, "")) || defaultTunnel;
+      const fullUrl = `${rawUrl}/api/v1/telemetry`;
+      let payload = buildWokwiSketchSnippet(fullUrl);
+      try {
+        const res = await fetch("./workcheck_platform/wokwi/sketch.ino");
+        if (res.ok) {
+          payload = (await res.text())
+            .replace("https://YOUR-PUBLIC-TUNNEL-URL/api/v1/telemetry", fullUrl)
+            .replace(/const char\*\s+DEVICE_KEY\s*=\s*"[^"]*";/, 'const char* DEVICE_KEY   = "YOUR_WC_DEVICE_KEY";');
+        }
+      } catch { /* fallback to concise snippet */ }
+      try {
+        await navigator.clipboard.writeText(payload);
+        toast("Copied bidirectional sketch.ino config.");
+      } catch {
+        toast("Copy manually from workcheck_platform/wokwi/sketch.ino.");
+      }
+    });
+  }
 
   // Toggle stream button
   const streamBtn = $("#wk-toggle-stream");

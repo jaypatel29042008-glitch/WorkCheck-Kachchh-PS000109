@@ -1112,7 +1112,7 @@ def device_key(x_api_key: Optional[str] = Header(default=None)):
 # Website to device: test values a supervisor sets on the website, picked up by the device in each reply.
 # The device swaps them in for its own sensor readings, so the link is shown working in both directions.
 # ---------------------------------------------------------------------------
-CONTROL_DEFAULTS = {"ambient_temp_c": 34.0, "relative_humidity_pct": 45.0, "globe_temp_c": 44.0, "pm10_0_ug_m3": 90.0, "uv_index": 9.0}
+CONTROL_DEFAULTS = {"ambient_temp_c": 34.0, "relative_humidity_pct": 45.0, "globe_temp_c": 44.0, "pm10_0_ug_m3": 90.0, "uv_index": 9.0, "noise_dba": 78.0}
 DEFAULT_DEVICE = "wokwi-node-01"
 
 
@@ -1124,6 +1124,7 @@ class Controls(BaseModel):
     globe_temp_c: float = Field(ge=20, le=70)
     pm10_0_ug_m3: float = Field(ge=0, le=500)
     uv_index: float = Field(ge=0, le=14)
+    noise_dba: Optional[float] = Field(default=None, ge=20, le=140)
 
 
 def controls_row(device_id, con, org_id: Optional[int] = None):
@@ -1155,15 +1156,44 @@ def get_controls(device_id: str = DEFAULT_DEVICE, user=Depends(require("supervis
         return controls_view(device_id, con, org_id=org_id)
 
 
+def remote_control_payload(c: dict) -> dict:
+    """Serialize remote control targets with flat r_ keys for ESP32 devices and UI."""
+    v = c["values"]
+    return {
+        "r_on": 1 if c["enabled"] else 0,
+        "r_rev": c["rev"],
+        "r_temp": v["ambient_temp_c"],
+        "r_rh": v["relative_humidity_pct"],
+        "r_globe": v["globe_temp_c"],
+        "r_pm10": v["pm10_0_ug_m3"],
+        "r_uv": v["uv_index"],
+        "r_noise": v.get("noise_dba", CONTROL_DEFAULTS["noise_dba"]),
+    }
+
+
+def _ack_remote_revision(device_id: str, remote_rev: Optional[int], org_id: int) -> None:
+    if remote_rev is None or remote_rev <= 0:
+        return
+    with db() as con:
+        row = con.execute("SELECT org_id, rev FROM device_controls WHERE device_id = ?", (device_id,)).fetchone()
+        if row is not None and row["org_id"] == org_id and row["rev"] == remote_rev:
+            con.execute(
+                "UPDATE device_controls SET ack_rev = ?, ack_at = ? WHERE device_id = ? AND org_id = ?",
+                (remote_rev, now().isoformat(), device_id, org_id),
+            )
+            con.commit()
+
+
 @app.post("/api/node/controls")
 def set_controls(payload: Controls, user=Depends(require("supervisor", "ddo", "clinician"))):
     import json
     org_id = user.get("org_id") or DEMO_ORG
-    values = {k: getattr(payload, k) for k in CONTROL_DEFAULTS}
     with db() as con:
-        existing = con.execute("SELECT org_id FROM device_controls WHERE device_id = ?", (payload.device_id,)).fetchone()
+        existing = con.execute("SELECT org_id, settings FROM device_controls WHERE device_id = ?", (payload.device_id,)).fetchone()
         if existing is not None and existing["org_id"] != org_id:
             raise HTTPException(403, "That device belongs to another organisation.")
+        prev_vals = {**CONTROL_DEFAULTS, **(json.loads(existing["settings"]) if existing is not None else {})}
+        values = {k: (getattr(payload, k) if getattr(payload, k) is not None else prev_vals[k]) for k in CONTROL_DEFAULTS}
         con.execute("""INSERT INTO device_controls (device_id, org_id, enabled, settings, rev, updated_at, updated_by) VALUES (?,?,?,?,1,?,?)
                        ON CONFLICT(device_id) DO UPDATE SET enabled=excluded.enabled, settings=excluded.settings, rev=device_controls.rev+1, updated_at=excluded.updated_at, updated_by=excluded.updated_by""",
                     (payload.device_id, org_id, int(payload.enabled), json.dumps(values), now().isoformat(), user["id"]))
@@ -1177,20 +1207,30 @@ def device_telemetry(payload: Telemetry):
         c = controls_row(payload.device_id, con)
     org_id = c["org_id"]
     view = store_reading(payload, org_id=org_id)
-    with db() as con:
-        if payload.remote_rev is not None and payload.remote_rev == c["rev"] and c["rev"] > 0:
-            con.execute("UPDATE device_controls SET ack_rev = ?, ack_at = ? WHERE device_id = ?", (payload.remote_rev, now().isoformat(), payload.device_id))
-    v = c["values"]
+    _ack_remote_revision(payload.device_id, payload.remote_rev, org_id)
     # Flat r_ keys so a small device can read them without a JSON library.
-    remote = {"r_on": 1 if c["enabled"] else 0, "r_rev": c["rev"], "r_temp": v["ambient_temp_c"], "r_rh": v["relative_humidity_pct"], "r_globe": v["globe_temp_c"], "r_pm10": v["pm10_0_ug_m3"], "r_uv": v["uv_index"]}
+    remote = remote_control_payload(c)
     return {**remote, "reading_id": view["id"], "wbgt_c": view["wbgt_c"], "wbgt_method": view["wbgt_method"], "lamp": view["jobs"][0]["lamp"], "jobs": view["jobs"], "alerts": view["alerts"]}
 
 
 @app.post("/api/node/simulate")
 def simulate(payload: Telemetry, user=Depends(require("supervisor", "ddo", "clinician"))):
-    payload.source = "browser_simulator"
-    payload.device_id = "browser-node"
-    return store_reading(payload, org_id=user.get("org_id") or DEMO_ORG)
+    org_id = user.get("org_id") or DEMO_ORG
+    is_wokwi = payload.source == "wokwi_simulated"
+    payload.source = "wokwi_simulated" if is_wokwi else "browser_simulator"
+    if not is_wokwi:
+        payload.device_id = "browser-node"
+    view = store_reading(payload, org_id=org_id)
+    _ack_remote_revision(payload.device_id, payload.remote_rev, org_id)
+    ctrl = None
+    if is_wokwi:
+        with db() as con:
+            existing = con.execute("SELECT org_id FROM device_controls WHERE device_id = ?", (payload.device_id,)).fetchone()
+            if existing is None or existing["org_id"] == org_id:
+                ctrl = controls_view(payload.device_id, con, org_id=org_id)
+    if ctrl is not None:
+        return {**remote_control_payload(ctrl), "controls": ctrl, **view}
+    return view
 
 
 def store_replay(location_id, day, hour, org_id: int = DEMO_ORG):

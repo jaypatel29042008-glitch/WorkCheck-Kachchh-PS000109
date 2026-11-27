@@ -34,7 +34,7 @@ const char* PLATFORM_URL = "https://YOUR-PUBLIC-TUNNEL-URL/api/v1/telemetry";
 const char* DEVICE_KEY   = "demo-device-key";
 const char* DEVICE_ID    = "wokwi-node-01";
 const char* SITE_ID      = "kandla_port";
-const uint32_t TELEMETRY_INTERVAL_MS = 5000;
+const uint32_t TELEMETRY_INTERVAL_MS = 3000;
 
 // ---------------------------------------------------------------------------
 // Pin Assignments
@@ -58,11 +58,35 @@ OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature ds18b20(&oneWire);
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
-// State tracking
+// State tracking & bidirectional website control overrides
 uint32_t lastSendMs = 0;
 String currentLamp = "GREEN";
 float lastWbgt = 0.0;
 bool wifiOk = false;
+
+bool  remoteOn = false;
+int   remoteRev = 0;
+float remoteTemp = 34.0, remoteRh = 45.0, remoteGlobe = 44.0;
+float remotePm10 = 90.0, remoteUv = 9.0, remoteNoise = 78.0;
+
+float replyNum(const String& r, const char* key, float fallback) {
+  int i = r.indexOf(key);
+  if (i < 0) return fallback;
+  return r.substring(i + strlen(key)).toFloat();
+}
+
+void applyRemoteOverrides(float& airTemp, float& humidity, float& globeTemp, float& pm10, float& pm25, float& uvIndex, float& noiseDba) {
+  if (!remoteOn) return;
+  airTemp = remoteTemp;
+  humidity = remoteRh;
+  globeTemp = remoteGlobe;
+  pm10 = remotePm10;
+  pm25 = remotePm10 * 0.42f;
+  uvIndex = remoteUv;
+  noiseDba = remoteNoise;
+  Serial.printf("[REMOTE REV #%d] Sliders active -> Air %.1fC, Globe %.1fC, PM10 %.0f, UV %.1f, Noise %.0fdBA\n",
+                remoteRev, airTemp, globeTemp, pm10, uvIndex, noiseDba);
+}
 
 // ---------------------------------------------------------------------------
 // Setup
@@ -157,13 +181,15 @@ void loop() {
     // Lower resistance in bright sunlight produces higher ADC reading or inverted depending on divider
     float uvIndex = map(constrain(rawLdr, 0, 4095), 0, 4095, 0, 140) / 10.0;
 
-    // 6. Update OLED Display
-    updateDisplay(airTemp, humidity, globeTemp, pm10, noiseDba, uvIndex);
+    // 6. Apply website "Control the device from here" slider values when active
+    applyRemoteOverrides(airTemp, humidity, globeTemp, pm10, pm25, uvIndex, noiseDba);
 
-    // 7. Transmit Telemetry Packet to WorkCheck Platform
+    // 7. Transmit Telemetry Packet & poll latest website control overrides
     sendTelemetry(airTemp, humidity, globeTemp, pm10, pm25, uvIndex, noiseDba);
 
-    // 8. Physical Alert Actuation
+    // 8. Re-apply if platform just turned remote sliders on, then update OLED & Actuators
+    applyRemoteOverrides(airTemp, humidity, globeTemp, pm10, pm25, uvIndex, noiseDba);
+    updateDisplay(airTemp, humidity, globeTemp, pm10, noiseDba, uvIndex);
     handleAlertActuators();
   }
 
@@ -178,8 +204,8 @@ void updateDisplay(float airT, float rh, float globeT, float pm10, float noise, 
   display.setTextSize(1);
   display.setCursor(0, 0);
 
-  // Top header bar
-  display.printf("WC-NODE: %s\n", SITE_ID);
+  // Top header bar (shows [REM] when website sliders control this device)
+  display.printf("WC-NODE: %s %s\n", SITE_ID, remoteOn ? "[REM]" : "");
   display.drawLine(0, 9, 127, 9, SSD1306_WHITE);
 
   // Sensor readouts
@@ -224,18 +250,26 @@ void sendTelemetry(float airT, float rh, float globeT, float pm10, float pm25, f
   json += "\"pm10_0_ug_m3\":" + String(pm10, 1) + ",";
   json += "\"pm2_5_ug_m3\":" + String(pm25, 1) + ",";
   json += "\"uv_index\":" + String(uv, 1) + ",";
-  json += "\"noise_dba\":" + String(noise, 1);
+  json += "\"noise_dba\":" + String(noise, 1) + ",";
+  json += "\"remote_rev\":" + String(remoteOn ? remoteRev : 0);
   json += "}";
 
-  WiFiClientSecure client;
-  client.setInsecure(); // Simulation only; certificate validation bypassed in sandbox
-
   HTTPClient http;
-  if (!http.begin(client, PLATFORM_URL)) {
+  WiFiClientSecure secClient;
+  WiFiClient plainClient;
+  bool started = false;
+  if (strncmp(PLATFORM_URL, "https://", 8) == 0) {
+    secClient.setInsecure(); // Simulation only; certificate validation bypassed in sandbox
+    started = http.begin(secClient, PLATFORM_URL);
+  } else {
+    started = http.begin(plainClient, PLATFORM_URL);
+  }
+  if (!started) {
     Serial.println("HTTP begin failed.");
     return;
   }
 
+  http.setTimeout(8000);
   http.addHeader("Content-Type", "application/json");
   http.addHeader("X-API-Key", DEVICE_KEY);
 
@@ -244,16 +278,23 @@ void sendTelemetry(float airT, float rh, float globeT, float pm10, float pm25, f
     String response = http.getString();
     Serial.printf("[HTTP POST] Code: %d  Payload size: %d bytes\n", httpCode, json.length());
 
-    // Basic reply parsing for lamp status and calculated WBGT
+    // Parse lamp status, WBGT, and website remote slider directives (r_on, r_rev, r_*)
     int lampIdx = response.indexOf("\"lamp\":\"");
     if (lampIdx != -1) {
       int endIdx = response.indexOf("\"", lampIdx + 8);
       currentLamp = response.substring(lampIdx + 8, endIdx);
     }
-    int wbgtIdx = response.indexOf("\"wbgt_c\":");
-    if (wbgtIdx != -1) {
-      lastWbgt = response.substring(wbgtIdx + 9, response.indexOf(",", wbgtIdx)).toFloat();
-    }
+    lastWbgt    = replyNum(response, "\"wbgt_c\":", lastWbgt);
+    remoteOn    = replyNum(response, "\"r_on\":", 0) > 0.5;
+    remoteRev   = (int)replyNum(response, "\"r_rev\":", 0);
+    remoteTemp  = replyNum(response, "\"r_temp\":", remoteTemp);
+    remoteRh    = replyNum(response, "\"r_rh\":", remoteRh);
+    remoteGlobe = replyNum(response, "\"r_globe\":", remoteGlobe);
+    remotePm10  = replyNum(response, "\"r_pm10\":", remotePm10);
+    remoteUv    = replyNum(response, "\"r_uv\":", remoteUv);
+    remoteNoise = replyNum(response, "\"r_noise\":", remoteNoise);
+    Serial.printf("Platform lamp: %s | WBGT: %.1fC | Website sliders: %s (rev %d)\n",
+                  currentLamp.c_str(), lastWbgt, remoteOn ? "ON" : "off", remoteRev);
   } else {
     Serial.printf("[HTTP POST] Error: %s\n", http.errorToString(httpCode).c_str());
   }

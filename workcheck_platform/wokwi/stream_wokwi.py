@@ -33,10 +33,27 @@ def parse_args():
     parser.add_argument("--interval", type=float, default=3.0, help="Seconds between telemetry packets")
     parser.add_argument("--count", type=int, default=0, help="Number of packets to send (0 = infinite)")
     parser.add_argument("--dust-spike", action="store_true", help="Simulate heavy concrete mixing dust spike (>200 ug/m3)")
+    parser.add_argument("--ignore-controls", action="store_true", help="Ignore remote website slider overrides (r_on)")
     return parser.parse_args()
 
 
-def generate_packet(device_id: str, site_id: str, step: int, dust_spike: bool) -> dict:
+def generate_packet(device_id: str, site_id: str, step: int, dust_spike: bool, remote_state: dict | None = None) -> dict:
+    if remote_state and remote_state.get("enabled"):
+        pm10 = float(remote_state["pm10_0_ug_m3"])
+        return {
+            "device_id": device_id,
+            "site_id": site_id,
+            "source": "wokwi_simulated",
+            "ambient_temp_c": round(float(remote_state["ambient_temp_c"]), 1),
+            "relative_humidity_pct": int(round(float(remote_state["relative_humidity_pct"]))),
+            "globe_temp_c": round(float(remote_state["globe_temp_c"]), 1),
+            "pm10_0_ug_m3": round(pm10, 1),
+            "pm2_5_ug_m3": round(pm10 * 0.42, 1),
+            "uv_index": round(float(remote_state["uv_index"]), 1),
+            "noise_dba": round(float(remote_state.get("noise_dba", 78.0)), 1),
+            "remote_rev": int(remote_state.get("rev", 0)),
+        }
+
     # Diurnal/periodic oscillations for realism
     t_air = 35.5 + math.sin(step * 0.1) * 2.5 + random.uniform(-0.3, 0.3)
     rh = max(20.0, min(80.0, 46.0 - (t_air - 35.0) * 1.5 + random.uniform(-1.0, 1.0)))
@@ -63,6 +80,7 @@ def generate_packet(device_id: str, site_id: str, step: int, dust_spike: bool) -
         "pm2_5_ug_m3": round(pm25, 1),
         "uv_index": round(uv, 1),
         "noise_dba": round(noise, 1),
+        "remote_rev": 0,
     }
 
 
@@ -76,6 +94,7 @@ def main():
     print(f" Device ID  : {args.device}  | Site ID: {args.site}")
     print(f" Interval   : {args.interval}s")
     print(f" Dust Mode  : {'HEAVY SPIKE (>200 ug/m3)' if args.dust_spike else 'Industrial yard baseline'}")
+    print(f" Sliders    : {'Ignored (--ignore-controls)' if args.ignore_controls else 'Bidirectional remote control enabled'}")
     print(" Press Ctrl+C to terminate stream.\n")
 
     headers = {
@@ -85,11 +104,12 @@ def main():
 
     client = httpx.Client(timeout=10.0)
     step = 0
+    remote_state = None
 
     try:
         while True:
             step += 1
-            payload = generate_packet(args.device, args.site, step, args.dust_spike)
+            payload = generate_packet(args.device, args.site, step, args.dust_spike, None if args.ignore_controls else remote_state)
             stamp = datetime.now().strftime("%H:%M:%S")
 
             try:
@@ -100,8 +120,21 @@ def main():
                     wbgt = reply.get("wbgt_c", 0.0)
                     alerts = [a.get("code") for a in reply.get("alerts", [])]
                     alert_str = f" Alerts: {','.join(alerts)}" if alerts else ""
+                    mode_tag = " [SLIDERS]" if (not args.ignore_controls and payload.get("remote_rev")) else ""
 
-                    print(f"[{stamp}] #{step:03d} -> HTTP 200 | Air: {payload['ambient_temp_c']}°C  Globe: {payload['globe_temp_c']}°C  PM10: {payload['pm10_0_ug_m3']}µg | WBGT: {wbgt:.1f}°C [{lamp}]{alert_str}")
+                    if not args.ignore_controls:
+                        remote_state = {
+                            "enabled": bool(reply.get("r_on")),
+                            "rev": int(reply.get("r_rev", 0)),
+                            "ambient_temp_c": reply.get("r_temp", payload["ambient_temp_c"]),
+                            "relative_humidity_pct": reply.get("r_rh", payload["relative_humidity_pct"]),
+                            "globe_temp_c": reply.get("r_globe", payload["globe_temp_c"]),
+                            "pm10_0_ug_m3": reply.get("r_pm10", payload["pm10_0_ug_m3"]),
+                            "uv_index": reply.get("r_uv", payload["uv_index"]),
+                            "noise_dba": reply.get("r_noise", payload["noise_dba"]),
+                        }
+
+                    print(f"[{stamp}] #{step:03d} -> HTTP 200 | Air: {payload['ambient_temp_c']}°C  Globe: {payload['globe_temp_c']}°C  PM10: {payload['pm10_0_ug_m3']}µg | WBGT: {wbgt:.1f}°C [{lamp}]{alert_str}{mode_tag}")
                 else:
                     print(f"[{stamp}] #{step:03d} -> HTTP {res.status_code}: {res.text}")
             except Exception as e:

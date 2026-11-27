@@ -176,7 +176,13 @@ def test_website_sliders_reach_the_device_and_are_confirmed(client):
     state = client.get("/api/node/controls").json()
     assert state["confirmed"] is True and state["values"]["globe_temp_c"] == 52
     # Moving a slider makes a new set; the old confirmation no longer counts.
-    moved = client.post("/api/node/controls", json={"enabled": True, "ambient_temp_c": 30, "relative_humidity_pct": 40, "globe_temp_c": 35, "pm10_0_ug_m3": 50, "uv_index": 5}).json()
-    assert moved["rev"] == 2 and moved["confirmed"] is False
+    moved = client.post("/api/node/controls", json={"enabled": True, "ambient_temp_c": 30, "relative_humidity_pct": 40, "globe_temp_c": 35, "pm10_0_ug_m3": 50, "uv_index": 5, "noise_dba": 88}).json()
+    assert moved["rev"] == 2 and moved["confirmed"] is False and moved["values"]["noise_dba"] == 88
+    # Browser Wokwi tab simulation confirms slider values and triggers NOISE_85 + Wokwi status immediately.
+    sim = client.post("/api/node/simulate", json={"device_id": "wokwi-node-01", "site_id": "kandla_port", "source": "wokwi_simulated", "ambient_temp_c": 30, "relative_humidity_pct": 40, "globe_temp_c": 35, "pm10_0_ug_m3": 50, "uv_index": 5, "noise_dba": 88, "remote_rev": 2}).json()
+    assert sim["controls"]["confirmed"] is True and sim["r_noise"] == 88
+    assert "NOISE_85" in [a["code"] for a in sim["alerts"]]
+    node_state = client.get("/api/node/state").json()
+    assert node_state["wokwi"]["connected"] is True and node_state["wokwi"]["device_id"] == "wokwi-node-01"
     off = client.post("/api/node/controls", json={"enabled": False, "ambient_temp_c": 30, "relative_humidity_pct": 40, "globe_temp_c": 35, "pm10_0_ug_m3": 50, "uv_index": 5}).json()
     assert off["enabled"] is False and client.post("/api/v1/telemetry", json=reading, headers=key).json()["r_on"] == 0

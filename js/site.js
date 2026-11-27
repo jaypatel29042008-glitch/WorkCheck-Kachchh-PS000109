@@ -188,17 +188,21 @@ function wokwiStatus(w) {
 
 let wokwiStreamTimer = null;
 
-async function sendWokwiSimulatedPacket() {
-  const tAir = 35.0 + Math.sin(Date.now() / 15000) * 2.5 + (Math.random() - 0.5) * 0.4;
-  const rh = Math.max(25, Math.min(75, 45.0 - (tAir - 35) * 1.5 + (Math.random() - 0.5) * 2));
-  const tGlobe = tAir + 12.0 + Math.cos(Date.now() / 20000) * 2.0 + (Math.random() - 0.5) * 0.5;
-  const pm10 = Math.max(60, 135.0 + Math.sin(Date.now() / 10000) * 35.0 + (Math.random() - 0.5) * 8);
+async function sendWokwiSimulatedPacket(ctrlOverride = null) {
+  let c = ctrlOverride;
+  if (!c) c = await api("/api/node/controls?device_id=wokwi-node-01").catch(() => null);
+  const useRemote = Boolean(c && c.enabled && c.values);
+  const v = useRemote ? c.values : {};
+  const tAir = useRemote ? Number(v.ambient_temp_c) : 35.0 + Math.sin(Date.now() / 15000) * 2.5 + (Math.random() - 0.5) * 0.4;
+  const rh = useRemote ? Number(v.relative_humidity_pct) : Math.max(25, Math.min(75, 45.0 - (tAir - 35) * 1.5 + (Math.random() - 0.5) * 2));
+  const tGlobe = useRemote ? Number(v.globe_temp_c) : tAir + 12.0 + Math.cos(Date.now() / 20000) * 2.0 + (Math.random() - 0.5) * 0.5;
+  const pm10 = useRemote ? Number(v.pm10_0_ug_m3) : Math.max(60, 135.0 + Math.sin(Date.now() / 10000) * 35.0 + (Math.random() - 0.5) * 8);
   const pm25 = pm10 * 0.42;
-  const uv = Math.max(1, 8.8 + (Math.random() - 0.5) * 0.6);
-  const noise = Math.max(65, 82.0 + Math.sin(Date.now() / 8000) * 7.0 + (Math.random() - 0.5) * 3);
+  const uv = useRemote ? Number(v.uv_index) : Math.max(1, 8.8 + (Math.random() - 0.5) * 0.6);
+  const noise = useRemote && v.noise_dba != null ? Number(v.noise_dba) : Math.max(65, 82.0 + Math.sin(Date.now() / 8000) * 7.0 + (Math.random() - 0.5) * 3);
 
   const payload = {
-    device_id: "browser-stream-01",
+    device_id: "wokwi-node-01",
     site_id: "kandla_port",
     source: "wokwi_simulated",
     ambient_temp_c: Math.round(tAir * 10) / 10,
@@ -208,17 +212,20 @@ async function sendWokwiSimulatedPacket() {
     pm2_5_ug_m3: Math.round(pm25 * 10) / 10,
     uv_index: Math.round(uv * 10) / 10,
     noise_dba: Math.round(noise * 10) / 10,
+    remote_rev: useRemote ? c.rev : 0,
   };
 
   try {
     const r = await api("/api/node/simulate", { method: "POST", body: payload });
     S.lastReading = r.id;
-    if ($("#site-live")) renderLive(r, "Simulated ESP32 packet");
+    if ($("#site-live")) renderLive(r, useRemote ? "Simulated Wokwi node (using slider controls)" : "Simulated ESP32 packet");
     const next = await api("/api/node/state").catch(() => null);
     const dot = $("#wokwi-status");
     if (dot && next && next.wokwi) dot.innerHTML = wokwiStatus(next.wokwi);
+    return r;
   } catch (err) {
     if ($("#site-live")) toast(err.message || "Could not send simulated packet.", "action");
+    return null;
   }
 }
 
@@ -284,22 +291,22 @@ async function tabWokwi(panel) {
 }
 
 /* Website to device: sliders here set test values, the Wokwi device picks them up, uses them, and reports back. */
-const CONTROL_SLIDERS = [["ambient_temp_c", "Air temperature", 20, 50, 0.5, "°C"], ["relative_humidity_pct", "Humidity", 5, 100, 1, "%"], ["globe_temp_c", "Globe temperature", 20, 70, 0.5, "°C"], ["pm10_0_ug_m3", "Dust (PM10)", 0, 500, 5, "µg/m³"], ["uv_index", "UV index", 0, 14, 0.5, ""]];
+const CONTROL_SLIDERS = [["ambient_temp_c", "Air temperature", 20, 50, 0.5, "°C"], ["relative_humidity_pct", "Humidity", 5, 100, 1, "%"], ["globe_temp_c", "Globe temperature", 20, 70, 0.5, "°C"], ["pm10_0_ug_m3", "Dust (PM10)", 0, 500, 5, "µg/m³"], ["uv_index", "UV index", 0, 14, 0.5, ""], ["noise_dba", "Noise level", 40, 120, 1, "dBA"]];
 
 function controlStatus(c) {
   if (!c.enabled) return `<span class="pill none">${ic("hand-stop", 14, 2)}Off. The device uses its own sensors</span>`;
   if (c.confirmed) return `<span class="pill clear">${ic("circle-check", 14, 2)}Device is using these values, confirmed ${c.confirmed_seconds}s ago</span>`;
   if (c.device_online) return `<span class="pill due">${ic("broadcast", 14, 2)}Sent. Waiting for the device to pick them up</span>`;
-  return `<span class="pill none">${ic("wifi-off", 14, 2)}Saved. No device is connected yet</span>`;
+  return `<span class="pill none">${ic("wifi-off", 14, 2)}Saved. Waiting for Wokwi node sync</span>`;
 }
 
-async function mountDeviceControls(host) {
+async function mountDeviceControls(host, opts = {}) {
   if (!host) return () => { };
   let c = await api("/api/node/controls");
   if (!host.isConnected) return () => { };
-  const values = { ...c.values };
+  const values = { noise_dba: 78, ...c.values };
   let enabled = c.enabled, timer, lastReading = S.lastReading;
-  host.innerHTML = `<div class="card-head"><div><h2>Control the device from here</h2><p class="sub">Move a slider and the Wokwi device takes the value, shows it on its own screen and lamp, and sends it back. These are test values, not sensor readings.</p></div>
+  host.innerHTML = `<div class="card-head"><div><h2>Control the device from here</h2><p class="sub">Move a slider or flip On to drive the Wokwi simulation (OLED screen, alert lamp, buzzer, and telemetry feed) live.</p></div>
       <div class="yn" role="radiogroup" aria-label="Website control"><button type="button" role="radio" id="ctl-on" data-v="1">On</button><button type="button" role="radio" id="ctl-off" data-v="0">Off</button></div></div>
     <div id="ctl-status" class="ctl-status"></div>
     <div class="sliders" id="ctl-sliders">${CONTROL_SLIDERS.map(([k, t, min, max, step]) => `<label class="slider"><span>${t}<b id="cv-${k}"></b></span><input type="range" id="c-${k}" min="${min}" max="${max}" step="${step}"></label>`).join("")}</div>`;
@@ -311,33 +318,56 @@ async function mountDeviceControls(host) {
     CONTROL_SLIDERS.forEach(([k, , , , , u]) => { $(`#c-${k}`, host).value = values[k]; $(`#c-${k}`, host).disabled = !enabled; $(`#cv-${k}`, host).textContent = `${values[k]} ${u}`; });
     $("#ctl-status", host).innerHTML = controlStatus(c);
   };
-  const send = async () => {
-    try { c = await api("/api/node/controls", { method: "POST", body: { enabled, ...values } }); draw(); } catch (err) { toast(err.message, "action"); }
+  const send = async (meta = { userAction: true }) => {
+    try {
+      c = await api("/api/node/controls", { method: "POST", body: { enabled, ...values } });
+      if (!host.isConnected) return;
+      draw();
+      if (typeof opts.onControlsUpdated === "function") await opts.onControlsUpdated(c, meta);
+    } catch (err) {
+      toast(err.message, "action");
+    }
   };
   CONTROL_SLIDERS.forEach(([k]) => $(`#c-${k}`, host).addEventListener("input", (e) => {
     values[k] = Number(e.target.value);
     $(`#cv-${k}`, host).textContent = `${values[k]} ${CONTROL_SLIDERS.find((x) => x[0] === k)[5]}`;
+    if (typeof opts.onSliderInput === "function") opts.onSliderInput({ enabled, ...values }, c);
     clearTimeout(timer);
-    timer = setTimeout(send, 250);
+    timer = setTimeout(() => send({ userAction: true, reason: "slider" }), 220);
   }));
-  $("#ctl-on", host).addEventListener("click", () => { enabled = true; send(); });
-  $("#ctl-off", host).addEventListener("click", () => { enabled = false; send(); });
+  $("#ctl-on", host).addEventListener("click", () => { enabled = true; draw(); send({ userAction: true, reason: "toggle_on" }); });
+  $("#ctl-off", host).addEventListener("click", () => { enabled = false; draw(); send({ userAction: true, reason: "toggle_off" }); });
   draw();
+  if (typeof opts.onControlsUpdated === "function") opts.onControlsUpdated(c, { userAction: false, reason: "init" });
+  const syncStatusFromServer = (next) => {
+    if (!next || !host.isConnected) return;
+    c = next;
+    const ctlEl = $("#ctl-status", host);
+    if (ctlEl) ctlEl.innerHTML = controlStatus(c);
+  };
   // Every 2 seconds: has the device confirmed, and has it sent a new reading to show above?
   const poll = setInterval(async () => {
     if (!host.isConnected) return;
     const [next, state] = await Promise.all([api("/api/node/controls").catch(() => null), api("/api/node/state").catch(() => null)]);
     if (!host.isConnected) return;
-    if (next) {
-      c = next;
-      const ctlEl = $("#ctl-status", host);
-      if (ctlEl) ctlEl.innerHTML = controlStatus(c);
-    }
-    if (state && state.latest.id !== lastReading) {
+    syncStatusFromServer(next);
+    if (state && state.latest && state.latest.id !== lastReading) {
       lastReading = state.latest.id; S.lastReading = lastReading;
       if ($("#site-live")) renderLive(state.latest, state.latest.source === "wokwi_simulated" ? "Sent by the Wokwi device" : undefined);
       const dot = $("#wokwi-status"); if (dot) dot.innerHTML = wokwiStatus(state.wokwi);
+      if (typeof opts.onNodeState === "function") opts.onNodeState(state);
     }
   }, 2000);
-  return () => { clearInterval(poll); clearTimeout(timer); };
+  const stop = () => { clearInterval(poll); clearTimeout(timer); };
+  stop.getState = () => ({ enabled, values: { ...values }, controls: c });
+  stop.applyStatus = (next) => syncStatusFromServer(next);
+  stop.setPreset = async (nextValues, shouldEnable = true) => {
+    Object.keys(values).forEach((k) => {
+      if (nextValues[k] !== undefined) values[k] = Number(nextValues[k]);
+    });
+    enabled = Boolean(shouldEnable);
+    draw();
+    await send({ userAction: false, reason: "preset" });
+  };
+  return stop;
 }

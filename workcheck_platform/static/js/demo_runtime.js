@@ -37,7 +37,7 @@
   };
   const CONTROL_DEFAULTS = {
     ambient_temp_c: 34.0, relative_humidity_pct: 45.0,
-    globe_temp_c: 44.0, pm10_0_ug_m3: 90.0, uv_index: 9.0,
+    globe_temp_c: 44.0, pm10_0_ug_m3: 90.0, uv_index: 9.0, noise_dba: 78.0,
   };
 
   const FEELINGS = {
@@ -738,6 +738,43 @@
     };
   }
 
+  function controlsViewDemo(store, orgId, dev) {
+    const key = `${orgId}:${dev}`;
+    const c = (store.node_controls && store.node_controls[key]) || {
+      device_id: dev, org_id: orgId, enabled: false, values: { ...CONTROL_DEFAULTS },
+      rev: 0, ack_rev: 0, ack_at: null, updated_at: null,
+    };
+    const values = { ...CONTROL_DEFAULTS, ...(c.values || {}) };
+    const seenAt = store.node_device_seen && store.node_device_seen[key];
+    const seen = seenAt ? Math.max(0, Math.round((Date.now() - seenAt) / 1000)) : null;
+    const acked = Boolean(c.ack_at && c.ack_rev === c.rev && c.rev > 0);
+    const confirmedSec = acked ? Math.max(0, Math.round((Date.now() - Date.parse(c.ack_at)) / 1000)) : null;
+    return {
+      ...c,
+      values,
+      device_seen_seconds: seen,
+      device_online: seen !== null && seen < 60,
+      confirmed: Boolean(c.enabled && acked),
+      confirmed_seconds: confirmedSec,
+    };
+  }
+
+  function storeDemoReading(store, orgId, view, isWokwi) {
+    store.node_latest = store.node_latest || {};
+    store.node_recent = store.node_recent || {};
+    store.node_device_seen = store.node_device_seen || {};
+    store.node_wokwi_seen = store.node_wokwi_seen || {};
+    store.node_latest[orgId] = view;
+    const prev = Array.isArray(store.node_recent[orgId]) ? store.node_recent[orgId] : [];
+    store.node_recent[orgId] = [{
+      id: view.id, at: view.at, device_id: view.device_id, site_id: view.site_id, source: view.source,
+      wbgt_c: view.wbgt_c, ambient_temp_c: view.ambient_temp_c, relative_humidity_pct: view.relative_humidity_pct,
+      pm10_0_ug_m3: view.pm10_0_ug_m3, uv_index: view.uv_index, noise_dba: view.noise_dba,
+    }, ...prev].slice(0, 6);
+    store.node_device_seen[`${orgId}:${view.device_id}`] = Date.now();
+    if (isWokwi) store.node_wokwi_seen[orgId] = { at: Date.now(), device_id: view.device_id };
+  }
+
   window.workcheckDemoApi = async function workcheckDemoApi(path, method, options, helpers) {
     const D = window.WORKCHECK_STATIC_DATA;
     const { ApiError, computeWbgt, haversineKm, nodeView, cache, talukaAliases } = helpers;
@@ -1096,33 +1133,48 @@
     if (p === "/api/heat/map") return D.heat_map;
     if (p === "/api/heat/jobs") return D.heat_jobs;
     if (p === "/api/heat/year") return (D.heat_year && D.heat_year[u.searchParams.get("job_id")]) || { curve: [] };
-    if (p === "/api/node/state") return D.node_state;
+    if (p === "/api/node/state") {
+      const su = requireUser(store, ApiError, ["supervisor", "ddo", "clinician"]);
+      const latest = (store.node_latest && store.node_latest[su.org_id]) || D.node_state.latest;
+      const recent = (store.node_recent && store.node_recent[su.org_id]) || D.node_state.recent;
+      const w = store.node_wokwi_seen && store.node_wokwi_seen[su.org_id];
+      const sec = w && w.at ? Math.max(0, Math.round((Date.now() - w.at) / 1000)) : null;
+      return {
+        latest,
+        recent,
+        wokwi: { connected: sec !== null && sec < 30, last_seen_seconds: sec, device_id: (w && w.device_id) || null },
+      };
+    }
     if (p === "/api/node/controls") {
       const su = requireUser(store, ApiError, ["supervisor", "ddo", "clinician"]);
-      const dev = u.searchParams.get("device_id") || "wokwi-node-01";
+      const dev = u.searchParams.get("device_id") || body.device_id || "wokwi-node-01";
       const key = `${su.org_id}:${dev}`;
       if (method === "POST") {
+        store.node_controls = store.node_controls || {};
         const cur = store.node_controls[key] || { device_id: dev, org_id: su.org_id, rev: 0, ack_rev: 0, ack_at: null };
+        const prevVals = { ...CONTROL_DEFAULTS, ...(cur.values || {}) };
         store.node_controls[key] = {
           ...cur, enabled: Boolean(body.enabled), rev: (cur.rev || 0) + 1, updated_at: nowIso(),
           values: {
-            ambient_temp_c: Number(body.ambient_temp_c ?? CONTROL_DEFAULTS.ambient_temp_c),
-            relative_humidity_pct: Number(body.relative_humidity_pct ?? CONTROL_DEFAULTS.relative_humidity_pct),
-            globe_temp_c: Number(body.globe_temp_c ?? CONTROL_DEFAULTS.globe_temp_c),
-            pm10_0_ug_m3: Number(body.pm10_0_ug_m3 ?? CONTROL_DEFAULTS.pm10_0_ug_m3),
-            uv_index: Number(body.uv_index ?? CONTROL_DEFAULTS.uv_index),
+            ambient_temp_c: Number(body.ambient_temp_c ?? prevVals.ambient_temp_c),
+            relative_humidity_pct: Number(body.relative_humidity_pct ?? prevVals.relative_humidity_pct),
+            globe_temp_c: Number(body.globe_temp_c ?? prevVals.globe_temp_c),
+            pm10_0_ug_m3: Number(body.pm10_0_ug_m3 ?? prevVals.pm10_0_ug_m3),
+            uv_index: Number(body.uv_index ?? prevVals.uv_index),
+            noise_dba: Number(body.noise_dba ?? prevVals.noise_dba),
           },
         };
         saveStore(store);
       }
-      const c = store.node_controls[key] || { device_id: dev, enabled: false, values: { ...CONTROL_DEFAULTS }, rev: 0, ack_rev: 0, ack_at: null, updated_at: null };
-      return { ...c, confirmed: false, device_online: false, confirmed_seconds: null };
+      return controlsViewDemo(store, su.org_id, dev);
     }
     if (p === "/api/node/day") {
+      requireUser(store, ApiError, ["supervisor", "ddo", "clinician"]);
       const lid = u.searchParams.get("location_id") || "kandla_port";
       return (D.node_day && D.node_day[lid]) || (D.node_day && D.node_day.kandla_port) || { location_id: lid, day: "2025-05-19", hours: [] };
     }
     if (p === "/api/node/replay") {
+      const su = requireUser(store, ApiError, ["supervisor", "ddo", "clinician"]);
       const lid = u.searchParams.get("location_id") || "kandla_port";
       const h = Number(u.searchParams.get("hour") || 12);
       const day = u.searchParams.get("day") || "2025-05-19";
@@ -1130,12 +1182,44 @@
       const base = (D.node_replay && D.node_replay[lid]) || D.node_state.latest;
       if (hr) {
         const simTa = Math.round((27 + Math.max(0, hr.wbgt - 22) * 1.15) * 10) / 10;
-        return { ...nodeView(D, { site_id: lid, source: "model_replay", ambient_temp_c: simTa, relative_humidity_pct: 45, pm10_0_ug_m3: base.pm10_0_ug_m3, uv_index: h >= 10 && h <= 16 ? 9 : 2 }, hr.wbgt, "Model estimate for sun"), hour: h, date: day };
+        const view = nodeView(D, { site_id: lid, source: "model_replay", ambient_temp_c: simTa, relative_humidity_pct: 45, pm10_0_ug_m3: base.pm10_0_ug_m3, uv_index: h >= 10 && h <= 16 ? 9 : 2 }, hr.wbgt, "Model estimate for sun");
+        storeDemoReading(store, su.org_id, view, false);
+        saveStore(store);
+        return { ...view, hour: h, date: day };
       }
       return { ...base, hour: h, date: day };
     }
     if (p === "/api/node/simulate" && method === "POST") {
-      return nodeView(D, { ...body, source: body.source || "browser_simulator" });
+      const su = requireUser(store, ApiError, ["supervisor", "ddo", "clinician"]);
+      const isWokwi = body.source === "wokwi_simulated";
+      const dev = isWokwi ? (body.device_id || "wokwi-node-01") : "browser-node";
+      const view = nodeView(D, { ...body, device_id: dev, source: isWokwi ? "wokwi_simulated" : "browser_simulator" });
+      storeDemoReading(store, su.org_id, view, isWokwi);
+      if (isWokwi && store.node_controls) {
+        const key = `${su.org_id}:${dev}`;
+        const c = store.node_controls[key];
+        if (c && body.remote_rev != null && Number(body.remote_rev) === c.rev && c.rev > 0) {
+          c.ack_rev = Number(body.remote_rev);
+          c.ack_at = nowIso();
+        }
+      }
+      saveStore(store);
+      if (isWokwi) {
+        const ctrl = controlsViewDemo(store, su.org_id, dev);
+        return {
+          r_on: ctrl.enabled ? 1 : 0,
+          r_rev: ctrl.rev,
+          r_temp: ctrl.values.ambient_temp_c,
+          r_rh: ctrl.values.relative_humidity_pct,
+          r_globe: ctrl.values.globe_temp_c,
+          r_pm10: ctrl.values.pm10_0_ug_m3,
+          r_uv: ctrl.values.uv_index,
+          r_noise: ctrl.values.noise_dba,
+          controls: ctrl,
+          ...view,
+        };
+      }
+      return view;
     }
 
     if (p === "/api/live/environment") {
